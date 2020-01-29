@@ -5,19 +5,19 @@
    <View
       id="View2">
       <property
-         name="activityId">User_Management</property>
+         name="activityId">Carrier</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">608.0</property>
+         name="x">601.0</property>
       <property
          name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>User_Management&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Carrier&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">236.5459</property>
+         name="y">226.5459</property>
       <property
-         name="page">/WEB-INF/Fragments/Modules/Setup/User_Management.jsff</property>
+         name="page">/WEB-INF/Fragments/Modules/Fuel_Management/Carrier.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -26,13 +26,13 @@
       <property
          name="activityId">ExecuteWithParams</property>
       <property
-         name="x">212.35156</property>
+         name="x">144.35156</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">335.1494</property>
+         name="y">293.1494</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -44,6 +44,6 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">R50,253.35156,334.79883,567.0,236.19531,L50</property>
+         name="sdm:polyPoints">R50,185.35156,292.79883,560.0,226.19531,L50</property>
    </ControlFlowCase>
 </SDM>

@@ -6,6 +6,28 @@
     <variableIterator id="variables"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.FuelManagementSidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="Fuel_Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Fuel_Management_Pages1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="Fuel_Management_Pages1Iterator" id="Fuel_Management_Pages1">
+      <nodeDefinition DefName="model.Users_Roles.Fuel_Management_Pages" Name="Fuel_Management_Pages10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>
