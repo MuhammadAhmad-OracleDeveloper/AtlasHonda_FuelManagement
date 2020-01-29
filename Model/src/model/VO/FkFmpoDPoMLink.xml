@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmpoDPoMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkFmpoDPoMAssoc">
+  <ViewLinkDefEnd
+    Name="TblFmpoMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblFmpoMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmpoMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmpoMView.FmpoMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblFmpoDView"
+    Cardinality="-1"
+    Owner="model.VO.TblFmpoDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmpoDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmpoDView.FmpoMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

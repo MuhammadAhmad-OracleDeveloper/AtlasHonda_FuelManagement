@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmpoMCarrierLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkFmpoMCarrierAssoc">
+  <ViewLinkDefEnd
+    Name="TblFmcarrierView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblFmcarrierView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmcarrierView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmcarrierView.FmcarrierId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblFmpoMView"
+    Cardinality="-1"
+    Owner="model.VO.TblFmpoMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmpoMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmpoMView.FmcarrierId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

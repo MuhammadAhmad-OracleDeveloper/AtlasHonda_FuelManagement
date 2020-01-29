@@ -14,10 +14,12 @@
                         <af:panelSplitter orientation="horizontal" splitterPosition="100" id="ps1">
                             <f:facet name="first">
                                 <!-- Left -->
+                                
                             </f:facet>
                             <f:facet name="second">
                                 <af:panelGroupLayout layout="scroll" id="pgl2">
                                     <!-- Content -->
+                                    <af:button text="reportwaa" id="b1"/>
                                 </af:panelGroupLayout>
                             </f:facet>
                         </af:panelSplitter>

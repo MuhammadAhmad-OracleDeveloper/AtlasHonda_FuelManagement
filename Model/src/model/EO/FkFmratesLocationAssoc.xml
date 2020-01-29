@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmratesLocationAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFmlocation"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblFmlocation">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmlocation"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmlocation.PkFmlocation"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmlocation.FmlocationId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFmrates"
+    Cardinality="-1"
+    Owner="model.EO.TblFmrates">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmrates"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmrates.FkFmratesLocation"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmrates.FmlocationId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

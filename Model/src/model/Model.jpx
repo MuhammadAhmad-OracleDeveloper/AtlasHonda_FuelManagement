@@ -13,6 +13,7 @@
     <Attr Name="_jprName" Value="../../Model.jpr"/>
     <Attr Name="_NamedConnection" Value="AHFM_DB"/>
     <Attr Name="_appModuleNames0" Value="model.Users_Roles.AppModule"/>
+    <Attr Name="_appModuleNames1" Value="model.AppModule"/>
   </DesignTime>
   <Containee
     Name="EO"
@@ -24,6 +25,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="model"
+    PackageName="model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="Users_Roles"
     PackageName="model.Users_Roles"
     ObjectType="JboPackage">
@@ -31,6 +40,15 @@
       <Attr Name="_VO" Value="true"/>
       <Attr Name="_VL" Value="true"/>
       <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="VO"
+    PackageName="model.VO"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
 </JboProject>

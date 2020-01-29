@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmitemsUomAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFmuom"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblFmuom">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmuom"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmuom.PkFmuom"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmuom.FmuomId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFmitems"
+    Cardinality="-1"
+    Owner="model.EO.TblFmitems">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmitems"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmitems.FkFmitemsUom"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmitems.FmuomId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmpoD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FMPO_D"
+  AliasName="TblFmpoD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FmpoDId"
+    IsNotNull="true"
+    ColumnName="FMPO_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FmpoMId"
+    ColumnName="FMPO_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="FmitemsId"
+    ColumnName="FMITEMS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="Fmqty"
+    ColumnName="FMQTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="Fmrate"
+    ColumnName="FMRATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="Fmgamt"
+    ColumnName="FMGAMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="FmstPerc"
+    ColumnName="FMST_PERC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="FmstAmt"
+    ColumnName="FMST_AMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <Attribute
+    Name="FmnetAmt"
+    ColumnName="FMNET_AMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPO_D"/>
+  <AccessorAttribute
+    Name="TblFmitems"
+    Association="model.EO.FkFmpoDItemsAssoc"
+    AssociationEnd="model.EO.FkFmpoDItemsAssoc.TblFmitems"
+    AssociationOtherEnd="model.EO.FkFmpoDItemsAssoc.TblFmpoD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFmpoM"
+    Association="model.EO.FkFmpoDPoMAssoc"
+    AssociationEnd="model.EO.FkFmpoDPoMAssoc.TblFmpoM"
+    AssociationOtherEnd="model.EO.FkFmpoDPoMAssoc.TblFmpoD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkFmpoD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FMPO_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpoD.FmpoDId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFmpoDItems">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMITEMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FMPO_D_ITEMS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpoD.FmitemsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFmpoDPoM">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMPO_M"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FMPO_D_PO_M"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpoD.FmpoMId"/>
+    </AttrArray>
+  </Key>
+</Entity>

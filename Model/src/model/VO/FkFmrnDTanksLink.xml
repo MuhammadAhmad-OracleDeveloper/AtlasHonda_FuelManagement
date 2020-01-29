@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmrnDTanksLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkFmrnDTanksAssoc">
+  <ViewLinkDefEnd
+    Name="TblFmtanksView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblFmtanksView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmtanksView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmtanksView.FmtanksId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblFmrnDView"
+    Cardinality="-1"
+    Owner="model.VO.TblFmrnDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmrnDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmrnDView.FmtanksId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

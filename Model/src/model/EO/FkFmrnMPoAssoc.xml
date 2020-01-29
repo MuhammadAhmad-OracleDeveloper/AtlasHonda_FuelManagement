@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmrnMPoAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFmpoM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblFmpoM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmpoM"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmpoM.PkFmpoM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpoM.FmpoMId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFmrnM"
+    Cardinality="-1"
+    Owner="model.EO.TblFmrnM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmrnM"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmrnM.FkFmrnMPo"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmrnM.FmpoMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

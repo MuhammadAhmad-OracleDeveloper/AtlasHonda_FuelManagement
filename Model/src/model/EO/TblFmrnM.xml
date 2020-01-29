@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmrnM"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FMRN_M"
+  AliasName="TblFmrnM"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FmrnMId"
+    IsNotNull="true"
+    ColumnName="FMRN_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMRN_M"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FmpoMId"
+    ColumnName="FMPO_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="FmdocstsId"
+    ColumnName="FMDOCSTS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="FmrnMDate"
+    ColumnName="FMRN_M_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="FmrnMDispDate"
+    ColumnName="FMRN_M_DISP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="FmrnMRecDate"
+    ColumnName="FMRN_M_REC_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="FmrnRemarks"
+    Precision="300"
+    ColumnName="FMRN_REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FMRN_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblFmrnD"
+    Association="model.EO.FkFmrnDRnMAssoc"
+    AssociationEnd="model.EO.FkFmrnDRnMAssoc.TblFmrnD"
+    AssociationOtherEnd="model.EO.FkFmrnDRnMAssoc.TblFmrnM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblFmdocsts"
+    Association="model.EO.FkFmrnMDocstsAssoc"
+    AssociationEnd="model.EO.FkFmrnMDocstsAssoc.TblFmdocsts"
+    AssociationOtherEnd="model.EO.FkFmrnMDocstsAssoc.TblFmrnM"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFmpoM"
+    Association="model.EO.FkFmrnMPoAssoc"
+    AssociationEnd="model.EO.FkFmrnMPoAssoc.TblFmpoM"
+    AssociationOtherEnd="model.EO.FkFmrnMPoAssoc.TblFmrnM"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkFmrnM"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FMRN_M"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmrnM.FmrnMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFmrnMDocsts">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMDOCSTS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FMRN_M_DOCSTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmrnM.FmdocstsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFmrnMPo">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMPO_M"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FMRN_M_PO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmrnM.FmpoMId"/>
+    </AttrArray>
+  </Key>
+</Entity>
