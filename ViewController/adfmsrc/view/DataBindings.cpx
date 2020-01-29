@@ -24,6 +24,10 @@
           usageId="view_User_Management_TaskFlow_User_Management_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/General_Setup_TaskFlow.xml#General_Setup_TaskFlow@ExecuteWithParams"
           usageId="view_General_Setup_TaskFlow_General_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Setup/Document_Status_TaskFlow.xml#Document_Status_TaskFlow@ExecuteWithParams"
+          usageId="view_Document_Status_TaskFlow_Document_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Setup/Unit_of_Measurement_TaskFlow.xml#Unit_of_Measurement_TaskFlow@ExecuteWithParams"
+          usageId="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -43,6 +47,10 @@
           path="Task_Flows.Modules.Setup.User_Management_TaskFlow_User_Management_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_General_Setup_TaskFlow_General_Setup_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Setup.General_Setup_TaskFlow_General_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Document_Status_TaskFlow_Document_Status_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Setup.Document_Status_TaskFlow_Document_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Setup.Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
