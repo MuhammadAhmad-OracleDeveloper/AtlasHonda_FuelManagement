@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Location_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmlocation.AST, 
+       TblFmlocation.FMLOCATION_ID, 
+       TblFmlocation.FMLOCATION_NAME"
+  FromList="TBL_FMLOCATION TblFmlocation"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Location_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmlocation"
+    Entity="model.EO.TblFmlocation"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmlocation"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="FmlocationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmlocationId"
+    EntityUsage="TblFmlocation"
+    AliasName="FMLOCATION_ID"/>
+  <ViewAttribute
+    Name="FmlocationName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmlocationName"
+    EntityUsage="TblFmlocation"
+    AliasName="FMLOCATION_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

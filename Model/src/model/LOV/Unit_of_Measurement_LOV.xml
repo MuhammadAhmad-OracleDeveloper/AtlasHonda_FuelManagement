@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Unit_of_Measurement_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmuom.FMUOM_ID, 
+       TblFmuom.FMUOM_NAME, 
+       TblFmuom.AST"
+  FromList="TBL_FMUOM TblFmuom"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Unit_of_Measurement_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmuom"
+    Entity="model.EO.TblFmuom"/>
+  <ViewAttribute
+    Name="FmuomId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmuomId"
+    EntityUsage="TblFmuom"
+    AliasName="FMUOM_ID"/>
+  <ViewAttribute
+    Name="FmuomName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmuomName"
+    EntityUsage="TblFmuom"
+    AliasName="FMUOM_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmuom"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Vendor_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmvendors.FMVENDORS_ID, 
+       TblFmvendors.FMVENDORS_NAME, 
+       TblFmvendors.AST"
+  FromList="TBL_FMVENDORS TblFmvendors"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Vendor_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmvendors"
+    Entity="model.EO.TblFmvendors"/>
+  <ViewAttribute
+    Name="FmvendorsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmvendorsId"
+    EntityUsage="TblFmvendors"
+    AliasName="FMVENDORS_ID"/>
+  <ViewAttribute
+    Name="FmvendorsName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmvendorsName"
+    EntityUsage="TblFmvendors"
+    AliasName="FMVENDORS_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmvendors"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Document_Status_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmdocsts.AST, 
+       TblFmdocsts.FMDOCSTS_ID, 
+       TblFmdocsts.FMDOCSTS_NAME"
+  FromList="TBL_FMDOCSTS TblFmdocsts"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Document_Status_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmdocsts"
+    Entity="model.EO.TblFmdocsts"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmdocsts"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="FmdocstsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmdocstsId"
+    EntityUsage="TblFmdocsts"
+    AliasName="FMDOCSTS_ID"/>
+  <ViewAttribute
+    Name="FmdocstsName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmdocstsName"
+    EntityUsage="TblFmdocsts"
+    AliasName="FMDOCSTS_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

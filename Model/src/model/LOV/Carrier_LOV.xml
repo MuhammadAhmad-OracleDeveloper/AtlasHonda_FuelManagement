@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Carrier_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmcarrier.FMCARRIER_ID, 
+       TblFmcarrier.FMCARRIER_NAME, 
+       TblFmcarrier.AST"
+  FromList="TBL_FMCARRIER TblFmcarrier"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Carrier_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmcarrier"
+    Entity="model.EO.TblFmcarrier"/>
+  <ViewAttribute
+    Name="FmcarrierId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmcarrierId"
+    EntityUsage="TblFmcarrier"
+    AliasName="FMCARRIER_ID"/>
+  <ViewAttribute
+    Name="FmcarrierName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmcarrierName"
+    EntityUsage="TblFmcarrier"
+    AliasName="FMCARRIER_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmcarrier"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
