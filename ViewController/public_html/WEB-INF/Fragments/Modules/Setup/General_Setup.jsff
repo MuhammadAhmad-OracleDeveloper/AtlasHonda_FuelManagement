@@ -31,8 +31,7 @@
                           selectionListener="#{bindings.TblFmdocstsView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmdocstsView1.rangeSize}"
                           filterModel="#{bindings.TblFmdocstsView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmdocstsView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          queryListener="#{bindings.TblFmdocstsView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblFmdocstsView1.hints.FmdocstsId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmdocstsView1.hints.FmdocstsId.label}" id="c1">
                     <af:inputText value="#{row.bindings.FmdocstsId.inputValue}"
@@ -69,18 +68,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
-                           disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
-                <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
-                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
-                <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                           disabled="#{!bindings.Delete.enabled}" id="b4"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b5"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b6">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Bay" id="sdi1">
                 <af:table value="#{bindings.TblFmbayView1.collectionModel}" var="row"
@@ -90,8 +89,7 @@
                           selectionListener="#{bindings.TblFmbayView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmbayView1.rangeSize}"
                           filterModel="#{bindings.TblFmbayView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmbayView1Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="::b7 ::b8 ::b9">
+                          queryListener="#{bindings.TblFmbayView1Query.processQuery}" varStatus="vs" id="t2">
                   <af:column sortProperty="#{bindings.TblFmbayView1.hints.FmbayId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmbayView1.hints.FmbayId.label}" id="c4">
                     <af:inputText value="#{row.bindings.FmbayId.inputValue}"
@@ -127,18 +125,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert1.execute}" text="CreateInsert1"
-                           disabled="#{!bindings.CreateInsert1.enabled}" id="b7"/>
-                <af:button actionListener="#{bindings.Execute1.execute}" text="Execute1"
-                           disabled="#{!bindings.Execute1.enabled}" id="b8"/>
-                <af:button actionListener="#{bindings.Delete1.execute}" text="Delete1"
-                           disabled="#{!bindings.Delete1.enabled}" id="b9"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b11"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b12">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Tank" id="sdi2">
                 <af:table value="#{bindings.TblFmtanksView1.collectionModel}" var="row"
@@ -149,8 +147,7 @@
                           selectionListener="#{bindings.TblFmtanksView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmtanksView1.rangeSize}"
                           filterModel="#{bindings.TblFmtanksView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmtanksView1Query.processQuery}" varStatus="vs" id="t3"
-                          partialTriggers="::b13 ::b14 ::b15">
+                          queryListener="#{bindings.TblFmtanksView1Query.processQuery}" varStatus="vs" id="t3">
                   <af:column sortProperty="#{bindings.TblFmtanksView1.hints.FmtanksId.name}" filterable="true"
                              sortable="true" headerText="Tanks ID" id="c7" align="center">
                     <af:inputText value="#{row.bindings.FmtanksId.inputValue}"
@@ -187,18 +184,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert2.execute}" text="CreateInsert2"
-                           disabled="#{!bindings.CreateInsert2.enabled}" id="b13"/>
-                <af:button actionListener="#{bindings.Execute2.execute}" text="Execute2"
-                           disabled="#{!bindings.Execute2.enabled}" id="b14"/>
-                <af:button actionListener="#{bindings.Delete2.execute}" text="Delete2"
-                           disabled="#{!bindings.Delete2.enabled}" id="b15"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b16"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b17">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s6"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s7"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Rejreason" id="sdi3">
                 <af:table value="#{bindings.TblFmrejreasonView1.collectionModel}" var="row"
@@ -209,8 +206,7 @@
                           selectionListener="#{bindings.TblFmrejreasonView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmrejreasonView1.rangeSize}"
                           filterModel="#{bindings.TblFmrejreasonView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmrejreasonView1Query.processQuery}" varStatus="vs" id="t4"
-                          partialTriggers="::b18 ::b19 ::b20">
+                          queryListener="#{bindings.TblFmrejreasonView1Query.processQuery}" varStatus="vs" id="t4">
                   <af:column sortProperty="#{bindings.TblFmrejreasonView1.hints.FmrejreasonId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmrejreasonView1.hints.FmrejreasonId.label}"
                              id="c10">
@@ -249,18 +245,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert3.execute}" text="CreateInsert3"
-                           disabled="#{!bindings.CreateInsert3.enabled}" id="b18"/>
-                <af:button actionListener="#{bindings.Execute3.execute}" text="Execute3"
-                           disabled="#{!bindings.Execute3.enabled}" id="b19"/>
-                <af:button actionListener="#{bindings.Delete3.execute}" text="Delete3"
-                           disabled="#{!bindings.Delete3.enabled}" id="b20"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b21"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b22">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s8"/>
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s10"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Atribute" id="sdi4">
                 <af:table value="#{bindings.TblFmatributeView1.collectionModel}" var="row"
@@ -271,8 +267,7 @@
                           selectionListener="#{bindings.TblFmatributeView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmatributeView1.rangeSize}"
                           filterModel="#{bindings.TblFmatributeView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmatributeView1Query.processQuery}" varStatus="vs" id="t5"
-                          partialTriggers="::b23 ::b24 ::b25">
+                          queryListener="#{bindings.TblFmatributeView1Query.processQuery}" varStatus="vs" id="t5">
                   <af:column sortProperty="#{bindings.TblFmatributeView1.hints.FmatributeId.name}" filterable="true"
                              sortable="true" headerText="Attribute ID"
                              id="c13" align="center">
@@ -311,18 +306,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert4.execute}" text="CreateInsert4"
-                           disabled="#{!bindings.CreateInsert4.enabled}" id="b23"/>
-                <af:button actionListener="#{bindings.Execute4.execute}" text="Execute4"
-                           disabled="#{!bindings.Execute4.enabled}" id="b24"/>
-                <af:button actionListener="#{bindings.Delete4.execute}" text="Delete4"
-                           disabled="#{!bindings.Delete4.enabled}" id="b25"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b26"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b27">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s11"/>
+                            <af:iterator id="i5" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s12"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Values" id="sdi5">
                 <af:table value="#{bindings.TblFmvalvesView1.collectionModel}" var="row"
@@ -333,8 +328,7 @@
                           selectionListener="#{bindings.TblFmvalvesView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmvalvesView1.rangeSize}"
                           filterModel="#{bindings.TblFmvalvesView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmvalvesView1Query.processQuery}" varStatus="vs" id="t6"
-                          partialTriggers="::b28 ::b29 ::b30">
+                          queryListener="#{bindings.TblFmvalvesView1Query.processQuery}" varStatus="vs" id="t6">
                   <af:column sortProperty="#{bindings.TblFmvalvesView1.hints.FmvalvesId.name}" filterable="true"
                              sortable="true" headerText="Values ID" id="c16">
                     <af:inputText value="#{row.bindings.FmvalvesId.inputValue}"
@@ -372,18 +366,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert5.execute}" text="CreateInsert5"
-                           disabled="#{!bindings.CreateInsert5.enabled}" id="b28"/>
-                <af:button actionListener="#{bindings.Execute5.execute}" text="Execute5"
-                           disabled="#{!bindings.Execute5.enabled}" id="b29"/>
-                <af:button actionListener="#{bindings.Delete5.execute}" text="Delete5"
-                           disabled="#{!bindings.Delete5.enabled}" id="b30"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b31"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b32">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s13"/>
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}5"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s14"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Lab test" id="sdi6">
                 <af:table value="#{bindings.TblFmlabtestView1.collectionModel}" var="row"
@@ -394,8 +388,7 @@
                           selectionListener="#{bindings.TblFmlabtestView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmlabtestView1.rangeSize}"
                           filterModel="#{bindings.TblFmlabtestView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmlabtestView1Query.processQuery}" varStatus="vs" id="t7"
-                          partialTriggers="::b33 ::b34 ::b35">
+                          queryListener="#{bindings.TblFmlabtestView1Query.processQuery}" varStatus="vs" id="t7">
                   <af:column sortProperty="#{bindings.TblFmlabtestView1.hints.FmlabtestId.name}" filterable="true"
                              sortable="true" headerText="Lab test ID"
                              id="c19" align="center">
@@ -434,18 +427,18 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert6.execute}" text="CreateInsert6"
-                           disabled="#{!bindings.CreateInsert6.enabled}" id="b33"/>
-                <af:button actionListener="#{bindings.Execute6.execute}" text="Execute6"
-                           disabled="#{!bindings.Execute6.enabled}" id="b34"/>
-                <af:button actionListener="#{bindings.Delete6.execute}" text="Delete6"
-                           disabled="#{!bindings.Delete6.enabled}" id="b35"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b36"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b37">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl9" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s15"/>
+                            <af:iterator id="i7" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}6"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s16"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Engines" id="sdi7">
                 <af:table value="#{bindings.TblFmenginesView1.collectionModel}" var="row"
@@ -456,8 +449,7 @@
                           selectionListener="#{bindings.TblFmenginesView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmenginesView1.rangeSize}"
                           filterModel="#{bindings.TblFmenginesView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmenginesView1Query.processQuery}" varStatus="vs" id="t8"
-                          partialTriggers="::b38 ::b39 ::b40">
+                          queryListener="#{bindings.TblFmenginesView1Query.processQuery}" varStatus="vs" id="t8">
                   <af:column sortProperty="#{bindings.TblFmenginesView1.hints.FmenginesId.name}" filterable="true"
                              sortable="true" headerText="Engines ID"
                              id="c22">
@@ -496,36 +488,25 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert7.execute}" text="CreateInsert7"
-                           disabled="#{!bindings.CreateInsert7.enabled}" id="b38"/>
-                <af:button actionListener="#{bindings.Execute7.execute}" text="Execute7"
-                           disabled="#{!bindings.Execute7.enabled}" id="b39"/>
-                <af:button actionListener="#{bindings.Delete7.execute}" text="Delete7"
-                           disabled="#{!bindings.Delete7.enabled}" id="b40"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b41"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b42">
-                  <af:resetActionListener/>
-                </af:button>
+                <af:panelGroupLayout id="pgl10" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s17"/>
+                            <af:iterator id="i8" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}7"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s18"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
-                            <af:iterator id="i2" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s5"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
+             
           </af:gridCell>
         </af:gridRow>
         
