@@ -13,6 +13,94 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Vendor_LOV1"
+    ViewObjectName="model.LOV.Vendor_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Carrier_LOV1"
+    ViewObjectName="model.LOV.Carrier_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Location_LOV1"
+    ViewObjectName="model.LOV.Location_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Document_Status_LOV1"
+    ViewObjectName="model.LOV.Document_Status_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FmvendorsId"
+    ListVOName="Vendor_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmvendorsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmcarrierId"
+    ListVOName="Carrier_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmcarrierId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmcarrierId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmcarrierName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmlocationId"
+    ListVOName="Location_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmlocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmlocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmlocationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmdocstsId"
+    ListVOName="Document_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmdocstsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmdocstsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmdocstsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmpoM"
     Entity="model.EO.TblFmpoM"/>
@@ -34,25 +122,57 @@
     PrecisionRule="true"
     EntityAttrName="FmvendorsId"
     EntityUsage="TblFmpoM"
-    AliasName="FMVENDORS_ID"/>
+    AliasName="FMVENDORS_ID"
+    LOVName="LOV_FmvendorsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmcarrierId"
     PrecisionRule="true"
     EntityAttrName="FmcarrierId"
     EntityUsage="TblFmpoM"
-    AliasName="FMCARRIER_ID"/>
+    AliasName="FMCARRIER_ID"
+    LOVName="LOV_FmcarrierId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmlocationId"
     PrecisionRule="true"
     EntityAttrName="FmlocationId"
     EntityUsage="TblFmpoM"
-    AliasName="FMLOCATION_ID"/>
+    AliasName="FMLOCATION_ID"
+    LOVName="LOV_FmlocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmdocstsId"
     PrecisionRule="true"
     EntityAttrName="FmdocstsId"
     EntityUsage="TblFmpoM"
-    AliasName="FMDOCSTS_ID"/>
+    AliasName="FMDOCSTS_ID"
+    LOVName="LOV_FmdocstsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmpoMRemarks"
     PrecisionRule="true"
