@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Fuel_Manag_LocationPageDef"
+                Package="Fragments.Modules.Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFmlocationView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmlocationView1Iterator"/>
+    <searchRegion Binds="TblFmlocationView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlocationView1Query"/>
+    <iterator Binds="TblFmuomView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmuomView1Iterator"/>
+    <searchRegion Binds="TblFmuomView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmuomView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFmlocationView1Iterator" id="TblFmlocationView1">
+      <nodeDefinition DefName="model.VO.TblFmlocationView" Name="TblFmlocationView10">
+        <AttrNames>
+          <Item Value="FmlocationId"/>
+          <Item Value="FmlocationName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmlocationView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmlocationView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="TblFmuomView1Iterator" id="TblFmuomView1">
+      <nodeDefinition DefName="model.VO.TblFmuomView" Name="TblFmuomView10">
+        <AttrNames>
+          <Item Value="FmuomId"/>
+          <Item Value="FmuomName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmuomView1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmuomView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmuomView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

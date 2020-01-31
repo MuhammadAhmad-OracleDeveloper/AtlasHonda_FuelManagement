@@ -34,6 +34,8 @@
     <page path="/WEB-INF/Fragments/Modules/Setup/General_Setup.jsff" usageId="view_General_SetupPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/Fuel_Manag_Location_TaskFlow.xml#Fuel_Manag_Location_TaskFlow@ExecuteWithParams"
           usageId="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/Fuel_Manag_Location.jsff" usageId="view_Fuel_Manag_LocationPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/Unit_of_Measurement.jsff" usageId="view_Unit_of_MeasurementPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -65,6 +67,8 @@
     <page id="view_General_SetupPageDef" path="Fragments.Modules.Setup.General_SetupPageDef"/>
     <page id="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Setup.Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Fuel_Manag_LocationPageDef" path="Fragments.Modules.Setup.Fuel_Manag_LocationPageDef"/>
+    <page id="view_Unit_of_MeasurementPageDef" path="Fragments.Modules.Setup.Unit_of_MeasurementPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
