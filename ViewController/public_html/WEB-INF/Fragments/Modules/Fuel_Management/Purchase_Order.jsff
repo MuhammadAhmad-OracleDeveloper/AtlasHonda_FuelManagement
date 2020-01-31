@@ -293,18 +293,6 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert1.execute}" text="CreateInsert1"
-                           disabled="#{!bindings.CreateInsert1.enabled}" id="b7"/>
-                <af:button actionListener="#{bindings.Execute1.execute}" text="Execute1"
-                           disabled="#{!bindings.Execute1.enabled}" id="b8"/>
-                <af:button actionListener="#{bindings.Delete1.execute}" text="Delete1"
-                           disabled="#{!bindings.Delete1.enabled}" id="b9"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b11"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b12">
-                  <af:resetActionListener/>
-                </af:button>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

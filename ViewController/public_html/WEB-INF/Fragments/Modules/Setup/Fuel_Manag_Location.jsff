@@ -31,8 +31,7 @@
                           selectionListener="#{bindings.TblFmlocationView11.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmlocationView11.rangeSize}"
                           filterModel="#{bindings.TblFmlocationView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmlocationView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          queryListener="#{bindings.TblFmlocationView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblFmlocationView11.hints.FmlocationId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmlocationView11.hints.FmlocationId.label}"
                              id="c1">
@@ -71,18 +70,6 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
-                           disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
-                <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
-                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
-                <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                           disabled="#{!bindings.Delete.enabled}" id="b4"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                           disabled="#{!bindings.Commit.enabled}" id="b5"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b6">
-                  <af:resetActionListener/>
-                </af:button>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
