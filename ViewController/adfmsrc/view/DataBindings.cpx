@@ -24,8 +24,6 @@
           usageId="view_User_Management_TaskFlow_User_Management_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/General_Setup_TaskFlow.xml#General_Setup_TaskFlow@ExecuteWithParams"
           usageId="view_General_Setup_TaskFlow_General_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Setup/Document_Status_TaskFlow.xml#Document_Status_TaskFlow@ExecuteWithParams"
-          usageId="view_Document_Status_TaskFlow_Document_Status_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/Unit_of_Measurement_TaskFlow.xml#Unit_of_Measurement_TaskFlow@ExecuteWithParams"
           usageId="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Carrier.jsff" usageId="view_CarrierPageDef"/>
@@ -34,6 +32,8 @@
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Vendors.jsff" usageId="view_VendorsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Purchase_Order.jsff" usageId="view_Purchase_OrderPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/General_Setup.jsff" usageId="view_General_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Setup/Fuel_Manag_Location_TaskFlow.xml#Fuel_Manag_Location_TaskFlow@ExecuteWithParams"
+          usageId="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -63,6 +63,8 @@
     <page id="view_VendorsPageDef" path="Fragments.Modules.Fuel_Management.VendorsPageDef"/>
     <page id="view_Purchase_OrderPageDef" path="Fragments.Modules.Fuel_Management.Purchase_OrderPageDef"/>
     <page id="view_General_SetupPageDef" path="Fragments.Modules.Setup.General_SetupPageDef"/>
+    <page id="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Setup.Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
