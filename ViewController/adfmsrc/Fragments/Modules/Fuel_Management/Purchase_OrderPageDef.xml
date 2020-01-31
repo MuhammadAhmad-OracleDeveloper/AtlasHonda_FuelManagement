@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Purchase_OrderPageDef"
+                Package="Fragments.Modules.Fuel_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFmpoMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmpoMView1Iterator"/>
+    <searchRegion Binds="TblFmpoMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmpoMView1Query"/>
+    <iterator Binds="TblFmpoDView3" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmpoDView3Iterator"/>
+    <searchRegion Binds="TblFmpoDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmpoDView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFmpoMView1Iterator" id="TblFmpoMView1">
+      <nodeDefinition DefName="model.VO.TblFmpoMView" Name="TblFmpoMView10">
+        <AttrNames>
+          <Item Value="FmpoMId"/>
+          <Item Value="FmpoMDate"/>
+          <Item Value="FmvendorsId"/>
+          <Item Value="FmcarrierId"/>
+          <Item Value="FmlocationId"/>
+          <Item Value="FmdocstsId"/>
+          <Item Value="FmpoMRemarks"/>
+          <Item Value="FmpoMCrDays"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmpoMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmpoMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmpoMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblFmpoDView3Iterator" id="TblFmpoDView3">
+      <nodeDefinition DefName="model.VO.TblFmpoDView" Name="TblFmpoDView30">
+        <AttrNames>
+          <Item Value="FmpoDId"/>
+          <Item Value="FmpoMId"/>
+          <Item Value="FmitemsId"/>
+          <Item Value="Fmqty"/>
+          <Item Value="Fmrate"/>
+          <Item Value="Fmgamt"/>
+          <Item Value="FmstPerc"/>
+          <Item Value="FmstAmt"/>
+          <Item Value="FmnetAmt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmpoDView3Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmpoDView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmpoDView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

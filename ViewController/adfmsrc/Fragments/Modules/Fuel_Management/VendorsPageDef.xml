@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="VendorsPageDef"
+                Package="Fragments.Modules.Fuel_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFmvendorsView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmvendorsView1Iterator"/>
+    <searchRegion Binds="TblFmvendorsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvendorsView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFmvendorsView1Iterator" id="TblFmvendorsView1">
+      <nodeDefinition DefName="model.VO.TblFmvendorsView" Name="TblFmvendorsView10">
+        <AttrNames>
+          <Item Value="FmvendorsId"/>
+          <Item Value="FmvendorsName"/>
+          <Item Value="Ast"/>
+          <Item Value="FmvendorsCper"/>
+          <Item Value="FmvendorsDsg"/>
+          <Item Value="FmvendorsAdrs"/>
+          <Item Value="FmvendorsPhone"/>
+          <Item Value="FmvendorsMob"/>
+          <Item Value="FmvendorsNtn"/>
+          <Item Value="FmvendorsStrn"/>
+          <Item Value="FmvendorsCrl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFmvendorsView1Iterator" id="TblFmvendorsView11">
+      <nodeDefinition DefName="model.VO.TblFmvendorsView" Name="TblFmvendorsView110">
+        <AttrNames>
+          <Item Value="FmvendorsId"/>
+          <Item Value="FmvendorsName"/>
+          <Item Value="Ast"/>
+          <Item Value="FmvendorsCper"/>
+          <Item Value="FmvendorsDsg"/>
+          <Item Value="FmvendorsAdrs"/>
+          <Item Value="FmvendorsPhone"/>
+          <Item Value="FmvendorsMob"/>
+          <Item Value="FmvendorsNtn"/>
+          <Item Value="FmvendorsStrn"/>
+          <Item Value="FmvendorsCrl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmvendorsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmvendorsView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmvendorsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

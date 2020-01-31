@@ -28,6 +28,12 @@
           usageId="view_Document_Status_TaskFlow_Document_Status_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/Unit_of_Measurement_TaskFlow.xml#Unit_of_Measurement_TaskFlow@ExecuteWithParams"
           usageId="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Carrier.jsff" usageId="view_CarrierPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Item_Profile.jsff" usageId="view_Item_ProfilePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Rate_Definition.jsff" usageId="view_Rate_DefinitionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Vendors.jsff" usageId="view_VendorsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Purchase_Order.jsff" usageId="view_Purchase_OrderPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/General_Setup.jsff" usageId="view_General_SetupPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -51,9 +57,20 @@
           path="Task_Flows.Modules.Setup.Document_Status_TaskFlow_Document_Status_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Setup.Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_CarrierPageDef" path="Fragments.Modules.Fuel_Management.CarrierPageDef"/>
+    <page id="view_Item_ProfilePageDef" path="Fragments.Modules.Fuel_Management.Item_ProfilePageDef"/>
+    <page id="view_Rate_DefinitionPageDef" path="Fragments.Modules.Fuel_Management.Rate_DefinitionPageDef"/>
+    <page id="view_VendorsPageDef" path="Fragments.Modules.Fuel_Management.VendorsPageDef"/>
+    <page id="view_Purchase_OrderPageDef" path="Fragments.Modules.Fuel_Management.Purchase_OrderPageDef"/>
+    <page id="view_General_SetupPageDef" path="Fragments.Modules.Setup.General_SetupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="General_SetupPageDef"
+                Package="Fragments.Modules.Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFmdocstsView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmdocstsView1Iterator"/>
+    <searchRegion Binds="TblFmdocstsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmdocstsView1Query"/>
+    <iterator Binds="TblFmbayView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmbayView1Iterator"/>
+    <searchRegion Binds="TblFmbayView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmbayView1Query"/>
+    <iterator Binds="TblFmtanksView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmtanksView1Iterator"/>
+    <searchRegion Binds="TblFmtanksView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmtanksView1Query"/>
+    <iterator Binds="TblFmrejreasonView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmrejreasonView1Iterator"/>
+    <searchRegion Binds="TblFmrejreasonView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrejreasonView1Query"/>
+    <iterator Binds="TblFmatributeView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmatributeView1Iterator"/>
+    <searchRegion Binds="TblFmatributeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmatributeView1Query"/>
+    <iterator Binds="TblFmvalvesView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmvalvesView1Iterator"/>
+    <searchRegion Binds="TblFmvalvesView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvalvesView1Query"/>
+    <iterator Binds="TblFmlabtestView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmlabtestView1Iterator"/>
+    <searchRegion Binds="TblFmlabtestView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlabtestView1Query"/>
+    <iterator Binds="TblFmenginesView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmenginesView1Iterator"/>
+    <searchRegion Binds="TblFmenginesView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmenginesView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFmdocstsView1Iterator" id="TblFmdocstsView1">
+      <nodeDefinition DefName="model.VO.TblFmdocstsView" Name="TblFmdocstsView10">
+        <AttrNames>
+          <Item Value="FmdocstsId"/>
+          <Item Value="FmdocstsName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmdocstsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmdocstsView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmdocstsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblFmbayView1Iterator" id="TblFmbayView1">
+      <nodeDefinition DefName="model.VO.TblFmbayView" Name="TblFmbayView10">
+        <AttrNames>
+          <Item Value="FmbayId"/>
+          <Item Value="FmbayName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmbayView1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmbayView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmbayView1Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmtanksView1Iterator" id="TblFmtanksView1">
+      <nodeDefinition DefName="model.VO.TblFmtanksView" Name="TblFmtanksView10">
+        <AttrNames>
+          <Item Value="FmtanksId"/>
+          <Item Value="FmtanksName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmtanksView1Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmtanksView1Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmtanksView1Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmrejreasonView1Iterator" id="TblFmrejreasonView1">
+      <nodeDefinition DefName="model.VO.TblFmrejreasonView" Name="TblFmrejreasonView10">
+        <AttrNames>
+          <Item Value="FmrejreasonId"/>
+          <Item Value="FmrejreasonName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmrejreasonView1Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmrejreasonView1Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFmrejreasonView1Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmatributeView1Iterator" id="TblFmatributeView1">
+      <nodeDefinition DefName="model.VO.TblFmatributeView" Name="TblFmatributeView10">
+        <AttrNames>
+          <Item Value="FmatributeId"/>
+          <Item Value="FmatributeName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmatributeView1Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmatributeView1Iterator" id="Execute4" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmatributeView1Iterator" id="Delete4" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmvalvesView1Iterator" id="TblFmvalvesView1">
+      <nodeDefinition DefName="model.VO.TblFmvalvesView" Name="TblFmvalvesView10">
+        <AttrNames>
+          <Item Value="FmvalvesId"/>
+          <Item Value="FmvalvesName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmvalvesView1Iterator" id="CreateInsert5" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmvalvesView1Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmvalvesView1Iterator" id="Delete5" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmlabtestView1Iterator" id="TblFmlabtestView1">
+      <nodeDefinition DefName="model.VO.TblFmlabtestView" Name="TblFmlabtestView10">
+        <AttrNames>
+          <Item Value="FmlabtestId"/>
+          <Item Value="FmlabtestName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmlabtestView1Iterator" id="CreateInsert6" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmlabtestView1Iterator" id="Execute6" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmlabtestView1Iterator" id="Delete6" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmenginesView1Iterator" id="TblFmenginesView1">
+      <nodeDefinition DefName="model.VO.TblFmenginesView" Name="TblFmenginesView10">
+        <AttrNames>
+          <Item Value="FmenginesId"/>
+          <Item Value="FmenginesName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmenginesView1Iterator" id="CreateInsert7" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmenginesView1Iterator" id="Execute7" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmenginesView1Iterator" id="Delete7" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

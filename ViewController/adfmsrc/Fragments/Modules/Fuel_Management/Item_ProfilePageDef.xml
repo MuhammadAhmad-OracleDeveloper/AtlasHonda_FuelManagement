@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Item_ProfilePageDef"
+                Package="Fragments.Modules.Fuel_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFmitemsView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmitemsView1Iterator"/>
+    <searchRegion Binds="TblFmitemsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmitemsView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFmitemsView1Iterator" id="TblFmitemsView1">
+      <nodeDefinition DefName="model.VO.TblFmitemsView" Name="TblFmitemsView10">
+        <AttrNames>
+          <Item Value="FmitemsId"/>
+          <Item Value="FmitemsName"/>
+          <Item Value="Ast"/>
+          <Item Value="FmuomId"/>
+          <Item Value="FmminLvl"/>
+          <Item Value="FmmaxLvl"/>
+          <Item Value="FmreordLvl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmitemsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmitemsView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmitemsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
