@@ -35,8 +35,16 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TblFmuomView1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblFmuomView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblFmuomView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmlocationView1Iterator" id="TblFmlocationView11">
+      <nodeDefinition DefName="model.VO.TblFmlocationView" Name="TblFmlocationView110">
+        <AttrNames>
+          <Item Value="FmlocationId"/>
+          <Item Value="FmlocationName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmlocationView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
   </bindings>

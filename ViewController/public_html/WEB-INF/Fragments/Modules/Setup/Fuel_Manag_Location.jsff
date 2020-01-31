@@ -23,54 +23,58 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Tab Label 1">
-                <af:table value="#{bindings.TblFmuomView1.collectionModel}" var="row"
-                          rows="#{bindings.TblFmuomView1.rangeSize}"
-                          emptyText="#{bindings.TblFmuomView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblFmuomView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblFmuomView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblFmuomView1.rangeSize}"
-                          filterModel="#{bindings.TblFmuomView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmuomView1Query.processQuery}" varStatus="vs" id="t1"
+                <af:table value="#{bindings.TblFmlocationView11.collectionModel}" var="row"
+                          rows="#{bindings.TblFmlocationView11.rangeSize}"
+                          emptyText="#{bindings.TblFmlocationView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmlocationView11.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmlocationView11.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmlocationView11.rangeSize}"
+                          filterModel="#{bindings.TblFmlocationView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmlocationView1Query.processQuery}" varStatus="vs" id="t1"
                           partialTriggers="::b2 ::b3 ::b4">
-                  <af:column sortProperty="#{bindings.TblFmuomView1.hints.FmuomId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmuomView1.hints.FmuomId.label}" id="c1">
-                    <af:inputText value="#{row.bindings.FmuomId.inputValue}"
-                                  label="#{bindings.TblFmuomView1.hints.FmuomId.label}"
-                                  required="#{bindings.TblFmuomView1.hints.FmuomId.mandatory}"
-                                  columns="#{bindings.TblFmuomView1.hints.FmuomId.displayWidth}"
-                                  maximumLength="#{bindings.TblFmuomView1.hints.FmuomId.precision}"
-                                  shortDesc="#{bindings.TblFmuomView1.hints.FmuomId.tooltip}" id="it1">
-                      <f:validator binding="#{row.bindings.FmuomId.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmuomView1.hints.FmuomId.format}"/>
+                  <af:column sortProperty="#{bindings.TblFmlocationView11.hints.FmlocationId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblFmlocationView11.hints.FmlocationId.label}"
+                             id="c1">
+                    <af:inputText value="#{row.bindings.FmlocationId.inputValue}"
+                                  label="#{bindings.TblFmlocationView11.hints.FmlocationId.label}"
+                                  required="#{bindings.TblFmlocationView11.hints.FmlocationId.mandatory}"
+                                  columns="#{bindings.TblFmlocationView11.hints.FmlocationId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmlocationView11.hints.FmlocationId.precision}"
+                                  shortDesc="#{bindings.TblFmlocationView11.hints.FmlocationId.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.FmlocationId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmlocationView11.hints.FmlocationId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmuomView1.hints.FmuomName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmuomView1.hints.FmuomName.label}" id="c2">
-                    <af:inputText value="#{row.bindings.FmuomName.inputValue}"
-                                  label="#{bindings.TblFmuomView1.hints.FmuomName.label}"
-                                  required="#{bindings.TblFmuomView1.hints.FmuomName.mandatory}"
-                                  columns="#{bindings.TblFmuomView1.hints.FmuomName.displayWidth}"
-                                  maximumLength="#{bindings.TblFmuomView1.hints.FmuomName.precision}"
-                                  shortDesc="#{bindings.TblFmuomView1.hints.FmuomName.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.FmuomName.validator}"/>
+                  <af:column sortProperty="#{bindings.TblFmlocationView11.hints.FmlocationName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblFmlocationView11.hints.FmlocationName.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.FmlocationName.inputValue}"
+                                  label="#{bindings.TblFmlocationView11.hints.FmlocationName.label}"
+                                  required="#{bindings.TblFmlocationView11.hints.FmlocationName.mandatory}"
+                                  columns="#{bindings.TblFmlocationView11.hints.FmlocationName.displayWidth}"
+                                  maximumLength="#{bindings.TblFmlocationView11.hints.FmlocationName.precision}"
+                                  shortDesc="#{bindings.TblFmlocationView11.hints.FmlocationName.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.FmlocationName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmuomView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmuomView1.hints.Ast.label}" id="c3">
+                  <af:column sortProperty="#{bindings.TblFmlocationView11.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblFmlocationView11.hints.Ast.label}" id="c3">
                     <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblFmuomView1.hints.Ast.label}"
-                                  required="#{bindings.TblFmuomView1.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblFmuomView1.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblFmuomView1.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblFmuomView1.hints.Ast.tooltip}" id="it3">
+                                  label="#{bindings.TblFmlocationView11.hints.Ast.label}"
+                                  required="#{bindings.TblFmlocationView11.hints.Ast.mandatory}"
+                                  columns="#{bindings.TblFmlocationView11.hints.Ast.displayWidth}"
+                                  maximumLength="#{bindings.TblFmlocationView11.hints.Ast.precision}"
+                                  shortDesc="#{bindings.TblFmlocationView11.hints.Ast.tooltip}" id="it3">
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.CreateInsert1.execute}" text="CreateInsert1"
-                           disabled="#{!bindings.CreateInsert1.enabled}" id="b2"/>
-                <af:button actionListener="#{bindings.Execute1.execute}" text="Execute1"
-                           disabled="#{!bindings.Execute1.enabled}" id="b3"/>
+                <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                           disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
                 <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                            disabled="#{!bindings.Delete.enabled}" id="b4"/>
                 <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
