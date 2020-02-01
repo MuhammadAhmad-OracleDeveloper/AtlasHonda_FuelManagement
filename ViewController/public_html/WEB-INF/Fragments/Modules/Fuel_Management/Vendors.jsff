@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Panel Label 1">
+    <af:showDetailItem id="pane1" text="Vendor">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -32,24 +32,37 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmvendorsView11.rangeSize}"
                           filterModel="#{bindings.TblFmvendorsView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmvendorsView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          partialTriggers="" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsId.label}"
-                             id="c1">
+                             sortable="true" headerText="Vendor ID"
+                             id="c1" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.FmvendorsId.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsId.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsId.mandatory}"
                                   columns="#{bindings.TblFmvendorsView11.hints.FmvendorsId.displayWidth}"
                                   maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsId.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsId.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFmvendorsView11.hints.FmvendorsId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsName.label}"
-                             id="c2">
+                             sortable="true" headerText="Vendor"
+                             id="c2" width="200">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsName}"
+                                          id="it3" placeholder="Search Vendor">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsName.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsName.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsName.mandatory}"
@@ -59,32 +72,55 @@
                       <f:validator binding="#{row.bindings.FmvendorsName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.Ast.label}" id="c3">
-                    <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblFmvendorsView11.hints.Ast.label}"
-                                  required="#{bindings.TblFmvendorsView11.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblFmvendorsView11.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblFmvendorsView11.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.Ast.tooltip}" id="it3">
+                  <af:column headerText="Active" id="c3" width="60">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it12" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblFmvendorsView11.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblFmvendorsView11.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.name}" filterable="true"
+                             sortable="true" headerText="Mobile" id="c8" align="center">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.FmvendorsMob}" id="it17" placeholder="Search Mobile"/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.FmvendorsMob.inputValue}"
+                                  label="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.label}"
+                                  required="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.mandatory}"
+                                  columns="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.tooltip}" id="it8"
+                                  contentStyle="text-align: center">
+                      <f:validator binding="#{row.bindings.FmvendorsMob.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.label}"
-                             id="c4">
-                    <af:inputText value="#{row.bindings.FmvendorsCper.inputValue}"
-                                  label="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.label}"
-                                  required="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.mandatory}"
-                                  columns="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.displayWidth}"
-                                  maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.tooltip}" id="it4">
-                      <f:validator binding="#{row.bindings.FmvendorsCper.validator}"/>
+                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.name}" filterable="true"
+                             sortable="true" headerText="Phone" id="c7" align="center">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.FmvendorsPhone}" id="it16" placeholder="Search Phone"/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.FmvendorsPhone.inputValue}"
+                                  label="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.label}"
+                                  required="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.mandatory}"
+                                  columns="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.tooltip}" id="it7"
+                                  contentStyle="text-align: center">
+                      <f:validator binding="#{row.bindings.FmvendorsPhone.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsDsg.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsDsg.label}"
-                             id="c5">
+                             sortable="true" headerText="Designation" id="c5">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.FmvendorsDsg}" id="it14"
+                                    placeholder="Search Designation"/>
+                    </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsDsg.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsDsg.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsDsg.mandatory}"
@@ -95,8 +131,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsAdrs.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsAdrs.label}"
-                             id="c6">
+                             sortable="true" headerText="Address" id="c6" width="200">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.FmvendorsAdrs}" id="it15" placeholder="Search Address"/>
+                    </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsAdrs.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsAdrs.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsAdrs.mandatory}"
@@ -106,57 +144,68 @@
                       <f:validator binding="#{row.bindings.FmvendorsAdrs.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.label}"
-                             id="c7">
-                    <af:inputText value="#{row.bindings.FmvendorsPhone.inputValue}"
-                                  label="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.label}"
-                                  required="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.mandatory}"
-                                  columns="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.displayWidth}"
-                                  maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsPhone.tooltip}" id="it7">
-                      <f:validator binding="#{row.bindings.FmvendorsPhone.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.label}"
-                             id="c8">
-                    <af:inputText value="#{row.bindings.FmvendorsMob.inputValue}"
-                                  label="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.label}"
-                                  required="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.mandatory}"
-                                  columns="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.displayWidth}"
-                                  maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsMob.tooltip}" id="it8">
-                      <f:validator binding="#{row.bindings.FmvendorsMob.validator}"/>
+                  <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.name}" filterable="true"
+                             sortable="true" headerText="Contact Person"
+                             id="c4" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsCper}"
+                                          id="it13" placeholder="Search Contact">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.FmvendorsCper.inputValue}"
+                                  label="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.label}"
+                                  required="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.mandatory}"
+                                  columns="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsCper.tooltip}" id="it4"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmvendorsCper.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.label}"
-                             id="c9">
+                             sortable="true" headerText="NTN"
+                             id="c9" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsNtn}"
+                                          id="it18" placeholder="Search NTN">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsNtn.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.mandatory}"
                                   columns="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.displayWidth}"
                                   maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsNtn.tooltip}" id="it9"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmvendorsNtn.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.label}"
-                             id="c10">
+                             sortable="true" headerText="STRN"
+                             id="c10" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsStrn}"
+                                          id="it19" placeholder="Search STRN">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsStrn.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.mandatory}"
                                   columns="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.displayWidth}"
                                   maximumLength="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblFmvendorsView11.hints.FmvendorsStrn.tooltip}" id="it10"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmvendorsStrn.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsView11.hints.FmvendorsCrl.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmvendorsView11.hints.FmvendorsCrl.label}"
-                             id="c11">
+                             sortable="true" headerText="URL"
+                             id="c11" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsCrl}"
+                                          id="it20" placeholder="Search URL">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsCrl.inputValue}"
                                   label="#{bindings.TblFmvendorsView11.hints.FmvendorsCrl.label}"
                                   required="#{bindings.TblFmvendorsView11.hints.FmvendorsCrl.mandatory}"
