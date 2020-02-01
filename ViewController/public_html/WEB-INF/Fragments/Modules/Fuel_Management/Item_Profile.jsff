@@ -32,22 +32,34 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmitemsView1.rangeSize}"
                           filterModel="#{bindings.TblFmitemsView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmitemsView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          partialTriggers="" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmitemsView1.hints.FmitemsId.name}" filterable="true"
                              sortable="true" headerText="Item ID" id="c1" align="center" width="60">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmitemsId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmitemsId.inputValue}"
                                   label="#{bindings.TblFmitemsView1.hints.FmitemsId.label}"
                                   required="#{bindings.TblFmitemsView1.hints.FmitemsId.mandatory}"
                                   columns="#{bindings.TblFmitemsView1.hints.FmitemsId.displayWidth}"
                                   maximumLength="#{bindings.TblFmitemsView1.hints.FmitemsId.precision}"
-                                  shortDesc="#{bindings.TblFmitemsView1.hints.FmitemsId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblFmitemsView1.hints.FmitemsId.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFmitemsView1.hints.FmitemsId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmitemsView1.hints.FmitemsName.name}" filterable="true"
-                             sortable="true" headerText="Item" id="c2">
+                             sortable="true" headerText="Item" id="c2" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmitemsName}"
+                                          id="it3" placeholder="Search Item">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmitemsName.inputValue}"
                                   label="#{bindings.TblFmitemsView1.hints.FmitemsName.label}"
                                   required="#{bindings.TblFmitemsView1.hints.FmitemsName.mandatory}"
@@ -57,32 +69,39 @@
                       <f:validator binding="#{row.bindings.FmitemsName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmitemsView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c3">
-                    <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblFmitemsView1.hints.Ast.label}"
-                                  required="#{bindings.TblFmitemsView1.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblFmitemsView1.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblFmitemsView1.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblFmitemsView1.hints.Ast.tooltip}" id="it3">
+                  <af:column headerText="Active" id="c3" sortable="true" filterable="true" width="60">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it4" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblFmitemsView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblFmitemsView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmitemsView1.hints.FmuomId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmitemsView1.hints.FmuomId.label}" id="c4">
-                    <af:inputText value="#{row.bindings.FmuomId.inputValue}"
-                                  label="#{bindings.TblFmitemsView1.hints.FmuomId.label}"
-                                  required="#{bindings.TblFmitemsView1.hints.FmuomId.mandatory}"
-                                  columns="#{bindings.TblFmitemsView1.hints.FmuomId.displayWidth}"
-                                  maximumLength="#{bindings.TblFmitemsView1.hints.FmuomId.precision}"
-                                  shortDesc="#{bindings.TblFmitemsView1.hints.FmuomId.tooltip}" id="it4">
+                  <af:column headerText="Unit of Measurement" id="c4" sortable="true" filterable="true" width="150">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmuomId}"
+                                          id="it8" placeholder="Search Unit">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FmuomId.inputValue}" label="#{row.bindings.FmuomId.label}"
+                                        required="#{bindings.TblFmitemsView1.hints.FmuomId.mandatory}"
+                                        shortDesc="#{bindings.TblFmitemsView1.hints.FmuomId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.FmuomId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.FmuomId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFmitemsView1.hints.FmuomId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmitemsView1.hints.FmminLvl.name}" filterable="true"
                              sortable="true" headerText="Minimum Level" id="c5">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmminLvl}"
+                                          id="it9" placeholder="Search Minimum Level">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmminLvl.inputValue}"
                                   label="#{bindings.TblFmitemsView1.hints.FmminLvl.label}"
                                   required="#{bindings.TblFmitemsView1.hints.FmminLvl.mandatory}"
@@ -96,6 +115,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmitemsView1.hints.FmmaxLvl.name}" filterable="true"
                              sortable="true" headerText="Maximum Level" id="c6">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmmaxLvl}"
+                                          id="it10" placeholder="Search Maximum Level">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmmaxLvl.inputValue}"
                                   label="#{bindings.TblFmitemsView1.hints.FmmaxLvl.label}"
                                   required="#{bindings.TblFmitemsView1.hints.FmmaxLvl.mandatory}"
@@ -108,7 +132,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmitemsView1.hints.FmreordLvl.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmitemsView1.hints.FmreordLvl.label}" id="c7">
+                             sortable="true" headerText="Reorder Level" id="c7">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmreordLvl}"
+                                          id="it11" placeholder="Search Reorder Level">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmreordLvl.inputValue}"
                                   label="#{bindings.TblFmitemsView1.hints.FmreordLvl.label}"
                                   required="#{bindings.TblFmitemsView1.hints.FmreordLvl.mandatory}"

@@ -4,29 +4,29 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblFmdocstsView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmdocstsView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmdocstsView1Iterator"/>
     <searchRegion Binds="TblFmdocstsView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmdocstsView1Query"/>
-    <iterator Binds="TblFmbayView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmbayView1Iterator"/>
+    <iterator Binds="TblFmbayView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmbayView1Iterator"/>
     <searchRegion Binds="TblFmbayView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmbayView1Query"/>
-    <iterator Binds="TblFmtanksView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmtanksView1Iterator"/>
+    <iterator Binds="TblFmtanksView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmtanksView1Iterator"/>
     <searchRegion Binds="TblFmtanksView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmtanksView1Query"/>
-    <iterator Binds="TblFmrejreasonView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmrejreasonView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmrejreasonView1Iterator"/>
     <searchRegion Binds="TblFmrejreasonView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrejreasonView1Query"/>
-    <iterator Binds="TblFmatributeView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmatributeView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmatributeView1Iterator"/>
     <searchRegion Binds="TblFmatributeView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmatributeView1Query"/>
-    <iterator Binds="TblFmvalvesView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmvalvesView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmvalvesView1Iterator"/>
     <searchRegion Binds="TblFmvalvesView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvalvesView1Query"/>
-    <iterator Binds="TblFmlabtestView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmlabtestView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmlabtestView1Iterator"/>
     <searchRegion Binds="TblFmlabtestView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlabtestView1Query"/>
