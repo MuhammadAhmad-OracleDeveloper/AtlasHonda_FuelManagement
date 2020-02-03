@@ -1,4 +1,185 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-  <af:button text="user mana" id="b1"/>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Manage User Roles">
+        <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl8">
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end"
+                                         valign="middle">
+                               
+                            </af:gridCell>
+                        </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr17">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
+                         <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                <af:showDetailItem id="tab3" text="Users and User's Roles">
+                    <af:panelGridLayout id="pgl1">
+                        
+                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"></af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab1" text="User's Roles"/>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                <af:panelGroupLayout id="pgl2">
+                                    <af:spacer width="100" height="10" id="s10"/>
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                    icon="#{resource['images:add.png']}"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b16"/>
+                                                <af:spacer width="5" height="10" id="s11"/>
+                                                <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+                                    icon="#{resource['images:edit.png']}"
+                                               disabled="#{!bindings.Execute.enabled}" id="b2"/>
+                                                <af:spacer width="5" height="10" id="s12"/>
+                                                <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                    icon="#{resource['images:delete.png']}"
+                                               disabled="#{!bindings.Delete.enabled}" id="b3"/>
+                                </af:panelGroupLayout>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr6">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr15">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab2" text="Users"/>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                                <af:panelGroupLayout id="pgl3">
+                                    <af:spacer width="100" height="10" id="s2"/>
+                                    <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+                                    icon="#{resource['images:add.png']}"
+                                               disabled="#{!bindings.CreateInsert1.enabled}" id="b4"/>
+                                                <af:spacer width="5" height="10" id="s13"/>
+                                                <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
+                                    icon="#{resource['images:edit.png']}"
+                                               disabled="#{!bindings.Execute1.enabled}" id="b5"/>
+                                                <af:spacer width="5" height="10" id="s14"/>
+                                                <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+                                    icon="#{resource['images:delete.png']}"
+                                               disabled="#{!bindings.Delete1.enabled}" id="b6"/>
+                                </af:panelGroupLayout>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+                <af:showDetailItem text="Role's Privileges" id="sdi1">
+                    <af:panelGridLayout id="pgl9">
+                        <af:gridRow marginTop="5px" height="auto" id="gr7">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab4" text="User's Roles"/>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr8">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr9">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr10">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
+                                <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab5" text="Modules">
+                                        <af:spacer width="100" height="100" id="s3"/>
+                                        <af:panelGroupLayout id="pgl5">
+                                            <af:spacer width="100" height="10" id="s4"/>
+                                            <!--<af:button actionListener="#{bindings.CreateInsert2.execute}"
+                                                       text="Add"
+                                                       icon="#{resource['images:add.png']}"
+                                                       disabled="#{!bindings.CreateInsert2.enabled}" id="b7"/>
+                                                        <af:spacer width="5" height="10" id="s15"/>-->
+                                                        <af:button actionListener="#{bindings.Execute2.execute}" text="Edit"
+                                            icon="#{resource['images:edit.png']}"
+                                                       disabled="#{!bindings.Execute2.enabled}" id="b8"/>
+                                                        <af:spacer width="5" height="10" id="s16"/>
+                                                        <!--<af:button actionListener="#{bindings.Delete2.execute}" text="Delete"
+                                            icon="#{resource['images:delete.png']}"
+                                                       disabled="#{!bindings.Delete2.enabled}" id="b9"/>-->
+                                        </af:panelGroupLayout>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem text="Pages" id="sdi2">
+                                        <af:spacer width="100" height="100" id="s5"/>
+                                        <af:panelGroupLayout id="pgl6">
+                                            <af:spacer width="100" height="10" id="s6"/>
+                                            <!--<af:button actionListener="#{bindings.CreateInsert3.execute}"
+                                                       text="Add"
+                                                       icon="#{resource['images:add.png']}"
+                                                       disabled="#{!bindings.CreateInsert3.enabled}" id="b17"/>
+                                                        <af:spacer width="5" height="10" id="s17"/>-->
+                                                        <af:button actionListener="#{bindings.Execute3.execute}" text="Edit"
+                                            icon="#{resource['images:edit.png']}"
+                                                       disabled="#{!bindings.Execute3.enabled}" id="b11"/>
+                                                        <af:spacer width="5" height="10" id="s18"/>
+                                                        <!--<af:button actionListener="#{bindings.Delete3.execute}" text="Delete"
+                                            icon="#{resource['images:delete.png']}"
+                                                       disabled="#{!bindings.Delete3.enabled}" id="b12"/>-->
+                                        </af:panelGroupLayout>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem text="Reports" id="sdi3">
+                                        <af:spacer width="100" height="100" id="s7"/>
+                                        <af:panelGroupLayout id="pgl7">
+                                            <af:spacer width="100" height="10" id="s8"/>
+                                            <!--<af:button actionListener="#{bindings.CreateInsert4.execute}"
+                                                       text="Add"
+                                                       icon="#{resource['images:add.png']}"
+                                                       disabled="#{!bindings.CreateInsert4.enabled}" id="b13"/>
+                                                        <af:spacer width="5" height="10" id="s19"/>-->
+                                                        <af:button actionListener="#{bindings.Execute4.execute}" text="Edit"
+                                            icon="#{resource['images:edit.png']}"
+                                                       disabled="#{!bindings.Execute4.enabled}" id="b14"/>
+                                                        <af:spacer width="5" height="10" id="s20"/>
+                                                        <!--<af:button actionListener="#{bindings.Delete4.execute}" text="Delete"
+                                            icon="#{resource['images:delete.png']}"
+                                                       disabled="#{!bindings.Delete4.enabled}" id="b15"/>-->
+                                        </af:panelGroupLayout>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr11">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr12">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr13">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr14">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+            </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+           
+        </af:showDetailItem>
+    </af:panelAccordion>
 </ui:composition>

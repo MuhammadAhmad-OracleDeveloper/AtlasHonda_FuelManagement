@@ -36,6 +36,7 @@
           usageId="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/Fuel_Manag_Location.jsff" usageId="view_Fuel_Manag_LocationPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/Unit_of_Measurement.jsff" usageId="view_Unit_of_MeasurementPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/User_Management.jsff" usageId="view_User_ManagementPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -69,6 +70,7 @@
           path="Task_Flows.Modules.Setup.Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Fuel_Manag_LocationPageDef" path="Fragments.Modules.Setup.Fuel_Manag_LocationPageDef"/>
     <page id="view_Unit_of_MeasurementPageDef" path="Fragments.Modules.Setup.Unit_of_MeasurementPageDef"/>
+    <page id="view_User_ManagementPageDef" path="Fragments.Modules.Setup.User_ManagementPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
