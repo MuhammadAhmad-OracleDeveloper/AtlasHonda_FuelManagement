@@ -84,6 +84,13 @@
     AssociationOtherEnd="model.EO.FkRoleDetailModulesAssoc.TblRoleDetailModules"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblRoleMaster"
+    Association="model.EO.FKRoleDetailModuleFkAssoc"
+    AssociationEnd="model.EO.FKRoleDetailModuleFkAssoc.TblRoleMaster"
+    AssociationOtherEnd="model.EO.FKRoleDetailModuleFkAssoc.TblRoleDetailModules"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkRoleDetailModules"
     PrimaryKey="true">
@@ -103,6 +110,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.EO.TblRoleDetailModules.ModuleMenuId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblRoleDetailModules">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ROLE_MASTER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_ROLE_DETAIL_MODULES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblRoleDetailModules.RoleMasterId"/>
     </AttrArray>
   </Key>
 </Entity>

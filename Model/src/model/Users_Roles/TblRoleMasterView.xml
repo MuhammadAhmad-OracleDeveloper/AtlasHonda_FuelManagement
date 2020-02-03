@@ -53,4 +53,9 @@
     ViewLink="model.Users_Roles.FkUserMasterRoleLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblRoleDetailModulesView"
+    ViewLink="model.Users_Roles.FKTblRoleDetailModuleFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

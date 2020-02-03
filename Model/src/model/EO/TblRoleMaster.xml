@@ -69,6 +69,13 @@
     AssociationOtherEnd="model.EO.FkUserMasterRoleAssoc.TblRoleMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblRoleDetailModules"
+    Association="model.EO.FKRoleDetailModuleFkAssoc"
+    AssociationEnd="model.EO.FKRoleDetailModuleFkAssoc.TblRoleDetailModules"
+    AssociationOtherEnd="model.EO.FKRoleDetailModuleFkAssoc.TblRoleMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkRoleMaster"
     PrimaryKey="true">

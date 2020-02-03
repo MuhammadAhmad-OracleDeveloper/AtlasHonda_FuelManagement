@@ -79,6 +79,9 @@
   <ViewUsage
     Name="USERS_CRUD_OPERATIONS1"
     ViewObjectName="model.Users_Roles.USERS_CRUD_OPERATIONS"/>
+  <ViewUsage
+    Name="TblRoleDetailModulesView3"
+    ViewObjectName="model.Users_Roles.TblRoleDetailModulesView"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.Users_Roles.FkPagesLink"
@@ -138,5 +141,11 @@
     ViewLinkObjectName="model.Users_Roles.FkUserMasterRoleLink"
     SrcViewUsageName="model.Users_Roles.AppModule.TblRoleMasterView1"
     DstViewUsageName="model.Users_Roles.AppModule.TblUserMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblRoleDetailModuleFkLink1"
+    ViewLinkObjectName="model.Users_Roles.FKTblRoleDetailModuleFkLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.TblRoleMasterView1"
+    DstViewUsageName="model.Users_Roles.AppModule.TblRoleDetailModulesView3"
     Reversed="false"/>
 </AppModule>
