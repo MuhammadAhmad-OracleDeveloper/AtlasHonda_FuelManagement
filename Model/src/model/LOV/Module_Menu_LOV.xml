@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Module_Menu_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblModuleMenu.MODULE_MENU_ID, 
+       TblModuleMenu.MODULE_MENU_NAME, 
+       TblModuleMenu.AST"
+  FromList="TBL_MODULE_MENU TblModuleMenu"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Module_Menu_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblModuleMenu"
+    Entity="model.EO.TblModuleMenu"/>
+  <ViewAttribute
+    Name="ModuleMenuId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ModuleMenuId"
+    EntityUsage="TblModuleMenu"
+    AliasName="MODULE_MENU_ID"/>
+  <ViewAttribute
+    Name="ModuleMenuName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ModuleMenuName"
+    EntityUsage="TblModuleMenu"
+    AliasName="MODULE_MENU_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblModuleMenu"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
