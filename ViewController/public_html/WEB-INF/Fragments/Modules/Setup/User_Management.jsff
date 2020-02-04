@@ -100,21 +100,22 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                               text="CreateInsert"
+                                                    <af:spacer width="30" height="10" id="s15"/>
+                                                    <af:panelGroupLayout id="pgl10" layout="horizontal">
+                                                    
+                                                        <af:spacer width="90" height="10" id="s17"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                               text="Add"
                                                                disabled="#{!bindings.CreateInsert.enabled}" id="b7"/>
-                                                    <af:button actionListener="#{bindings.Execute.execute}"
-                                                               text="Execute" disabled="#{!bindings.Execute.enabled}"
+                                                        <af:spacer width="5" height="10" id="s19"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                               text="Edit" disabled="#{!bindings.Execute.enabled}"
                                                                id="b9"/>
-                                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                        <af:spacer width="5" height="10" id="s21"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                                disabled="#{!bindings.Delete.enabled}" id="b12"/>
-                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                                                               disabled="#{!bindings.Commit.enabled}" id="b13"/>
-                                                    <af:button actionListener="#{bindings.Rollback.execute}"
-                                                               text="Rollback" disabled="#{!bindings.Rollback.enabled}"
-                                                               immediate="true" id="b15">
-                                                        <af:resetActionListener/>
-                                                    </af:button>
+                                                   
+                                                    </af:panelGroupLayout>
                                                 </af:showDetailItem>
                                             </af:panelTabbed>
                                         </af:gridCell>
@@ -230,15 +231,21 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
+                                                    <af:spacer width="10" height="10" id="s22"/>
+                                                    <af:panelGroupLayout id="pgl11">
+                                                    <af:spacer width="200" height="10" id="s25"/>
                                                     <af:button actionListener="#{bindings.CreateInsert1.execute}"
-                                                               text="CreateInsert1"
+                                                               text="Add"
                                                                disabled="#{!bindings.CreateInsert1.enabled}" id="b17"/>
+                                                    <af:spacer width="5" height="10" id="s23"/>
                                                     <af:button actionListener="#{bindings.Execute1.execute}"
-                                                               text="Execute1" disabled="#{!bindings.Execute1.enabled}"
+                                                               text="Edit" disabled="#{!bindings.Execute1.enabled}"
                                                                id="b18"/>
+                                                    <af:spacer width="5" height="10" id="s24"/>
                                                     <af:button actionListener="#{bindings.Delete1.execute}"
-                                                               text="Delete1" disabled="#{!bindings.Delete1.enabled}"
+                                                               text="Delete" disabled="#{!bindings.Delete1.enabled}"
                                                                id="b19"/>
+                                                 </af:panelGroupLayout>      
                                                 </af:showDetailItem>
                                             </af:panelTabbed>
                                         </af:gridCell>
