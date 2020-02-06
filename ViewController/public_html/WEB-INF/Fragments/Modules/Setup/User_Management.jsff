@@ -43,7 +43,7 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblRoleMasterView1Query.processQuery}"
                                                               varStatus="vs" id="t1"
-                                                              partialTriggers="::b7 ::b9 ::b12 ::b26 ::b27 ::b28"
+                                                              partialTriggers="::b7 ::b9 ::b12 ::b27"
                                                               scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.TblRoleMasterView1.hints.RoleMasterId.name}"
                                                                    filterable="true" sortable="true"
@@ -106,14 +106,16 @@
                                                         <af:spacer width="90" height="10" id="s17"/>
                                                         <af:button actionListener="#{bindings.CreateInsert.execute}"
                                                                text="Add"
-                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b7"/>
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b7"
+                                                                   icon="#{resource['images:add.png']}"/>
                                                         <af:spacer width="5" height="10" id="s19"/>
                                                         <af:button actionListener="#{bindings.Execute.execute}"
                                                                text="Edit" disabled="#{!bindings.Execute.enabled}"
-                                                               id="b9"/>
+                                                               id="b9" icon="#{resource['images:edit.png']}"/>
                                                         <af:spacer width="5" height="10" id="s21"/>
                                                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                               disabled="#{!bindings.Delete.enabled}" id="b12"/>
+                                                               disabled="#{!bindings.Delete.enabled}" id="b12"
+                                                                   icon="#{resource['images:delete.png']}"/>
                                                    
                                                     </af:panelGroupLayout>
                                                 </af:showDetailItem>
@@ -122,20 +124,7 @@
                                     </af:gridRow>
                                     <af:gridRow marginTop="5px" height="auto" id="gr2">
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                                            <af:panelGroupLayout id="pgl2">
-                                                <af:spacer width="100" height="10" id="s10"/>
-                                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
-                                                           icon="#{resource['images:add.png']}"
-                                                           disabled="#{!bindings.CreateInsert.enabled}" id="b16"/>
-                                                <af:spacer width="5" height="10" id="s11"/>
-                                                <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
-                                                           icon="#{resource['images:edit.png']}"
-                                                           disabled="#{!bindings.Execute.enabled}" id="b2"/>
-                                                <af:spacer width="5" height="10" id="s12"/>
-                                                <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                           icon="#{resource['images:delete.png']}"
-                                                           disabled="#{!bindings.Delete.enabled}" id="b3"/>
-                                            </af:panelGroupLayout>
+                                            
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow marginTop="5px" height="auto" id="gr6">
@@ -236,38 +225,22 @@
                                                     <af:spacer width="200" height="10" id="s25"/>
                                                     <af:button actionListener="#{bindings.CreateInsert1.execute}"
                                                                text="Add"
-                                                               disabled="#{!bindings.CreateInsert1.enabled}" id="b17"/>
+                                                               disabled="#{!bindings.CreateInsert1.enabled}" id="b17"
+                                                               icon="#{resource['images:add.png']}"/>
                                                     <af:spacer width="5" height="10" id="s23"/>
                                                     <af:button actionListener="#{bindings.Execute1.execute}"
                                                                text="Edit" disabled="#{!bindings.Execute1.enabled}"
-                                                               id="b18"/>
+                                                               id="b18" icon="#{resource['images:edit.png']}"/>
                                                     <af:spacer width="5" height="10" id="s24"/>
                                                     <af:button actionListener="#{bindings.Delete1.execute}"
                                                                text="Delete" disabled="#{!bindings.Delete1.enabled}"
-                                                               id="b19"/>
+                                                               id="b19" icon="#{resource['images:delete.png']}"/>
                                                  </af:panelGroupLayout>      
                                                 </af:showDetailItem>
                                             </af:panelTabbed>
                                         </af:gridCell>
                                     </af:gridRow>
-                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-                                            <af:panelGroupLayout id="pgl3">
-                                                <af:spacer width="100" height="10" id="s2"/>
-                                                <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
-                                                           icon="#{resource['images:add.png']}"
-                                                           disabled="#{!bindings.CreateInsert1.enabled}" id="b4"/>
-                                                <af:spacer width="5" height="10" id="s13"/>
-                                                <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
-                                                           icon="#{resource['images:edit.png']}"
-                                                           disabled="#{!bindings.Execute1.enabled}" id="b5"/>
-                                                <af:spacer width="5" height="10" id="s14"/>
-                                                <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
-                                                           icon="#{resource['images:delete.png']}"
-                                                           disabled="#{!bindings.Delete1.enabled}" id="b6"/>
-                                            </af:panelGroupLayout>
-                                        </af:gridCell>
-                                    </af:gridRow>
+                                   
                                 </af:panelGridLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Role's Privileges" id="sdi1">
@@ -288,7 +261,7 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblRoleMasterView1Query.processQuery}"
                                                               varStatus="vs" id="t3"
-                                                              partialTriggers="::b7 ::b9 ::b12 ::b16 ::b2 ::b3 ::b26 ::b27 ::b28"
+                                                              partialTriggers="::b7 ::b9 ::b12  ::b27 "
                                                               scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.TblRoleMasterView11.hints.RoleMasterId.name}"
                                                                    filterable="true" sortable="true"
@@ -353,12 +326,7 @@
                                             </af:panelTabbed>
                                         </af:gridCell>
                                     </af:gridRow>
-                                    <af:gridRow marginTop="5px" height="auto" id="gr8">
-                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
-                                    </af:gridRow>
-                                    <af:gridRow marginTop="5px" height="auto" id="gr9">
-                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9"/>
-                                    </af:gridRow>
+                                   
                                     <af:gridRow marginTop="5px" height="auto" id="gr10">
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
                                             <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
@@ -376,7 +344,7 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblRoleDetailModulesView3Query.processQuery}"
                                                               varStatus="vs" id="t4"
-                                                              partialTriggers="::b20 ::b21 ::b22" scrollPolicy="page" autoHeightRows="0">
+                                                              partialTriggers="::b21" scrollPolicy="page" autoHeightRows="0">
                                                         <af:column headerText="Module"
                                                                    id="c11" sortable="true" filterable="true"
                                                                    width="200">
@@ -413,31 +381,14 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.CreateInsert2.execute}"
-                                                               text="CreateInsert2"
-                                                               disabled="#{!bindings.CreateInsert2.enabled}" id="b20"/>
+                                                    <af:spacer width="50" height="50" id="s26"/>
+                                                    <af:panelGroupLayout id="pgl13">
+                                                    <af:spacer width="100" height="10" id="s29"/>
                                                     <af:button actionListener="#{bindings.Execute2.execute}"
-                                                               text="Execute2" disabled="#{!bindings.Execute2.enabled}"
-                                                               id="b21"/>
-                                                    <af:button actionListener="#{bindings.Delete2.execute}"
-                                                               text="Delete2" disabled="#{!bindings.Delete2.enabled}"
-                                                               id="b22"/>
-                                                    <af:spacer width="100" height="100" id="s3"/>
-                                                    <af:panelGroupLayout id="pgl5">
-                                                        <af:spacer width="100" height="10" id="s4"/>
-                                                        <!--<af:button actionListener="#{bindings.CreateInsert2.execute}"
-                                                       text="Add"
-                                                       icon="#{resource['images:add.png']}"
-                                                       disabled="#{!bindings.CreateInsert2.enabled}" id="b7"/>
-                                                        <af:spacer width="5" height="10" id="s15"/>-->
-                                                        <af:button actionListener="#{bindings.Execute2.execute}"
-                                                                   text="Edit" icon="#{resource['images:edit.png']}"
-                                                                   disabled="#{!bindings.Execute2.enabled}" id="b8"/>
-                                                        <af:spacer width="5" height="10" id="s16"/>
-                                                        <!--<af:button actionListener="#{bindings.Delete2.execute}" text="Delete"
-                                            icon="#{resource['images:delete.png']}"
-                                                       disabled="#{!bindings.Delete2.enabled}" id="b9"/>-->
+                                                               text="Edit" disabled="#{!bindings.Execute2.enabled}"
+                                                               id="b21" icon="#{resource['images:edit.png']}"/>
                                                     </af:panelGroupLayout>
+                                                   
                                                 </af:showDetailItem>
                                                 <af:showDetailItem text="Pages" id="sdi2">
                                                     <af:table value="#{bindings.TblRoleDetailPagesView31.collectionModel}"
@@ -453,7 +404,7 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblRoleDetailPagesView3Query.processQuery}"
                                                               varStatus="vs" id="t5"
-                                                              partialTriggers="::b11 ::b23 ::b24 ::b25" scrollPolicy="page" autoHeightRows="0">
+                                                              partialTriggers="::b24 " scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.TblRoleDetailPagesView31.hints.PagesId.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Page"
@@ -588,31 +539,14 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.CreateInsert3.execute}"
-                                                               text="CreateInsert3"
-                                                               disabled="#{!bindings.CreateInsert3.enabled}" id="b23"/>
+                                                    <af:spacer width="50" height="50" id="s28"/>
+                                                    <af:panelGroupLayout id="pgl12">
+                                                    <af:spacer width="350" height="10" id="s27"/>
                                                     <af:button actionListener="#{bindings.Execute3.execute}"
-                                                               text="Execute3" disabled="#{!bindings.Execute3.enabled}"
-                                                               id="b24"/>
-                                                    <af:button actionListener="#{bindings.Delete3.execute}"
-                                                               text="Delete3" disabled="#{!bindings.Delete3.enabled}"
-                                                               id="b25"/>
-                                                    <af:spacer width="100" height="100" id="s5"/>
-                                                    <af:panelGroupLayout id="pgl6">
-                                                        <af:spacer width="100" height="10" id="s6"/>
-                                                        <!--<af:button actionListener="#{bindings.CreateInsert3.execute}"
-                                                       text="Add"
-                                                       icon="#{resource['images:add.png']}"
-                                                       disabled="#{!bindings.CreateInsert3.enabled}" id="b17"/>
-                                                        <af:spacer width="5" height="10" id="s17"/>-->
-                                                        <af:button actionListener="#{bindings.Execute3.execute}"
-                                                                   text="Edit" icon="#{resource['images:edit.png']}"
-                                                                   disabled="#{!bindings.Execute3.enabled}" id="b11"/>
-                                                        <af:spacer width="5" height="10" id="s18"/>
-                                                        <!--<af:button actionListener="#{bindings.Delete3.execute}" text="Delete"
-                                            icon="#{resource['images:delete.png']}"
-                                                       disabled="#{!bindings.Delete3.enabled}" id="b12"/>-->
+                                                               text="Edit" disabled="#{!bindings.Execute3.enabled}"
+                                                               id="b24" icon="#{resource['images:edit.png']}"/>
                                                     </af:panelGroupLayout>
+                                                    
                                                 </af:showDetailItem>
                                                 <af:showDetailItem text="Reports" id="sdi3">
                                                     <af:table value="#{bindings.TblRoleDetailReportsView3.collectionModel}"
@@ -627,7 +561,7 @@
                                                               filterModel="#{bindings.TblRoleDetailReportsView3Query.queryDescriptor}"
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblRoleDetailReportsView3Query.processQuery}"
-                                                              varStatus="vs" id="t6">
+                                                              varStatus="vs" id="t6" scrollPolicy="page" autoHeightRows="0">
                                                         <af:column headerText="Report"
                                                                    id="c20" sortable="true" filterable="true"
                                                                    width="200">
@@ -664,30 +598,14 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                               text="CreateInsert"
-                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b26"/>
-                                                    <af:button actionListener="#{bindings.Execute.execute}"
-                                                               text="Execute" disabled="#{!bindings.Execute.enabled}"
-                                                               id="b27"/>
-                                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                               disabled="#{!bindings.Delete.enabled}" id="b28"/>
-                                                    <af:spacer width="100" height="100" id="s7"/>
-                                                    <af:panelGroupLayout id="pgl7">
-                                                        <af:spacer width="100" height="10" id="s8"/>
-                                                        <!--<af:button actionListener="#{bindings.CreateInsert4.execute}"
-                                                       text="Add"
-                                                       icon="#{resource['images:add.png']}"
-                                                       disabled="#{!bindings.CreateInsert4.enabled}" id="b13"/>
-                                                        <af:spacer width="5" height="10" id="s19"/>-->
-                                                        <af:button actionListener="#{bindings.Execute4.execute}"
-                                                                   text="Edit" icon="#{resource['images:edit.png']}"
-                                                                   disabled="#{!bindings.Execute4.enabled}" id="b14"/>
-                                                        <af:spacer width="5" height="10" id="s20"/>
-                                                        <!--<af:button actionListener="#{bindings.Delete4.execute}" text="Delete"
-                                            icon="#{resource['images:delete.png']}"
-                                                       disabled="#{!bindings.Delete4.enabled}" id="b15"/>-->
-                                                    </af:panelGroupLayout>
+                                                    <af:spacer width="50" height="10" id="s30"/>
+                                                    <af:panelGroupLayout id="pgl14">
+                                                        <af:spacer width="100" height="10" id="s31"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                               text="Edit" disabled="#{!bindings.Execute.enabled}"
+                                                               id="b27" icon="#{resource['images:edit.png']}"/>
+                                                   </af:panelGroupLayout>
+                                                    
                                                 </af:showDetailItem>
                                             </af:panelTabbed>
                                         </af:gridCell>
