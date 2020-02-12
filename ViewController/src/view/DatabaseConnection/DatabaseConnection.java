@@ -22,7 +22,7 @@ public class DatabaseConnection {
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("ahfm");
         setUpasss("ahfm");
-        setUipp("192.168.1.2");
+        setUipp("192.168.1.3");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */

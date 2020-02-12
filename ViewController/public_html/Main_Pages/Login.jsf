@@ -6,7 +6,7 @@
             <!--<af:inputText label="Label 1" id="it1" binding="#{backingBeanScope.backing_Main_Pages_Login.it1}"/>
             <af:inputText label="Label 2" id="it2" binding="#{backingBeanScope.backing_Main_Pages_Login.it2}"/>
             <af:link text="link 1" id="l1" binding="#{backingBeanScope.backing_Main_Pages_Login.l1}"/>-->
-            <!--<af:image source="#{resource['images:ahfm_Slider.jpg']}" shortDesc="Atlas Honda Fuel Management" id="i1"
+            <!--<af:image source="#{resource['images:ahfm_Slider.jpg']}" shortDesc="Atlas Power Fuel Management" id="i1"
                       binding="#{backingBeanScope.backing_Main_Pages_Login.i1}"/>-->
             <af:panelGridLayout id="pgl1"
                                 inlineStyle="background-image: url(../Resources/ahfm_Slider.jpg); background-size:cover ;max-height: none !important; max-width: none;">
@@ -49,10 +49,10 @@
                 <af:gridRow marginTop="0px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="50%" id="gc13">
                         <af:panelGroupLayout id="pgl2" layout="vertical">
-                            <af:outputLabel value="Atlas Honda" id="ol4"
+                            <af:outputLabel value="Atlas Power" id="ol4"
                                             inlineStyle="font-weight: bold;font-size: 80px;font-family: cursive; color: White;"/>
                             <af:spacer width="100" height="25" id="s6"/>
-                            <af:outputLabel value="Atlas Honda Fuel Management" id="ol5"
+                            <af:outputLabel value="Atlas Power Fuel Management" id="ol5"
                                             inlineStyle="font-weight: bold;font-size: x-large;font-family: cursive; color: White;"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
