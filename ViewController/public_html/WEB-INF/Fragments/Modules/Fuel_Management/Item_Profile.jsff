@@ -23,7 +23,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Item Profile">
-                <af:table value="#{bindings.TblFmitemsView1.collectionModel}" var="row"
+               <af:table value="#{bindings.TblFmitemsView1.collectionModel}" var="row"
                           rows="#{bindings.TblFmitemsView1.rangeSize}"
                           emptyText="#{bindings.TblFmitemsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
