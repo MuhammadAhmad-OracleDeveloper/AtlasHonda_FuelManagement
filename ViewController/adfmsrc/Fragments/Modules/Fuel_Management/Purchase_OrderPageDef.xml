@@ -20,7 +20,6 @@
           <Item Value="FmpoMId"/>
           <Item Value="FmpoMDate"/>
           <Item Value="FmvendorsId"/>
-          <Item Value="FmcarrierId"/>
           <Item Value="FmlocationId"/>
           <Item Value="FmdocstsId"/>
           <Item Value="FmpoMRemarks"/>

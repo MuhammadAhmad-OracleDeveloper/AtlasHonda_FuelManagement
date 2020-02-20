@@ -116,14 +116,4 @@
     EntityAttrName="FmcarrierCrl"
     EntityUsage="TblFmcarrier"
     AliasName="FMCARRIER_CRL"/>
-  <ViewLinkAccessor
-    Name="TblFmpoMView"
-    ViewLink="model.VO.FkFmpoMCarrierLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblFmratesView"
-    ViewLink="model.VO.FkFmratesCarrierLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
 </ViewObject>

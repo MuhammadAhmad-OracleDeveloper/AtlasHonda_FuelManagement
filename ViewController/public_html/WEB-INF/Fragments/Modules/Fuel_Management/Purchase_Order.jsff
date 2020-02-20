@@ -31,8 +31,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmpoMView1.rangeSize}"
                           filterModel="#{bindings.TblFmpoMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmpoMView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0"
-                          partialTriggers="::b2 ::b3 ::b4" >
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmpoMView1.hints.FmpoMId.name}" filterable="true"
                              sortable="true" headerText="Purchase Order Master ID" id="c1" align="center">
                              <f:facet name="filter">
@@ -82,20 +81,6 @@
                                         shortDesc="#{bindings.TblFmpoMView1.hints.FmvendorsId.tooltip}" id="soc2">
                       <f:selectItems value="#{row.bindings.FmvendorsId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column headerText="Carrier" id="c4" sortable="true" filterable="true">
-                  <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmcarrierId}"
-                                          id="it3" placeholder="Search Carrier">
-                           </af:inputText>
-                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FmcarrierId.inputValue}"
-                                        label="#{row.bindings.FmcarrierId.label}"
-                                        required="#{bindings.TblFmpoMView1.hints.FmcarrierId.mandatory}"
-                                        shortDesc="#{bindings.TblFmpoMView1.hints.FmcarrierId.tooltip}" id="soc3">
-                      <f:selectItems value="#{row.bindings.FmcarrierId.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.FmcarrierId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Location" id="c5" sortable="true" filterable="true">

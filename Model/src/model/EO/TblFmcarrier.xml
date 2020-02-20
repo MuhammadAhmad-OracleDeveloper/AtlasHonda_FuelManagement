@@ -145,20 +145,6 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
-  <AccessorAttribute
-    Name="TblFmpoM"
-    Association="model.EO.FkFmpoMCarrierAssoc"
-    AssociationEnd="model.EO.FkFmpoMCarrierAssoc.TblFmpoM"
-    AssociationOtherEnd="model.EO.FkFmpoMCarrierAssoc.TblFmcarrier"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="TblFmrates"
-    Association="model.EO.FkFmratesCarrierAssoc"
-    AssociationEnd="model.EO.FkFmratesCarrierAssoc.TblFmrates"
-    AssociationOtherEnd="model.EO.FkFmratesCarrierAssoc.TblFmcarrier"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <Key
     Name="PkFmcarrier"
     PrimaryKey="true">

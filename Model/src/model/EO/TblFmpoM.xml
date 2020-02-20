@@ -35,13 +35,6 @@
     ColumnType="NUMBER"
     TableName="TBL_FMPO_M"/>
   <Attribute
-    Name="FmcarrierId"
-    ColumnName="FMCARRIER_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_FMPO_M"/>
-  <Attribute
     Name="FmlocationId"
     ColumnName="FMLOCATION_ID"
     SQLType="NUMERIC"
@@ -81,13 +74,6 @@
     AssociationOtherEnd="model.EO.FkFmpoDPoMAssoc.TblFmpoM"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="TblFmcarrier"
-    Association="model.EO.FkFmpoMCarrierAssoc"
-    AssociationEnd="model.EO.FkFmpoMCarrierAssoc.TblFmcarrier"
-    AssociationOtherEnd="model.EO.FkFmpoMCarrierAssoc.TblFmpoM"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
   <AccessorAttribute
     Name="TblFmdocsts"
     Association="model.EO.FkFmpoMDocstsAssoc"

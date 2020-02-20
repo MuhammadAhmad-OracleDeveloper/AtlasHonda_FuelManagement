@@ -3,39 +3,41 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkFmpoMCarrierAssoc"
+  Name="FkTblFMVendorAtributeFKAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblFmcarrier"
+    Name="TblFmvendors"
     Cardinality="1"
     Source="true"
-    Owner="model.EO.TblFmcarrier">
+    Owner="model.EO.TblFmvendors"
+    LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblFmcarrier"/>
-      <Attr Name="_foreignKey" Value="model.EO.TblFmcarrier.PkFmcarrier"/>
+      <Attr Name="_finderName" Value="TblFmvendors"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmvendors.PkFmvendors"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.TblFmcarrier.FmcarrierId"/>
+      <Item Value="model.EO.TblFmvendors.FmvendorsId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="TblFmpoM"
+    Name="TblFmvendorsAtribute"
     Cardinality="-1"
-    Owner="model.EO.TblFmpoM">
+    Owner="model.EO.TblFmvendorsAtribute">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblFmpoM"/>
-      <Attr Name="_foreignKey" Value="model.EO.TblFmpoM.FkFmpoMCarrier"/>
+      <Attr Name="_finderName" Value="TblFmvendorsAtribute"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmvendorsAtribute.fk_TblFmvendorsAtribute"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.TblFmpoM.FmcarrierId"/>
+      <Item Value="model.EO.TblFmvendorsAtribute.FmvendorsId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

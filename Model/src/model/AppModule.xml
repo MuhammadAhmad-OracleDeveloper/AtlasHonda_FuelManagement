@@ -112,6 +112,24 @@
   <ViewUsage
     Name="TblFmratesView5"
     ViewObjectName="model.VO.TblFmratesView"/>
+  <ViewUsage
+    Name="TblFmatributeView2"
+    ViewObjectName="model.VO.TblFmatributeView"/>
+  <ViewUsage
+    Name="TblFmlocationView3"
+    ViewObjectName="model.VO.TblFmlocationView"/>
+  <ViewUsage
+    Name="TblFmvendorsAtributeView1"
+    ViewObjectName="model.VO.TblFmvendorsAtributeView"/>
+  <ViewUsage
+    Name="TblFmvendorsLocationView1"
+    ViewObjectName="model.VO.TblFmvendorsLocationView"/>
+  <ViewUsage
+    Name="TblFmvendorsAtributeView2"
+    ViewObjectName="model.VO.TblFmvendorsAtributeView"/>
+  <ViewUsage
+    Name="TblFmvendorsLocationView2"
+    ViewObjectName="model.VO.TblFmvendorsLocationView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
@@ -125,12 +143,6 @@
     DstViewUsageName="model.AppModule.TblFmpoDView3"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="FkFmpoMCarrierLink1"
-    ViewLinkObjectName="model.VO.FkFmpoMCarrierLink"
-    SrcViewUsageName="model.AppModule.TblFmcarrierView1"
-    DstViewUsageName="model.AppModule.TblFmpoMView2"
-    Reversed="false"/>
-  <ViewLinkUsage
     Name="FkFmpoMDocstsLink1"
     ViewLinkObjectName="model.VO.FkFmpoMDocstsLink"
     SrcViewUsageName="model.AppModule.TblFmdocstsView1"
@@ -141,12 +153,6 @@
     ViewLinkObjectName="model.VO.FkFmpoMLocationLink"
     SrcViewUsageName="model.AppModule.TblFmlocationView1"
     DstViewUsageName="model.AppModule.TblFmpoMView4"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="FkFmratesCarrierLink1"
-    ViewLinkObjectName="model.VO.FkFmratesCarrierLink"
-    SrcViewUsageName="model.AppModule.TblFmcarrierView1"
-    DstViewUsageName="model.AppModule.TblFmratesView2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="FkFmratesItemsLink1"
@@ -213,5 +219,17 @@
     ViewLinkObjectName="model.VO.FkFmratesVendorLink"
     SrcViewUsageName="model.AppModule.TblFmvendorsView1"
     DstViewUsageName="model.AppModule.TblFmratesView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFMVendorAtributeFKLink1"
+    ViewLinkObjectName="model.VO.FkTblFMVendorAtributeFKLink"
+    SrcViewUsageName="model.AppModule.TblFmvendorsView1"
+    DstViewUsageName="model.AppModule.TblFmvendorsAtributeView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFMVendorLocationFKLink1"
+    ViewLinkObjectName="model.VO.FkTblFMVendorLocationFKLink"
+    SrcViewUsageName="model.AppModule.TblFmvendorsView1"
+    DstViewUsageName="model.AppModule.TblFmvendorsLocationView2"
     Reversed="false"/>
 </AppModule>

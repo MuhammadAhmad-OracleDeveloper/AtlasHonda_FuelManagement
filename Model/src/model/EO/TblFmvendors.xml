@@ -159,6 +159,20 @@
     AssociationOtherEnd="model.EO.FkFmratesVendorAssoc.TblFmvendors"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblFmvendorsAtribute"
+    Association="model.EO.FkTblFMVendorAtributeFKAssoc"
+    AssociationEnd="model.EO.FkTblFMVendorAtributeFKAssoc.TblFmvendorsAtribute"
+    AssociationOtherEnd="model.EO.FkTblFMVendorAtributeFKAssoc.TblFmvendors"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblFmvendorsLocation"
+    Association="model.EO.FkTblFMVendorLocationFKAssoc"
+    AssociationEnd="model.EO.FkTblFMVendorLocationFKAssoc.TblFmvendorsLocation"
+    AssociationOtherEnd="model.EO.FkTblFMVendorLocationFKAssoc.TblFmvendors"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkFmvendors"
     PrimaryKey="true">

@@ -236,6 +236,151 @@
                         </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2">
+              <af:showDetailItem id="tab2" text="Location">
+                <af:table value="#{bindings.TblFmvendorsLocationView2.collectionModel}" var="row"
+                          rows="#{bindings.TblFmvendorsLocationView2.rangeSize}"
+                          emptyText="#{bindings.TblFmvendorsLocationView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmvendorsLocationView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmvendorsLocationView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmvendorsLocationView2.rangeSize}"
+                          filterModel="#{bindings.TblFmvendorsLocationView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmvendorsLocationView2Query.processQuery}" varStatus="vs"
+                          id="t2">
+                  <af:column sortProperty="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.label}"
+                             id="c12">
+                    <af:inputText value="#{row.bindings.FmvendorsLocationId.inputValue}" readOnly="true"
+                                  label="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.label}"
+                                  required="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.mandatory}"
+                                  columns="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.tooltip}"
+                                  id="it21">
+                      <f:validator binding="#{row.bindings.FmvendorsLocationId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.label}" id="c13">
+                    <af:inputText value="#{row.bindings.FmvendorsId.inputValue}"
+                                  label="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.label}"
+                                  required="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.mandatory}"
+                                  columns="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.tooltip}" id="it22">
+                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.label}" id="c14">
+                    <af:selectOneChoice value="#{row.bindings.FmlocationId.inputValue}"
+                                        label="#{row.bindings.FmlocationId.label}"
+                                        required="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.mandatory}"
+                                        shortDesc="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.FmlocationId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.FmlocationId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="sdi1" text="Attributes">
+                <af:table value="#{bindings.TblFmvendorsAtributeView2.collectionModel}" var="row"
+                          rows="#{bindings.TblFmvendorsAtributeView2.rangeSize}"
+                          emptyText="#{bindings.TblFmvendorsAtributeView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmvendorsAtributeView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmvendorsAtributeView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmvendorsAtributeView2.rangeSize}"
+                          filterModel="#{bindings.TblFmvendorsAtributeView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmvendorsAtributeView2Query.processQuery}" varStatus="vs"
+                          id="t3">
+                  <af:column sortProperty="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.label}"
+                             id="c15">
+                    <af:inputText value="#{row.bindings.FmvendorsAtributeId.inputValue}" readOnly="true"
+                                  label="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.label}"
+                                  required="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.mandatory}"
+                                  columns="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.tooltip}"
+                                  id="it23">
+                      <f:validator binding="#{row.bindings.FmvendorsAtributeId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.label}" id="c16">
+                    <af:inputText value="#{row.bindings.FmvendorsId.inputValue}"
+                                  label="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.label}"
+                                  required="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.mandatory}"
+                                  columns="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.tooltip}" id="it24">
+                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.label}" id="c17">
+                    <af:selectOneChoice value="#{row.bindings.FmatributeId.inputValue}"
+                                        label="#{row.bindings.FmatributeId.label}"
+                                        required="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.mandatory}"
+                                        shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.FmatributeId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.FmatributeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s6"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s7"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+            
+          </af:gridCell>
+        </af:gridRow>
         
       </af:panelGridLayout>
     </af:showDetailItem>

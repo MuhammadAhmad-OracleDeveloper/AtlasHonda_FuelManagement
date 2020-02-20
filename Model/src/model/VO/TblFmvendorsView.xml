@@ -126,4 +126,14 @@
     ViewLink="model.VO.FkFmratesVendorLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblFmvendorsAtributeView"
+    ViewLink="model.VO.FkTblFMVendorAtributeFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblFmvendorsLocationView"
+    ViewLink="model.VO.FkTblFMVendorLocationFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

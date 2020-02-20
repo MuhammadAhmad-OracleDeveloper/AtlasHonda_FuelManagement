@@ -16,7 +16,7 @@
           usageId="view_Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Purchase_Order_TaskFlow.xml#Purchase_Order_TaskFlow@ExecuteWithParams"
           usageId="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Item_Profile_TaskFlow.xml#Item_Profile_TaskFlow@ExecuteWithParams"
+    <page path="/WEB-INF/Task_Flows/Modules/Setup/Item_Profile_TaskFlow.xml#Item_Profile_TaskFlow@ExecuteWithParams"
           usageId="view_Item_Profile_TaskFlow_Item_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Carrier_TaskFlow.xml#Carrier_TaskFlow@ExecuteWithParams"
           usageId="view_Carrier_TaskFlow_Carrier_TaskFlow_ExecuteWithParamsPageDef"/>
@@ -27,16 +27,16 @@
     <page path="/WEB-INF/Task_Flows/Modules/Setup/Unit_of_Measurement_TaskFlow.xml#Unit_of_Measurement_TaskFlow@ExecuteWithParams"
           usageId="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Carrier.jsff" usageId="view_CarrierPageDef"/>
-    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Item_Profile.jsff" usageId="view_Item_ProfilePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/Item_Profile.jsff" usageId="view_Item_ProfilePageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Rate_Definition.jsff" usageId="view_Rate_DefinitionPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Vendors.jsff" usageId="view_VendorsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Purchase_Order.jsff" usageId="view_Purchase_OrderPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/General_Setup.jsff" usageId="view_General_SetupPageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Setup/Fuel_Manag_Location_TaskFlow.xml#Fuel_Manag_Location_TaskFlow@ExecuteWithParams"
-          usageId="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
-    <page path="/WEB-INF/Fragments/Modules/Setup/Fuel_Manag_Location.jsff" usageId="view_Fuel_Manag_LocationPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/Unit_of_Measurement.jsff" usageId="view_Unit_of_MeasurementPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/User_Management.jsff" usageId="view_User_ManagementPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Receipt_Notes_TaskFlow.xml#Receipt_Notes_TaskFlow@ExecuteWithParams"
+          usageId="view_Receipt_Notes_TaskFlow_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Receipt_Notes.jsff" usageId="view_Receipt_NotesPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -66,11 +66,12 @@
     <page id="view_VendorsPageDef" path="Fragments.Modules.Fuel_Management.VendorsPageDef"/>
     <page id="view_Purchase_OrderPageDef" path="Fragments.Modules.Fuel_Management.Purchase_OrderPageDef"/>
     <page id="view_General_SetupPageDef" path="Fragments.Modules.Setup.General_SetupPageDef"/>
-    <page id="view_Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"
-          path="Task_Flows.Modules.Setup.Fuel_Manag_Location_TaskFlow_Fuel_Manag_Location_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Fuel_Manag_LocationPageDef" path="Fragments.Modules.Setup.Fuel_Manag_LocationPageDef"/>
     <page id="view_Unit_of_MeasurementPageDef" path="Fragments.Modules.Setup.Unit_of_MeasurementPageDef"/>
     <page id="view_User_ManagementPageDef" path="Fragments.Modules.Setup.User_ManagementPageDef"/>
+    <page id="view_Receipt_Notes_TaskFlow_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fuel_Management.Receipt_Notes_TaskFlow_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Receipt_NotesPageDef" path="Fragments.Modules.Fuel_Management.Receipt_NotesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"

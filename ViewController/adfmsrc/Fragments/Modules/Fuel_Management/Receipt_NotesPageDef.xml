@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Receipt_NotesPageDef"
+                Package="Fragments.Modules.Fuel_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFmrnMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmrnMView1Iterator"/>
+    <searchRegion Binds="TblFmrnMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrnMView1Query"/>
+    <iterator Binds="TblFmrnDView4" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmrnDView4Iterator"/>
+    <searchRegion Binds="TblFmrnDView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrnDView4Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.Users_Roles.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFmrnMView1Iterator" id="TblFmrnMView1">
+      <nodeDefinition DefName="model.VO.TblFmrnMView" Name="TblFmrnMView10">
+        <AttrNames>
+          <Item Value="FmrnMId"/>
+          <Item Value="FmpoMId"/>
+          <Item Value="FmdocstsId"/>
+          <Item Value="FmrnMDate"/>
+          <Item Value="FmrnMDispDate"/>
+          <Item Value="FmrnMRecDate"/>
+          <Item Value="FmrnRemarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmrnMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmrnDView4Iterator" id="TblFmrnDView4">
+      <nodeDefinition DefName="model.VO.TblFmrnDView" Name="TblFmrnDView40">
+        <AttrNames>
+          <Item Value="FmrnDId"/>
+          <Item Value="FmrnMId"/>
+          <Item Value="FmitemsId"/>
+          <Item Value="FmrnQty"/>
+          <Item Value="FmrnRate"/>
+          <Item Value="FmrnGamt"/>
+          <Item Value="FmrnStPerc"/>
+          <Item Value="FmrnStAmt"/>
+          <Item Value="FmrnNetAmt"/>
+          <Item Value="FmrnGWeight"/>
+          <Item Value="FmrnTWeight"/>
+          <Item Value="FmrnNWeight"/>
+          <Item Value="FmrnVtWeight"/>
+          <Item Value="FmrnVnWeight"/>
+          <Item Value="FmrnDip1"/>
+          <Item Value="FmrnDip2"/>
+          <Item Value="FmrnDip3"/>
+          <Item Value="FmbayId"/>
+          <Item Value="FmtanksId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmrnDView4Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmrnDView4Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmrnDView4Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

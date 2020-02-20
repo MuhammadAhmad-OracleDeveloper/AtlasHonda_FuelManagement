@@ -18,10 +18,6 @@
     ViewObjectName="model.LOV.Vendor_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Carrier_LOV1"
-    ViewObjectName="model.LOV.Carrier_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Location_LOV1"
     ViewObjectName="model.LOV.Location_LOV"
     RowLevelBinds="true"/>
@@ -44,24 +40,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmvendorsName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_FmcarrierId"
-    ListVOName="Carrier_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="FmcarrierId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FmcarrierId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FmcarrierName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -130,20 +108,6 @@
     EntityUsage="TblFmrates"
     AliasName="FMVENDORS_ID"
     LOVName="LOV_FmvendorsId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="FmcarrierId"
-    PrecisionRule="true"
-    EntityAttrName="FmcarrierId"
-    EntityUsage="TblFmrates"
-    AliasName="FMCARRIER_ID"
-    LOVName="LOV_FmcarrierId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

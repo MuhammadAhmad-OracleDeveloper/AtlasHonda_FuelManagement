@@ -36,6 +36,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmenginesView1Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFmlocationView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmlocationView1Iterator"/>
+    <searchRegion Binds="TblFmlocationView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlocationView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblFmdocstsView1Iterator" id="TblFmdocstsView1">
@@ -157,5 +161,19 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="TblFmlocationView1Iterator" id="TblFmlocationView1">
+      <nodeDefinition DefName="model.VO.TblFmlocationView" Name="TblFmlocationView10">
+        <AttrNames>
+          <Item Value="FmlocationId"/>
+          <Item Value="FmlocationName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmlocationView1Iterator" id="CreateInsert8" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmlocationView1Iterator" id="Execute8" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmlocationView1Iterator" id="Delete8" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
