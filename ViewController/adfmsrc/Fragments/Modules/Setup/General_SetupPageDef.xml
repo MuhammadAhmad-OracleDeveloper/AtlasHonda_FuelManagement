@@ -130,6 +130,9 @@
           <Item Value="FmlabtestId"/>
           <Item Value="FmlabtestName"/>
           <Item Value="Ast"/>
+          <Item Value="MinValue"/>
+          <Item Value="MaxValue"/>
+          <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

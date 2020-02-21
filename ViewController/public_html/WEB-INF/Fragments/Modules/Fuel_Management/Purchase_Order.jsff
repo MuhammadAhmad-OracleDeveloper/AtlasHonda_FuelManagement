@@ -130,6 +130,16 @@
                                         pattern="#{bindings.TblFmpoMView1.hints.FmpoMCrDays.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.TblFmpoMView1.hints.SpecInstr.label}" id="c4">
+                    <af:inputText value="#{row.bindings.SpecInstr.inputValue}"
+                                  label="#{bindings.TblFmpoMView1.hints.SpecInstr.label}"
+                                  required="#{bindings.TblFmpoMView1.hints.SpecInstr.mandatory}"
+                                  columns="#{bindings.TblFmpoMView1.hints.SpecInstr.displayWidth}"
+                                  maximumLength="#{bindings.TblFmpoMView1.hints.SpecInstr.precision}"
+                                  shortDesc="#{bindings.TblFmpoMView1.hints.SpecInstr.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.SpecInstr.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoMView1.hints.FmpoMRemarks.name}" filterable="true"
                              sortable="true" headerText="Remarks" id="c7" width="195">
                               <f:facet name="filter">

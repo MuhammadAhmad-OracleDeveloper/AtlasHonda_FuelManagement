@@ -30,6 +30,7 @@
           <Item Value="FmmarginAmt"/>
           <Item Value="FmnetRate"/>
           <Item Value="Fmremarks"/>
+          <Item Value="RefineryRate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

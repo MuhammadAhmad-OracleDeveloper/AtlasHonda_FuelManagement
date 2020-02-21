@@ -580,7 +580,41 @@
                       <f:validator binding="#{row.bindings.FmlabtestName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Active" id="c21" sortable="true" filterable="true">
+                  <af:column headerText="#{bindings.TblFmlabtestView1.hints.MinValue.label}" id="c28" width="100">
+                    <af:inputText value="#{row.bindings.MinValue.inputValue}"
+                                  label="#{bindings.TblFmlabtestView1.hints.MinValue.label}"
+                                  required="#{bindings.TblFmlabtestView1.hints.MinValue.mandatory}"
+                                  columns="#{bindings.TblFmlabtestView1.hints.MinValue.displayWidth}"
+                                  maximumLength="#{bindings.TblFmlabtestView1.hints.MinValue.precision}"
+                                  shortDesc="#{bindings.TblFmlabtestView1.hints.MinValue.tooltip}" id="it42">
+                      <f:validator binding="#{row.bindings.MinValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmlabtestView1.hints.MinValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblFmlabtestView1.hints.MaxValue.label}" id="c29" width="100">
+                    <af:inputText value="#{row.bindings.MaxValue.inputValue}"
+                                  label="#{bindings.TblFmlabtestView1.hints.MaxValue.label}"
+                                  required="#{bindings.TblFmlabtestView1.hints.MaxValue.mandatory}"
+                                  columns="#{bindings.TblFmlabtestView1.hints.MaxValue.displayWidth}"
+                                  maximumLength="#{bindings.TblFmlabtestView1.hints.MaxValue.precision}"
+                                  shortDesc="#{bindings.TblFmlabtestView1.hints.MaxValue.tooltip}" id="it43">
+                      <f:validator binding="#{row.bindings.MaxValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmlabtestView1.hints.MaxValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblFmlabtestView1.hints.Remarks.label}" id="c30" width="267">
+                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                  label="#{bindings.TblFmlabtestView1.hints.Remarks.label}"
+                                  required="#{bindings.TblFmlabtestView1.hints.Remarks.mandatory}"
+                                  columns="#{bindings.TblFmlabtestView1.hints.Remarks.displayWidth}"
+                                  maximumLength="#{bindings.TblFmlabtestView1.hints.Remarks.precision}"
+                                  shortDesc="#{bindings.TblFmlabtestView1.hints.Remarks.tooltip}" id="it44">
+                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Active" id="c21" sortable="true" filterable="true" width="102">
                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Ast}"
                                           id="it21" placeholder="Search Status">

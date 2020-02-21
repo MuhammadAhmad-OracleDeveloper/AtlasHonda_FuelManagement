@@ -149,6 +149,12 @@
     EntityAttrName="FmpoMCrDays"
     EntityUsage="TblFmpoM"
     AliasName="FMPO_M_CR_DAYS"/>
+  <ViewAttribute
+    Name="SpecInstr"
+    PrecisionRule="true"
+    EntityAttrName="SpecInstr"
+    EntityUsage="TblFmpoM"
+    AliasName="SPEC_INSTR"/>
   <ViewLinkAccessor
     Name="TblFmpoDView"
     ViewLink="model.VO.FkFmpoDPoMLink"

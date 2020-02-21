@@ -68,4 +68,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="MaxValue"
+    PrecisionRule="true"
+    EntityAttrName="MaxValue"
+    EntityUsage="TblFmlabtest"
+    AliasName="MAX_VALUE"/>
+  <ViewAttribute
+    Name="MinValue"
+    PrecisionRule="true"
+    EntityAttrName="MinValue"
+    EntityUsage="TblFmlabtest"
+    AliasName="MIN_VALUE"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblFmlabtest"
+    AliasName="REMARKS"/>
 </ViewObject>

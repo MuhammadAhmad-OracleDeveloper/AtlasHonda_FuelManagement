@@ -203,4 +203,10 @@
     EntityAttrName="Fmremarks"
     EntityUsage="TblFmrates"
     AliasName="FMREMARKS"/>
+  <ViewAttribute
+    Name="RefineryRate"
+    PrecisionRule="true"
+    EntityAttrName="RefineryRate"
+    EntityUsage="TblFmrates"
+    AliasName="REFINERY_RATE"/>
 </ViewObject>

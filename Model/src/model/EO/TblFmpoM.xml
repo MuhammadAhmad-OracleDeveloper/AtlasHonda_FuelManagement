@@ -67,6 +67,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMPO_M"/>
+  <Attribute
+    Name="SpecInstr"
+    Precision="2000"
+    ColumnName="SPEC_INSTR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FMPO_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblFmpoD"
     Association="model.EO.FkFmpoDPoMAssoc"
@@ -119,9 +131,6 @@
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_FMPO_M_CARRIER"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.EO.TblFmpoM.FmcarrierId"/>
-    </AttrArray>
   </Key>
   <Key
     Name="FkFmpoMDocsts">
