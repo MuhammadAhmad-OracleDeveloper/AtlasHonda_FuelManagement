@@ -14,8 +14,9 @@
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
                         <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
                             <af:spacer width="20" height="10" id="pt_s2"/>
-                            <af:image source="#{resource['images:mfp.png']}" id="pt_i1"
-                                      inlineStyle="width:220px; height:122px; margin-top:2%;"/>
+                            <af:image id="pt_i1"
+                                      inlineStyle="width:320px; height:100px; margin-top:2%;"
+                                      source="#{resource['images:atlas_power.jpg']}"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
                                      id="pt_gc3">
@@ -24,8 +25,8 @@
                                     <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
                                     <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
                                                  marginEnd="5px" id="pt_gc6">
-                                        <af:image source="#{resource['images:punjab_agri_e_logo.png']}" id="pt_i2"
-                                      inlineStyle="width:105px; height:75px; margin-top:2%;"/>
+                                        <!--<af:image source="#{resource['images:punjab_agri_e_logo.png']}" id="pt_i2"
+                                      inlineStyle="width:105px; height:75px; margin-top:2%;"/>-->
                                     </af:gridCell>
                                 </af:gridRow>
                                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
