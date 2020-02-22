@@ -35,6 +35,8 @@
           <Item Value="FmrnMDispDate"/>
           <Item Value="FmrnMRecDate"/>
           <Item Value="FmrnRemarks"/>
+          <Item Value="BatchNo"/>
+          <Item Value="CreditDays"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

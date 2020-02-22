@@ -13,6 +13,32 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Purchase_Order_LOV1"
+    ViewObjectName="model.LOV.Purchase_Order_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FmpoMId"
+    ListVOName="Purchase_Order_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmpoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CreditDays"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmpoMId"/>
+      <Item Value="FmpoMCrDays"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmpoMId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmrnM"
     Entity="model.EO.TblFmrnM"/>
@@ -28,7 +54,15 @@
     PrecisionRule="true"
     EntityAttrName="FmpoMId"
     EntityUsage="TblFmrnM"
-    AliasName="FMPO_M_ID"/>
+    AliasName="FMPO_M_ID"
+    LOVName="LOV_FmpoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmdocstsId"
     PrecisionRule="true"
@@ -59,6 +93,18 @@
     EntityAttrName="FmrnRemarks"
     EntityUsage="TblFmrnM"
     AliasName="FMRN_REMARKS"/>
+  <ViewAttribute
+    Name="BatchNo"
+    PrecisionRule="true"
+    EntityAttrName="BatchNo"
+    EntityUsage="TblFmrnM"
+    AliasName="BATCH_NO"/>
+  <ViewAttribute
+    Name="CreditDays"
+    PrecisionRule="true"
+    EntityAttrName="CreditDays"
+    EntityUsage="TblFmrnM"
+    AliasName="CREDIT_DAYS"/>
   <ViewLinkAccessor
     Name="TblFmrnDView"
     ViewLink="model.VO.FkFmrnDRnMLink"

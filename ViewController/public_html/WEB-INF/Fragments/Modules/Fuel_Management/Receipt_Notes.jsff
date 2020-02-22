@@ -43,7 +43,7 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView1.hints.FmrnMId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmpoMId.name}" filterable="true"
+                  <!--<af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmpoMId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmrnMView1.hints.FmpoMId.label}" id="c2">
                     <af:inputText value="#{row.bindings.FmpoMId.inputValue}"
                                   label="#{bindings.TblFmrnMView1.hints.FmpoMId.label}"
@@ -53,6 +53,26 @@
                                   shortDesc="#{bindings.TblFmrnMView1.hints.FmpoMId.tooltip}" id="it2">
                       <f:validator binding="#{row.bindings.FmpoMId.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView1.hints.FmpoMId.format}"/>
+                    </af:inputText>
+                  </af:column>-->
+                  <af:column headerText="#{bindings.TblFmrnMView1.hints.FmpoMId.label}" id="c2">
+                    <af:selectOneChoice value="#{row.bindings.FmpoMId.inputValue}" label="#{row.bindings.FmpoMId.label}"
+                                        required="#{bindings.TblFmrnMView1.hints.FmpoMId.mandatory}" autoSubmit="true"
+                                        shortDesc="#{bindings.TblFmrnMView1.hints.FmpoMId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.FmpoMId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.FmpoMId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblFmrnMView1.hints.CreditDays.label}" id="c28">
+                    <af:inputText value="#{row.bindings.CreditDays.inputValue}"
+                                  label="#{bindings.TblFmrnMView1.hints.CreditDays.label}"
+                                  required="#{bindings.TblFmrnMView1.hints.CreditDays.mandatory}"
+                                  columns="#{bindings.TblFmrnMView1.hints.CreditDays.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnMView1.hints.CreditDays.precision}"
+                                  shortDesc="#{bindings.TblFmrnMView1.hints.CreditDays.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.CreditDays.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmrnMView1.hints.CreditDays.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmdocstsId.name}" filterable="true"
@@ -118,6 +138,16 @@
                       <f:validator binding="#{row.bindings.FmrnMRecDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.format}"/>
                     </af:inputDate>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblFmrnMView1.hints.BatchNo.label}" id="c27">
+                    <af:inputText value="#{row.bindings.BatchNo.inputValue}"
+                                  label="#{bindings.TblFmrnMView1.hints.BatchNo.label}"
+                                  required="#{bindings.TblFmrnMView1.hints.BatchNo.mandatory}"
+                                  columns="#{bindings.TblFmrnMView1.hints.BatchNo.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnMView1.hints.BatchNo.precision}"
+                                  shortDesc="#{bindings.TblFmrnMView1.hints.BatchNo.tooltip}" id="it24">
+                      <f:validator binding="#{row.bindings.BatchNo.validator}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnRemarks.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmrnMView1.hints.FmrnRemarks.label}" id="c7">
