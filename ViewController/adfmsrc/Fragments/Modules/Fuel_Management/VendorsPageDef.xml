@@ -10,11 +10,11 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvendorsView1Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblFmvendorsLocationView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmvendorsLocationView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmvendorsLocationView2Iterator"/>
     <searchRegion Binds="TblFmvendorsLocationView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvendorsLocationView2Query"/>
-    <iterator Binds="TblFmvendorsAtributeView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmvendorsAtributeView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmvendorsAtributeView2Iterator"/>
     <searchRegion Binds="TblFmvendorsAtributeView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvendorsAtributeView2Query"/>

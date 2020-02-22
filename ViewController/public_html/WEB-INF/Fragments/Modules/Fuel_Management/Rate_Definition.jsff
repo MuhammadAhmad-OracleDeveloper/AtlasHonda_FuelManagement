@@ -304,13 +304,19 @@
                                         pattern="#{bindings.TblFmratesView1.hints.FmnetRate.format}"/>
                     </af:inputText>
                   </af:column>-->
-                  <af:column headerText="Refinery Rate" id="c5">
+                  <af:column headerText="Refinery Rate" id="c5" sortable="true" filterable="true" align="center">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RefineryRate}"
+                                          id="it14" placeholder="Search Rate">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.RefineryRate.inputValue}"
                                   label="#{bindings.TblFmratesView1.hints.RefineryRate.label}"
                                   required="#{bindings.TblFmratesView1.hints.RefineryRate.mandatory}"
                                   columns="#{bindings.TblFmratesView1.hints.RefineryRate.displayWidth}"
                                   maximumLength="#{bindings.TblFmratesView1.hints.RefineryRate.precision}"
-                                  shortDesc="#{bindings.TblFmratesView1.hints.RefineryRate.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblFmratesView1.hints.RefineryRate.tooltip}" id="it2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.RefineryRate.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFmratesView1.hints.RefineryRate.format}"/>

@@ -72,7 +72,7 @@
                       <f:validator binding="#{row.bindings.FmvendorsName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Active" id="c3" width="60">
+                  <af:column headerText="Active" id="c3" width="60" sortable="true" filterable="true">
                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Ast}"
                                           id="it12" placeholder="Search Status">
@@ -249,40 +249,35 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmvendorsLocationView2.rangeSize}"
                           filterModel="#{bindings.TblFmvendorsLocationView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmvendorsLocationView2Query.processQuery}" varStatus="vs"
-                          id="t2">
-                  <af:column sortProperty="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.label}"
-                             id="c12">
-                    <af:inputText value="#{row.bindings.FmvendorsLocationId.inputValue}" readOnly="true"
+                          id="t2" scrollPolicy="page" autoHeightRows="0">
+                  <af:column headerText="Vendors Location ID"
+                             id="c13" align="center" sortable="true" filterable="true" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsLocationId}"
+                                          id="it22" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.FmvendorsLocationId.inputValue}"
                                   label="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.label}"
                                   required="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.mandatory}"
                                   columns="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.displayWidth}"
                                   maximumLength="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.precision}"
                                   shortDesc="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.tooltip}"
-                                  id="it21">
+                                  id="it21" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmvendorsLocationId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsLocationId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.label}" id="c13">
-                    <af:inputText value="#{row.bindings.FmvendorsId.inputValue}"
-                                  label="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.label}"
-                                  required="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.mandatory}"
-                                  columns="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.displayWidth}"
-                                  maximumLength="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.tooltip}" id="it22">
-                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.label}" id="c14">
+                             headerText="Location" id="c14" width="400">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmlocationId}"
+                                          id="it24" placeholder="Search Location">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FmlocationId.inputValue}"
                                         label="#{row.bindings.FmlocationId.label}"
                                         required="#{bindings.TblFmvendorsLocationView2.hints.FmlocationId.mandatory}"
@@ -290,6 +285,22 @@
                                         id="soc2">
                       <f:selectItems value="#{row.bindings.FmlocationId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.FmlocationId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Vendor" id="c12"
+                             sortable="true" filterable="true" width="400">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsId}"
+                                          id="it25" placeholder="Search Vendor">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FmvendorsId.inputValue}"
+                                        label="#{row.bindings.FmvendorsId.label}"
+                                        required="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.mandatory}"
+                                        shortDesc="#{bindings.TblFmvendorsLocationView2.hints.FmvendorsId.tooltip}"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.FmvendorsId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
@@ -316,40 +327,38 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmvendorsAtributeView2.rangeSize}"
                           filterModel="#{bindings.TblFmvendorsAtributeView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmvendorsAtributeView2Query.processQuery}" varStatus="vs"
-                          id="t3">
+                          id="t3" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.label}"
-                             id="c15">
+                             headerText="Vendors Attribute ID"
+                             id="c15" align="center" width="80">
+                            <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsAtributeId}"
+                                          id="it26" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsAtributeId.inputValue}" readOnly="true"
                                   label="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.label}"
                                   required="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.mandatory}"
                                   columns="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.displayWidth}"
                                   maximumLength="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.precision}"
                                   shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.tooltip}"
-                                  id="it23">
+                                  id="it23" 
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmvendorsAtributeId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsAtributeId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.label}" id="c16">
-                    <af:inputText value="#{row.bindings.FmvendorsId.inputValue}"
-                                  label="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.label}"
-                                  required="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.mandatory}"
-                                  columns="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.displayWidth}"
-                                  maximumLength="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.precision}"
-                                  shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.tooltip}" id="it24">
-                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.format}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.label}" id="c17">
+                             headerText="Attribute" id="c17" width="400">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmatributeId}"
+                                          id="it27" placeholder="Search Attribute">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FmatributeId.inputValue}"
                                         label="#{row.bindings.FmatributeId.label}"
                                         required="#{bindings.TblFmvendorsAtributeView2.hints.FmatributeId.mandatory}"
@@ -357,6 +366,21 @@
                                         id="soc3">
                       <f:selectItems value="#{row.bindings.FmatributeId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.FmatributeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Vendor" id="c16" sortable="true" filterable="true" width="400">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FmvendorsId}"
+                                          id="it28" placeholder="Search Vendor">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FmvendorsId.inputValue}"
+                                        label="#{row.bindings.FmvendorsId.label}"
+                                        required="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.mandatory}"
+                                        shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.tooltip}"
+                                        id="soc5">
+                      <f:selectItems value="#{row.bindings.FmvendorsId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>

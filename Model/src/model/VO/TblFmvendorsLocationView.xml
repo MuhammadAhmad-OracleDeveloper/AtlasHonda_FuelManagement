@@ -17,6 +17,10 @@
     Name="Location_LOV1"
     ViewObjectName="model.LOV.Location_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Vendor_LOV1"
+    ViewObjectName="model.LOV.Vendor_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FmlocationId"
     ListVOName="Location_LOV1"
@@ -35,6 +39,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_FmvendorsId"
+    ListVOName="Vendor_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmvendorsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmvendorsLocation"
     Entity="model.EO.TblFmvendorsLocation"/>
@@ -50,7 +72,15 @@
     PrecisionRule="true"
     EntityAttrName="FmvendorsId"
     EntityUsage="TblFmvendorsLocation"
-    AliasName="FMVENDORS_ID"/>
+    AliasName="FMVENDORS_ID"
+    LOVName="LOV_FmvendorsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmlocationId"
     PrecisionRule="true"

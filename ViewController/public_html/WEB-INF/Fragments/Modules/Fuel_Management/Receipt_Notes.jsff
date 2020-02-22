@@ -30,7 +30,8 @@
                           selectionListener="#{bindings.TblFmrnMView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmrnMView1.rangeSize}"
                           filterModel="#{bindings.TblFmrnMView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmrnMView1.hints.FmrnMId.label}" id="c1">
                     <af:inputText value="#{row.bindings.FmrnMId.inputValue}"
@@ -192,7 +193,8 @@
                           selectionListener="#{bindings.TblFmrnDView4.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmrnDView4.rangeSize}"
                           filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t2">
+                          queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblFmrnDView4.hints.FmrnDId.label}" id="c8">
                     <af:inputText value="#{row.bindings.FmrnDId.inputValue}"

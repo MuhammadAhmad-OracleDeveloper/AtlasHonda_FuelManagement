@@ -130,7 +130,13 @@
                                         pattern="#{bindings.TblFmpoMView1.hints.FmpoMCrDays.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblFmpoMView1.hints.SpecInstr.label}" id="c4">
+                  <af:column headerText="Special Instructions" id="c4" sortable="true"
+                             filterable="true" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.SpecInstr}"
+                                          id="it25" placeholder="Search Instructions">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.SpecInstr.inputValue}"
                                   label="#{bindings.TblFmpoMView1.hints.SpecInstr.label}"
                                   required="#{bindings.TblFmpoMView1.hints.SpecInstr.mandatory}"

@@ -17,6 +17,10 @@
     Name="Atribute_Name_LOV1"
     ViewObjectName="model.LOV.Atribute_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Vendor_LOV1"
+    ViewObjectName="model.LOV.Vendor_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FmatributeId"
     ListVOName="Atribute_Name_LOV1"
@@ -32,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmatributeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmvendorsId"
+    ListVOName="Vendor_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmvendorsName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -51,7 +73,15 @@
     PrecisionRule="true"
     EntityAttrName="FmvendorsId"
     EntityUsage="TblFmvendorsAtribute"
-    AliasName="FMVENDORS_ID"/>
+    AliasName="FMVENDORS_ID"
+    LOVName="LOV_FmvendorsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmatributeId"
     PrecisionRule="true"
