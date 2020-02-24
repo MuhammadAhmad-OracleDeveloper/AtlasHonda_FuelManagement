@@ -261,6 +261,7 @@
                                   columns="#{bindings.TblFmpoDView3.hints.Fmrate.displayWidth}"
                                   maximumLength="#{bindings.TblFmpoDView3.hints.Fmrate.precision}"
                                   shortDesc="#{bindings.TblFmpoDView3.hints.Fmrate.tooltip}" id="it12"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Fmrate.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmpoDView3.hints.Fmrate.format}"/>
@@ -279,6 +280,7 @@
                                   columns="#{bindings.TblFmpoDView3.hints.Fmgamt.displayWidth}"
                                   maximumLength="#{bindings.TblFmpoDView3.hints.Fmgamt.precision}"
                                   shortDesc="#{bindings.TblFmpoDView3.hints.Fmgamt.tooltip}" id="it13"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Fmgamt.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmpoDView3.hints.Fmgamt.format}"/>
@@ -315,6 +317,7 @@
                                   columns="#{bindings.TblFmpoDView3.hints.FmstAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmpoDView3.hints.FmstAmt.precision}"
                                   shortDesc="#{bindings.TblFmpoDView3.hints.FmstAmt.tooltip}" id="it15"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmstAmt.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmpoDView3.hints.FmstAmt.format}"/>
@@ -333,6 +336,7 @@
                                   columns="#{bindings.TblFmpoDView3.hints.FmnetAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmpoDView3.hints.FmnetAmt.precision}"
                                   shortDesc="#{bindings.TblFmpoDView3.hints.FmnetAmt.tooltip}" id="it16"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmnetAmt.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmpoDView3.hints.FmnetAmt.format}"/>

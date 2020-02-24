@@ -183,6 +183,7 @@
                                   columns="#{bindings.TblFmratesView1.hints.FmprodCost.displayWidth}"
                                   maximumLength="#{bindings.TblFmratesView1.hints.FmprodCost.precision}"
                                   shortDesc="#{bindings.TblFmratesView1.hints.FmprodCost.tooltip}" id="it8"
+                                  
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmprodCost.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -202,6 +203,7 @@
                                   columns="#{bindings.TblFmratesView1.hints.FmdlvRate.displayWidth}"
                                   maximumLength="#{bindings.TblFmratesView1.hints.FmdlvRate.precision}"
                                   shortDesc="#{bindings.TblFmratesView1.hints.FmdlvRate.tooltip}" id="it9"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmdlvRate.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -240,6 +242,7 @@
                                   columns="#{bindings.TblFmratesView1.hints.FmstAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmratesView1.hints.FmstAmt.precision}"
                                   shortDesc="#{bindings.TblFmratesView1.hints.FmstAmt.tooltip}" id="it11"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmstAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -259,6 +262,7 @@
                                   columns="#{bindings.TblFmratesView1.hints.FmmarginPerc.displayWidth}"
                                   maximumLength="#{bindings.TblFmratesView1.hints.FmmarginPerc.precision}"
                                   shortDesc="#{bindings.TblFmratesView1.hints.FmmarginPerc.tooltip}" id="it12"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmmarginPerc.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -278,6 +282,7 @@
                                   columns="#{bindings.TblFmratesView1.hints.FmmarginAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmratesView1.hints.FmmarginAmt.precision}"
                                   shortDesc="#{bindings.TblFmratesView1.hints.FmmarginAmt.tooltip}" id="it13"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmmarginAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
