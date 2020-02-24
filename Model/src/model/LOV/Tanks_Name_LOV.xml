@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Tanks_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmtanks.FMTANKS_ID, 
+       TblFmtanks.FMTANKS_NAME, 
+       TblFmtanks.AST"
+  FromList="TBL_FMTANKS TblFmtanks"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Tanks_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmtanks"
+    Entity="model.EO.TblFmtanks"/>
+  <ViewAttribute
+    Name="FmtanksId"
+    PrecisionRule="true"
+    EntityAttrName="FmtanksId"
+    EntityUsage="TblFmtanks"
+    AliasName="FMTANKS_ID"/>
+  <ViewAttribute
+    Name="FmtanksName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmtanksName"
+    EntityUsage="TblFmtanks"
+    AliasName="FMTANKS_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmtanks"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

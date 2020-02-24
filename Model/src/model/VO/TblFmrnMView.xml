@@ -17,6 +17,10 @@
     Name="Purchase_Order_LOV1"
     ViewObjectName="model.LOV.Purchase_Order_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Document_Status_LOV1"
+    ViewObjectName="model.LOV.Document_Status_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FmpoMId"
     ListVOName="Purchase_Order_LOV1"
@@ -36,6 +40,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmpoMId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmdocstsId"
+    ListVOName="Document_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmdocstsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmdocstsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmdocstsName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -68,7 +90,15 @@
     PrecisionRule="true"
     EntityAttrName="FmdocstsId"
     EntityUsage="TblFmrnM"
-    AliasName="FMDOCSTS_ID"/>
+    AliasName="FMDOCSTS_ID"
+    LOVName="LOV_FmdocstsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmrnMDate"
     PrecisionRule="true"

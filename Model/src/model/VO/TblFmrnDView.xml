@@ -13,6 +13,72 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Item_LOV1"
+    ViewObjectName="model.LOV.Item_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bay_Name_LOV1"
+    ViewObjectName="model.LOV.Bay_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tanks_Name_LOV1"
+    ViewObjectName="model.LOV.Tanks_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FmitemsId"
+    ListVOName="Item_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmitemsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmbayId"
+    ListVOName="Bay_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmbayId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmbayId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmbayName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmtanksId"
+    ListVOName="Tanks_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmtanksId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmtanksId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmtanksName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmrnD"
     Entity="model.EO.TblFmrnD"/>
@@ -34,7 +100,15 @@
     PrecisionRule="true"
     EntityAttrName="FmitemsId"
     EntityUsage="TblFmrnD"
-    AliasName="FMITEMS_ID"/>
+    AliasName="FMITEMS_ID"
+    LOVName="LOV_FmitemsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmrnQty"
     PrecisionRule="true"
@@ -124,11 +198,27 @@
     PrecisionRule="true"
     EntityAttrName="FmbayId"
     EntityUsage="TblFmrnD"
-    AliasName="FMBAY_ID"/>
+    AliasName="FMBAY_ID"
+    LOVName="LOV_FmbayId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmtanksId"
     PrecisionRule="true"
     EntityAttrName="FmtanksId"
     EntityUsage="TblFmrnD"
-    AliasName="FMTANKS_ID"/>
+    AliasName="FMTANKS_ID"
+    LOVName="LOV_FmtanksId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

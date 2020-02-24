@@ -228,7 +228,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmratesView1.hints.FmstAmt.name}" filterable="true"
-                             sortable="true" headerText="Sale Tax Amount" id="c13">
+                             sortable="true" headerText="Sale Tax Amount" id="c13" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmstAmt}"
                                           id="it21" placeholder="Search Amount">

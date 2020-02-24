@@ -267,7 +267,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoDView3.hints.Fmgamt.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c14" align="center">
+                             sortable="true" headerText="Gross Amount" id="c14" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Fmgamt}"
                                           id="it21" placeholder="Search Amount">
