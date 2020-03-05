@@ -148,7 +148,7 @@
                                 required="#{bindings.FmrnMId.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.FmrnMId.hints.precision}"
-                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1">
+                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" readOnly="true">
                     <f:validator binding="#{bindings.FmrnMId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmrnMId.format}"/>
                   </af:inputText>
@@ -176,7 +176,7 @@
                   <af:spacer  id="s8"/>
                   <af:selectOneChoice value="#{bindings.VendorId.inputValue}" label="Vendor"
                                       required="#{bindings.VendorId.hints.mandatory}"
-                                      shortDesc="#{bindings.VendorId.hints.tooltip}" id="soc7">
+                                      shortDesc="#{bindings.VendorId.hints.tooltip}" id="soc7" readOnly="true">
                     <f:selectItems value="#{bindings.VendorId.items}" id="si7"/>
                     <f:validator binding="#{bindings.VendorId.validator}"/>
                   </af:selectOneChoice>
@@ -190,7 +190,7 @@
                   <af:spacer  id="s11"/>
                   <af:selectOneChoice value="#{bindings.LocationId.inputValue}" label="Location"
                                       required="#{bindings.LocationId.hints.mandatory}"
-                                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc9">
+                                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc9" readOnly="true">
                     <f:selectItems value="#{bindings.LocationId.items}" id="si9"/>
                     <f:validator binding="#{bindings.LocationId.validator}"/>
                   </af:selectOneChoice>
@@ -251,7 +251,7 @@
                                 shortDesc="#{bindings.VehicleNo.hints.tooltip}" id="it6">
                     <f:validator binding="#{bindings.VehicleNo.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.GrossWeight.inputValue}" label="#{bindings.GrossWeight.hints.label}"
+                  <af:inputText value="#{bindings.GrossWeight.inputValue}" label="Gross Weight"
                                 required="#{bindings.GrossWeight.hints.mandatory}"
                                 columns="#{bindings.GrossWeight.hints.displayWidth}"
                                 maximumLength="#{bindings.GrossWeight.hints.precision}"
@@ -271,7 +271,7 @@
                                 required="#{bindings.NetWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.NetWeight.hints.precision}"
-                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23">
+                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23" readOnly="true">
                     <f:validator binding="#{bindings.NetWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.NetWeight.format}"/>
                   </af:inputText>
@@ -298,7 +298,7 @@
                                 required="#{bindings.VendorNetWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.VendorNetWeight.hints.precision}"
-                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44">
+                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44" readOnly="true">
                     <f:validator binding="#{bindings.VendorNetWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorNetWeight.format}"/>
                   </af:inputText>
@@ -307,7 +307,7 @@
                                 required="#{bindings.ShortageWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.ShortageWeight.hints.precision}"
-                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45">
+                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45" readOnly="true">
                     <f:validator binding="#{bindings.ShortageWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageWeight.format}"/>
                   </af:inputText>
@@ -394,7 +394,8 @@
                     <af:selectOneChoice value="#{row.bindings.FmitemsId.inputValue}"
                                         label="#{row.bindings.FmitemsId.label}"
                                         required="#{bindings.TblFmrnDView4.hints.FmitemsId.mandatory}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.FmitemsId.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblFmrnDView4.hints.FmitemsId.tooltip}" id="soc3"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.FmitemsId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
                     </af:selectOneChoice>
@@ -429,7 +430,7 @@
                                   required="#{bindings.TblFmrnDView4.hints.FmrnRate.mandatory}"
                                   columns="#{bindings.TblFmrnDView4.hints.FmrnRate.displayWidth}"
                                   maximumLength="#{bindings.TblFmrnDView4.hints.FmrnRate.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnRate.tooltip}" id="it9"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnRate.tooltip}" id="it9" readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnRate.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnRate.format}"/>
@@ -447,7 +448,7 @@
                                   required="#{bindings.TblFmrnDView4.hints.FmrnGamt.mandatory}"
                                   columns="#{bindings.TblFmrnDView4.hints.FmrnGamt.displayWidth}"
                                   maximumLength="#{bindings.TblFmrnDView4.hints.FmrnGamt.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnGamt.tooltip}" id="it10"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnGamt.tooltip}" id="it10" readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnGamt.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnGamt.format}"/>
@@ -484,7 +485,7 @@
                                   required="#{bindings.TblFmrnDView4.hints.FmrnStAmt.mandatory}"
                                   columns="#{bindings.TblFmrnDView4.hints.FmrnStAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmrnDView4.hints.FmrnStAmt.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnStAmt.tooltip}" id="it12"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnStAmt.tooltip}" id="it12" readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnStAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -503,7 +504,7 @@
                                   required="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.mandatory}"
                                   columns="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.tooltip}" id="it13"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.tooltip}" id="it13" readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnNetAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
