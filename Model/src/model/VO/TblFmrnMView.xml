@@ -21,6 +21,34 @@
     Name="Document_Status_LOV1"
     ViewObjectName="model.LOV.Document_Status_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bay_Name_LOV1"
+    ViewObjectName="model.LOV.Bay_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Carrier_LOV1"
+    ViewObjectName="model.LOV.Carrier_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Location_LOV1"
+    ViewObjectName="model.LOV.Location_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Status_LOV1"
+    ViewObjectName="model.LOV.Status_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tanks_Name_LOV1"
+    ViewObjectName="model.LOV.Tanks_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Vendor_LOV1"
+    ViewObjectName="model.LOV.Vendor_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_LOV1"
+    ViewObjectName="model.LOV.Item_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FmpoMId"
     ListVOName="Purchase_Order_LOV1"
@@ -61,9 +89,154 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_BayId"
+    ListVOName="Bay_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BayId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmbayId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmbayName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CarrierId"
+    ListVOName="Carrier_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CarrierId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmcarrierId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmcarrierName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LocationId"
+    ListVOName="Location_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmlocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmlocationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TankId"
+    ListVOName="Tanks_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TankId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmtanksId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmtanksName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_VendorId"
+    ListVOName="Vendor_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VendorId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmvendorsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmitemsId"
+    ListVOName="Item_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmitemsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmrnM"
     Entity="model.EO.TblFmrnM"/>
+  <EntityUsage
+    Name="TblFmrnD"
+    Entity="model.EO.TblFmrnD"
+    Association="model.EO.FkFmrnDRnMAssoc"
+    AssociationEnd="model.EO.FkFmrnDRnMAssoc.TblFmrnD"
+    SourceUsage="model.VO.TblFmrnMView.TblFmrnM"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFmrnD.FmrnMId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFmrnM.FmrnMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="FmrnMId"
     IsNotNull="true"
@@ -135,6 +308,173 @@
     EntityAttrName="CreditDays"
     EntityUsage="TblFmrnM"
     AliasName="CREDIT_DAYS"/>
+  <ViewAttribute
+    Name="BayId"
+    PrecisionRule="true"
+    EntityAttrName="BayId"
+    EntityUsage="TblFmrnM"
+    AliasName="BAY_ID"
+    LOVName="LOV_BayId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CarrierId"
+    PrecisionRule="true"
+    EntityAttrName="CarrierId"
+    EntityUsage="TblFmrnM"
+    AliasName="CARRIER_ID"
+    LOVName="LOV_CarrierId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GrossWeight"
+    PrecisionRule="true"
+    EntityAttrName="GrossWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="GROSS_WEIGHT"/>
+  <ViewAttribute
+    Name="InvoiceNo"
+    PrecisionRule="true"
+    EntityAttrName="InvoiceNo"
+    EntityUsage="TblFmrnM"
+    AliasName="INVOICE_NO"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="TblFmrnM"
+    AliasName="LOCATION_ID"
+    LOVName="LOV_LocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NetWeight"
+    PrecisionRule="true"
+    EntityAttrName="NetWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="NET_WEIGHT"/>
+  <ViewAttribute
+    Name="ShortageWeight"
+    PrecisionRule="true"
+    EntityAttrName="ShortageWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="SHORTAGE_WEIGHT"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="TblFmrnM"
+    AliasName="STATUS"
+    LOVName="LOV_Status">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TankId"
+    PrecisionRule="true"
+    EntityAttrName="TankId"
+    EntityUsage="TblFmrnM"
+    AliasName="TANK_ID"
+    LOVName="LOV_TankId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TearWeight"
+    PrecisionRule="true"
+    EntityAttrName="TearWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="TEAR_WEIGHT"/>
+  <ViewAttribute
+    Name="VehicleNo"
+    PrecisionRule="true"
+    EntityAttrName="VehicleNo"
+    EntityUsage="TblFmrnM"
+    AliasName="VEHICLE_NO"/>
+  <ViewAttribute
+    Name="VendorGrossWeight"
+    PrecisionRule="true"
+    EntityAttrName="VendorGrossWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="VENDOR_GROSS_WEIGHT"/>
+  <ViewAttribute
+    Name="VendorId"
+    PrecisionRule="true"
+    EntityAttrName="VendorId"
+    EntityUsage="TblFmrnM"
+    AliasName="VENDOR_ID"
+    LOVName="LOV_VendorId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VendorNetWeight"
+    PrecisionRule="true"
+    EntityAttrName="VendorNetWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="VENDOR_NET_WEIGHT"/>
+  <ViewAttribute
+    Name="VendorTearWeight"
+    PrecisionRule="true"
+    EntityAttrName="VendorTearWeight"
+    EntityUsage="TblFmrnM"
+    AliasName="VENDOR_TEAR_WEIGHT"/>
+  <ViewAttribute
+    Name="FmrnQty"
+    PrecisionRule="true"
+    EntityAttrName="FmrnQty"
+    EntityUsage="TblFmrnD"
+    AliasName="FMRN_QTY"/>
+  <ViewAttribute
+    Name="FmrnDId"
+    PrecisionRule="true"
+    EntityAttrName="FmrnDId"
+    EntityUsage="TblFmrnD"
+    AliasName="FMRN_D_ID"/>
+  <ViewAttribute
+    Name="FmitemsId"
+    PrecisionRule="true"
+    EntityAttrName="FmitemsId"
+    EntityUsage="TblFmrnD"
+    AliasName="FMITEMS_ID"
+    LOVName="LOV_FmitemsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="FmrnMId"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblFmrnDView"
     ViewLink="model.VO.FkFmrnDRnMLink"

@@ -146,6 +146,42 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_D"/>
+  <Attribute
+    Name="CompSize"
+    Precision="20"
+    ColumnName="COMP_SIZE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FMRN_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Shortage"
+    Precision="20"
+    ColumnName="SHORTAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FMRN_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ShortPerChart"
+    Precision="20"
+    ColumnName="SHORT_PER_CHART"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FMRN_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblFmbay"
     Association="model.EO.FkFmrnDBayAssoc"

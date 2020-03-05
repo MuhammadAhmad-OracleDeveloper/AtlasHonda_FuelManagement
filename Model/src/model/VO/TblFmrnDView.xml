@@ -221,4 +221,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompSize"
+    PrecisionRule="true"
+    EntityAttrName="CompSize"
+    EntityUsage="TblFmrnD"
+    AliasName="COMP_SIZE"/>
+  <ViewAttribute
+    Name="ShortPerChart"
+    PrecisionRule="true"
+    EntityAttrName="ShortPerChart"
+    EntityUsage="TblFmrnD"
+    AliasName="SHORT_PER_CHART"/>
+  <ViewAttribute
+    Name="Shortage"
+    PrecisionRule="true"
+    EntityAttrName="Shortage"
+    EntityUsage="TblFmrnD"
+    AliasName="SHORTAGE"/>
 </ViewObject>

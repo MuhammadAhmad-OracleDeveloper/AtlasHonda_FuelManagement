@@ -17,188 +17,321 @@
                         </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+            <af:panelTabbed position="above" id="pt3" inlineStyle="width:1009px;">
+              <af:showDetailItem id="tab3" text="Receipt Notes Master List">
+                <af:table value="#{bindings.TblFmrnMView11.collectionModel}" var="row"
+                          rows="#{bindings.TblFmrnMView11.rangeSize}"
+                          emptyText="#{bindings.TblFmrnMView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmrnMView11.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmrnMView11.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmrnMView11.rangeSize}"
+                          filterModel="#{bindings.TblFmrnMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t3"
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4 ::b5">
+                  <af:column sortProperty="#{bindings.TblFmrnMView11.hints.FmrnMId.name}" filterable="true"
+                             sortable="true" headerText="Receipt Notes Master ID" id="c19" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnMId}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.FmrnMId.inputValue}"
+                                  label="#{bindings.TblFmrnMView11.hints.FmrnMId.label}"
+                                  required="#{bindings.TblFmrnMView11.hints.FmrnMId.mandatory}"
+                                  columns="#{bindings.TblFmrnMView11.hints.FmrnMId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnMView11.hints.FmrnMId.precision}"
+                                  shortDesc="#{bindings.TblFmrnMView11.hints.FmrnMId.tooltip}" id="it34"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmrnMId.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView11.hints.FmrnMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmrnMView11.hints.FmrnMDate.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c20" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblFmrnMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDate.value}"
+                                    id="id8">
+                        <af:convertDateTime pattern="#{bindings.TblFmrnMView11.hints.FmrnMDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.FmrnMDate.inputValue}"
+                                  label="#{bindings.TblFmrnMView11.hints.FmrnMDate.label}"
+                                  required="#{bindings.TblFmrnMView11.hints.FmrnMDate.mandatory}"
+                                  columns="#{bindings.TblFmrnMView11.hints.FmrnMDate.displayWidth}"
+                                  shortDesc="#{bindings.TblFmrnMView11.hints.FmrnMDate.tooltip}" id="id9"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmrnMDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblFmrnMView11.hints.FmrnMDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmrnMView11.hints.VendorId.name}" filterable="true"
+                             sortable="true" headerText="Vendor" id="c21" width="250">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VendorId}"
+       id="it40" placeholder="Search Vendor">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
+                                        label="#{row.bindings.VendorId.label}"
+                                        required="#{bindings.TblFmrnMView11.hints.VendorId.mandatory}"
+                                        shortDesc="#{bindings.TblFmrnMView11.hints.VendorId.tooltip}" id="soc4"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.VendorId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.VendorId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmrnMView11.hints.FmitemsId.name}" filterable="true"
+                             sortable="true" headerText="Item" id="c25" width="250">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmitemsId}"
+       id="it41" placeholder="Search Item">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FmitemsId.inputValue}"
+                                        label="#{row.bindings.FmitemsId.label}"
+                                        required="#{bindings.TblFmrnMView11.hints.FmitemsId.mandatory}"
+                                        shortDesc="#{bindings.TblFmrnMView11.hints.FmitemsId.tooltip}" id="soc5"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.FmitemsId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmrnMView11.hints.FmrnQty.name}" filterable="true"
+                             sortable="true" headerText="Quantity" id="c26" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnQty}"
+       id="it42" placeholder="Search Quantity">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmrnQty.inputValue}"
+                                  label="#{bindings.TblFmrnMView11.hints.FmrnQty.label}"
+                                  required="#{bindings.TblFmrnMView11.hints.FmrnQty.mandatory}"
+                                  columns="#{bindings.TblFmrnMView11.hints.FmrnQty.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnMView11.hints.FmrnQty.precision}"
+                                  shortDesc="#{bindings.TblFmrnMView11.hints.FmrnQty.tooltip}" id="it35"
+                                  readOnly="true" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmrnQty.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView11.hints.FmrnQty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmrnMView11.hints.Status.name}" filterable="true"
+                             sortable="true" headerText="Status" id="c29">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Status}"
+       id="it43" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
+                                        required="#{bindings.TblFmrnMView11.hints.Status.mandatory}"
+                                        shortDesc="#{bindings.TblFmrnMView11.hints.Status.tooltip}" id="soc6"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.Status.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.Status.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Receipt Notes Master">
-                <af:table value="#{bindings.TblFmrnMView1.collectionModel}" var="row"
-                          rows="#{bindings.TblFmrnMView1.rangeSize}"
-                          emptyText="#{bindings.TblFmrnMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblFmrnMView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblFmrnMView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblFmrnMView1.rangeSize}"
-                          filterModel="#{bindings.TblFmrnMView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMId.name}" filterable="true"
-                             sortable="true" headerText="Receipt Notes Master ID" id="c1" align="center" width="90">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmrnMId}"
-                                          id="id4" placeholder="Search ID">
-                           </af:inputText>
-                             </f:facet>
-
-                    <af:inputText value="#{row.bindings.FmrnMId.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.FmrnMId.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.FmrnMId.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.FmrnMId.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnMView1.hints.FmrnMId.precision}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.FmrnMId.tooltip}" id="it1"
-                                  readOnly="true"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnMId.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView1.hints.FmrnMId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <!--<af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmpoMId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFmrnMView1.hints.FmpoMId.label}" id="c2">
-                    <af:inputText value="#{row.bindings.FmpoMId.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.FmpoMId.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.FmpoMId.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.FmpoMId.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnMView1.hints.FmpoMId.precision}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.FmpoMId.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.FmpoMId.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView1.hints.FmpoMId.format}"/>
-                    </af:inputText>
-                  </af:column>-->
-                  <af:column headerText="Purchase Order" id="c2" sortable="true" filterable="true" width="100">
-                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmpoMId}"
-                                          id="it3" placeholder="Search Purchase Order">
-                           </af:inputText>
-                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FmpoMId.inputValue}" label="#{row.bindings.FmpoMId.label}"
-                                        required="#{bindings.TblFmrnMView1.hints.FmpoMId.mandatory}" autoSubmit="true"
-                                        shortDesc="#{bindings.TblFmrnMView1.hints.FmpoMId.tooltip}" id="soc1">
-                      <f:selectItems value="#{row.bindings.FmpoMId.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.FmpoMId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column headerText="Credit Days" id="c28" align="center" sortable="true" filterable="true"
-                             width="80">
-                  <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.CreditDays}"
-                                          id="it6" placeholder="Search Days">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.CreditDays.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.CreditDays.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.CreditDays.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.CreditDays.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnMView1.hints.CreditDays.precision}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.CreditDays.tooltip}" id="it2"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.CreditDays.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFmrnMView1.hints.CreditDays.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="Document Status" id="c3" sortable="true"
-                             filterable="true" width="120">
-                             
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmdocstsId}"
-                                          id="it7" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FmdocstsId.inputValue}"
-                                        label="#{row.bindings.FmdocstsId.label}"
-                                        required="#{bindings.TblFmrnMView1.hints.FmdocstsId.mandatory}"
-                                        shortDesc="#{bindings.TblFmrnMView1.hints.FmdocstsId.tooltip}" id="soc2">
-                      <f:selectItems value="#{row.bindings.FmdocstsId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.FmdocstsId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMDate.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c4" align="center">
-                    <f:facet name="filter"> 
-                      <af:inputDate value="#{bindings.TblFmrnMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDate.value}"
-                                    id="id1">
-                        <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.FmrnMDate.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.FmrnMDate.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.FmrnMDate.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.FmrnMDate.displayWidth}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.FmrnMDate.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnMDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.name}" filterable="true"
-                             sortable="true" headerText="Dispatch Date" id="c5" align="center">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblFmrnMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDispDate.value}"
-                                    id="id3">
-                        <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.FmrnMDispDate.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.displayWidth}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.tooltip}" id="id7"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnMDispDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMDispDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.name}" filterable="true"
-                             sortable="true" headerText="Received Date" id="c6">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblFmrnMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMRecDate.value}"
-                                    id="id5">
-                        <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.FmrnMRecDate.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.displayWidth}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.tooltip}" id="id6"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnMRecDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblFmrnMView1.hints.FmrnMRecDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column headerText="Batch No." id="c27" align="center" sortable="true" filterable="true">
-                  <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.BatchNo}"
-                                          id="it22" placeholder="Search Batch No.">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.BatchNo.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.BatchNo.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.BatchNo.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.BatchNo.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnMView1.hints.BatchNo.precision}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.BatchNo.tooltip}" id="it24"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.BatchNo.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnRemarks.name}" filterable="true"
-                             sortable="true" headerText="Remarks" id="c7" width="200">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmrnRemarks}"
-                                          id="it23" placeholder="Search Remarks">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.FmrnRemarks.inputValue}"
-                                  label="#{bindings.TblFmrnMView1.hints.FmrnRemarks.label}"
-                                  required="#{bindings.TblFmrnMView1.hints.FmrnRemarks.mandatory}"
-                                  columns="#{bindings.TblFmrnMView1.hints.FmrnRemarks.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnMView1.hints.FmrnRemarks.precision}"
-                                  shortDesc="#{bindings.TblFmrnMView1.hints.FmrnRemarks.tooltip}" id="it4">
-                      <f:validator binding="#{row.bindings.FmrnRemarks.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                  <af:inputText value="#{bindings.FmrnMId.inputValue}" label="Receipt Master ID"
+                                required="#{bindings.FmrnMId.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.FmrnMId.hints.precision}"
+                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1">
+                    <f:validator binding="#{bindings.FmrnMId.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.FmrnMId.format}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.FmrnMDate.inputValue}" label="Date"
+                                required="#{bindings.FmrnMDate.hints.mandatory}"
+                                columns="20"
+                                shortDesc="#{bindings.FmrnMDate.hints.tooltip}" id="id1">
+                    <f:validator binding="#{bindings.FmrnMDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.FmrnMDate.format}"/>
+                  </af:inputDate>
+                  <af:spacer id="s6"/>
+                  <af:selectOneChoice value="#{bindings.Status.inputValue}" label="Status"
+                                      required="#{bindings.Status.hints.mandatory}"
+                                      shortDesc="#{bindings.Status.hints.tooltip}" id="soc1">
+                    <f:selectItems value="#{bindings.Status.items}" id="si1"/>
+                    <f:validator binding="#{bindings.Status.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer id="s7"/>
+                  <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
+                                      required="#{bindings.FmpoMId.hints.mandatory}"
+                                      shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2">
+                    <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
+                    <f:validator binding="#{bindings.FmpoMId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s8"/>
+                  <af:selectOneChoice value="#{bindings.VendorId.inputValue}" label="Vendor"
+                                      required="#{bindings.VendorId.hints.mandatory}"
+                                      shortDesc="#{bindings.VendorId.hints.tooltip}" id="soc7">
+                    <f:selectItems value="#{bindings.VendorId.items}" id="si7"/>
+                    <f:validator binding="#{bindings.VendorId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s10"/>
+                  <af:selectOneChoice value="#{bindings.BayId.inputValue}" label="Bay"
+                                      required="#{bindings.BayId.hints.mandatory}"
+                                      shortDesc="#{bindings.BayId.hints.tooltip}" id="soc8">
+                    <f:selectItems value="#{bindings.BayId.items}" id="si8"/>
+                    <f:validator binding="#{bindings.BayId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s11"/>
+                  <af:selectOneChoice value="#{bindings.LocationId.inputValue}" label="Location"
+                                      required="#{bindings.LocationId.hints.mandatory}"
+                                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc9">
+                    <f:selectItems value="#{bindings.LocationId.items}" id="si9"/>
+                    <f:validator binding="#{bindings.LocationId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s12"/>
+                  <af:selectOneChoice value="#{bindings.TankId.inputValue}" label="Tanks"
+                                      required="#{bindings.TankId.hints.mandatory}"
+                                      shortDesc="#{bindings.TankId.hints.tooltip}" id="soc10">
+                    <f:selectItems value="#{bindings.TankId.items}" id="si10"/>
+                    <f:validator binding="#{bindings.TankId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s13"/>
+                  <af:selectOneChoice value="#{bindings.CarrierId.inputValue}" label="Carrier"
+                                      required="#{bindings.CarrierId.hints.mandatory}"
+                                      shortDesc="#{bindings.CarrierId.hints.tooltip}" id="soc11">
+                    <f:selectItems value="#{bindings.CarrierId.items}" id="si11"/>
+                    <f:validator binding="#{bindings.CarrierId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.BatchNo.inputValue}" label="Batch No."
+                                required="#{bindings.BatchNo.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.BatchNo.hints.precision}"
+                                shortDesc="#{bindings.BatchNo.hints.tooltip}" id="it2">
+                    <f:validator binding="#{bindings.BatchNo.validator}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.FmrnMDispDate.inputValue}"
+                                label="Dispatch Date"
+                                required="#{bindings.FmrnMDispDate.hints.mandatory}"
+                                columns="20"
+                                shortDesc="#{bindings.FmrnMDispDate.hints.tooltip}" id="id2">
+                    <f:validator binding="#{bindings.FmrnMDispDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.FmrnMDispDate.format}"/>
+                  </af:inputDate>
+                  <af:inputDate value="#{bindings.FmrnMRecDate.inputValue}" label="Recieved Date"
+                                required="#{bindings.FmrnMRecDate.hints.mandatory}"
+                                columns="20"
+                                shortDesc="#{bindings.FmrnMRecDate.hints.tooltip}" id="id3">
+                    <f:validator binding="#{bindings.FmrnMRecDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.FmrnMRecDate.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.InvoiceNo.inputValue}" label="Invoice No."
+                                required="#{bindings.InvoiceNo.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.InvoiceNo.hints.precision}"
+                                shortDesc="#{bindings.InvoiceNo.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.InvoiceNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.FmrnRemarks.inputValue}" label="Remarks"
+                                required="#{bindings.FmrnRemarks.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.FmrnRemarks.hints.precision}"
+                                shortDesc="#{bindings.FmrnRemarks.hints.tooltip}" id="it4">
+                    <f:validator binding="#{bindings.FmrnRemarks.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.VehicleNo.inputValue}" label="Vehicle No."
+                                required="#{bindings.VehicleNo.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.VehicleNo.hints.precision}"
+                                shortDesc="#{bindings.VehicleNo.hints.tooltip}" id="it6">
+                    <f:validator binding="#{bindings.VehicleNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.GrossWeight.inputValue}" label="#{bindings.GrossWeight.hints.label}"
+                                required="#{bindings.GrossWeight.hints.mandatory}"
+                                columns="#{bindings.GrossWeight.hints.displayWidth}"
+                                maximumLength="#{bindings.GrossWeight.hints.precision}"
+                                shortDesc="#{bindings.GrossWeight.hints.tooltip}" id="it7">
+                    <f:validator binding="#{bindings.GrossWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.GrossWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.TearWeight.inputValue}" label="Tear Weight"
+                                required="#{bindings.TearWeight.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.TearWeight.hints.precision}"
+                                shortDesc="#{bindings.TearWeight.hints.tooltip}" id="it22">
+                    <f:validator binding="#{bindings.TearWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.TearWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.NetWeight.inputValue}" label="Net Weight"
+                                required="#{bindings.NetWeight.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.NetWeight.hints.precision}"
+                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23">
+                    <f:validator binding="#{bindings.NetWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.NetWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.VendorGrossWeight.inputValue}"
+                                label="Vendor Gross Weight"
+                                required="#{bindings.VendorGrossWeight.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.VendorGrossWeight.hints.precision}"
+                                shortDesc="#{bindings.VendorGrossWeight.hints.tooltip}" id="it24">
+                    <f:validator binding="#{bindings.VendorGrossWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorGrossWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.VendorTearWeight.inputValue}"
+                                label="Vendor Tear Weight"
+                                required="#{bindings.VendorTearWeight.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.VendorTearWeight.hints.precision}"
+                                shortDesc="#{bindings.VendorTearWeight.hints.tooltip}" id="it39">
+                    <f:validator binding="#{bindings.VendorTearWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorTearWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.VendorNetWeight.inputValue}"
+                                label="Vendor Net Weight"
+                                required="#{bindings.VendorNetWeight.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.VendorNetWeight.hints.precision}"
+                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44">
+                    <f:validator binding="#{bindings.VendorNetWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorNetWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ShortageWeight.inputValue}"
+                                label="Shortage Weight"
+                                required="#{bindings.ShortageWeight.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.ShortageWeight.hints.precision}"
+                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45">
+                    <f:validator binding="#{bindings.ShortageWeight.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageWeight.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.CreditDays.inputValue}" label="Credit Days"
+                                required="#{bindings.CreditDays.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.CreditDays.hints.precision}"
+                                shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46">
+                    <f:validator binding="#{bindings.CreditDays.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.CreditDays.format}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -377,7 +510,7 @@
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGWeight.name}" filterable="true"
+                  <!--<af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGWeight.name}" filterable="true"
                              sortable="true" headerText="Gross Weight" id="c17">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnGWeight}"
@@ -471,13 +604,13 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnVnWeight.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip1.name}" filterable="true"
-                             sortable="true" headerText="Dip 1" id="c22"
+                             sortable="true" headerText="Ref.Dip" id="c22"
                              align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnDip1}"
-                                          id="it36" placeholder="Search Dip 1">
+                                          id="it36" placeholder="Search Dip">
                            </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.FmrnDip1.inputValue}"
@@ -492,10 +625,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip2.name}" filterable="true"
-                             sortable="true" headerText="Dip 2" id="c23" align="center">
+                             sortable="true" headerText="Prod.Dip" id="c23" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnDip2}"
-                                          id="it37" placeholder="Search Dip 2">
+                                          id="it37" placeholder="Search Dip">
                            </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.FmrnDip2.inputValue}"
@@ -510,10 +643,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip3.name}" filterable="true"
-                             sortable="true" headerText="Dip 3" id="c24" align="center">
+                             sortable="true" headerText="Actual Dip" id="c24" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnDip3}"
-                                          id="it38" placeholder="Search Dip 3">
+                                          id="it38" placeholder="Search Dip">
                            </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.FmrnDip3.inputValue}"
@@ -527,32 +660,52 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnDip3.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Bay" id="c25" sortable="true" filterable="true">
-                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmbayId}"
-                                          id="it39" placeholder="Search Bay">
+                  <af:column headerText="Comp Size" id="c9" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CompSize}"
+                                          id="it17" placeholder="Search Size">
                            </af:inputText>
                              </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FmbayId.inputValue}" label="#{row.bindings.FmbayId.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.FmbayId.mandatory}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.FmbayId.tooltip}" id="soc4">
-                      <f:selectItems value="#{row.bindings.FmbayId.items}" id="si4"/>
-                      <f:validator binding="#{row.bindings.FmbayId.validator}"/>
-                    </af:selectOneChoice>
+                    <af:inputText value="#{row.bindings.CompSize.inputValue}"
+                                  label="#{bindings.TblFmrnDView4.hints.CompSize.label}"
+                                  required="#{bindings.TblFmrnDView4.hints.CompSize.mandatory}"
+                                  columns="#{bindings.TblFmrnDView4.hints.CompSize.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnDView4.hints.CompSize.precision}"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.CompSize.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.CompSize.validator}"/>
+                    </af:inputText>
                   </af:column>
-                  <af:column headerText="Tanks" id="c26" sortable="true" filterable="true">
-                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmtanksId}"
-                                          id="it40" placeholder="Search Tanks">
+                  <af:column headerText="Shortage" id="c17" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Shortage}"
+                                          id="it18" placeholder="Search Shortage">
                            </af:inputText>
                              </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FmtanksId.inputValue}"
-                                        label="#{row.bindings.FmtanksId.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.FmtanksId.mandatory}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.FmtanksId.tooltip}" id="soc5">
-                      <f:selectItems value="#{row.bindings.FmtanksId.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.FmtanksId.validator}"/>
-                    </af:selectOneChoice>
+                    <af:inputText value="#{row.bindings.Shortage.inputValue}"
+                                  label="#{bindings.TblFmrnDView4.hints.Shortage.label}"
+                                  required="#{bindings.TblFmrnDView4.hints.Shortage.mandatory}"
+                                  columns="#{bindings.TblFmrnDView4.hints.Shortage.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnDView4.hints.Shortage.precision}"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.Shortage.tooltip}" id="it15">
+                      <f:validator binding="#{row.bindings.Shortage.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Short Per Chart" id="c18" sortable="true"
+                             filterable="true" width="120">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ShortPerChart}"
+                                          id="it33" placeholder="Search Short">
+                           </af:inputText>
+                             </f:facet>
+                             
+                    <af:inputText value="#{row.bindings.ShortPerChart.inputValue}"
+                                  label="#{bindings.TblFmrnDView4.hints.ShortPerChart.label}"
+                                  required="#{bindings.TblFmrnDView4.hints.ShortPerChart.mandatory}"
+                                  columns="#{bindings.TblFmrnDView4.hints.ShortPerChart.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnDView4.hints.ShortPerChart.precision}"
+                                  shortDesc="#{bindings.TblFmrnDView4.hints.ShortPerChart.tooltip}" id="it16">
+                      <f:validator binding="#{row.bindings.ShortPerChart.validator}"/>
+                    </af:inputText>
                   </af:column>
                 </af:table>
                  </af:showDetailItem>

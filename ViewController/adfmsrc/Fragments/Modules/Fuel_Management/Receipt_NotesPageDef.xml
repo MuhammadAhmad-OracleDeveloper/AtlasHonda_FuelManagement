@@ -25,21 +25,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblFmrnMView1Iterator" id="TblFmrnMView1">
-      <nodeDefinition DefName="model.VO.TblFmrnMView" Name="TblFmrnMView10">
-        <AttrNames>
-          <Item Value="FmrnMId"/>
-          <Item Value="FmpoMId"/>
-          <Item Value="FmdocstsId"/>
-          <Item Value="FmrnMDate"/>
-          <Item Value="FmrnMDispDate"/>
-          <Item Value="FmrnMRecDate"/>
-          <Item Value="FmrnRemarks"/>
-          <Item Value="BatchNo"/>
-          <Item Value="CreditDays"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="TblFmrnMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblFmrnMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblFmrnMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
@@ -65,6 +50,9 @@
           <Item Value="FmrnDip3"/>
           <Item Value="FmbayId"/>
           <Item Value="FmtanksId"/>
+          <Item Value="CompSize"/>
+          <Item Value="Shortage"/>
+          <Item Value="ShortPerChart"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -73,5 +61,115 @@
     <action IterBinding="TblFmrnDView4Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblFmrnMView1Iterator" id="TblFmrnMView11">
+      <nodeDefinition DefName="model.VO.TblFmrnMView" Name="TblFmrnMView110">
+        <AttrNames>
+          <Item Value="FmrnMId"/>
+          <Item Value="FmrnMDate"/>
+          <Item Value="VendorId"/>
+          <Item Value="FmitemsId"/>
+          <Item Value="FmrnQty"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMId">
+      <AttrNames>
+        <Item Value="FmrnMId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMDate">
+      <AttrNames>
+        <Item Value="FmrnMDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_Status" id="Status" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmpoMId" id="FmpoMId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_VendorId" id="VendorId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BayId" id="BayId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_LocationId" id="LocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_TankId" id="TankId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_CarrierId" id="CarrierId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="BatchNo">
+      <AttrNames>
+        <Item Value="BatchNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMDispDate">
+      <AttrNames>
+        <Item Value="FmrnMDispDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMRecDate">
+      <AttrNames>
+        <Item Value="FmrnMRecDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvoiceNo">
+      <AttrNames>
+        <Item Value="InvoiceNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnRemarks">
+      <AttrNames>
+        <Item Value="FmrnRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VehicleNo">
+      <AttrNames>
+        <Item Value="VehicleNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="GrossWeight">
+      <AttrNames>
+        <Item Value="GrossWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="TearWeight">
+      <AttrNames>
+        <Item Value="TearWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="NetWeight">
+      <AttrNames>
+        <Item Value="NetWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorGrossWeight">
+      <AttrNames>
+        <Item Value="VendorGrossWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorTearWeight">
+      <AttrNames>
+        <Item Value="VendorTearWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorNetWeight">
+      <AttrNames>
+        <Item Value="VendorNetWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageWeight">
+      <AttrNames>
+        <Item Value="ShortageWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="CreditDays">
+      <AttrNames>
+        <Item Value="CreditDays"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblFmrnMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>
