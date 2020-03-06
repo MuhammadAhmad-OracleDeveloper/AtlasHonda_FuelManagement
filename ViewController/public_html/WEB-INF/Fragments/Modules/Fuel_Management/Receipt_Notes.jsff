@@ -167,8 +167,8 @@
                   </af:selectOneChoice>
                   <af:spacer id="s7"/>
                   <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
-                                      required="#{bindings.FmpoMId.hints.mandatory}"
-                                      shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2">
+                                      shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2"
+                                      contentStyle="width:200px;">
                     <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
                     <f:validator binding="#{bindings.FmpoMId.validator}"/>
                   </af:selectOneChoice>
@@ -291,7 +291,7 @@
                                 required="#{bindings.VendorNetWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.VendorNetWeight.hints.precision}"
-                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44" readOnly="true">
+                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44" disabled="true">
                     <f:validator binding="#{bindings.VendorNetWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorNetWeight.format}"/>
                   </af:inputText>
@@ -315,7 +315,7 @@
                                 required="#{bindings.NetWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.NetWeight.hints.precision}"
-                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23" readOnly="true">
+                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23" disabled="true">
                     <f:validator binding="#{bindings.NetWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.NetWeight.format}"/>
                   </af:inputText>
@@ -325,7 +325,7 @@
                                 required="#{bindings.ShortageWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.ShortageWeight.hints.precision}"
-                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45" readOnly="true">
+                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45" disabled="true">
                     <f:validator binding="#{bindings.ShortageWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageWeight.format}"/>
                   </af:inputText>
