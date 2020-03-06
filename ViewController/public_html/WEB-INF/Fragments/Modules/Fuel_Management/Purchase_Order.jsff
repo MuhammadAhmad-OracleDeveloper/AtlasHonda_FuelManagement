@@ -145,7 +145,8 @@
                           <af:panelFormLayout id="pfl1" maxColumns="2" rows="4">
                             <af:inputText value="#{bindings.FmpoMId.inputValue}" label="Purchase Order Master ID"
                                           required="#{bindings.FmpoMId.hints.mandatory}"
-                                          columns="20"
+                                          columns="20" disabled="true"
+                                  contentStyle='text-align: center'
                                           maximumLength="#{bindings.FmpoMId.hints.precision}"
                                           shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="it26">
                               <f:validator binding="#{bindings.FmpoMId.validator}"/>

@@ -186,5 +186,7 @@
         <Item Value="InvoiceDate"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="TblFmrnDView4Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmrnDView4Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

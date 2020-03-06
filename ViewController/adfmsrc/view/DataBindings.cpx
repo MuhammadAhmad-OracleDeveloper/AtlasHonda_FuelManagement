@@ -10,7 +10,7 @@
     <page path="/Main_Pages/Dashboard.jsf" usageId="view_DashboardPageDef"/>
     <page path="/Main_Pages/Modules/Setup/Setup.jsf" usageId="view_SetupPageDef"/>
     <page path="/Main_Pages/Modules/Fuel_Management/Fuel_Management.jsf" usageId="view_Fuel_ManagementPageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Vendors_TaskFlow.xml#Vendors_TaskFlow@ExecuteWithParams"
+    <page path="/WEB-INF/Task_Flows/Modules/Setup/Vendors_TaskFlow.xml#Vendors_TaskFlow@ExecuteWithParams"
           usageId="view_Vendors_TaskFlow_Vendors_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Rate_Definition_TaskFlow.xml#Rate_Definition_TaskFlow@ExecuteWithParams"
           usageId="view_Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef"/>
@@ -18,7 +18,7 @@
           usageId="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/Item_Profile_TaskFlow.xml#Item_Profile_TaskFlow@ExecuteWithParams"
           usageId="view_Item_Profile_TaskFlow_Item_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Carrier_TaskFlow.xml#Carrier_TaskFlow@ExecuteWithParams"
+    <page path="/WEB-INF/Task_Flows/Modules/Setup/Carrier_TaskFlow.xml#Carrier_TaskFlow@ExecuteWithParams"
           usageId="view_Carrier_TaskFlow_Carrier_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/User_Management_TaskFlow.xml#User_Management_TaskFlow@ExecuteWithParams"
           usageId="view_User_Management_TaskFlow_User_Management_TaskFlow_ExecuteWithParamsPageDef"/>
@@ -26,10 +26,10 @@
           usageId="view_General_Setup_TaskFlow_General_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Setup/Unit_of_Measurement_TaskFlow.xml#Unit_of_Measurement_TaskFlow@ExecuteWithParams"
           usageId="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
-    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Carrier.jsff" usageId="view_CarrierPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/Carrier.jsff" usageId="view_CarrierPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/Item_Profile.jsff" usageId="view_Item_ProfilePageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Rate_Definition.jsff" usageId="view_Rate_DefinitionPageDef"/>
-    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Vendors.jsff" usageId="view_VendorsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Setup/Vendors.jsff" usageId="view_VendorsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Purchase_Order.jsff" usageId="view_Purchase_OrderPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/General_Setup.jsff" usageId="view_General_SetupPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Setup/Unit_of_Measurement.jsff" usageId="view_Unit_of_MeasurementPageDef"/>

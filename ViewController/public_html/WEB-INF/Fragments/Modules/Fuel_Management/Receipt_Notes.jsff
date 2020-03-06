@@ -19,7 +19,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
             <af:panelTabbed position="above" id="pt3" inlineStyle="width:1009px;">
-              <af:showDetailItem id="tab3" text="Receipt Notes List">
+              <af:showDetailItem id="tab3" text="Fuel Receipt List">
                 <af:table value="#{bindings.TblFmrnMView11.collectionModel}" var="row"
                           rows="#{bindings.TblFmrnMView11.rangeSize}"
                           emptyText="#{bindings.TblFmrnMView11.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -136,7 +136,7 @@
                   </af:column>
                 </af:table>
               </af:showDetailItem>
-              <af:showDetailItem id="sdi1" text="Receipt Notes">
+              <af:showDetailItem id="sdi1" text="Fuel Receipt">
                 <af:panelGridLayout id="pgl6">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
@@ -147,11 +147,11 @@
                                 required="#{bindings.FmrnMId.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.FmrnMId.hints.precision}"
-                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" readOnly="true">
+                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" disabled="true">
                     <f:validator binding="#{bindings.FmrnMId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmrnMId.format}"/>
                   </af:inputText>
-                  <af:inputDate value="#{bindings.FmrnMDate.inputValue}" label="Transection Date"
+                  <af:inputDate value="#{bindings.FmrnMDate.inputValue}" label="Transaction Date"
                                 required="#{bindings.FmrnMDate.hints.mandatory}"
                                 columns="20"
                                 shortDesc="#{bindings.FmrnMDate.hints.tooltip}" id="id1">
@@ -321,7 +321,7 @@
                   </af:inputText>
                   <af:inputText value="#{bindings.CreditDays.inputValue}" label="Credit Days"
                                 required="#{bindings.CreditDays.hints.mandatory}"
-                                columns="20"
+                                columns="10"
                                 maximumLength="#{bindings.CreditDays.hints.precision}"
                                 shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46">
                     <f:validator binding="#{bindings.CreditDays.validator}"/>
@@ -377,7 +377,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmrnDView4.rangeSize}"
                           filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t2"
-                          scrollPolicy="page" autoHeightRows="0" partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="true"
                              sortable="true" headerText="Receipt Notes Detail ID" id="c8" align="center" width="90">
                               <f:facet name="filter">
@@ -644,7 +644,7 @@
                                 rowSelection="single" fetchSize="#{bindings.TblFmrnDView41.rangeSize}"
                                 filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
                                 queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t1"
-                                scrollPolicy="page" autoHeightRows="0">
+                                scrollPolicy="page" autoHeightRows="0" >
                         <af:column sortProperty="#{bindings.TblFmrnDView41.hints.FmrnDip1.name}" filterable="true"
                                    sortable="true" headerText="Ref. Dip" id="c1" align="center">
                                    <f:facet name="filter">
@@ -776,8 +776,7 @@
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr10">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
-                      
-                    </af:gridCell>
+                      </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>

@@ -6,7 +6,7 @@
       <shared/>
     </data-control-scope>
     <view id="Vendors">
-      <page>/WEB-INF/Fragments/Modules/Fuel_Management/Vendors.jsff</page>
+      <page>/WEB-INF/Fragments/Modules/Setup/Vendors.jsff</page>
     </view>
     <method-call id="ExecuteWithParams">
       <method>#{bindings.ExecuteWithParams.execute}</method>
