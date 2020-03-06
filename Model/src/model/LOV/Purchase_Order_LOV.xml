@@ -60,6 +60,44 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="TblFmvendors"
+    Entity="model.EO.TblFmvendors"
+    Association="model.EO.FkFmpoMVendorAssoc"
+    AssociationEnd="model.EO.FkFmpoMVendorAssoc.TblFmvendors"
+    SourceUsage="model.LOV.Purchase_Order_LOV.TblFmpoM"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFmvendors.FmvendorsId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFmpoM.FmvendorsId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblFmlocation"
+    Entity="model.EO.TblFmlocation"
+    Association="model.EO.FkFmpoMLocationAssoc"
+    AssociationEnd="model.EO.FkFmpoMLocationAssoc.TblFmlocation"
+    SourceUsage="model.LOV.Purchase_Order_LOV.TblFmpoM"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFmlocation.FmlocationId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFmpoM.FmlocationId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="FmpoMDate"
     PrecisionRule="true"
@@ -104,6 +142,34 @@
     EntityAttrName="FmitemsId"
     EntityUsage="TblFmitems"
     AliasName="FMITEMS_ID"/>
+  <ViewAttribute
+    Name="FmvendorsName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmvendorsName"
+    EntityUsage="TblFmvendors"
+    AliasName="FMVENDORS_NAME"/>
+  <ViewAttribute
+    Name="FmvendorsId1"
+    PrecisionRule="true"
+    EntityAttrName="FmvendorsId"
+    EntityUsage="TblFmvendors"
+    AliasName="FMVENDORS_ID1"/>
+  <ViewAttribute
+    Name="FmlocationName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmlocationName"
+    EntityUsage="TblFmlocation"
+    AliasName="FMLOCATION_NAME"/>
+  <ViewAttribute
+    Name="FmlocationId1"
+    PrecisionRule="true"
+    EntityAttrName="FmlocationId"
+    EntityUsage="TblFmlocation"
+    AliasName="FMLOCATION_ID1"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmpoMId"/>
   </AttrArray>

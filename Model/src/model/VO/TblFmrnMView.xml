@@ -68,8 +68,9 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmpoMId"/>
+      <Item Value="FmvendorsName"/>
+      <Item Value="FmlocationName"/>
       <Item Value="FmpoMDate"/>
-      <Item Value="FmitemsName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
