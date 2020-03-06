@@ -62,5 +62,40 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblFmpoMView1Iterator" id="FmpoMId">
+      <AttrNames>
+        <Item Value="FmpoMId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmpoMView1Iterator" id="FmpoMDate">
+      <AttrNames>
+        <Item Value="FmpoMDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblFmpoMView1Iterator" StaticList="false" Uses="LOV_FmvendorsId" id="FmvendorsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmpoMView1Iterator" StaticList="false" Uses="LOV_FmlocationId" id="FmlocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmpoMView1Iterator" StaticList="false" Uses="LOV_FmdocstsId" id="FmdocstsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmpoMView1Iterator" id="FmpoMRemarks">
+      <AttrNames>
+        <Item Value="FmpoMRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmpoMView1Iterator" id="FmpoMCrDays">
+      <AttrNames>
+        <Item Value="FmpoMCrDays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmpoMView1Iterator" id="SpecInstr">
+      <AttrNames>
+        <Item Value="SpecInstr"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblFmpoMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFmpoMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFmpoMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFmpoMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

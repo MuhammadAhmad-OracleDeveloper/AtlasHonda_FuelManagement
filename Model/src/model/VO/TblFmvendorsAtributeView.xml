@@ -96,4 +96,10 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblFmvendorsAtribute"
+    AliasName="REMARKS"/>
 </ViewObject>

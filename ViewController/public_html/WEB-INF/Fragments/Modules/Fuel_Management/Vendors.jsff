@@ -223,7 +223,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -305,7 +304,6 @@
                   </af:column>
                 </af:table>
                 <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -368,24 +366,23 @@
                       <f:validator binding="#{row.bindings.FmatributeId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Vendor" id="c16" sortable="true" filterable="true" width="400">
+                  <af:column headerText="Remarks" id="c16" sortable="true" filterable="true" width="480">
                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmvendorsId}"
-                                          id="it28" placeholder="Search Vendor">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it29" placeholder="Search Remarks">
                            </af:inputText>
                              </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FmvendorsId.inputValue}"
-                                        label="#{row.bindings.FmvendorsId.label}"
-                                        required="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.mandatory}"
-                                        shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.FmvendorsId.tooltip}"
-                                        id="soc5">
-                      <f:selectItems value="#{row.bindings.FmvendorsId.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.FmvendorsId.validator}"/>
-                    </af:selectOneChoice>
+                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                  label="#{bindings.TblFmvendorsAtributeView2.hints.Remarks.label}"
+                                  required="#{bindings.TblFmvendorsAtributeView2.hints.Remarks.mandatory}"
+                                  columns="#{bindings.TblFmvendorsAtributeView2.hints.Remarks.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvendorsAtributeView2.hints.Remarks.precision}"
+                                  shortDesc="#{bindings.TblFmvendorsAtributeView2.hints.Remarks.tooltip}" id="it28">
+                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                    </af:inputText>
                   </af:column>
                 </af:table>
                 <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s6"/>
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

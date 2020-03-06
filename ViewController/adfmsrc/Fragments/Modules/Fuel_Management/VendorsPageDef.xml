@@ -92,6 +92,7 @@
           <Item Value="FmvendorsAtributeId"/>
           <Item Value="FmvendorsId"/>
           <Item Value="FmatributeId"/>
+          <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

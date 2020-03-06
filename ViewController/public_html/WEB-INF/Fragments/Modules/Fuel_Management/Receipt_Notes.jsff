@@ -19,7 +19,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
             <af:panelTabbed position="above" id="pt3" inlineStyle="width:1009px;">
-              <af:showDetailItem id="tab3" text="Receipt Notes Master List">
+              <af:showDetailItem id="tab3" text="Receipt Notes List">
                 <af:table value="#{bindings.TblFmrnMView11.collectionModel}" var="row"
                           rows="#{bindings.TblFmrnMView11.rangeSize}"
                           emptyText="#{bindings.TblFmrnMView11.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -136,14 +136,13 @@
                   </af:column>
                 </af:table>
               </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Receipt Notes Master">
-                <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+              <af:showDetailItem id="sdi1" text="Receipt Notes">
+                <af:panelGridLayout id="pgl6">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                      <af:panelTabbed position="above" id="pt4">
+                        <af:showDetailItem id="tab4" text="Receipt Notes Master">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                   <af:inputText value="#{bindings.FmrnMId.inputValue}" label="Receipt Master ID"
                                 required="#{bindings.FmrnMId.hints.mandatory}"
                                 columns="20"
@@ -152,7 +151,7 @@
                     <f:validator binding="#{bindings.FmrnMId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmrnMId.format}"/>
                   </af:inputText>
-                  <af:inputDate value="#{bindings.FmrnMDate.inputValue}" label="Date"
+                  <af:inputDate value="#{bindings.FmrnMDate.inputValue}" label="Transection Date"
                                 required="#{bindings.FmrnMDate.hints.mandatory}"
                                 columns="20"
                                 shortDesc="#{bindings.FmrnMDate.hints.tooltip}" id="id1">
@@ -237,7 +236,16 @@
                                 shortDesc="#{bindings.InvoiceNo.hints.tooltip}" id="it3">
                     <f:validator binding="#{bindings.InvoiceNo.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.FmrnRemarks.inputValue}" label="Remarks"
+                            <af:inputText value="#{bindings.InvoiceDate.inputValue}"
+                                          label="Invoice Date"
+                                          required="#{bindings.InvoiceDate.hints.mandatory}"
+                                          columns="#{bindings.InvoiceDate.hints.displayWidth}"
+                                          maximumLength="#{bindings.InvoiceDate.hints.precision}"
+                                          shortDesc="#{bindings.InvoiceDate.hints.tooltip}" id="it20">
+                              <f:validator binding="#{bindings.InvoiceDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.InvoiceDate.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.FmrnRemarks.inputValue}" label="Remarks"
                                 required="#{bindings.FmrnRemarks.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.FmrnRemarks.hints.precision}"
@@ -259,7 +267,7 @@
                     <f:validator binding="#{bindings.GrossWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.GrossWeight.format}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.TearWeight.inputValue}" label="Tear Weight"
+                  <af:inputText value="#{bindings.TearWeight.inputValue}" label="Tare Weight"
                                 required="#{bindings.TearWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.TearWeight.hints.precision}"
@@ -323,23 +331,25 @@
                     <af:panelGroupLayout layout="horizontal" id="pgl5">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
-                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                <af:spacer width="5" height="10" id="s4"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
-                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                <af:spacer width="5" height="10" id="s14"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
                                  disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
-                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                <af:spacer width="5" height="10" id="s15"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
                                  disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
                     </af:panelGroupLayout>
                   </f:facet>
                 </af:panelFormLayout>
-              </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                      <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -350,11 +360,14 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Receipt Notes Detail">
                 <af:table value="#{bindings.TblFmrnDView4.collectionModel}" var="row"
                           rows="#{bindings.TblFmrnDView4.rangeSize}"
@@ -364,7 +377,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmrnDView4.rangeSize}"
                           filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t2"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="">
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="true"
                              sortable="true" headerText="Receipt Notes Detail ID" id="c8" align="center" width="90">
                               <f:facet name="filter">
@@ -385,7 +398,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column headerText="Item" id="c10" sortable="true"
-                             filterable="true" width="150">
+                             filterable="true" width="195">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmitemsId}"
                                           id="it26" placeholder="Search Item">
@@ -606,117 +619,9 @@
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnVnWeight.format}"/>
                     </af:inputText>
                   </af:column>-->
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip1.name}" filterable="true"
-                             sortable="true" headerText="Ref.Dip" id="c22"
-                             align="center">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmrnDip1}"
-                                          id="it36" placeholder="Search Dip">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.FmrnDip1.inputValue}"
-                                  label="#{bindings.TblFmrnDView4.hints.FmrnDip1.label}"
-                                  required="#{bindings.TblFmrnDView4.hints.FmrnDip1.mandatory}"
-                                  columns="#{bindings.TblFmrnDView4.hints.FmrnDip1.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnDView4.hints.FmrnDip1.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnDip1.tooltip}" id="it19"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnDip1.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnDip1.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip2.name}" filterable="true"
-                             sortable="true" headerText="Prod.Dip" id="c23" align="center">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmrnDip2}"
-                                          id="it37" placeholder="Search Dip">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.FmrnDip2.inputValue}"
-                                  label="#{bindings.TblFmrnDView4.hints.FmrnDip2.label}"
-                                  required="#{bindings.TblFmrnDView4.hints.FmrnDip2.mandatory}"
-                                  columns="#{bindings.TblFmrnDView4.hints.FmrnDip2.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnDView4.hints.FmrnDip2.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnDip2.tooltip}" id="it20"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnDip2.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnDip2.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip3.name}" filterable="true"
-                             sortable="true" headerText="Actual Dip" id="c24" align="center">
-                              <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FmrnDip3}"
-                                          id="it38" placeholder="Search Dip">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.FmrnDip3.inputValue}"
-                                  label="#{bindings.TblFmrnDView4.hints.FmrnDip3.label}"
-                                  required="#{bindings.TblFmrnDView4.hints.FmrnDip3.mandatory}"
-                                  columns="#{bindings.TblFmrnDView4.hints.FmrnDip3.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnDView4.hints.FmrnDip3.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.FmrnDip3.tooltip}" id="it21"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.FmrnDip3.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnDip3.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="Comp Size" id="c9" sortable="true" filterable="true">
-                  <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.CompSize}"
-                                          id="it17" placeholder="Search Size">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.CompSize.inputValue}"
-                                  label="#{bindings.TblFmrnDView4.hints.CompSize.label}"
-                                  required="#{bindings.TblFmrnDView4.hints.CompSize.mandatory}"
-                                  columns="#{bindings.TblFmrnDView4.hints.CompSize.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnDView4.hints.CompSize.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.CompSize.tooltip}" id="it14">
-                      <f:validator binding="#{row.bindings.CompSize.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="Shortage" id="c17" sortable="true" filterable="true">
-                  <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.Shortage}"
-                                          id="it18" placeholder="Search Shortage">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.Shortage.inputValue}"
-                                  label="#{bindings.TblFmrnDView4.hints.Shortage.label}"
-                                  required="#{bindings.TblFmrnDView4.hints.Shortage.mandatory}"
-                                  columns="#{bindings.TblFmrnDView4.hints.Shortage.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnDView4.hints.Shortage.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.Shortage.tooltip}" id="it15">
-                      <f:validator binding="#{row.bindings.Shortage.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="Short Per Chart" id="c18" sortable="true"
-                             filterable="true" width="120">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.ShortPerChart}"
-                                          id="it33" placeholder="Search Short">
-                           </af:inputText>
-                             </f:facet>
-                             
-                    <af:inputText value="#{row.bindings.ShortPerChart.inputValue}"
-                                  label="#{bindings.TblFmrnDView4.hints.ShortPerChart.label}"
-                                  required="#{bindings.TblFmrnDView4.hints.ShortPerChart.mandatory}"
-                                  columns="#{bindings.TblFmrnDView4.hints.ShortPerChart.displayWidth}"
-                                  maximumLength="#{bindings.TblFmrnDView4.hints.ShortPerChart.precision}"
-                                  shortDesc="#{bindings.TblFmrnDView4.hints.ShortPerChart.tooltip}" id="it16">
-                      <f:validator binding="#{row.bindings.ShortPerChart.validator}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                 </af:table>
-                 </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-             <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -727,6 +632,177 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                 </af:showDetailItem>
+                        <af:showDetailItem text="Dip" id="sdi2">
+                         
+                                  <af:table value="#{bindings.TblFmrnDView41.collectionModel}" var="row"
+                                rows="#{bindings.TblFmrnDView41.rangeSize}"
+                                emptyText="#{bindings.TblFmrnDView41.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                rowBandingInterval="0"
+                                selectedRowKeys="#{bindings.TblFmrnDView41.collectionModel.selectedRow}"
+                                selectionListener="#{bindings.TblFmrnDView41.collectionModel.makeCurrent}"
+                                rowSelection="single" fetchSize="#{bindings.TblFmrnDView41.rangeSize}"
+                                filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
+                                queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t1"
+                                scrollPolicy="page" autoHeightRows="0">
+                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.FmrnDip1.name}" filterable="true"
+                                   sortable="true" headerText="Ref. Dip" id="c1" align="center">
+                                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnDip1}"
+       id="it14" placeholder="Search Dip">
+      </af:inputText>
+</f:facet>
+                          <af:inputText value="#{row.bindings.FmrnDip1.inputValue}"
+                                        label="#{bindings.TblFmrnDView41.hints.FmrnDip1.label}"
+                                        required="#{bindings.TblFmrnDView41.hints.FmrnDip1.mandatory}"
+                                        columns="#{bindings.TblFmrnDView41.hints.FmrnDip1.displayWidth}"
+                                        maximumLength="#{bindings.TblFmrnDView41.hints.FmrnDip1.precision}"
+                                        shortDesc="#{bindings.TblFmrnDView41.hints.FmrnDip1.tooltip}" id="it47"
+                                        contentStyle='text-align: center'>
+                            <f:validator binding="#{row.bindings.FmrnDip1.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.TblFmrnDView41.hints.FmrnDip1.format}"/>
+                          </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.FmrnDip2.name}" filterable="true"
+                                   sortable="true" headerText="Prod. Dip" id="c2" align="center">
+                                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnDip2}"
+       id="it15" placeholder="Search Dip">
+      </af:inputText>
+</f:facet>
+                          <af:inputText value="#{row.bindings.FmrnDip2.inputValue}"
+                                        label="#{bindings.TblFmrnDView41.hints.FmrnDip2.label}"
+                                        required="#{bindings.TblFmrnDView41.hints.FmrnDip2.mandatory}"
+                                        columns="#{bindings.TblFmrnDView41.hints.FmrnDip2.displayWidth}"
+                                        maximumLength="#{bindings.TblFmrnDView41.hints.FmrnDip2.precision}"
+                                        shortDesc="#{bindings.TblFmrnDView41.hints.FmrnDip2.tooltip}" id="it48"
+                                        contentStyle='text-align: center'>
+                            <f:validator binding="#{row.bindings.FmrnDip2.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.TblFmrnDView41.hints.FmrnDip2.format}"/>
+                          </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.FmrnDip3.name}" filterable="true"
+                                   sortable="true" headerText="Actual Dip" id="c3" align="center">
+                                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnDip3}"
+       id="it16" placeholder="Search Dip">
+      </af:inputText>
+</f:facet>
+                          <af:inputText value="#{row.bindings.FmrnDip3.inputValue}"
+                                        label="#{bindings.TblFmrnDView41.hints.FmrnDip3.label}"
+                                        required="#{bindings.TblFmrnDView41.hints.FmrnDip3.mandatory}"
+                                        columns="#{bindings.TblFmrnDView41.hints.FmrnDip3.displayWidth}"
+                                        maximumLength="#{bindings.TblFmrnDView41.hints.FmrnDip3.precision}"
+                                        shortDesc="#{bindings.TblFmrnDView41.hints.FmrnDip3.tooltip}" id="it49"
+                                        contentStyle='text-align: center'>
+                            <f:validator binding="#{row.bindings.FmrnDip3.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.TblFmrnDView41.hints.FmrnDip3.format}"/>
+                          </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.CompSize.name}" filterable="true"
+                                   sortable="true" headerText="Comp. Size" id="c4" align="center">
+                                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnDip3}"
+       id="it17" placeholder="Search Size">
+      </af:inputText>
+</f:facet>
+                          <af:inputText value="#{row.bindings.CompSize.inputValue}"
+                                        label="#{bindings.TblFmrnDView41.hints.CompSize.label}"
+                                        required="#{bindings.TblFmrnDView41.hints.CompSize.mandatory}"
+                                        columns="#{bindings.TblFmrnDView41.hints.CompSize.displayWidth}"
+                                        maximumLength="#{bindings.TblFmrnDView41.hints.CompSize.precision}"
+                                        shortDesc="#{bindings.TblFmrnDView41.hints.CompSize.tooltip}" id="it50"
+                                        contentStyle='text-align: center'>
+                            <f:validator binding="#{row.bindings.CompSize.validator}"/>
+                          </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.Shortage.name}" filterable="true"
+                                   sortable="true" headerText="Shortage" id="c6" align="center">
+                                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Shortage}"
+       id="it19" placeholder="Search Shortage">
+      </af:inputText>
+</f:facet>
+                          <af:inputText value="#{row.bindings.Shortage.inputValue}"
+                                        label="#{bindings.TblFmrnDView41.hints.Shortage.label}"
+                                        required="#{bindings.TblFmrnDView41.hints.Shortage.mandatory}"
+                                        columns="#{bindings.TblFmrnDView41.hints.Shortage.displayWidth}"
+                                        maximumLength="#{bindings.TblFmrnDView41.hints.Shortage.precision}"
+                                        shortDesc="#{bindings.TblFmrnDView41.hints.Shortage.tooltip}" id="it52"
+                                        contentStyle='text-align: center'>
+                            <f:validator binding="#{row.bindings.Shortage.validator}"/>
+                          </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.ShortPerChart.name}" filterable="true"
+                                   sortable="true" headerText="Short per Chart"
+                                   id="c5" align="center">
+                                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ShortPerChart}"
+       id="it18" placeholder="Search Chart">
+      </af:inputText>
+</f:facet>
+                          <af:inputText value="#{row.bindings.ShortPerChart.inputValue}"
+                                        label="#{bindings.TblFmrnDView41.hints.ShortPerChart.label}"
+                                        required="#{bindings.TblFmrnDView41.hints.ShortPerChart.mandatory}"
+                                        columns="#{bindings.TblFmrnDView41.hints.ShortPerChart.displayWidth}"
+                                        maximumLength="#{bindings.TblFmrnDView41.hints.ShortPerChart.precision}"
+                                        shortDesc="#{bindings.TblFmrnDView41.hints.ShortPerChart.tooltip}" id="it51"
+                                        contentStyle='text-align: center'>
+                            <f:validator binding="#{row.bindings.ShortPerChart.validator}"/>
+                          </af:inputText>
+                        </af:column>
+                        
+                      </af:table>
+                      <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                                </af:showDetailItem>
+                              </af:panelTabbed>
+                          
+                      
+                      
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr10">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
+                      
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             
            </af:gridCell>
         </af:gridRow>
       </af:panelGridLayout>

@@ -68,6 +68,8 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmpoMId"/>
+      <Item Value="FmpoMDate"/>
+      <Item Value="FmitemsName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -472,6 +474,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="InvoiceDate"
+    PrecisionRule="true"
+    EntityAttrName="InvoiceDate"
+    EntityUsage="TblFmrnM"
+    AliasName="INVOICE_DATE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmrnMId"/>
   </AttrArray>

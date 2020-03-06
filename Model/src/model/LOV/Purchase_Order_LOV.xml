@@ -22,6 +22,44 @@
   <EntityUsage
     Name="TblFmpoM"
     Entity="model.EO.TblFmpoM"/>
+  <EntityUsage
+    Name="TblFmpoD"
+    Entity="model.EO.TblFmpoD"
+    Association="model.EO.FkFmpoDPoMAssoc"
+    AssociationEnd="model.EO.FkFmpoDPoMAssoc.TblFmpoD"
+    SourceUsage="model.LOV.Purchase_Order_LOV.TblFmpoM"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFmpoD.FmpoMId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFmpoM.FmpoMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblFmitems"
+    Entity="model.EO.TblFmitems"
+    Association="model.EO.FkFmpoDItemsAssoc"
+    AssociationEnd="model.EO.FkFmpoDItemsAssoc.TblFmitems"
+    SourceUsage="model.LOV.Purchase_Order_LOV.TblFmpoD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFmitems.FmitemsId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFmpoD.FmitemsId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="FmpoMDate"
     PrecisionRule="true"
@@ -52,6 +90,23 @@
     EntityAttrName="FmpoMCrDays"
     EntityUsage="TblFmpoM"
     AliasName="FMPO_M_CR_DAYS"/>
+  <ViewAttribute
+    Name="FmitemsName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmitemsName"
+    EntityUsage="TblFmitems"
+    AliasName="FMITEMS_NAME"/>
+  <ViewAttribute
+    Name="FmitemsId"
+    PrecisionRule="true"
+    EntityAttrName="FmitemsId"
+    EntityUsage="TblFmitems"
+    AliasName="FMITEMS_ID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="FmpoMId"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

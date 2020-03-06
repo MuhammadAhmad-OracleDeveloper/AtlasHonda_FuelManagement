@@ -56,8 +56,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblFmrnDView4Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblFmrnDView4Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblFmrnDView4Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
@@ -171,5 +169,22 @@
     <action IterBinding="TblFmrnMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblFmrnMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="TblFmrnMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblFmrnDView4Iterator" id="TblFmrnDView41">
+      <nodeDefinition DefName="model.VO.TblFmrnDView" Name="TblFmrnDView410">
+        <AttrNames>
+          <Item Value="FmrnDip1"/>
+          <Item Value="FmrnDip2"/>
+          <Item Value="FmrnDip3"/>
+          <Item Value="CompSize"/>
+          <Item Value="ShortPerChart"/>
+          <Item Value="Shortage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvoiceDate">
+      <AttrNames>
+        <Item Value="InvoiceDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

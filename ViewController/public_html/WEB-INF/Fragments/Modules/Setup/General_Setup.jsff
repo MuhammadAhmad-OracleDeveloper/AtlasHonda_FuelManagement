@@ -398,7 +398,7 @@
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Attribute" id="sdi4">
+              <af:showDetailItem text="Vendor Attribute" id="sdi4">
                 <af:table value="#{bindings.TblFmatributeView1.collectionModel}" var="row"
                           rows="#{bindings.TblFmatributeView1.rangeSize}"
                           emptyText="#{bindings.TblFmatributeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
