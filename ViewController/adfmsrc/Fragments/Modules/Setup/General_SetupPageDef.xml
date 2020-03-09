@@ -24,8 +24,6 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmatributeView1Query"/>
     <iterator Binds="TblFmvalvesView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmvalvesView1Iterator"/>
-    <searchRegion Binds="TblFmvalvesView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvalvesView1Query"/>
     <iterator Binds="TblFmlabtestView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmlabtestView1Iterator"/>
     <searchRegion Binds="TblFmlabtestView1Iterator" Criteria=""
@@ -111,15 +109,6 @@
     <action IterBinding="TblFmatributeView1Iterator" id="Execute4" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblFmatributeView1Iterator" id="Delete4" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <tree IterBinding="TblFmvalvesView1Iterator" id="TblFmvalvesView1">
-      <nodeDefinition DefName="model.VO.TblFmvalvesView" Name="TblFmvalvesView10">
-        <AttrNames>
-          <Item Value="FmvalvesId"/>
-          <Item Value="FmvalvesName"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="TblFmvalvesView1Iterator" id="CreateInsert5" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="TblFmvalvesView1Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
