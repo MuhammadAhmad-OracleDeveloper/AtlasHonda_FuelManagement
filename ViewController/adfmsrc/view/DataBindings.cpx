@@ -37,6 +37,9 @@
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Receipt_Notes_TaskFlow.xml#Receipt_Notes_TaskFlow@ExecuteWithParams"
           usageId="view_Receipt_Notes_TaskFlow_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Receipt_Notes.jsff" usageId="view_Receipt_NotesPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Lab_Test_Report_TaskFlow.xml#Lab_Test_Report_TaskFlow@ExecuteWithParams"
+          usageId="view_Lab_Test_Report_TaskFlow_Lab_Test_Report_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Lab_Test_Report.jsff" usageId="view_Lab_Test_ReportPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -72,6 +75,9 @@
     <page id="view_Receipt_Notes_TaskFlow_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Receipt_Notes_TaskFlow_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Receipt_NotesPageDef" path="Fragments.Modules.Fuel_Management.Receipt_NotesPageDef"/>
+    <page id="view_Lab_Test_Report_TaskFlow_Lab_Test_Report_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fuel_Management.Lab_Test_Report_TaskFlow_Lab_Test_Report_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Lab_Test_ReportPageDef" path="Fragments.Modules.Fuel_Management.Lab_Test_ReportPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
