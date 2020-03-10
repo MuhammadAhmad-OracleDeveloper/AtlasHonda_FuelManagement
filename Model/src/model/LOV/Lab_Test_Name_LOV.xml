@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Lab_Test_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblFmlabtest.FMLABTEST_ID, 
+       TblFmlabtest.FMLABTEST_NAME, 
+       TblFmlabtest.AST"
+  FromList="TBL_FMLABTEST TblFmlabtest"
+  Where="Ast='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Lab_Test_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblFmlabtest"
+    Entity="model.EO.TblFmlabtest"/>
+  <ViewAttribute
+    Name="FmlabtestId"
+    PrecisionRule="true"
+    EntityAttrName="FmlabtestId"
+    EntityUsage="TblFmlabtest"
+    AliasName="FMLABTEST_ID"/>
+  <ViewAttribute
+    Name="FmlabtestName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmlabtestName"
+    EntityUsage="TblFmlabtest"
+    AliasName="FMLABTEST_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFmlabtest"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

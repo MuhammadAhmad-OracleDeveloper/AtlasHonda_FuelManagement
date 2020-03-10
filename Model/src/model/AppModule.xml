@@ -130,6 +130,15 @@
   <ViewUsage
     Name="TblFmvendorsLocationView2"
     ViewObjectName="model.VO.TblFmvendorsLocationView"/>
+  <ViewUsage
+    Name="TblFmlabTestRepDView1"
+    ViewObjectName="model.VO.TblFmlabTestRepDView"/>
+  <ViewUsage
+    Name="TblFmlabTestRepMView1"
+    ViewObjectName="model.VO.TblFmlabTestRepMView"/>
+  <ViewUsage
+    Name="TblFmlabTestRepDView2"
+    ViewObjectName="model.VO.TblFmlabTestRepDView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
@@ -231,5 +240,11 @@
     ViewLinkObjectName="model.VO.FkTblFMVendorLocationFKLink"
     SrcViewUsageName="model.AppModule.TblFmvendorsView1"
     DstViewUsageName="model.AppModule.TblFmvendorsLocationView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFmlabTestRepMRepMLink1"
+    ViewLinkObjectName="model.VO.FkTblFmlabTestRepMRepMLink"
+    SrcViewUsageName="model.AppModule.TblFmlabTestRepMView1"
+    DstViewUsageName="model.AppModule.TblFmlabTestRepDView2"
     Reversed="false"/>
 </AppModule>
