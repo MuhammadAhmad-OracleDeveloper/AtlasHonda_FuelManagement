@@ -25,6 +25,17 @@
     Name="Item_LOV1"
     ViewObjectName="model.LOV.Item_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Vendor_Location_Name_LOV1"
+    ViewObjectName="model.LOV.Vendor_Location_Name_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getvendorID">
+        <TransientExpression
+          Name="ExpressionScript"><![CDATA[FmvendorsId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_FmvendorsId"
     ListVOName="Vendor_LOV1"
@@ -44,24 +55,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_FmlocationId"
-    ListVOName="Location_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="FmlocationId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FmlocationId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FmlocationName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_FmitemsId"
     ListVOName="Item_LOV1"
     ListRangeSize="-1"
@@ -76,6 +69,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmitemsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmlocationId"
+    ListVOName="Vendor_Location_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmlocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvendorsLocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmlocationName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

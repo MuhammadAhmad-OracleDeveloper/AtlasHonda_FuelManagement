@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="FmlabTestRepMId"
-    IsNotNull="true"
     ColumnName="FMLAB_TEST_REP_M_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMLAB_TEST_REP_M"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmreportDate"
     ColumnName="FMREPORT_DATE"

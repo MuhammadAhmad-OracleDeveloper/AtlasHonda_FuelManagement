@@ -12,6 +12,8 @@
               id="TblFmlabTestRepDView2Iterator"/>
     <searchRegion Binds="TblFmlabTestRepDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlabTestRepDView2Query"/>
+    <searchRegion Binds="TblFmlabTestRepMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlabTestRepMView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -25,31 +27,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblFmlabTestRepMView1Iterator" id="FmlabTestRepMId">
-      <AttrNames>
-        <Item Value="FmlabTestRepMId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmlabTestRepMView1Iterator" id="FmreportDate">
-      <AttrNames>
-        <Item Value="FmreportDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmlabTestRepMView1Iterator" id="FmgatePass">
-      <AttrNames>
-        <Item Value="FmgatePass"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblFmlabTestRepMView1Iterator" StaticList="false" Uses="LOV_FmvendorsId" id="FmvendorsId1"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmlabTestRepMView1Iterator" StaticList="false" Uses="LOV_FmlocationId" id="FmlocationId1"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmlabTestRepMView1Iterator" StaticList="false" Uses="LOV_FmitemsId" id="FmitemsId1"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblFmlabTestRepMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblFmlabTestRepMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblFmlabTestRepMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblFmlabTestRepMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <tree IterBinding="TblFmlabTestRepDView2Iterator" id="TblFmlabTestRepDView2">
       <nodeDefinition DefName="model.VO.TblFmlabTestRepDView" Name="TblFmlabTestRepDView20">
         <AttrNames>
@@ -59,7 +36,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblFmlabTestRepDView2Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
     <tree IterBinding="TblFmlabTestRepDView2Iterator" id="TblFmlabTestRepDView21">
       <nodeDefinition DefName="model.VO.TblFmlabTestRepDView" Name="TblFmlabTestRepDView210">
         <AttrNames>
@@ -83,5 +59,17 @@
             Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblFmlabTestRepMView1Iterator" id="TblFmlabTestRepMView1">
+      <nodeDefinition DefName="model.VO.TblFmlabTestRepMView" Name="TblFmlabTestRepMView10">
+        <AttrNames>
+          <Item Value="FmlabTestRepMId"/>
+          <Item Value="FmreportDate"/>
+          <Item Value="FmgatePass"/>
+          <Item Value="FmvendorsId"/>
+          <Item Value="FmlocationId"/>
+          <Item Value="FmitemsId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
