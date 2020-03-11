@@ -131,7 +131,7 @@
                                                 label="Vendor"
                                                 required="#{bindings.FmvendorsId1.hints.mandatory}"
                                                 shortDesc="#{bindings.FmvendorsId1.hints.tooltip}" id="soc3"
-                                                contentStyle="width:200px;" disabled="true">
+                                                contentStyle="width:200px;" >
                               <f:selectItems value="#{bindings.FmvendorsId1.items}" id="si3"/>
                               <f:validator binding="#{bindings.FmvendorsId1.validator}"/>
                             </af:selectOneChoice>
@@ -140,7 +140,7 @@
                                                 label="Location"
                                                 required="#{bindings.FmlocationId1.hints.mandatory}"
                                                 shortDesc="#{bindings.FmlocationId1.hints.tooltip}" id="soc5"
-                                                contentStyle="width:200px;" disabled="true">
+                                                contentStyle="width:200px;" >
                               <f:selectItems value="#{bindings.FmlocationId1.items}" id="si5"/>
                               <f:validator binding="#{bindings.FmlocationId1.validator}"/>
                             </af:selectOneChoice>
@@ -149,7 +149,7 @@
                                                 label="Item"
                                                 required="#{bindings.FmitemsId1.hints.mandatory}"
                                                 shortDesc="#{bindings.FmitemsId1.hints.tooltip}" id="soc6"
-                                                contentStyle="width:200px;" disabled="true">
+                                                contentStyle="width:200px;" >
                               <f:selectItems value="#{bindings.FmitemsId1.items}" id="si6"/>
                               <f:validator binding="#{bindings.FmitemsId1.validator}"/>
                             </af:selectOneChoice>
