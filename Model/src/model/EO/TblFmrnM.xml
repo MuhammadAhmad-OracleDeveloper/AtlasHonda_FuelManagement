@@ -213,6 +213,13 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="DeliveryNo"
+    ColumnName="DELIVERY_NO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMRN_M"/>
   <AccessorAttribute
     Name="TblFmrnD"
     Association="model.EO.FkFmrnDRnMAssoc"

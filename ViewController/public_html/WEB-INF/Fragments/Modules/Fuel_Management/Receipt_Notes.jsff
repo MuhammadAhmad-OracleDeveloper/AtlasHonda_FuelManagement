@@ -147,21 +147,21 @@
                                 required="#{bindings.FmrnMId.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.FmrnMId.hints.precision}"
-                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" disabled="true">
+                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.FmrnMId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmrnMId.format}"/>
                   </af:inputText>
                   <af:inputDate value="#{bindings.FmrnMDate.inputValue}" label="Transaction Date"
                                 required="#{bindings.FmrnMDate.hints.mandatory}"
                                 columns="20"
-                                shortDesc="#{bindings.FmrnMDate.hints.tooltip}" id="id1">
+                                shortDesc="#{bindings.FmrnMDate.hints.tooltip}" id="id1" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.FmrnMDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.FmrnMDate.format}"/>
                   </af:inputDate>
                   <af:spacer id="s6"/>
                   <af:selectOneChoice value="#{bindings.Status.inputValue}" label="Status"
                                       required="#{bindings.Status.hints.mandatory}"
-                                      shortDesc="#{bindings.Status.hints.tooltip}" id="soc1">
+                                      shortDesc="#{bindings.Status.hints.tooltip}" id="soc1" contentStyle='text-align: center'>
                     <f:selectItems value="#{bindings.Status.items}" id="si1"/>
                     <f:validator binding="#{bindings.Status.validator}"/>
                   </af:selectOneChoice>
@@ -175,7 +175,7 @@
                   <af:spacer  id="s8"/>
                   <af:selectOneChoice value="#{bindings.VendorId.inputValue}" label="Vendor"
                                       required="#{bindings.VendorId.hints.mandatory}"
-                                      shortDesc="#{bindings.VendorId.hints.tooltip}" id="soc7" readOnly="true">
+                                      shortDesc="#{bindings.VendorId.hints.tooltip}" id="soc7" disabled="true">
                     <f:selectItems value="#{bindings.VendorId.items}" id="si7"/>
                     <f:validator binding="#{bindings.VendorId.validator}"/>
                   </af:selectOneChoice>
@@ -189,7 +189,7 @@
                   <af:spacer  id="s11"/>
                   <af:selectOneChoice value="#{bindings.LocationId.inputValue}" label="Location"
                                       required="#{bindings.LocationId.hints.mandatory}"
-                                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc9" readOnly="true">
+                                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc9" disabled="true">
                     <f:selectItems value="#{bindings.LocationId.items}" id="si9"/>
                     <f:validator binding="#{bindings.LocationId.validator}"/>
                   </af:selectOneChoice>
@@ -212,14 +212,14 @@
                                 required="#{bindings.BatchNo.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.BatchNo.hints.precision}"
-                                shortDesc="#{bindings.BatchNo.hints.tooltip}" id="it2">
+                                shortDesc="#{bindings.BatchNo.hints.tooltip}" id="it2" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.BatchNo.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.CreditDays.inputValue}" label="Credit Days"
                                 required="#{bindings.CreditDays.hints.mandatory}"
                                 columns="10"
                                 maximumLength="#{bindings.CreditDays.hints.precision}"
-                                shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46">
+                                shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.CreditDays.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.CreditDays.format}"/>
                   </af:inputText>
@@ -227,14 +227,14 @@
                                 label="Dispatch Date"
                                 required="#{bindings.FmrnMDispDate.hints.mandatory}"
                                 columns="20"
-                                shortDesc="#{bindings.FmrnMDispDate.hints.tooltip}" id="id2">
+                                shortDesc="#{bindings.FmrnMDispDate.hints.tooltip}" id="id2" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.FmrnMDispDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.FmrnMDispDate.format}"/>
                   </af:inputDate>
                   <af:inputDate value="#{bindings.FmrnMRecDate.inputValue}" label="Recieved Date"
                                 required="#{bindings.FmrnMRecDate.hints.mandatory}"
                                 columns="20"
-                                shortDesc="#{bindings.FmrnMRecDate.hints.tooltip}" id="id3">
+                                shortDesc="#{bindings.FmrnMRecDate.hints.tooltip}" id="id3" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.FmrnMRecDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.FmrnMRecDate.format}"/>
                   </af:inputDate>
@@ -242,17 +242,25 @@
                                 required="#{bindings.InvoiceNo.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.InvoiceNo.hints.precision}"
-                                shortDesc="#{bindings.InvoiceNo.hints.tooltip}" id="it3">
+                                shortDesc="#{bindings.InvoiceNo.hints.tooltip}" id="it3" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.InvoiceNo.validator}"/>
                   </af:inputText>
-                            <af:inputText value="#{bindings.InvoiceDate.inputValue}"
-                                          label="Invoice Date"
+                            <af:inputDate value="#{bindings.InvoiceDate.inputValue}"
                                           required="#{bindings.InvoiceDate.hints.mandatory}"
                                           columns="#{bindings.InvoiceDate.hints.displayWidth}"
-                                          maximumLength="#{bindings.InvoiceDate.hints.precision}"
-                                          shortDesc="#{bindings.InvoiceDate.hints.tooltip}" id="it20">
+                                          shortDesc="#{bindings.InvoiceDate.hints.tooltip}" id="id5" contentStyle='text-align: center'
+                                          label="Invoice Date">
                               <f:validator binding="#{bindings.InvoiceDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.InvoiceDate.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.DeliveryNo.inputValue}"
+                                          label="Delivery No."
+                                          required="#{bindings.DeliveryNo.hints.mandatory}"
+                                          columns="#{bindings.DeliveryNo.hints.displayWidth}"
+                                          maximumLength="#{bindings.DeliveryNo.hints.precision}"
+                                          shortDesc="#{bindings.DeliveryNo.hints.tooltip}" id="it20" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.DeliveryNo.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.DeliveryNo.format}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.FmrnRemarks.inputValue}" label="Remarks"
                                 required="#{bindings.FmrnRemarks.hints.mandatory}"
@@ -265,49 +273,49 @@
                                 required="#{bindings.VehicleNo.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.VehicleNo.hints.precision}"
-                                shortDesc="#{bindings.VehicleNo.hints.tooltip}" id="it6">
+                                shortDesc="#{bindings.VehicleNo.hints.tooltip}" id="it6" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VehicleNo.validator}"/>
                   </af:inputText>
                    <af:inputText value="#{bindings.VendorGrossWeight.inputValue}"
-                                label="Vendor Gross Weight"
+                                label="Fuel Supplier Gross Weight"
                                 required="#{bindings.VendorGrossWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.VendorGrossWeight.hints.precision}"
-                                shortDesc="#{bindings.VendorGrossWeight.hints.tooltip}" id="it24">
+                                shortDesc="#{bindings.VendorGrossWeight.hints.tooltip}" id="it24" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VendorGrossWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorGrossWeight.format}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.VendorTearWeight.inputValue}"
-                                label="Vendor Tare Weight"
+                                label="Fuel Supplier Tare Weight"
                                 required="#{bindings.VendorTearWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.VendorTearWeight.hints.precision}"
-                                shortDesc="#{bindings.VendorTearWeight.hints.tooltip}" id="it39">
+                                shortDesc="#{bindings.VendorTearWeight.hints.tooltip}" id="it39" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VendorTearWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorTearWeight.format}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.VendorNetWeight.inputValue}"
-                                label="Vendor Net Weight"
+                                label="Fuel Supplier Net Weight"
                                 required="#{bindings.VendorNetWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.VendorNetWeight.hints.precision}"
-                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44" disabled="true">
+                                shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VendorNetWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.VendorNetWeight.format}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.GrossWeight.inputValue}" label="Gross Weight"
+                  <af:inputText value="#{bindings.GrossWeight.inputValue}" label="APL Gross Weight"
                                 required="#{bindings.GrossWeight.hints.mandatory}"
                                 columns="#{bindings.GrossWeight.hints.displayWidth}"
                                 maximumLength="#{bindings.GrossWeight.hints.precision}"
-                                shortDesc="#{bindings.GrossWeight.hints.tooltip}" id="it7">
+                                shortDesc="#{bindings.GrossWeight.hints.tooltip}" id="it7" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.GrossWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.GrossWeight.format}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.TearWeight.inputValue}" label="Tare Weight"
+                  <af:inputText value="#{bindings.TearWeight.inputValue}" label="APL Tare Weight"
                                 required="#{bindings.TearWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.TearWeight.hints.precision}"
-                                shortDesc="#{bindings.TearWeight.hints.tooltip}" id="it22">
+                                shortDesc="#{bindings.TearWeight.hints.tooltip}" id="it22" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.TearWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.TearWeight.format}"/>
                   </af:inputText>
@@ -315,17 +323,17 @@
                                 required="#{bindings.NetWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.NetWeight.hints.precision}"
-                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23" disabled="true">
+                                shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.NetWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.NetWeight.format}"/>
                   </af:inputText>
                  
                   <af:inputText value="#{bindings.ShortageWeight.inputValue}"
-                                label="Shortage Weight"
+                                label="APL Shortage "
                                 required="#{bindings.ShortageWeight.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.ShortageWeight.hints.precision}"
-                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45" disabled="true">
+                                shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.ShortageWeight.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageWeight.format}"/>
                   </af:inputText>
@@ -381,8 +389,8 @@
                           filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="true"
-                             sortable="true" headerText="Fuel Receipt Detail ID" id="c8" align="center" width="90">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="false"
+                             sortable="false" headerText="Fuel Receipt Detail ID" id="c8" align="center" width="90">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnDId}"
                                           id="it25" placeholder="Search ID">
@@ -400,8 +408,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnDId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Item" id="c10" sortable="true"
-                             filterable="true" width="195">
+                  <af:column headerText="Item" id="c10" sortable="false"
+                             filterable="false" width="195">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmitemsId}"
                                           id="it26" placeholder="Search Item">
@@ -416,8 +424,8 @@
                       <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnQty.name}" filterable="true"
-                             sortable="true" headerText="Quantity" id="c11" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnQty.name}" filterable="false"
+                             sortable="false" headerText="Quantity" id="c11" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnQty}"
                                           id="it27" placeholder="Search Quantity">
@@ -434,8 +442,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnQty.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnRate.name}" filterable="true"
-                             sortable="true" headerText="Rate" id="c12" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnRate.name}" filterable="false"
+                             sortable="false" headerText="Rate" id="c12" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnRate}"
                                           id="it28" placeholder="Search Rate">
@@ -452,8 +460,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnRate.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGamt.name}" filterable="true"
-                             sortable="true" headerText="Gross Amount" id="c13" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGamt.name}" filterable="false"
+                             sortable="false" headerText="Gross Amount" id="c13" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnGamt}"
                                           id="it29" placeholder="Search Gross Amount">
@@ -470,8 +478,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnGamt.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStPerc.name}" filterable="true"
-                             sortable="true" headerText="Sale Tax Percentage" id="c14" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStPerc.name}" filterable="false"
+                             sortable="false" headerText="Sale Tax Percentage" id="c14" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnStPerc}"
                                           id="it30" placeholder="Search Percentage">
@@ -489,8 +497,8 @@
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnStPerc.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStAmt.name}" filterable="true"
-                             sortable="true" headerText="Sale Tax Amount" id="c15" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStAmt.name}" filterable="false"
+                             sortable="false" headerText="Sale Tax Amount" id="c15" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnStAmt}"
                                           id="it31" placeholder="Search Amount">
@@ -508,8 +516,8 @@
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnStAmt.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.name}" filterable="true"
-                             sortable="true" headerText="Net Amount" id="c16" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.name}" filterable="false"
+                             sortable="false" headerText="Net Amount" id="c16" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnNetAmt}"
                                           id="it32" placeholder="Search Net Amount">

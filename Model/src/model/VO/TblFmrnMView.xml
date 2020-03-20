@@ -481,6 +481,12 @@
     EntityAttrName="InvoiceDate"
     EntityUsage="TblFmrnM"
     AliasName="INVOICE_DATE"/>
+  <ViewAttribute
+    Name="DeliveryNo"
+    PrecisionRule="true"
+    EntityAttrName="DeliveryNo"
+    EntityUsage="TblFmrnM"
+    AliasName="DELIVERY_NO"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmrnMId"/>
   </AttrArray>

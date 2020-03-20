@@ -40,6 +40,10 @@
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Lab_Test_Report_TaskFlow.xml#Lab_Test_Report_TaskFlow@ExecuteWithParams"
           usageId="view_Lab_Test_Report_TaskFlow_Lab_Test_Report_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Lab_Test_Report.jsff" usageId="view_Lab_Test_ReportPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Daily_Consumption_TaskFlow.xml#Daily_Consumption_TaskFlow@ExecuteWithParams"
+          usageId="view_Daily_Consumption_TaskFlow_Daily_Consumption_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Daily_Consumption.jsff"
+          usageId="view_Daily_ConsumptionPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -78,6 +82,9 @@
     <page id="view_Lab_Test_Report_TaskFlow_Lab_Test_Report_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Lab_Test_Report_TaskFlow_Lab_Test_Report_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Lab_Test_ReportPageDef" path="Fragments.Modules.Fuel_Management.Lab_Test_ReportPageDef"/>
+    <page id="view_Daily_Consumption_TaskFlow_Daily_Consumption_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fuel_Management.Daily_Consumption_TaskFlow_Daily_Consumption_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Daily_ConsumptionPageDef" path="Fragments.Modules.Fuel_Management.Daily_ConsumptionPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"

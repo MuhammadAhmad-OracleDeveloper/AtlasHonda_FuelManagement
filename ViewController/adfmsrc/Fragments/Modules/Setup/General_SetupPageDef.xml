@@ -122,6 +122,7 @@
           <Item Value="MinValue"/>
           <Item Value="MaxValue"/>
           <Item Value="Remarks"/>
+          <Item Value="UomId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

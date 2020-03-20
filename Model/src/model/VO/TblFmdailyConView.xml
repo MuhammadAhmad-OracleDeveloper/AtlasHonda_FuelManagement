@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblFmlabtestView"
+  Name="TblFmdailyConView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,75 +14,72 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Active_LOV1"
-    ViewObjectName="model.LOV.Active_LOV"
+    Name="Tanks_Name_LOV1"
+    ViewObjectName="model.LOV.Tanks_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Unit_of_Measurement_LOV1"
-    ViewObjectName="model.LOV.Unit_of_Measurement_LOV"
+    Name="Item_LOV1"
+    ViewObjectName="model.LOV.Item_LOV"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_Ast"
-    ListVOName="Active_LOV1"
+    Name="LOV_FmtanksId"
+    ListVOName="Tanks_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="Ast"/>
+      <Item Value="FmtanksId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="DBView"/>
+      <Item Value="FmtanksId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="StatusView"/>
+      <Item Value="FmtanksName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_UomId"
-    ListVOName="Unit_of_Measurement_LOV1"
+    Name="LOV_FmitemsId"
+    ListVOName="Item_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="UomId"/>
+      <Item Value="FmitemsId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="FmuomId"/>
+      <Item Value="FmitemsId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FmuomName"/>
+      <Item Value="FmitemsName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblFmlabtest"
-    Entity="model.EO.TblFmlabtest"/>
+    Name="TblFmdailyCon"
+    Entity="model.EO.TblFmdailyCon"/>
   <ViewAttribute
-    Name="FmlabtestId"
+    Name="FmdailyConId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="FmlabtestId"
-    EntityUsage="TblFmlabtest"
-    AliasName="FMLABTEST_ID"/>
+    EntityAttrName="FmdailyConId"
+    EntityUsage="TblFmdailyCon"
+    AliasName="FMDAILY_CON_ID"/>
   <ViewAttribute
-    Name="FmlabtestName"
-    IsUnique="true"
-    IsNotNull="true"
+    Name="FmreadingDate"
     PrecisionRule="true"
-    EntityAttrName="FmlabtestName"
-    EntityUsage="TblFmlabtest"
-    AliasName="FMLABTEST_NAME"/>
+    EntityAttrName="FmreadingDate"
+    EntityUsage="TblFmdailyCon"
+    AliasName="FMREADING_DATE"/>
   <ViewAttribute
-    Name="Ast"
-    IsNotNull="true"
+    Name="FmtanksId"
     PrecisionRule="true"
-    EntityAttrName="Ast"
-    EntityUsage="TblFmlabtest"
-    AliasName="AST"
-    LOVName="LOV_Ast">
+    EntityAttrName="FmtanksId"
+    EntityUsage="TblFmdailyCon"
+    AliasName="FMTANKS_ID"
+    LOVName="LOV_FmtanksId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -91,30 +88,12 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="MaxValue"
+    Name="FmitemsId"
     PrecisionRule="true"
-    EntityAttrName="MaxValue"
-    EntityUsage="TblFmlabtest"
-    AliasName="MAX_VALUE"/>
-  <ViewAttribute
-    Name="MinValue"
-    PrecisionRule="true"
-    EntityAttrName="MinValue"
-    EntityUsage="TblFmlabtest"
-    AliasName="MIN_VALUE"/>
-  <ViewAttribute
-    Name="Remarks"
-    PrecisionRule="true"
-    EntityAttrName="Remarks"
-    EntityUsage="TblFmlabtest"
-    AliasName="REMARKS"/>
-  <ViewAttribute
-    Name="UomId"
-    PrecisionRule="true"
-    EntityAttrName="UomId"
-    EntityUsage="TblFmlabtest"
-    AliasName="UOM_ID"
-    LOVName="LOV_UomId">
+    EntityAttrName="FmitemsId"
+    EntityUsage="TblFmdailyCon"
+    AliasName="FMITEMS_ID"
+    LOVName="LOV_FmitemsId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -122,4 +101,16 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="DipValue"
+    PrecisionRule="true"
+    EntityAttrName="DipValue"
+    EntityUsage="TblFmdailyCon"
+    AliasName="DIP_VALUE"/>
+  <ViewAttribute
+    Name="MeterRead"
+    PrecisionRule="true"
+    EntityAttrName="MeterRead"
+    EntityUsage="TblFmdailyCon"
+    AliasName="METER_READ"/>
 </ViewObject>
