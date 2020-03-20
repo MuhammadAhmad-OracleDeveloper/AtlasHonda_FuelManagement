@@ -96,6 +96,79 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3">
+                        <af:showDetailItem id="tab3" text="Lab Test Report Master">
+                          <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.FmlabTestRepMId.inputValue}"
+                                          label="Report Master ID"
+                                          required="#{bindings.FmlabTestRepMId.hints.mandatory}"
+                                          columns="#{bindings.FmlabTestRepMId.hints.displayWidth}"
+                                          maximumLength="#{bindings.FmlabTestRepMId.hints.precision}"
+                                          shortDesc="#{bindings.FmlabTestRepMId.hints.tooltip}" id="it3"
+                                           disabled="true" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.FmlabTestRepMId.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.FmlabTestRepMId.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FmreportDate.inputValue}"
+                                          label="Report Date"
+                                          required="#{bindings.FmreportDate.hints.mandatory}"
+                                          columns="#{bindings.FmreportDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.FmreportDate.hints.tooltip}" id="id3"
+                                          contentStyle="width:200px;">
+                              <f:validator binding="#{bindings.FmreportDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.FmreportDate.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.FmgatePass.inputValue}"
+                                          label="Gate Pass"
+                                          required="#{bindings.FmgatePass.hints.mandatory}"
+                                          columns="#{bindings.FmgatePass.hints.displayWidth}"
+                                          maximumLength="#{bindings.FmgatePass.hints.precision}"
+                                          shortDesc="#{bindings.FmgatePass.hints.tooltip}" id="it5"
+                                          contentStyle="width:200px;">
+                              <f:validator binding="#{bindings.FmgatePass.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.FmvendorsId1.inputValue}"
+                                                label="Vendor"
+                                                required="#{bindings.FmvendorsId1.hints.mandatory}"
+                                                shortDesc="#{bindings.FmvendorsId1.hints.tooltip}" id="soc3"
+                                                contentStyle="width:200px;" >
+                              <f:selectItems value="#{bindings.FmvendorsId1.items}" id="si3"/>
+                              <f:validator binding="#{bindings.FmvendorsId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s8"/>
+                            <af:selectOneChoice value="#{bindings.FmlocationId1.inputValue}"
+                                                label="Location"
+                                                required="#{bindings.FmlocationId1.hints.mandatory}"
+                                                shortDesc="#{bindings.FmlocationId1.hints.tooltip}" id="soc5"
+                                                contentStyle="width:200px;" >
+                              <f:selectItems value="#{bindings.FmlocationId1.items}" id="si5"/>
+                              <f:validator binding="#{bindings.FmlocationId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.FmitemsId1.inputValue}"
+                                                label="Item"
+                                                required="#{bindings.FmitemsId1.hints.mandatory}"
+                                                shortDesc="#{bindings.FmitemsId1.hints.tooltip}" id="soc6"
+                                                contentStyle="width:200px;" >
+                              <f:selectItems value="#{bindings.FmitemsId1.items}" id="si6"/>
+                              <f:validator binding="#{bindings.FmitemsId1.validator}"/>
+                            </af:selectOneChoice>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" id="pgl6">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                                
+                                           
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                        </af:showDetailItem> 
                         <af:showDetailItem id="tab3" text="Batch Report Master">
 
                           <af:table value="#{bindings.TblFmlabTestRepMView1.collectionModel}" var="row"
