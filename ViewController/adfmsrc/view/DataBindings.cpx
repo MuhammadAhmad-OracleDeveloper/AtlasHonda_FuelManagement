@@ -46,6 +46,8 @@
           usageId="view_Daily_ConsumptionPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Engine_Consumption_TaskFlow.xml#Engine_Consumption_TaskFlow@ExecuteWithParams"
           usageId="view_Engine_Consumption_TaskFlow_Engine_Consumption_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Engine_Consumption.jsff"
+          usageId="view_Engine_ConsumptionPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -89,6 +91,7 @@
     <page id="view_Daily_ConsumptionPageDef" path="Fragments.Modules.Fuel_Management.Daily_ConsumptionPageDef"/>
     <page id="view_Engine_Consumption_TaskFlow_Engine_Consumption_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Engine_Consumption_TaskFlow_Engine_Consumption_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Engine_ConsumptionPageDef" path="Fragments.Modules.Fuel_Management.Engine_ConsumptionPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
