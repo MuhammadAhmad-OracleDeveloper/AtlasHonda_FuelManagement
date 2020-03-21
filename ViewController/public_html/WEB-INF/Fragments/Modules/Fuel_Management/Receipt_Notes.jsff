@@ -170,6 +170,7 @@
                   <af:spacer width="10" height="0" id="s7"/>
                   <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
                                       shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2"
+                                      autoSubmit="true"
                                       contentStyle="width:200px;">
                     <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
                     <f:validator binding="#{bindings.FmpoMId.validator}"/>
@@ -224,6 +225,7 @@
                             <af:spacer width="10" height="0" id="s34"/>
                             <af:selectOneChoice value="#{bindings.BatchNo1.inputValue}"
                                                 label="Batch No."
+                                                
                                                 required="#{bindings.BatchNo1.hints.mandatory}"
                                                 shortDesc="#{bindings.BatchNo1.hints.tooltip}" id="soc12">
                               <f:selectItems value="#{bindings.BatchNo1.items}" id="si12"/>

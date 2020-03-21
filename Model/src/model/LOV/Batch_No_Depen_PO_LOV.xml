@@ -21,7 +21,8 @@
   <Variable
     Name="getFMPOMID"
     Kind="where"
-    Type="java.math.BigDecimal"/>
+    Type="java.math.BigDecimal"
+    IsUpdateable="true"/>
   <SQLQuery><![CDATA[select     
 tftrm.FMBATCH_NO,    
 tftrm.fmreport_date,    
