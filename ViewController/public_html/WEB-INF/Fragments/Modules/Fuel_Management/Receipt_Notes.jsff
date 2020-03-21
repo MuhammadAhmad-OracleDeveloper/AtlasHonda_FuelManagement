@@ -29,7 +29,8 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmrnMView11.rangeSize}"
                           filterModel="#{bindings.TblFmrnMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t3"
-                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4 ::b5">
+                          scrollPolicy="page" autoHeightRows="0"
+                          partialTriggers="::b2 ::b3 ::b4 ::b5 ::b6 ::b7 ::b8 ::b9">
                   <af:column sortProperty="#{bindings.TblFmrnMView11.hints.FmrnMId.name}" filterable="true"
                              sortable="true" headerText="Receipt Notes Master ID" id="c19" align="center">
                              <f:facet name="filter">
@@ -147,7 +148,7 @@
                                 required="#{bindings.FmrnMId.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.FmrnMId.hints.precision}"
-                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" disabled="true" contentStyle='text-align: center'>
+                                shortDesc="#{bindings.FmrnMId.hints.tooltip}" id="it1" autoSubmit="true" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.FmrnMId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmrnMId.format}"/>
                   </af:inputText>
@@ -208,14 +209,14 @@
                     <f:selectItems value="#{bindings.CarrierId.items}" id="si11"/>
                     <f:validator binding="#{bindings.CarrierId.validator}"/>
                   </af:selectOneChoice>
-                  <af:inputText value="#{bindings.BatchNo.inputValue}" label="Batch No."
-                                required="#{bindings.BatchNo.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.BatchNo.hints.precision}"
-                                shortDesc="#{bindings.BatchNo.hints.tooltip}" id="it2" contentStyle='text-align: center'>
-                    <f:validator binding="#{bindings.BatchNo.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.CreditDays.inputValue}" label="Credit Days"
+                            <af:selectOneChoice value="#{bindings.BatchNo1.inputValue}"
+                                                label="Batch No."
+                                                required="#{bindings.BatchNo1.hints.mandatory}"
+                                                shortDesc="#{bindings.BatchNo1.hints.tooltip}" id="soc12">
+                              <f:selectItems value="#{bindings.BatchNo1.items}" id="si12"/>
+                              <f:validator binding="#{bindings.BatchNo1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:inputText value="#{bindings.CreditDays.inputValue}" label="Credit Days"
                                 required="#{bindings.CreditDays.hints.mandatory}"
                                 columns="10"
                                 maximumLength="#{bindings.CreditDays.hints.precision}"
@@ -276,7 +277,10 @@
                                 shortDesc="#{bindings.VehicleNo.hints.tooltip}" id="it6" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VehicleNo.validator}"/>
                   </af:inputText>
-                   <af:inputText value="#{bindings.VendorGrossWeight.inputValue}"
+                            <af:panelGroupLayout id="pgl8">
+                              
+                            </af:panelGroupLayout>
+                            <af:inputText value="#{bindings.VendorGrossWeight.inputValue}"
                                 label="Fuel Supplier Gross Weight"
                                 required="#{bindings.VendorGrossWeight.hints.mandatory}"
                                 columns="20"
@@ -644,7 +648,7 @@
                             </af:iterator>
                         </af:panelGroupLayout>
                  </af:showDetailItem>
-                        <af:showDetailItem text="Dip" id="sdi2">
+                        <af:showDetailItem text="DIP Info" id="sdi2">
                          
                                   <af:table value="#{bindings.TblFmrnDView41.collectionModel}" var="row"
                                 rows="#{bindings.TblFmrnDView41.rangeSize}"
@@ -779,7 +783,242 @@
                             </af:iterator>
                         </af:panelGroupLayout>
                                 </af:showDetailItem>
-                              </af:panelTabbed>
+                        <af:showDetailItem text="DIP Shortage" id="sdi3">
+                          <af:panelFormLayout id="pfl2" maxColumns="4" rows="6">
+                            <af:inputText value="#{bindings.InvTempCel.inputValue}"
+                                          label="#{bindings.InvTempCel.hints.label}"
+                                          required="#{bindings.InvTempCel.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvTempCel.hints.precision}"
+                                          shortDesc="#{bindings.InvTempCel.hints.tooltip}" id="it2">
+                              <f:validator binding="#{bindings.InvTempCel.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTempCel.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvTempFr.inputValue}"
+                                          label="#{bindings.InvTempFr.hints.label}"
+                                          required="#{bindings.InvTempFr.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvTempFr.hints.precision}"
+                                          shortDesc="#{bindings.InvTempFr.hints.tooltip}" id="it21">
+                              <f:validator binding="#{bindings.InvTempFr.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTempFr.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvDensity.inputValue}"
+                                          label="#{bindings.InvDensity.hints.label}"
+                                          required="#{bindings.InvDensity.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvDensity.hints.precision}"
+                                          shortDesc="#{bindings.InvDensity.hints.tooltip}" id="it33">
+                              <f:validator binding="#{bindings.InvDensity.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvDensity.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.PhyTempCel.inputValue}"
+                                          label="#{bindings.PhyTempCel.hints.label}"
+                                          required="#{bindings.PhyTempCel.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.PhyTempCel.hints.precision}"
+                                          shortDesc="#{bindings.PhyTempCel.hints.tooltip}" id="it36">
+                              <f:validator binding="#{bindings.PhyTempCel.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.PhyTempCel.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.PhyTempFr.inputValue}"
+                                          label="#{bindings.PhyTempFr.hints.label}"
+                                          required="#{bindings.PhyTempFr.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.PhyTempFr.hints.precision}"
+                                          shortDesc="#{bindings.PhyTempFr.hints.tooltip}" id="it37">
+                              <f:validator binding="#{bindings.PhyTempFr.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.PhyTempFr.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.PhyDensity.inputValue}"
+                                          label="#{bindings.PhyDensity.hints.label}"
+                                          required="#{bindings.PhyDensity.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.PhyDensity.hints.precision}"
+                                          shortDesc="#{bindings.PhyDensity.hints.tooltip}" id="it38">
+                              <f:validator binding="#{bindings.PhyDensity.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.PhyDensity.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.WaterPerc.inputValue}"
+                                          label="#{bindings.WaterPerc.hints.label}"
+                                          required="#{bindings.WaterPerc.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.WaterPerc.hints.precision}"
+                                          shortDesc="#{bindings.WaterPerc.hints.tooltip}" id="it53">
+                              <f:validator binding="#{bindings.WaterPerc.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.WaterPerc.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Viscosity.inputValue}"
+                                          label="#{bindings.Viscosity.hints.label}"
+                                          required="#{bindings.Viscosity.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.Viscosity.hints.precision}"
+                                          shortDesc="#{bindings.Viscosity.hints.tooltip}" id="it54">
+                              <f:validator binding="#{bindings.Viscosity.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Viscosity.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvTempDiff.inputValue}"
+                                          label="#{bindings.InvTempDiff.hints.label}"
+                                          required="#{bindings.InvTempDiff.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvTempDiff.hints.precision}"
+                                          shortDesc="#{bindings.InvTempDiff.hints.tooltip}" id="it55">
+                              <f:validator binding="#{bindings.InvTempDiff.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTempDiff.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.VolCorrFactorId.inputValue}"
+                                          label="#{bindings.VolCorrFactorId.hints.label}"
+                                          required="#{bindings.VolCorrFactorId.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.VolCorrFactorId.hints.precision}"
+                                          shortDesc="#{bindings.VolCorrFactorId.hints.tooltip}" id="it56">
+                              <f:validator binding="#{bindings.VolCorrFactorId.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.VolCorrFactorId.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CalorificValue.inputValue}"
+                                          label="#{bindings.CalorificValue.hints.label}"
+                                          required="#{bindings.CalorificValue.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.CalorificValue.hints.precision}"
+                                          shortDesc="#{bindings.CalorificValue.hints.tooltip}" id="it57">
+                              <f:validator binding="#{bindings.CalorificValue.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.CalorificValue.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.DipFuelShort.inputValue}"
+                                          label="#{bindings.DipFuelShort.hints.label}"
+                                          required="#{bindings.DipFuelShort.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.DipFuelShort.hints.precision}"
+                                          shortDesc="#{bindings.DipFuelShort.hints.tooltip}" id="it58">
+                              <f:validator binding="#{bindings.DipFuelShort.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.DipFuelShort.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.TempShortRec.inputValue}"
+                                          label="#{bindings.TempShortRec.hints.label}"
+                                          required="#{bindings.TempShortRec.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.TempShortRec.hints.precision}"
+                                          shortDesc="#{bindings.TempShortRec.hints.tooltip}" id="it59">
+                              <f:validator binding="#{bindings.TempShortRec.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.TempShortRec.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ActualShort.inputValue}"
+                                          label="#{bindings.ActualShort.hints.label}"
+                                          required="#{bindings.ActualShort.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ActualShort.hints.precision}"
+                                          shortDesc="#{bindings.ActualShort.hints.tooltip}" id="it60">
+                              <f:validator binding="#{bindings.ActualShort.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualShort.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvTotalFuelLtr.inputValue}"
+                                          label="#{bindings.InvTotalFuelLtr.hints.label}"
+                                          required="#{bindings.InvTotalFuelLtr.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvTotalFuelLtr.hints.precision}"
+                                          shortDesc="#{bindings.InvTotalFuelLtr.hints.tooltip}" id="it61">
+                              <f:validator binding="#{bindings.InvTotalFuelLtr.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTotalFuelLtr.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ShortageLtr.inputValue}"
+                                          label="#{bindings.ShortageLtr.hints.label}"
+                                          required="#{bindings.ShortageLtr.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ShortageLtr.hints.precision}"
+                                          shortDesc="#{bindings.ShortageLtr.hints.tooltip}" id="it62">
+                              <f:validator binding="#{bindings.ShortageLtr.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageLtr.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ActualFuelRecLtr.inputValue}"
+                                          label="#{bindings.ActualFuelRecLtr.hints.label}"
+                                          required="#{bindings.ActualFuelRecLtr.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ActualFuelRecLtr.hints.precision}"
+                                          shortDesc="#{bindings.ActualFuelRecLtr.hints.tooltip}" id="it63">
+                              <f:validator binding="#{bindings.ActualFuelRecLtr.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualFuelRecLtr.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvTotalFuelKg.inputValue}"
+                                          label="#{bindings.InvTotalFuelKg.hints.label}"
+                                          required="#{bindings.InvTotalFuelKg.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvTotalFuelKg.hints.precision}"
+                                          shortDesc="#{bindings.InvTotalFuelKg.hints.tooltip}" id="it64">
+                              <f:validator binding="#{bindings.InvTotalFuelKg.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTotalFuelKg.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ShortageKg.inputValue}"
+                                          label="#{bindings.ShortageKg.hints.label}"
+                                          required="#{bindings.ShortageKg.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ShortageKg.hints.precision}"
+                                          shortDesc="#{bindings.ShortageKg.hints.tooltip}" id="it65">
+                              <f:validator binding="#{bindings.ShortageKg.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageKg.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ActualFuelRecTon.inputValue}"
+                                          label="#{bindings.ActualFuelRecTon.hints.label}"
+                                          required="#{bindings.ActualFuelRecTon.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ActualFuelRecTon.hints.precision}"
+                                          shortDesc="#{bindings.ActualFuelRecTon.hints.tooltip}" id="it66">
+                              <f:validator binding="#{bindings.ActualFuelRecTon.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualFuelRecTon.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvTotalFuelTon.inputValue}"
+                                          label="#{bindings.InvTotalFuelTon.hints.label}"
+                                          required="#{bindings.InvTotalFuelTon.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.InvTotalFuelTon.hints.precision}"
+                                          shortDesc="#{bindings.InvTotalFuelTon.hints.tooltip}" id="it67">
+                              <f:validator binding="#{bindings.InvTotalFuelTon.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTotalFuelTon.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ActualFuelWeighTon.inputValue}"
+                                          label="#{bindings.ActualFuelWeighTon.hints.label}"
+                                          required="#{bindings.ActualFuelWeighTon.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ActualFuelWeighTon.hints.precision}"
+                                          shortDesc="#{bindings.ActualFuelWeighTon.hints.tooltip}" id="it68">
+                              <f:validator binding="#{bindings.ActualFuelWeighTon.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualFuelWeighTon.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ShortageTon.inputValue}"
+                                          label="#{bindings.ShortageTon.hints.label}"
+                                          required="#{bindings.ShortageTon.hints.mandatory}"
+                                          columns="10"
+                                          maximumLength="#{bindings.ShortageTon.hints.precision}"
+                                          shortDesc="#{bindings.ShortageTon.hints.tooltip}" id="it69">
+                              <f:validator binding="#{bindings.ShortageTon.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageTon.format}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" id="pgl9">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b7"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b8"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b9"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                          <af:spacer width="10" height="20" id="s16"/>
+                          <af:panelGroupLayout id="pgl10" layout="horizontal">
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s17"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
                           
                       
                       
@@ -817,6 +1056,7 @@
         </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
+    
   </af:panelAccordion>
 </ui:composition>
 

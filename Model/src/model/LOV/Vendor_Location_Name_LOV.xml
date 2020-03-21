@@ -22,20 +22,20 @@
     Name="getvendorID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[SELECT     
-    TBL_FMVENDORS_LOCATION.FMVENDORS_LOCATION_ID FMVENDORS_LOCATION_ID,     
-    TBL_FMVENDORS_LOCATION.FMVENDORS_ID FMVENDORS_ID,     
-        
-    TBL_FMVENDORS.FMVENDORS_NAME FMVENDORS_NAME,     
-    TBL_FMVENDORS.AST AST,     
-    TBL_FMLOCATION.FMLOCATION_NAME FMLOCATION_NAME     
-FROM     
-    TBL_FMVENDORS_LOCATION,     
-    TBL_FMVENDORS,     
-    TBL_FMLOCATION    
-    Where TBL_FMVENDORS_LOCATION.FMVENDORS_ID=TBL_FMVENDORS.FMVENDORS_ID    
-    And TBL_FMVENDORS_LOCATION.FMLOCATION_ID=TBL_FMLOCATION.FMLOCATION_ID    
-    And TBL_FMVENDORS.Ast='Y'   
+  <SQLQuery><![CDATA[SELECT       
+    TBL_FMVENDORS_LOCATION.FMVENDORS_LOCATION_ID FMVENDORS_LOCATION_ID,       
+    TBL_FMVENDORS_LOCATION.FMVENDORS_ID FMVENDORS_ID,       
+    TBL_FMLOCATION.FMLOCATION_ID FMLOCATION_ID,    
+    TBL_FMVENDORS.FMVENDORS_NAME FMVENDORS_NAME,       
+    TBL_FMVENDORS.AST AST,       
+    TBL_FMLOCATION.FMLOCATION_NAME FMLOCATION_NAME       
+FROM       
+    TBL_FMVENDORS_LOCATION,       
+    TBL_FMVENDORS,       
+    TBL_FMLOCATION      
+    Where TBL_FMVENDORS_LOCATION.FMVENDORS_ID=TBL_FMVENDORS.FMVENDORS_ID      
+    And TBL_FMVENDORS_LOCATION.FMLOCATION_ID=TBL_FMLOCATION.FMLOCATION_ID      
+    And TBL_FMVENDORS.Ast='Y'     
     AND TBL_FMVENDORS_LOCATION.FMVENDORS_ID = :getvendorID]]></SQLQuery>
   <ViewAttribute
     Name="FmvendorsLocationId"
@@ -56,6 +56,16 @@ FROM
     ColumnType="NUMBER"
     AliasName="FMVENDORS_ID"
     Expression="FMVENDORS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmlocationId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMLOCATION_ID"
+    Expression="FMLOCATION_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
     Name="FmvendorsName"
@@ -82,7 +92,7 @@ FROM
     ColumnType="CHAR"
     AliasName="AST"
     Expression="AST"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

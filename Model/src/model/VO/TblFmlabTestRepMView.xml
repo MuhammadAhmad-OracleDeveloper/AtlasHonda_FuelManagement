@@ -84,7 +84,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="FmvendorsLocationId"/>
+      <Item Value="FmlocationId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmlocationName"/>

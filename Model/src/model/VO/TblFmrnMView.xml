@@ -49,6 +49,18 @@
     Name="Item_LOV1"
     ViewObjectName="model.LOV.Item_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Batch_No_Depen_PO_LOV1"
+    ViewObjectName="model.LOV.Batch_No_Depen_PO_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getFMPOMID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[FmpoMId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_FmpoMId"
     ListVOName="Purchase_Order_LOV1"
@@ -218,6 +230,25 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_BatchNo"
+    ListVOName="Batch_No_Depen_PO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BatchNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmbatchNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmbatchNo"/>
+      <Item Value="FmreportDate"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmrnM"
     Entity="model.EO.TblFmrnM"/>
@@ -304,7 +335,15 @@
     PrecisionRule="true"
     EntityAttrName="BatchNo"
     EntityUsage="TblFmrnM"
-    AliasName="BATCH_NO"/>
+    AliasName="BATCH_NO"
+    LOVName="LOV_BatchNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreditDays"
     PrecisionRule="true"
@@ -487,6 +526,144 @@
     EntityAttrName="DeliveryNo"
     EntityUsage="TblFmrnM"
     AliasName="DELIVERY_NO"/>
+  <ViewAttribute
+    Name="ActualFuelRecLtr"
+    PrecisionRule="true"
+    EntityAttrName="ActualFuelRecLtr"
+    EntityUsage="TblFmrnM"
+    AliasName="ACTUAL_FUEL_REC_LTR"/>
+  <ViewAttribute
+    Name="ActualFuelRecTon"
+    PrecisionRule="true"
+    EntityAttrName="ActualFuelRecTon"
+    EntityUsage="TblFmrnM"
+    AliasName="ACTUAL_FUEL_REC_TON"/>
+  <ViewAttribute
+    Name="ActualFuelWeighTon"
+    PrecisionRule="true"
+    EntityAttrName="ActualFuelWeighTon"
+    EntityUsage="TblFmrnM"
+    AliasName="ACTUAL_FUEL_WEIGH_TON"/>
+  <ViewAttribute
+    Name="ActualShort"
+    PrecisionRule="true"
+    EntityAttrName="ActualShort"
+    EntityUsage="TblFmrnM"
+    AliasName="ACTUAL_SHORT"/>
+  <ViewAttribute
+    Name="CalorificValue"
+    PrecisionRule="true"
+    EntityAttrName="CalorificValue"
+    EntityUsage="TblFmrnM"
+    AliasName="CALORIFIC_VALUE"/>
+  <ViewAttribute
+    Name="DipFuelShort"
+    PrecisionRule="true"
+    EntityAttrName="DipFuelShort"
+    EntityUsage="TblFmrnM"
+    AliasName="DIP_FUEL_SHORT"/>
+  <ViewAttribute
+    Name="InvDensity"
+    PrecisionRule="true"
+    EntityAttrName="InvDensity"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_DENSITY"/>
+  <ViewAttribute
+    Name="InvTempCel"
+    PrecisionRule="true"
+    EntityAttrName="InvTempCel"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_TEMP_CEL"/>
+  <ViewAttribute
+    Name="InvTempDiff"
+    PrecisionRule="true"
+    EntityAttrName="InvTempDiff"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_TEMP_DIFF"/>
+  <ViewAttribute
+    Name="InvTempFr"
+    PrecisionRule="true"
+    EntityAttrName="InvTempFr"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_TEMP_FR"/>
+  <ViewAttribute
+    Name="InvTotalFuelKg"
+    PrecisionRule="true"
+    EntityAttrName="InvTotalFuelKg"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_TOTAL_FUEL_KG"/>
+  <ViewAttribute
+    Name="InvTotalFuelLtr"
+    PrecisionRule="true"
+    EntityAttrName="InvTotalFuelLtr"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_TOTAL_FUEL_LTR"/>
+  <ViewAttribute
+    Name="InvTotalFuelTon"
+    PrecisionRule="true"
+    EntityAttrName="InvTotalFuelTon"
+    EntityUsage="TblFmrnM"
+    AliasName="INV_TOTAL_FUEL_TON"/>
+  <ViewAttribute
+    Name="PhyDensity"
+    PrecisionRule="true"
+    EntityAttrName="PhyDensity"
+    EntityUsage="TblFmrnM"
+    AliasName="PHY_DENSITY"/>
+  <ViewAttribute
+    Name="PhyTempCel"
+    PrecisionRule="true"
+    EntityAttrName="PhyTempCel"
+    EntityUsage="TblFmrnM"
+    AliasName="PHY_TEMP_CEL"/>
+  <ViewAttribute
+    Name="PhyTempFr"
+    PrecisionRule="true"
+    EntityAttrName="PhyTempFr"
+    EntityUsage="TblFmrnM"
+    AliasName="PHY_TEMP_FR"/>
+  <ViewAttribute
+    Name="ShortageKg"
+    PrecisionRule="true"
+    EntityAttrName="ShortageKg"
+    EntityUsage="TblFmrnM"
+    AliasName="SHORTAGE_KG"/>
+  <ViewAttribute
+    Name="ShortageLtr"
+    PrecisionRule="true"
+    EntityAttrName="ShortageLtr"
+    EntityUsage="TblFmrnM"
+    AliasName="SHORTAGE_LTR"/>
+  <ViewAttribute
+    Name="ShortageTon"
+    PrecisionRule="true"
+    EntityAttrName="ShortageTon"
+    EntityUsage="TblFmrnM"
+    AliasName="SHORTAGE_TON"/>
+  <ViewAttribute
+    Name="TempShortRec"
+    PrecisionRule="true"
+    EntityAttrName="TempShortRec"
+    EntityUsage="TblFmrnM"
+    AliasName="TEMP_SHORT_REC"/>
+  <ViewAttribute
+    Name="WaterPerc"
+    PrecisionRule="true"
+    EntityAttrName="WaterPerc"
+    EntityUsage="TblFmrnM"
+    AliasName="WATER_PERC"/>
+  <ViewAttribute
+    Name="VolCorrFactorId"
+    PrecisionRule="true"
+    EntityAttrName="VolCorrFactorId"
+    EntityUsage="TblFmrnM"
+    AliasName="VOL_CORR_FACTOR_ID"/>
+  <ViewAttribute
+    Name="Viscosity"
+    PrecisionRule="true"
+    EntityAttrName="Viscosity"
+    EntityUsage="TblFmrnM"
+    AliasName="VISCOSITY"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmrnMId"/>
   </AttrArray>
