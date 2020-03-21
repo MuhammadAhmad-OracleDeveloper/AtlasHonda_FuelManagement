@@ -122,6 +122,12 @@
     EntityAttrName="FmreordLvl"
     EntityUsage="TblFmitems"
     AliasName="FMREORD_LVL"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblFmitems"
+    AliasName="REMARKS"/>
   <ViewLinkAccessor
     Name="TblFmpoDView"
     ViewLink="model.VO.FkFmpoDItemsLink"

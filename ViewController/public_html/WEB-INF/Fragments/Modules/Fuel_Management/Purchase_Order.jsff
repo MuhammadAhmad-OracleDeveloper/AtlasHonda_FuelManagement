@@ -176,6 +176,7 @@
                               <f:selectItems value="#{bindings.FmlocationId.items}" id="si6"/>
                               <f:validator binding="#{bindings.FmlocationId.validator}"/>
                             </af:selectOneChoice>
+                            <af:spacer  id="s11"/>
                             <af:selectOneChoice value="#{bindings.FmdocstsId.inputValue}"
                                                 label="Document Status"
                                                 required="#{bindings.FmdocstsId.hints.mandatory}"
@@ -183,14 +184,6 @@
                               <f:selectItems value="#{bindings.FmdocstsId.items}" id="si7"/>
                               <f:validator binding="#{bindings.FmdocstsId.validator}"/>
                             </af:selectOneChoice>
-                            <af:inputText value="#{bindings.FmpoMRemarks.inputValue}"
-                                          label="Remarks"
-                                          required="#{bindings.FmpoMRemarks.hints.mandatory}"
-                                          columns="40"
-                                          maximumLength="#{bindings.FmpoMRemarks.hints.precision}"
-                                          shortDesc="#{bindings.FmpoMRemarks.hints.tooltip}" id="it27">
-                              <f:validator binding="#{bindings.FmpoMRemarks.validator}"/>
-                            </af:inputText>
                             <af:inputText value="#{bindings.FmpoMCrDays.inputValue}"
                                           label="Credit Days"
                                           required="#{bindings.FmpoMCrDays.hints.mandatory}"
@@ -201,9 +194,9 @@
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FmpoMCrDays.format}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.SpecInstr.inputValue}"
-                                          label="Special Instruction"
+                                          label="Special Instructions"
                                           required="#{bindings.SpecInstr.hints.mandatory}"
-                                          columns="20"
+                                          columns="40"
                                           maximumLength="#{bindings.SpecInstr.hints.precision}"
                                           shortDesc="#{bindings.SpecInstr.hints.tooltip}" id="it29">
                               <f:validator binding="#{bindings.SpecInstr.validator}"/>

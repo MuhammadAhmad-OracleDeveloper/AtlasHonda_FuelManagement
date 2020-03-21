@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Lab Test Report">
+    <af:showDetailItem id="pane1" text="Batch Report">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -22,7 +22,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Lab Test  List">
+              <af:showDetailItem id="tab1" text="Batch Report  List">
                 <af:table value="#{bindings.TblFmlabTestRepDView21.collectionModel}" var="row"
                           rows="#{bindings.TblFmlabTestRepDView21.rangeSize}"
                           emptyText="#{bindings.TblFmlabTestRepDView21.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -91,12 +91,85 @@
                   </af:column>
                 </af:table>
               </af:showDetailItem>
-              <af:showDetailItem text="Lab Test Report" id="sdi1">
+              <af:showDetailItem text="Batch Report" id="sdi1">
                 <af:panelGridLayout id="pgl5">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3">
                         <af:showDetailItem id="tab3" text="Lab Test Report Master">
+                          <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.FmlabTestRepMId.inputValue}"
+                                          label="Report Master ID"
+                                          required="#{bindings.FmlabTestRepMId.hints.mandatory}"
+                                          columns="#{bindings.FmlabTestRepMId.hints.displayWidth}"
+                                          maximumLength="#{bindings.FmlabTestRepMId.hints.precision}"
+                                          shortDesc="#{bindings.FmlabTestRepMId.hints.tooltip}" id="it3"
+                                           disabled="true" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.FmlabTestRepMId.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.FmlabTestRepMId.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FmreportDate.inputValue}"
+                                          label="Report Date"
+                                          required="#{bindings.FmreportDate.hints.mandatory}"
+                                          columns="#{bindings.FmreportDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.FmreportDate.hints.tooltip}" id="id3"
+                                          contentStyle="width:200px;">
+                              <f:validator binding="#{bindings.FmreportDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.FmreportDate.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.FmgatePass.inputValue}"
+                                          label="Gate Pass"
+                                          required="#{bindings.FmgatePass.hints.mandatory}"
+                                          columns="#{bindings.FmgatePass.hints.displayWidth}"
+                                          maximumLength="#{bindings.FmgatePass.hints.precision}"
+                                          shortDesc="#{bindings.FmgatePass.hints.tooltip}" id="it5"
+                                          contentStyle="width:200px;">
+                              <f:validator binding="#{bindings.FmgatePass.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.FmvendorsId1.inputValue}"
+                                                label="Vendor"
+                                                required="#{bindings.FmvendorsId1.hints.mandatory}"
+                                                shortDesc="#{bindings.FmvendorsId1.hints.tooltip}" id="soc3"
+                                                contentStyle="width:200px;" >
+                              <f:selectItems value="#{bindings.FmvendorsId1.items}" id="si3"/>
+                              <f:validator binding="#{bindings.FmvendorsId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s8"/>
+                            <af:selectOneChoice value="#{bindings.FmlocationId1.inputValue}"
+                                                label="Location"
+                                                required="#{bindings.FmlocationId1.hints.mandatory}"
+                                                shortDesc="#{bindings.FmlocationId1.hints.tooltip}" id="soc5"
+                                                contentStyle="width:200px;" >
+                              <f:selectItems value="#{bindings.FmlocationId1.items}" id="si5"/>
+                              <f:validator binding="#{bindings.FmlocationId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.FmitemsId1.inputValue}"
+                                                label="Item"
+                                                required="#{bindings.FmitemsId1.hints.mandatory}"
+                                                shortDesc="#{bindings.FmitemsId1.hints.tooltip}" id="soc6"
+                                                contentStyle="width:200px;" >
+                              <f:selectItems value="#{bindings.FmitemsId1.items}" id="si6"/>
+                              <f:validator binding="#{bindings.FmitemsId1.validator}"/>
+                            </af:selectOneChoice>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" id="pgl6">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                                
+                                           
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                        </af:showDetailItem> 
+                        <af:showDetailItem id="tab3" text="Batch Report Master">
 
                           <af:table value="#{bindings.TblFmlabTestRepMView1.collectionModel}" var="row"
                                     rows="#{bindings.TblFmlabTestRepMView1.rangeSize}"
@@ -153,10 +226,10 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmlabTestRepMView1.hints.FmgatePass.name}"
                                        filterable="true" sortable="true"
-                                       headerText="Gate Pass" id="c8" align="center">
+                                       headerText="Report No." id="c8" align="center">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FmgatePass}"
-       id="it9" placeholder="Search Gate Pass">
+       id="it9" placeholder="Search Report No.">
       </af:inputText>
 </f:facet>
                               <af:inputText value="#{row.bindings.FmgatePass.inputValue}"
@@ -165,8 +238,27 @@
                                             columns="#{bindings.TblFmlabTestRepMView1.hints.FmgatePass.displayWidth}"
                                             maximumLength="#{bindings.TblFmlabTestRepMView1.hints.FmgatePass.precision}"
                                             shortDesc="#{bindings.TblFmlabTestRepMView1.hints.FmgatePass.tooltip}"
-                                            id="it5">
+                                            id="it5" contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.FmgatePass.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Batch No." id="c13"
+                                       sortable="true" filterable="true" align="center">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmbatchNo}"
+       id="it18" placeholder="Search Batch No.">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmbatchNo.inputValue}"
+                                            label="#{bindings.TblFmlabTestRepMView1.hints.FmbatchNo.label}"
+                                            required="#{bindings.TblFmlabTestRepMView1.hints.FmbatchNo.mandatory}"
+                                            columns="#{bindings.TblFmlabTestRepMView1.hints.FmbatchNo.displayWidth}"
+                                            maximumLength="#{bindings.TblFmlabTestRepMView1.hints.FmbatchNo.precision}"
+                                            shortDesc="#{bindings.TblFmlabTestRepMView1.hints.FmbatchNo.tooltip}"
+                                            id="it17" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmbatchNo.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmlabTestRepMView1.hints.FmbatchNo.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmlabTestRepMView1.hints.FmvendorsId.name}"
@@ -248,7 +340,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr8">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
                       <af:panelTabbed position="above" id="pt4">
-                        <af:showDetailItem id="tab4" text="Lab Test Report Detail">
+                        <af:showDetailItem id="tab4" text="Batch Report Detail">
                           <af:table value="#{bindings.TblFmlabTestRepDView2.collectionModel}" var="row"
                                     rows="#{bindings.TblFmlabTestRepDView2.rangeSize}"
                                     emptyText="#{bindings.TblFmlabTestRepDView2.viewable ? 'No data to display.' : 'Access Denied.'}"

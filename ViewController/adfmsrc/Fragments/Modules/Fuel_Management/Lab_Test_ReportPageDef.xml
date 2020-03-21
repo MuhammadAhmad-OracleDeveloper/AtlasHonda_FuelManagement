@@ -68,6 +68,7 @@
           <Item Value="FmvendorsId"/>
           <Item Value="FmlocationId"/>
           <Item Value="FmitemsId"/>
+          <Item Value="FmbatchNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

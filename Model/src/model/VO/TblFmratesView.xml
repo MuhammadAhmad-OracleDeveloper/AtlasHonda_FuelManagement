@@ -209,4 +209,10 @@
     EntityAttrName="RefineryRate"
     EntityUsage="TblFmrates"
     AliasName="REFINERY_RATE"/>
+  <ViewAttribute
+    Name="OmcPer"
+    PrecisionRule="true"
+    EntityAttrName="OmcPer"
+    EntityUsage="TblFmrates"
+    AliasName="OMC_PER"/>
 </ViewObject>

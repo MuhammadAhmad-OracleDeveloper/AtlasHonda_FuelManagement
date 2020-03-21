@@ -84,7 +84,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="FmvendorsLocationId"/>
+      <Item Value="FmlocationId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FmlocationName"/>
@@ -155,6 +155,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="FmbatchNo"
+    PrecisionRule="true"
+    EntityAttrName="FmbatchNo"
+    EntityUsage="TblFmlabTestRepM"
+    AliasName="FMBATCH_NO"/>
   <ViewLinkAccessor
     Name="TblFmlabTestRepDView"
     ViewLink="model.VO.FkTblFmlabTestRepMRepMLink"
