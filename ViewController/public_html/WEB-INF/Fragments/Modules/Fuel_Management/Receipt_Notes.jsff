@@ -801,7 +801,7 @@
                         <af:showDetailItem text="DIP Shortage" id="sdi3">
                           <af:panelFormLayout id="pfl2" maxColumns="4" rows="6">
                             <af:inputText value="#{bindings.InvTempCel.inputValue}"
-                                          label="#{bindings.InvTempCel.hints.label}"
+                                          label="Invc. Temp Cel."
                                           required="#{bindings.InvTempCel.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTempCel.hints.precision}"
@@ -811,7 +811,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s35"/>
                             <af:inputText value="#{bindings.InvTempFr.inputValue}"
-                                          label="#{bindings.InvTempFr.hints.label}"
+                                          label="Invc. Temp Fr"
                                           required="#{bindings.InvTempFr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTempFr.hints.precision}"
@@ -821,7 +821,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s36"/>
                             <af:inputText value="#{bindings.InvDensity.inputValue}"
-                                          label="#{bindings.InvDensity.hints.label}"
+                                          label="Invc. Density (Kg/Ltr)"
                                           required="#{bindings.InvDensity.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvDensity.hints.precision}"
@@ -831,7 +831,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s37"/>
                             <af:inputText value="#{bindings.PhyTempCel.inputValue}"
-                                          label="#{bindings.PhyTempCel.hints.label}"
+                                          label="Phy. Temp Cel"
                                           required="#{bindings.PhyTempCel.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.PhyTempCel.hints.precision}"
@@ -841,7 +841,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s38"/>
                             <af:inputText value="#{bindings.PhyTempFr.inputValue}"
-                                          label="#{bindings.PhyTempFr.hints.label}"
+                                          label="Phy. Temp Fr"
                                           required="#{bindings.PhyTempFr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.PhyTempFr.hints.precision}"
@@ -851,7 +851,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s39"/>
                             <af:inputText value="#{bindings.PhyDensity.inputValue}"
-                                          label="#{bindings.PhyDensity.hints.label}"
+                                          label="Phy. Density (Kg/Ltr)"
                                           required="#{bindings.PhyDensity.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.PhyDensity.hints.precision}"
@@ -861,7 +861,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s40"/>
                             <af:inputText value="#{bindings.WaterPerc.inputValue}"
-                                          label="#{bindings.WaterPerc.hints.label}"
+                                          label="Water Percentage"
                                           required="#{bindings.WaterPerc.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.WaterPerc.hints.precision}"
@@ -871,7 +871,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s41"/>
                             <af:inputText value="#{bindings.Viscosity.inputValue}"
-                                          label="#{bindings.Viscosity.hints.label}"
+                                          label="Viscosity"
                                           required="#{bindings.Viscosity.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.Viscosity.hints.precision}"
@@ -881,7 +881,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s42"/>
                             <af:inputText value="#{bindings.InvTempDiff.inputValue}"
-                                          label="#{bindings.InvTempDiff.hints.label}"
+                                          label="Temp diff. from Invoice"
                                           required="#{bindings.InvTempDiff.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTempDiff.hints.precision}"
@@ -891,7 +891,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s43"/>
                             <af:inputText value="#{bindings.VolCorrFactorId.inputValue}"
-                                          label="#{bindings.VolCorrFactorId.hints.label}"
+                                          label="Volume Correction Factor"
                                           required="#{bindings.VolCorrFactorId.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.VolCorrFactorId.hints.precision}"
@@ -911,7 +911,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s45"/>
                             <af:inputText value="#{bindings.DipFuelShort.inputValue}"
-                                          label="#{bindings.DipFuelShort.hints.label}"
+                                          label="Shortage of Fuel by DIP (Ltrs)"
                                           required="#{bindings.DipFuelShort.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.DipFuelShort.hints.precision}"
@@ -921,7 +921,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s46"/>
                             <af:inputText value="#{bindings.TempShortRec.inputValue}"
-                                          label="#{bindings.TempShortRec.hints.label}"
+                                          label="Shortage Recovery by Temp"
                                           required="#{bindings.TempShortRec.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.TempShortRec.hints.precision}"
@@ -931,7 +931,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s47"/>
                             <af:inputText value="#{bindings.ActualShort.inputValue}"
-                                          label="#{bindings.ActualShort.hints.label}"
+                                          label="Actual Shortage (Ltrs)"
                                           required="#{bindings.ActualShort.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualShort.hints.precision}"
@@ -941,7 +941,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s48"/>
                             <af:inputText value="#{bindings.InvTotalFuelLtr.inputValue}"
-                                          label="#{bindings.InvTotalFuelLtr.hints.label}"
+                                          label="Total Fuel by Invoice (Ltrs)"
                                           required="#{bindings.InvTotalFuelLtr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelLtr.hints.precision}"
@@ -951,7 +951,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s49"/>
                             <af:inputText value="#{bindings.ShortageLtr.inputValue}"
-                                          label="#{bindings.ShortageLtr.hints.label}"
+                                          label="Shortage (Ltrs)"
                                           required="#{bindings.ShortageLtr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ShortageLtr.hints.precision}"
@@ -961,7 +961,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s50"/>
                             <af:inputText value="#{bindings.ActualFuelRecLtr.inputValue}"
-                                          label="#{bindings.ActualFuelRecLtr.hints.label}"
+                                          label="Actual Fuel Recieved (Ltrs)"
                                           required="#{bindings.ActualFuelRecLtr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualFuelRecLtr.hints.precision}"
@@ -971,7 +971,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s51"/>
                             <af:inputText value="#{bindings.InvTotalFuelKg.inputValue}"
-                                          label="#{bindings.InvTotalFuelKg.hints.label}"
+                                          label="Total Fuel by Invoice (Kgs)"
                                           required="#{bindings.InvTotalFuelKg.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelKg.hints.precision}"
@@ -981,7 +981,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s52"/>
                             <af:inputText value="#{bindings.ShortageKg.inputValue}"
-                                          label="#{bindings.ShortageKg.hints.label}"
+                                          label="Shortage (Kgs)"
                                           required="#{bindings.ShortageKg.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ShortageKg.hints.precision}"
@@ -991,7 +991,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s53"/>
                             <af:inputText value="#{bindings.ActualFuelRecTon.inputValue}"
-                                          label="#{bindings.ActualFuelRecTon.hints.label}"
+                                          label="Actual Fuel Recieved (Ton)"
                                           required="#{bindings.ActualFuelRecTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualFuelRecTon.hints.precision}"
@@ -1001,7 +1001,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s54"/>
                             <af:inputText value="#{bindings.InvTotalFuelTon.inputValue}"
-                                          label="#{bindings.InvTotalFuelTon.hints.label}"
+                                          label="Total Fuel by Invoice (Ton)"
                                           required="#{bindings.InvTotalFuelTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelTon.hints.precision}"
@@ -1011,7 +1011,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s55"/>
                             <af:inputText value="#{bindings.ActualFuelWeighTon.inputValue}"
-                                          label="#{bindings.ActualFuelWeighTon.hints.label}"
+                                          label="Actual Fuel by Weigh Bridge (Ton)"
                                           required="#{bindings.ActualFuelWeighTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualFuelWeighTon.hints.precision}"
@@ -1021,7 +1021,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s56"/>
                             <af:inputText value="#{bindings.ShortageTon.inputValue}"
-                                          label="#{bindings.ShortageTon.hints.label}"
+                                          label="Fuel Shortage (Ton)"
                                           required="#{bindings.ShortageTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ShortageTon.hints.precision}"
