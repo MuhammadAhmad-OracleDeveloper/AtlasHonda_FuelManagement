@@ -57,7 +57,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmlabTestRepDView21.hints.FmlabtestId.name}" filterable="true"
                              sortable="true" headerText="Lab Test"
-                             id="c2" width="200">
+                             id="c2" width="250">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FmlabtestId}"
        id="it4" placeholder="Search Lab Test">
@@ -74,7 +74,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmlabTestRepDView21.hints.Remarks.name}" filterable="true"
                              sortable="true" headerText="Remarks"
-                             id="c3" width="1000">
+                             id="c3" width="620">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Remarks}"
        id="it6" placeholder="Search Remarks">
@@ -97,6 +97,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3">
                         <af:showDetailItem id="tab3" text="Lab Test Report Master">
+
                           <af:table value="#{bindings.TblFmlabTestRepMView1.collectionModel}" var="row"
                                     rows="#{bindings.TblFmlabTestRepMView1.rangeSize}"
                                     emptyText="#{bindings.TblFmlabTestRepMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -221,6 +222,10 @@
                             </af:column>
                           </af:table>
                         </af:showDetailItem>
+
+                       
+                        
+
                       </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
@@ -256,7 +261,7 @@
                                     queryListener="#{bindings.TblFmlabTestRepDView2Query.processQuery}" varStatus="vs"
                                     id="t2" scrollPolicy="page" autoHeightRows="0" >
                             <af:column sortProperty="#{bindings.TblFmlabTestRepDView2.hints.FmlabTestRepDId.name}"
-                                       filterable="true" sortable="true"
+                                       filterable="false" sortable="false"
                                        headerText="Report Detail ID"
                                        id="c4" align="center" width="80">
                                        <f:facet name="filter">
@@ -279,7 +284,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmlabTestRepDView2.hints.FmlabtestId.name}"
-                                       filterable="true" sortable="true"
+                                       filterable="false" sortable="false"
                                        headerText="Lab Test" id="c6" width="200">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FmlabtestId}"
@@ -296,8 +301,8 @@
                               </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmlabTestRepDView2.hints.Remarks.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Remarks" id="c9" width="1000">
+                                       filterable="false" sortable="false"
+                                       headerText="Remarks" id="c9" width="640">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Remarks}"
        id="it14" placeholder="Search Remarks">
