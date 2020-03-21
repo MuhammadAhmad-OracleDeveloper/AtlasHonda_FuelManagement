@@ -139,6 +139,12 @@
   <ViewUsage
     Name="TblFmlabTestRepDView2"
     ViewObjectName="model.VO.TblFmlabTestRepDView"/>
+  <ViewUsage
+    Name="TblFmdailyConView1"
+    ViewObjectName="model.VO.TblFmdailyConView"/>
+  <ViewUsage
+    Name="TblFmdailyConEngView1"
+    ViewObjectName="model.VO.TblFmdailyConEngView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"

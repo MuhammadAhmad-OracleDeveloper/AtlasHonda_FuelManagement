@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmdailyConEngView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="Item_LOV1"
+    ViewObjectName="model.LOV.Item_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Engines_Name_LOV1"
+    ViewObjectName="model.LOV.Engines_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FmitemsId"
+    ListVOName="Item_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmitemsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmenginesId"
+    ListVOName="Engines_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmenginesId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmenginesId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmenginesName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblFmdailyConEng"
+    Entity="model.EO.TblFmdailyConEng"/>
+  <ViewAttribute
+    Name="FmdailyConEngId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmdailyConEngId"
+    EntityUsage="TblFmdailyConEng"
+    AliasName="FMDAILY_CON_ENG_ID"/>
+  <ViewAttribute
+    Name="FmreadingDate"
+    PrecisionRule="true"
+    EntityAttrName="FmreadingDate"
+    EntityUsage="TblFmdailyConEng"
+    AliasName="FMREADING_DATE"/>
+  <ViewAttribute
+    Name="FmitemsId"
+    PrecisionRule="true"
+    EntityAttrName="FmitemsId"
+    EntityUsage="TblFmdailyConEng"
+    AliasName="FMITEMS_ID"
+    LOVName="LOV_FmitemsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FmenginesId"
+    PrecisionRule="true"
+    EntityAttrName="FmenginesId"
+    EntityUsage="TblFmdailyConEng"
+    AliasName="FMENGINES_ID"
+    LOVName="LOV_FmenginesId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MeterRead"
+    PrecisionRule="true"
+    EntityAttrName="MeterRead"
+    EntityUsage="TblFmdailyConEng"
+    AliasName="METER_READ"/>
+</ViewObject>

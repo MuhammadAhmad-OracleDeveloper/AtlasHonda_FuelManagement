@@ -381,8 +381,8 @@
                           filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="true"
-                             sortable="true" headerText="Fuel Receipt Detail ID" id="c8" align="center" width="90">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDId.name}" filterable="false"
+                             sortable="false" headerText="Fuel Receipt Detail ID" id="c8" align="center" width="90">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnDId}"
                                           id="it25" placeholder="Search ID">
@@ -400,8 +400,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnDId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Item" id="c10" sortable="true"
-                             filterable="true" width="195">
+                  <af:column headerText="Item" id="c10" sortable="false"
+                             filterable="false" width="195">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmitemsId}"
                                           id="it26" placeholder="Search Item">
@@ -416,8 +416,8 @@
                       <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnQty.name}" filterable="true"
-                             sortable="true" headerText="Quantity" id="c11" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnQty.name}" filterable="false"
+                             sortable="false" headerText="Quantity" id="c11" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnQty}"
                                           id="it27" placeholder="Search Quantity">
@@ -434,8 +434,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnQty.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnRate.name}" filterable="true"
-                             sortable="true" headerText="Rate" id="c12" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnRate.name}" filterable="false"
+                             sortable="false" headerText="Rate" id="c12" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnRate}"
                                           id="it28" placeholder="Search Rate">
@@ -452,8 +452,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnRate.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGamt.name}" filterable="true"
-                             sortable="true" headerText="Gross Amount" id="c13" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGamt.name}" filterable="false"
+                             sortable="false" headerText="Gross Amount" id="c13" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnGamt}"
                                           id="it29" placeholder="Search Gross Amount">
@@ -470,8 +470,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnDView4.hints.FmrnGamt.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStPerc.name}" filterable="true"
-                             sortable="true" headerText="Sale Tax Percentage" id="c14" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStPerc.name}" filterable="false"
+                             sortable="false" headerText="Sale Tax Percentage" id="c14" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnStPerc}"
                                           id="it30" placeholder="Search Percentage">
@@ -489,8 +489,8 @@
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnStPerc.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStAmt.name}" filterable="true"
-                             sortable="true" headerText="Sale Tax Amount" id="c15" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnStAmt.name}" filterable="false"
+                             sortable="false" headerText="Sale Tax Amount" id="c15" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnStAmt}"
                                           id="it31" placeholder="Search Amount">
@@ -508,8 +508,8 @@
                                         pattern="#{bindings.TblFmrnDView4.hints.FmrnStAmt.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.name}" filterable="true"
-                             sortable="true" headerText="Net Amount" id="c16" align="center">
+                  <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.name}" filterable="false"
+                             sortable="false" headerText="Net Amount" id="c16" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnNetAmt}"
                                           id="it32" placeholder="Search Net Amount">

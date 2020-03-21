@@ -3,47 +3,47 @@
    <OverallProperties
       id="OverallProperties1"/>
    <View
-      id="View2">
+      id="View10">
       <property
-         name="activityId">Lab_Test_Report</property>
+         name="activityId">Daily_Consumption</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">531.0</property>
+         name="x">538.0</property>
       <property
          name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Lab_Test_Report&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Daily_Consumption&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">254.14355</property>
+         name="y">60.844727</property>
       <property
-         name="page">/WEB-INF/Fragments/Modules/Fuel_Management/Lab_Test_Report.jsff</property>
+         name="page">/WEB-INF/Fragments/Modules/Fuel_Management/Daily_Consumption.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
    <MethodCall
-      id="MethodCall3">
+      id="MethodCall15">
       <property
          name="activityId">ExecuteWithParams</property>
       <property
-         name="x">181.35156</property>
+         name="x">233.35156</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">277.44824</property>
+         name="y">148.14941</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase4"
-      from="MethodCall3"
-      to="View2">
+      id="ControlFlowCase16"
+      from="MethodCall15"
+      to="View10">
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">R50,222.35156,277.09766,490.0,253.79297,L50</property>
+         name="sdm:polyPoints">L39,L60</property>
    </ControlFlowCase>
 </SDM>
