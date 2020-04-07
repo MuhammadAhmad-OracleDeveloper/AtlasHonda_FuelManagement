@@ -327,22 +327,7 @@
                                         pattern="#{bindings.TblFmratesView1.hints.RefineryRate.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="OMC Percentage" id="c16" sortable="true" filterable="true" width="120">
-                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.OmcPer}"
-                                          id="it26" placeholder="Search Percentage">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.OmcPer.inputValue}"
-                                  label="#{bindings.TblFmratesView1.hints.OmcPer.label}"
-                                  required="#{bindings.TblFmratesView1.hints.OmcPer.mandatory}"
-                                  columns="#{bindings.TblFmratesView1.hints.OmcPer.displayWidth}"
-                                  maximumLength="#{bindings.TblFmratesView1.hints.OmcPer.precision}"
-                                  shortDesc="#{bindings.TblFmratesView1.hints.OmcPer.tooltip}" id="it24"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.OmcPer.validator}"/>
-                    </af:inputText>
-                  </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblFmratesView1.hints.Fmremarks.name}" filterable="true"
                              sortable="true" headerText="Remarks" id="c17">
                               <f:facet name="filter">

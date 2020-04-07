@@ -6,13 +6,64 @@
   Name="TblFmrnMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmrnM.FMRN_M_ID, 
+       TblFmrnM.FMPO_M_ID, 
+       TblFmrnM.FMDOCSTS_ID, 
+       TblFmrnM.FMRN_M_DATE, 
+       TblFmrnM.FMRN_M_DISP_DATE, 
+       TblFmrnM.FMRN_M_REC_DATE, 
+       TblFmrnM.FMRN_REMARKS, 
+       TblFmrnM.BATCH_NO, 
+       TblFmrnM.CREDIT_DAYS, 
+       TblFmrnM.BAY_ID, 
+       TblFmrnM.CARRIER_ID, 
+       TblFmrnM.GROSS_WEIGHT, 
+       TblFmrnM.INVOICE_NO, 
+       TblFmrnM.LOCATION_ID, 
+       TblFmrnM.NET_WEIGHT, 
+       TblFmrnM.SHORTAGE_WEIGHT, 
+       TblFmrnM.STATUS, 
+       TblFmrnM.TANK_ID, 
+       TblFmrnM.TEAR_WEIGHT, 
+       TblFmrnM.VEHICLE_NO, 
+       TblFmrnM.VENDOR_GROSS_WEIGHT, 
+       TblFmrnM.VENDOR_ID, 
+       TblFmrnM.VENDOR_NET_WEIGHT, 
+       TblFmrnM.VENDOR_TEAR_WEIGHT, 
+       TblFmrnD.FMRN_QTY, 
+       TblFmrnD.FMRN_D_ID, 
+       TblFmrnD.FMITEMS_ID, 
+       TblFmrnM.INVOICE_DATE, 
+       TblFmrnM.DELIVERY_NO, 
+       TblFmrnM.ACTUAL_FUEL_REC_LTR, 
+       TblFmrnM.ACTUAL_FUEL_REC_TON, 
+       TblFmrnM.ACTUAL_FUEL_WEIGH_TON, 
+       TblFmrnM.ACTUAL_SHORT, 
+       TblFmrnM.CALORIFIC_VALUE, 
+       TblFmrnM.DIP_FUEL_SHORT, 
+       TblFmrnM.INV_DENSITY, 
+       TblFmrnM.INV_TEMP_CEL, 
+       TblFmrnM.INV_TEMP_DIFF, 
+       TblFmrnM.INV_TEMP_FR, 
+       TblFmrnM.INV_TOTAL_FUEL_KG, 
+       TblFmrnM.INV_TOTAL_FUEL_LTR, 
+       TblFmrnM.INV_TOTAL_FUEL_TON, 
+       TblFmrnM.PHY_DENSITY, 
+       TblFmrnM.PHY_TEMP_CEL, 
+       TblFmrnM.PHY_TEMP_FR, 
+       TblFmrnM.SHORTAGE_KG, 
+       TblFmrnM.SHORTAGE_LTR, 
+       TblFmrnM.SHORTAGE_TON, 
+       TblFmrnM.TEMP_SHORT_REC, 
+       TblFmrnM.WATER_PERC, 
+       TblFmrnM.VOL_CORR_FACTOR_ID, 
+       TblFmrnM.VISCOSITY"
+  FromList="TBL_FMRN_M TblFmrnM, TBL_FMRN_D TblFmrnD"
+  Where="TblFmrnM.FMRN_M_ID = TblFmrnD.FMRN_M_ID(+)  
+Order by TblFmrnM.FMPO_M_ID desc">
   <ViewAccessor
     Name="Purchase_Order_LOV1"
     ViewObjectName="model.LOV.Purchase_Order_LOV"

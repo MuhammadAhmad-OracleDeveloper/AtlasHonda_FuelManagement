@@ -250,7 +250,7 @@
                     <af:convertDateTime pattern="#{bindings.FmrnMDispDate.format}"/>
                   </af:inputDate>
                             <af:spacer width="10" height="0" id="s21"/>
-                            <af:inputDate value="#{bindings.FmrnMRecDate.inputValue}" label="Recieved Date"
+                            <af:inputDate value="#{bindings.FmrnMRecDate.inputValue}" label="Received Date"
                                 required="#{bindings.FmrnMRecDate.hints.mandatory}"
                                 columns="20"
                                 shortDesc="#{bindings.FmrnMRecDate.hints.tooltip}" id="id3" contentStyle='text-align: center'>
@@ -675,25 +675,6 @@
                                 filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
                                 queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t1"
                                 scrollPolicy="page" autoHeightRows="0" >
-                        <af:column sortProperty="#{bindings.TblFmrnDView41.hints.FmrnDip1.name}" filterable="true"
-                                   sortable="true" headerText="Ref. Dip" id="c1" align="center">
-                                   <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.FmrnDip1}"
-       id="it14" placeholder="Search Dip">
-      </af:inputText>
-</f:facet>
-                          <af:inputText value="#{row.bindings.FmrnDip1.inputValue}"
-                                        label="#{bindings.TblFmrnDView41.hints.FmrnDip1.label}"
-                                        required="#{bindings.TblFmrnDView41.hints.FmrnDip1.mandatory}"
-                                        columns="#{bindings.TblFmrnDView41.hints.FmrnDip1.displayWidth}"
-                                        maximumLength="#{bindings.TblFmrnDView41.hints.FmrnDip1.precision}"
-                                        shortDesc="#{bindings.TblFmrnDView41.hints.FmrnDip1.tooltip}" id="it47"
-                                        contentStyle='text-align: center'>
-                            <f:validator binding="#{row.bindings.FmrnDip1.validator}"/>
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.TblFmrnDView41.hints.FmrnDip1.format}"/>
-                          </af:inputText>
-                        </af:column>
                         <af:column sortProperty="#{bindings.TblFmrnDView41.hints.FmrnDip2.name}" filterable="true"
                                    sortable="true" headerText="Prod. Dip" id="c2" align="center">
                                     <f:facet name="filter">
