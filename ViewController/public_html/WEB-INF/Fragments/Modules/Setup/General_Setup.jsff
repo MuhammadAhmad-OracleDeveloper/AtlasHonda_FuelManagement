@@ -619,7 +619,8 @@
                           selectionListener="#{bindings.TblFmenginesView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblFmenginesView1.rangeSize}"
                           filterModel="#{bindings.TblFmenginesView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmenginesView1Query.processQuery}" varStatus="vs" id="t8">
+                          queryListener="#{bindings.TblFmenginesView1Query.processQuery}" varStatus="vs" id="t8"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmenginesView1.hints.FmenginesId.name}" filterable="true"
                              sortable="true" headerText="Engines ID"
                              id="c22" align="center" width="80">
@@ -685,7 +686,102 @@
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
-              
+              <af:showDetailItem text="VCF" id="sdi5">
+                <af:table value="#{bindings.TblFmvcfView1.collectionModel}" var="row"
+                          rows="#{bindings.TblFmvcfView1.rangeSize}"
+                          emptyText="#{bindings.TblFmvcfView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblFmvcfView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmvcfView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmvcfView1.rangeSize}"
+                          filterModel="#{bindings.TblFmvcfView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmvcfView1Query.processQuery}" varStatus="vs" id="t6"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblFmvcfView1.hints.FmvcfId.name}" filterable="true"
+                             sortable="true" headerText="VCF ID" id="c17" align="center" width="80">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmvcfId}"
+       id="it51" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmvcfId.inputValue}"
+                                  label="#{bindings.TblFmvcfView1.hints.FmvcfId.label}"
+                                  required="#{bindings.TblFmvcfView1.hints.FmvcfId.mandatory}"
+                                  columns="#{bindings.TblFmvcfView1.hints.FmvcfId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvcfView1.hints.FmvcfId.precision}"
+                                  shortDesc="#{bindings.TblFmvcfView1.hints.FmvcfId.tooltip}" id="it18" readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmvcfId.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmvcfView1.hints.FmvcfId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvcfView1.hints.FromValue.name}" filterable="true"
+                             sortable="true" headerText="Frome value " id="c18" align="center">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FromValue}"
+       id="it52" placeholder="Search Value">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FromValue.inputValue}"
+                                  label="#{bindings.TblFmvcfView1.hints.FromValue.label}"
+                                  required="#{bindings.TblFmvcfView1.hints.FromValue.mandatory}"
+                                  columns="#{bindings.TblFmvcfView1.hints.FromValue.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvcfView1.hints.FromValue.precision}"
+                                  shortDesc="#{bindings.TblFmvcfView1.hints.FromValue.tooltip}" id="it34"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FromValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmvcfView1.hints.FromValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvcfView1.hints.ToValue.name}" filterable="true"
+                             sortable="true" headerText="To value" id="c31" align="center">
+                     <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ToValue}"
+       id="it53" placeholder="Search Value">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ToValue.inputValue}"
+                                  label="#{bindings.TblFmvcfView1.hints.ToValue.label}"
+                                  required="#{bindings.TblFmvcfView1.hints.ToValue.mandatory}"
+                                  columns="#{bindings.TblFmvcfView1.hints.ToValue.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvcfView1.hints.ToValue.precision}"
+                                  shortDesc="#{bindings.TblFmvcfView1.hints.ToValue.tooltip}" id="it35"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ToValue.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmvcfView1.hints.ToValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmvcfView1.hints.VcfValue.name}" filterable="true"
+                             sortable="true" headerText="VCf value" id="c32" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VcfValue}"
+       id="it54" placeholder="Search Value">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.VcfValue.inputValue}"
+                                  label="#{bindings.TblFmvcfView1.hints.VcfValue.label}"
+                                  required="#{bindings.TblFmvcfView1.hints.VcfValue.mandatory}"
+                                  columns="#{bindings.TblFmvcfView1.hints.VcfValue.displayWidth}"
+                                  maximumLength="#{bindings.TblFmvcfView1.hints.VcfValue.precision}"
+                                  shortDesc="#{bindings.TblFmvcfView1.hints.VcfValue.tooltip}" id="it50"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.VcfValue.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmvcfView1.hints.VcfValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                 <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}8"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>

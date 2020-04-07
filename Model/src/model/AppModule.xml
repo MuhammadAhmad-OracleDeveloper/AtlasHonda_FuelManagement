@@ -145,6 +145,9 @@
   <ViewUsage
     Name="TblFmdailyConEngView1"
     ViewObjectName="model.VO.TblFmdailyConEngView"/>
+  <ViewUsage
+    Name="TblFmvcfView1"
+    ViewObjectName="model.VO.TblFmvcfView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"

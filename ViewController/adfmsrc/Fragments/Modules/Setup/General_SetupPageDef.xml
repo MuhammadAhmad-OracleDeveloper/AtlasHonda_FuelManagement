@@ -28,7 +28,7 @@
               id="TblFmlabtestView1Iterator"/>
     <searchRegion Binds="TblFmlabtestView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlabtestView1Query"/>
-    <iterator Binds="TblFmenginesView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFmenginesView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFmenginesView1Iterator"/>
     <searchRegion Binds="TblFmenginesView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmenginesView1Query"/>
@@ -38,6 +38,9 @@
               id="TblFmlocationView1Iterator"/>
     <searchRegion Binds="TblFmlocationView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmlocationView1Query"/>
+    <iterator Binds="TblFmvcfView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmvcfView1Iterator"/>
+    <searchRegion Binds="TblFmvcfView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvcfView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblFmdocstsView1Iterator" id="TblFmdocstsView1">
@@ -168,5 +171,18 @@
     <action IterBinding="TblFmlocationView1Iterator" id="Execute8" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblFmlocationView1Iterator" id="Delete8" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmvcfView1Iterator" id="TblFmvcfView1">
+      <nodeDefinition DefName="model.VO.TblFmvcfView" Name="TblFmvcfView10">
+        <AttrNames>
+          <Item Value="FmvcfId"/>
+          <Item Value="FromValue"/>
+          <Item Value="ToValue"/>
+          <Item Value="VcfValue"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmvcfView1Iterator" id="CreateInsert9" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmvcfView1Iterator" id="Execute9" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmvcfView1Iterator" id="Delete9" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
