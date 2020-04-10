@@ -6,13 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblFmrnMView1" DataControl="AppModuleDataControl1" id="TblFmrnMView1Iterator" RangeSize="8"
-              Refresh="always" CacheResults="false"/>
-    <searchRegion Binds="TblFmrnMView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrnMView1Query"/>
     <iterator Binds="TblFmrnDView4" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmrnDView4Iterator"/>
     <searchRegion Binds="TblFmrnDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrnDView4Query"/>
+    <iterator Binds="TblFmrnMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmrnMView1Iterator"/>
+    <searchRegion Binds="TblFmrnMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmrnMView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -60,45 +59,24 @@
     <action IterBinding="TblFmrnDView4Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblFmrnMView1Iterator" id="TblFmrnMView11">
-      <nodeDefinition DefName="model.VO.TblFmrnMView" Name="TblFmrnMView110">
-        <AttrNames>
-          <Item Value="FmrnMId"/>
-          <Item Value="FmrnMDate"/>
-          <Item Value="VendorId"/>
-          <Item Value="FmitemsId"/>
-          <Item Value="FmrnQty"/>
-          <Item Value="Status"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <action IterBinding="TblFmrnMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFmrnMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblFmrnDView4Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblFmrnDView4Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMId">
       <AttrNames>
         <Item Value="FmrnMId"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmpoMId" id="FmpoMId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmdocstsId" id="FmdocstsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMDate">
       <AttrNames>
         <Item Value="FmrnMDate"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_Status" id="Status" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmpoMId" id="FmpoMId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_VendorId" id="VendorId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BayId" id="BayId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_LocationId" id="LocationId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_TankId" id="TankId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_CarrierId" id="CarrierId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="BatchNo">
-      <AttrNames>
-        <Item Value="BatchNo"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMDispDate">
@@ -111,49 +89,37 @@
         <Item Value="FmrnMRecDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvoiceNo">
-      <AttrNames>
-        <Item Value="InvoiceNo"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnRemarks">
       <AttrNames>
         <Item Value="FmrnRemarks"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VehicleNo">
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BatchNo" id="BatchNo" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="CreditDays">
       <AttrNames>
-        <Item Value="VehicleNo"/>
+        <Item Value="CreditDays"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BayId" id="BayId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_CarrierId" id="CarrierId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="GrossWeight">
       <AttrNames>
         <Item Value="GrossWeight"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="TearWeight">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvoiceNo">
       <AttrNames>
-        <Item Value="TearWeight"/>
+        <Item Value="InvoiceNo"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_LocationId" id="LocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="NetWeight">
       <AttrNames>
         <Item Value="NetWeight"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorGrossWeight">
-      <AttrNames>
-        <Item Value="VendorGrossWeight"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorTearWeight">
-      <AttrNames>
-        <Item Value="VendorTearWeight"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorNetWeight">
-      <AttrNames>
-        <Item Value="VendorNetWeight"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageWeight">
@@ -161,89 +127,77 @@
         <Item Value="ShortageWeight"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="CreditDays">
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_Status" id="Status" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_TankId" id="TankId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="TearWeight">
       <AttrNames>
-        <Item Value="CreditDays"/>
+        <Item Value="TearWeight"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="TblFmrnMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblFmrnMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblFmrnMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblFmrnMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <tree IterBinding="TblFmrnDView4Iterator" id="TblFmrnDView41">
-      <nodeDefinition DefName="model.VO.TblFmrnDView" Name="TblFmrnDView410">
-        <AttrNames>
-          <Item Value="FmrnDip1"/>
-          <Item Value="FmrnDip2"/>
-          <Item Value="FmrnDip3"/>
-          <Item Value="CompSize"/>
-          <Item Value="ShortPerChart"/>
-          <Item Value="Shortage"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VehicleNo">
+      <AttrNames>
+        <Item Value="VehicleNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorGrossWeight">
+      <AttrNames>
+        <Item Value="VendorGrossWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_VendorId" id="VendorId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorNetWeight">
+      <AttrNames>
+        <Item Value="VendorNetWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VendorTearWeight">
+      <AttrNames>
+        <Item Value="VendorTearWeight"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnQty">
+      <AttrNames>
+        <Item Value="FmrnQty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnDId">
+      <AttrNames>
+        <Item Value="FmrnDId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmitemsId" id="FmitemsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvoiceDate">
       <AttrNames>
         <Item Value="InvoiceDate"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="TblFmrnDView4Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblFmrnDView4Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="DeliveryNo">
       <AttrNames>
         <Item Value="DeliveryNo"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BatchNo" id="BatchNo1" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTempCel">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualFuelRecLtr">
       <AttrNames>
-        <Item Value="InvTempCel"/>
+        <Item Value="ActualFuelRecLtr"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTempFr">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualFuelRecTon">
       <AttrNames>
-        <Item Value="InvTempFr"/>
+        <Item Value="ActualFuelRecTon"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvDensity">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualFuelWeighTon">
       <AttrNames>
-        <Item Value="InvDensity"/>
+        <Item Value="ActualFuelWeighTon"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="PhyTempCel">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualShort">
       <AttrNames>
-        <Item Value="PhyTempCel"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="PhyTempFr">
-      <AttrNames>
-        <Item Value="PhyTempFr"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="PhyDensity">
-      <AttrNames>
-        <Item Value="PhyDensity"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="WaterPerc">
-      <AttrNames>
-        <Item Value="WaterPerc"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="Viscosity">
-      <AttrNames>
-        <Item Value="Viscosity"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTempDiff">
-      <AttrNames>
-        <Item Value="InvTempDiff"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VolCorrFactorId">
-      <AttrNames>
-        <Item Value="VolCorrFactorId"/>
+        <Item Value="ActualShort"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="CalorificValue">
@@ -256,29 +210,24 @@
         <Item Value="DipFuelShort"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="TempShortRec">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvDensity">
       <AttrNames>
-        <Item Value="TempShortRec"/>
+        <Item Value="InvDensity"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualShort">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTempCel">
       <AttrNames>
-        <Item Value="ActualShort"/>
+        <Item Value="InvTempCel"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTotalFuelLtr">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTempDiff">
       <AttrNames>
-        <Item Value="InvTotalFuelLtr"/>
+        <Item Value="InvTempDiff"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageLtr">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTempFr">
       <AttrNames>
-        <Item Value="ShortageLtr"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualFuelRecLtr">
-      <AttrNames>
-        <Item Value="ActualFuelRecLtr"/>
+        <Item Value="InvTempFr"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTotalFuelKg">
@@ -286,14 +235,9 @@
         <Item Value="InvTotalFuelKg"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageKg">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTotalFuelLtr">
       <AttrNames>
-        <Item Value="ShortageKg"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualFuelRecTon">
-      <AttrNames>
-        <Item Value="ActualFuelRecTon"/>
+        <Item Value="InvTotalFuelLtr"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="InvTotalFuelTon">
@@ -301,9 +245,29 @@
         <Item Value="InvTotalFuelTon"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ActualFuelWeighTon">
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="PhyDensity">
       <AttrNames>
-        <Item Value="ActualFuelWeighTon"/>
+        <Item Value="PhyDensity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="PhyTempCel">
+      <AttrNames>
+        <Item Value="PhyTempCel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="PhyTempFr">
+      <AttrNames>
+        <Item Value="PhyTempFr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageKg">
+      <AttrNames>
+        <Item Value="ShortageKg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageLtr">
+      <AttrNames>
+        <Item Value="ShortageLtr"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="ShortageTon">
@@ -311,5 +275,83 @@
         <Item Value="ShortageTon"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="TempShortRec">
+      <AttrNames>
+        <Item Value="TempShortRec"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="WaterPerc">
+      <AttrNames>
+        <Item Value="WaterPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VolCorrFactorId">
+      <AttrNames>
+        <Item Value="VolCorrFactorId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="Viscosity">
+      <AttrNames>
+        <Item Value="Viscosity"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="TblFmrnMView1Iterator" id="TblFmrnMView1">
+      <nodeDefinition DefName="model.VO.TblFmrnMView" Name="TblFmrnMView10">
+        <AttrNames>
+          <Item Value="FmrnMId"/>
+          <Item Value="FmpoMId"/>
+          <Item Value="FmdocstsId"/>
+          <Item Value="FmrnMDate"/>
+          <Item Value="FmrnMDispDate"/>
+          <Item Value="FmrnMRecDate"/>
+          <Item Value="FmrnRemarks"/>
+          <Item Value="BatchNo"/>
+          <Item Value="CreditDays"/>
+          <Item Value="BayId"/>
+          <Item Value="CarrierId"/>
+          <Item Value="GrossWeight"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="LocationId"/>
+          <Item Value="NetWeight"/>
+          <Item Value="ShortageWeight"/>
+          <Item Value="Status"/>
+          <Item Value="TankId"/>
+          <Item Value="TearWeight"/>
+          <Item Value="VehicleNo"/>
+          <Item Value="VendorGrossWeight"/>
+          <Item Value="VendorId"/>
+          <Item Value="VendorNetWeight"/>
+          <Item Value="VendorTearWeight"/>
+          <Item Value="FmrnQty"/>
+          <Item Value="FmrnDId"/>
+          <Item Value="FmitemsId"/>
+          <Item Value="InvoiceDate"/>
+          <Item Value="DeliveryNo"/>
+          <Item Value="ActualFuelRecLtr"/>
+          <Item Value="ActualFuelRecTon"/>
+          <Item Value="ActualFuelWeighTon"/>
+          <Item Value="ActualShort"/>
+          <Item Value="CalorificValue"/>
+          <Item Value="DipFuelShort"/>
+          <Item Value="InvDensity"/>
+          <Item Value="InvTempCel"/>
+          <Item Value="InvTempDiff"/>
+          <Item Value="InvTempFr"/>
+          <Item Value="InvTotalFuelKg"/>
+          <Item Value="InvTotalFuelLtr"/>
+          <Item Value="InvTotalFuelTon"/>
+          <Item Value="PhyDensity"/>
+          <Item Value="PhyTempCel"/>
+          <Item Value="PhyTempFr"/>
+          <Item Value="ShortageKg"/>
+          <Item Value="ShortageLtr"/>
+          <Item Value="ShortageTon"/>
+          <Item Value="TempShortRec"/>
+          <Item Value="WaterPerc"/>
+          <Item Value="VolCorrFactorId"/>
+          <Item Value="Viscosity"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
