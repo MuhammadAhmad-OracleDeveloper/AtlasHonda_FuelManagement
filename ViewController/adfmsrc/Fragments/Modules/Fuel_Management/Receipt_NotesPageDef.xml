@@ -94,7 +94,7 @@
         <Item Value="FmrnRemarks"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BatchNo" id="BatchNo" DTSupportsMRU="false"
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_BatchNo" id="BatchNo" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="CreditDays">
       <AttrNames>

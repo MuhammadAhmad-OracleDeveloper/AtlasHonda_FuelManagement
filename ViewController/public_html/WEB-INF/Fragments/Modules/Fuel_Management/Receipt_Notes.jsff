@@ -217,14 +217,13 @@
                     <f:validator binding="#{bindings.CarrierId.validator}"/>
                   </af:selectOneChoice>
                             <af:spacer width="10" height="0" id="s34"/>
-                            <!--<af:selectOneChoice value="#{bindings.BatchNo1.inputValue}"
-                                                label="Batch No."
-                                                
-                                                required="#{bindings.BatchNo1.hints.mandatory}"
-                                                shortDesc="#{bindings.BatchNo1.hints.tooltip}" id="soc12">
-                              <f:selectItems value="#{bindings.BatchNo1.items}" id="si12"/>
-                              <f:validator binding="#{bindings.BatchNo1.validator}"/>
-                            </af:selectOneChoice>-->
+                            <af:selectOneChoice value="#{bindings.BatchNo.inputValue}" label="Batch No."
+                                                required="#{bindings.BatchNo.hints.mandatory}"
+                                                shortDesc="#{bindings.BatchNo.hints.tooltip}" id="soc12">
+                              <f:selectItems value="#{bindings.BatchNo.items}" id="si12"/>
+                              <f:validator binding="#{bindings.BatchNo.validator}"/>
+                            </af:selectOneChoice>
+                     
                             <af:spacer width="10" height="0" id="s19"/>
                             <af:inputText value="#{bindings.CreditDays.inputValue}" label="Credit Days"
                                 required="#{bindings.CreditDays.hints.mandatory}"
