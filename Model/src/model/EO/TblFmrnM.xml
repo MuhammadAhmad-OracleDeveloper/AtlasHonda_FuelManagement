@@ -230,14 +230,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ActualFuelRecTon"
     ColumnName="ACTUAL_FUEL_REC_TON"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ActualFuelWeighTon"
     ColumnName="ACTUAL_FUEL_WEIGH_TON"
@@ -251,7 +255,9 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="CalorificValue"
     ColumnName="CALORIFIC_VALUE"
@@ -286,7 +292,9 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="InvTempFr"
     ColumnName="INV_TEMP_FR"
@@ -342,14 +350,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="ShortageLtr"
     ColumnName="SHORTAGE_LTR"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ShortageTon"
     ColumnName="SHORTAGE_TON"
@@ -363,7 +375,9 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Viscosity"
     ColumnName="VISCOSITY"

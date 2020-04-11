@@ -869,7 +869,7 @@
                                           required="#{bindings.InvTempDiff.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTempDiff.hints.precision}"
-                                          shortDesc="#{bindings.InvTempDiff.hints.tooltip}" id="it55">
+                                          shortDesc="#{bindings.InvTempDiff.hints.tooltip}" id="it55" disabled="true">
                               <f:validator binding="#{bindings.InvTempDiff.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTempDiff.format}"/>
                             </af:inputText>
@@ -885,7 +885,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s44"/>
                             <af:inputText value="#{bindings.CalorificValue.inputValue}"
-                                          label="#{bindings.CalorificValue.hints.label}"
+                                          label="Calorific Value"
                                           required="#{bindings.CalorificValue.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.CalorificValue.hints.precision}"
@@ -909,7 +909,7 @@
                                           required="#{bindings.TempShortRec.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.TempShortRec.hints.precision}"
-                                          shortDesc="#{bindings.TempShortRec.hints.tooltip}" id="it59">
+                                          shortDesc="#{bindings.TempShortRec.hints.tooltip}" id="it59" disabled="true">
                               <f:validator binding="#{bindings.TempShortRec.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.TempShortRec.format}"/>
                             </af:inputText>
@@ -919,7 +919,7 @@
                                           required="#{bindings.ActualShort.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualShort.hints.precision}"
-                                          shortDesc="#{bindings.ActualShort.hints.tooltip}" id="it60">
+                                          shortDesc="#{bindings.ActualShort.hints.tooltip}" id="it60" disabled="true">
                               <f:validator binding="#{bindings.ActualShort.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualShort.format}"/>
                             </af:inputText>
@@ -939,7 +939,7 @@
                                           required="#{bindings.ShortageLtr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ShortageLtr.hints.precision}"
-                                          shortDesc="#{bindings.ShortageLtr.hints.tooltip}" id="it62">
+                                          shortDesc="#{bindings.ShortageLtr.hints.tooltip}" id="it62" disabled="true">
                               <f:validator binding="#{bindings.ShortageLtr.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageLtr.format}"/>
                             </af:inputText>
@@ -949,7 +949,7 @@
                                           required="#{bindings.ActualFuelRecLtr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualFuelRecLtr.hints.precision}"
-                                          shortDesc="#{bindings.ActualFuelRecLtr.hints.tooltip}" id="it63">
+                                          shortDesc="#{bindings.ActualFuelRecLtr.hints.tooltip}" id="it63" disabled="true">
                               <f:validator binding="#{bindings.ActualFuelRecLtr.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualFuelRecLtr.format}"/>
                             </af:inputText>
@@ -959,7 +959,7 @@
                                           required="#{bindings.InvTotalFuelKg.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelKg.hints.precision}"
-                                          shortDesc="#{bindings.InvTotalFuelKg.hints.tooltip}" id="it64">
+                                          shortDesc="#{bindings.InvTotalFuelKg.hints.tooltip}" id="it64" >
                               <f:validator binding="#{bindings.InvTotalFuelKg.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.InvTotalFuelKg.format}"/>
                             </af:inputText>
@@ -969,8 +969,8 @@
                                           required="#{bindings.ShortageKg.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ShortageKg.hints.precision}"
-                                          shortDesc="#{bindings.ShortageKg.hints.tooltip}" id="it65">
-                              <f:validator binding="#{bindings.ShortageKg.validator}"/>
+                                          shortDesc="#{bindings.ShortageKg.hints.tooltip}" id="it65" disabled="true">
+                              <f:validator binding="#{bindings.ShortageKg.validator}"/> 
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.ShortageKg.format}"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s53"/>
@@ -979,7 +979,7 @@
                                           required="#{bindings.ActualFuelRecTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualFuelRecTon.hints.precision}"
-                                          shortDesc="#{bindings.ActualFuelRecTon.hints.tooltip}" id="it66">
+                                          shortDesc="#{bindings.ActualFuelRecTon.hints.tooltip}" id="it66" disabled="true">
                               <f:validator binding="#{bindings.ActualFuelRecTon.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.ActualFuelRecTon.format}"/>
                             </af:inputText>
