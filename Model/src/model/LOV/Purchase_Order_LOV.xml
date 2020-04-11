@@ -6,13 +6,24 @@
   Name="Purchase_Order_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmpoM.FMPO_M_DATE, 
+       TblFmpoM.FMPO_M_ID, 
+       TblFmpoM.FMLOCATION_ID, 
+       TblFmpoM.FMVENDORS_ID, 
+       TblFmpoM.FMPO_M_CR_DAYS, 
+       TblFmitems.FMITEMS_NAME, 
+       TblFmitems.FMITEMS_ID, 
+       TblFmvendors.FMVENDORS_NAME, 
+       TblFmvendors.FMVENDORS_ID AS FMVENDORS_ID1, 
+       TblFmlocation.FMLOCATION_NAME, 
+       TblFmlocation.FMLOCATION_ID AS FMLOCATION_ID1, 
+       TblFmrnM.CREDIT_DAYS, 
+       TblFmrnM.FMRN_M_ID"
+  FromList="TBL_FMPO_M TblFmpoM, TBL_FMPO_D TblFmpoD, TBL_FMITEMS TblFmitems, TBL_FMVENDORS TblFmvendors, TBL_FMLOCATION TblFmlocation, TBL_FMRN_M TblFmrnM"
+  Where="((((TblFmpoM.FMPO_M_ID = TblFmpoD.FMPO_M_ID(+)) AND (TblFmpoD.FMITEMS_ID = TblFmitems.FMITEMS_ID(+))) AND (TblFmpoM.FMVENDORS_ID = TblFmvendors.FMVENDORS_ID(+))) AND (TblFmpoM.FMLOCATION_ID = TblFmlocation.FMLOCATION_ID(+))) AND (TblFmpoM.FMPO_M_ID = TblFmrnM.FMPO_M_ID(+))">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -98,6 +109,25 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="TblFmrnM"
+    Entity="model.EO.TblFmrnM"
+    Association="model.EO.FkFmrnMPoAssoc"
+    AssociationEnd="model.EO.FkFmrnMPoAssoc.TblFmrnM"
+    SourceUsage="model.LOV.Purchase_Order_LOV.TblFmpoM"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFmrnM.FmpoMId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFmpoM.FmpoMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="FmpoMDate"
     PrecisionRule="true"
@@ -170,6 +200,18 @@
     EntityAttrName="FmlocationId"
     EntityUsage="TblFmlocation"
     AliasName="FMLOCATION_ID1"/>
+  <ViewAttribute
+    Name="CreditDays"
+    PrecisionRule="true"
+    EntityAttrName="CreditDays"
+    EntityUsage="TblFmrnM"
+    AliasName="CREDIT_DAYS"/>
+  <ViewAttribute
+    Name="FmrnMId"
+    PrecisionRule="true"
+    EntityAttrName="FmrnMId"
+    EntityUsage="TblFmrnM"
+    AliasName="FMRN_M_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmpoMId"/>
   </AttrArray>

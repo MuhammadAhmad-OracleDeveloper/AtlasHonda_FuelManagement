@@ -729,8 +729,7 @@
                                   shortDesc="#{bindings.TblFmvcfView1.hints.FromValue.tooltip}" id="it34"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FromValue.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFmvcfView1.hints.FromValue.format}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvcfView1.hints.ToValue.name}" filterable="true"
@@ -748,7 +747,8 @@
                                   shortDesc="#{bindings.TblFmvcfView1.hints.ToValue.tooltip}" id="it35"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ToValue.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmvcfView1.hints.ToValue.format}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvcfView1.hints.VcfValue.name}" filterable="true"
@@ -766,7 +766,8 @@
                                   shortDesc="#{bindings.TblFmvcfView1.hints.VcfValue.tooltip}" id="it50"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.VcfValue.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmvcfView1.hints.VcfValue.format}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="6" maxFractionDigits="6"/>
+                      
                     </af:inputText>
                   </af:column>
                 </af:table>

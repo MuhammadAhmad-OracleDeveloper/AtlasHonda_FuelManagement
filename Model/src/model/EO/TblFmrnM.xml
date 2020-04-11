@@ -136,14 +136,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ShortageWeight"
     ColumnName="SHORTAGE_WEIGHT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Status"
     Precision="3"
@@ -202,7 +206,9 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="VendorTearWeight"
     ColumnName="VENDOR_TEAR_WEIGHT"
