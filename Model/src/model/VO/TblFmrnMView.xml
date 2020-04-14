@@ -62,8 +62,8 @@
        TblFmrnM.VOL_CORR_FACTOR_ID, 
        TblFmrnM.VISCOSITY"
   FromList="TBL_FMRN_M TblFmrnM, TBL_FMRN_D TblFmrnD"
-  Where="TblFmrnM.FMRN_M_ID = TblFmrnD.FMRN_M_ID(+) 
-order  by TblFmrnM.FMPO_M_ID desc">
+  Where="TblFmrnM.FMRN_M_ID = TblFmrnD.FMRN_M_ID(+)  
+order  by TblFmrnM.FMRN_M_ID desc">
   <ViewAccessor
     Name="Purchase_Order_LOV1"
     ViewObjectName="model.LOV.Purchase_Order_LOV"
