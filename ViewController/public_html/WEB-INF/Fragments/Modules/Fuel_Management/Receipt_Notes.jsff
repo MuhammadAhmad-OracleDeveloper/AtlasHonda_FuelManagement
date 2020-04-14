@@ -485,7 +485,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGamt.name}" filterable="false"
-                             sortable="false" headerText="Gross Amount" id="c13" align="center">
+                             sortable="false" headerText="Amount w/o Sales Tax" id="c13" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnGamt}"
                                           id="it29" placeholder="Search Gross Amount">
@@ -540,7 +540,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnNetAmt.name}" filterable="false"
-                             sortable="false" headerText="Net Amount" id="c16" align="center">
+                             sortable="false" headerText="Amount with Sales Tax" id="c16" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnNetAmt}"
                                           id="it32" placeholder="Search Net Amount">
