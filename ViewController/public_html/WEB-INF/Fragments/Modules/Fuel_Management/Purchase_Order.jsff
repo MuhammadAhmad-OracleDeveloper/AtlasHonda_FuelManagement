@@ -370,7 +370,7 @@
                                   required="#{bindings.TblFmpoDView3.hints.FmstAmt.mandatory}"
                                   columns="#{bindings.TblFmpoDView3.hints.FmstAmt.displayWidth}"
                                   maximumLength="#{bindings.TblFmpoDView3.hints.FmstAmt.precision}"
-                                  shortDesc="#{bindings.TblFmpoDView3.hints.FmstAmt.tooltip}" id="it15" readOnly="true"
+                                  shortDesc="#{bindings.TblFmpoDView3.hints.FmstAmt.tooltip}" id="it15" 
                                   readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmstAmt.validator}"/>
