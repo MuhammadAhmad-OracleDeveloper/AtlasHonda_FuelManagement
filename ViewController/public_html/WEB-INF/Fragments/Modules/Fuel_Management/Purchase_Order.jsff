@@ -299,7 +299,7 @@
                                   shortDesc="#{bindings.TblFmpoDView3.hints.Fmqty.tooltip}" id="it11"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Fmqty.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoDView3.hints.Fmrate.name}" filterable="false"
@@ -318,11 +318,11 @@
                                   readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Fmrate.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoDView3.hints.Fmgamt.name}" filterable="false"
-                             sortable="false" headerText="Gross Amount" id="c14" align="center">
+                             sortable="false" headerText="Amount w/o Sales Tax" id="c14" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Fmgamt}"
                                           id="it21" placeholder="Search Amount">
@@ -337,7 +337,7 @@
                                   readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Fmgamt.validator}"/>
-                     <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                     <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoDView3.hints.FmstPerc.name}" filterable="false"
@@ -355,7 +355,7 @@
                                   shortDesc="#{bindings.TblFmpoDView3.hints.FmstPerc.tooltip}" id="it14"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmstPerc.validator}"/>
-                     <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                     <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoDView3.hints.FmstAmt.name}" filterable="false"
@@ -374,11 +374,11 @@
                                   readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmstAmt.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmpoDView3.hints.FmnetAmt.name}" filterable="false"
-                             sortable="false" headerText="Net Amount" id="c17" align="center">
+                             sortable="false" headerText="Amount with Sales Tax" id="c17" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmnetAmt}"
                                           id="it24" placeholder="Search Amount">
@@ -393,7 +393,7 @@
                                   readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmnetAmt.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                 </af:table>
