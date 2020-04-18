@@ -48,6 +48,12 @@
           usageId="view_Engine_Consumption_TaskFlow_Engine_Consumption_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Engine_Consumption.jsff"
           usageId="view_Engine_ConsumptionPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/PDC_Issuance_TaskFlow.xml#PDC_Issuance_TaskFlow@ExecuteWithParams"
+          usageId="view_PDC_Issuance_TaskFlow_PDC_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Gate_Pass_TaskFlow.xml#Gate_Pass_TaskFlow@ExecuteWithParams"
+          usageId="view_Gate_Pass_TaskFlow_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Token_Issuance_TaskFlow.xml#Token_Issuance_TaskFlow@ExecuteWithParams"
+          usageId="view_Token_Issuance_TaskFlow_Token_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -92,6 +98,12 @@
     <page id="view_Engine_Consumption_TaskFlow_Engine_Consumption_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Engine_Consumption_TaskFlow_Engine_Consumption_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Engine_ConsumptionPageDef" path="Fragments.Modules.Fuel_Management.Engine_ConsumptionPageDef"/>
+    <page id="view_PDC_Issuance_TaskFlow_PDC_Issuance_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fuel_Management.PDC_Issuance_TaskFlow_PDC_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Gate_Pass_TaskFlow_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fuel_Management.Gate_Pass_TaskFlow_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Token_Issuance_TaskFlow_Token_Issuance_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fuel_Management.Token_Issuance_TaskFlow_Token_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
