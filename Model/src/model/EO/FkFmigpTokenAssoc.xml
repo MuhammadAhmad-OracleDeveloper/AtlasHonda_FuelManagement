@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFmigpTokenAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFmtoken"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblFmtoken">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmtoken"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmtoken.PkFmtoken"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmtoken.FmtokenId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFmigp"
+    Cardinality="-1"
+    Owner="model.EO.TblFmigp">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmigp"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmigp.FkFmigpToken"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmigp.FmtokenId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

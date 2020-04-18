@@ -54,6 +54,9 @@
           usageId="view_Gate_Pass_TaskFlow_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Token_Issuance_TaskFlow.xml#Token_Issuance_TaskFlow@ExecuteWithParams"
           usageId="view_Token_Issuance_TaskFlow_Token_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Token_Issuance.jsff" usageId="view_Token_IssuancePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Gate_Pass.jsff" usageId="view_Gate_PassPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/PDC_Issuance.jsff" usageId="view_PDC_IssuancePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -104,6 +107,9 @@
           path="Task_Flows.Modules.Fuel_Management.Gate_Pass_TaskFlow_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Token_Issuance_TaskFlow_Token_Issuance_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Token_Issuance_TaskFlow_Token_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Token_IssuancePageDef" path="Fragments.Modules.Fuel_Management.Token_IssuancePageDef"/>
+    <page id="view_Gate_PassPageDef" path="Fragments.Modules.Fuel_Management.Gate_PassPageDef"/>
+    <page id="view_PDC_IssuancePageDef" path="Fragments.Modules.Fuel_Management.PDC_IssuancePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"

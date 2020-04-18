@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmpdcM"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FMPDC_M"
+  AliasName="TblFmpdcM"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FmpdcMId"
+    IsNotNull="true"
+    ColumnName="FMPDC_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPDC_M"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FmpdcMDate"
+    IsNotNull="true"
+    ColumnName="FMPDC_M_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMPDC_M"/>
+  <Attribute
+    Name="FmvendorsId"
+    ColumnName="FMVENDORS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPDC_M"/>
+  <Attribute
+    Name="FmpdcMRemarks"
+    Precision="300"
+    ColumnName="FMPDC_M_REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FMPDC_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FromDate"
+    ColumnName="FROM_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMPDC_M"/>
+  <Attribute
+    Name="ToDate"
+    ColumnName="TO_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMPDC_M"/>
+  <AccessorAttribute
+    Name="TblFmpdcD"
+    Association="model.EO.FkFmpdcDPdcAssoc"
+    AssociationEnd="model.EO.FkFmpdcDPdcAssoc.TblFmpdcD"
+    AssociationOtherEnd="model.EO.FkFmpdcDPdcAssoc.TblFmpdcM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkFmpdcM"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FMPDC_M"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpdcM.FmpdcMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFmpdcMVendor">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMVENDORS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FMPDC_M_VENDOR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpdcM.FmvendorsId"/>
+    </AttrArray>
+  </Key>
+</Entity>

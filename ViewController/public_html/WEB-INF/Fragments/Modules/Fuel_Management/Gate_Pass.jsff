@@ -1,2 +1,187 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Gate Pass">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Gate Pass">
+                <af:panelFormLayout id="pfl1">
+                  <af:inputText value="#{bindings.FmigpId.inputValue}" label="Gate Pass ID"
+                                required="#{bindings.FmigpId.hints.mandatory}"
+                                columns="#{bindings.FmigpId.hints.displayWidth}"
+                                maximumLength="#{bindings.FmigpId.hints.precision}"
+                                shortDesc="#{bindings.FmigpId.hints.tooltip}" id="it1" contentStyle="width:150px;"
+                                inlineStyle="text-align:center;">
+                    <f:validator binding="#{bindings.FmigpId.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.FmigpId.format}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.FmigpDate.inputValue}" label="Gate Pass Date"
+                                required="#{bindings.FmigpDate.hints.mandatory}"
+                                columns="#{bindings.FmigpDate.hints.displayWidth}"
+                                shortDesc="#{bindings.FmigpDate.hints.tooltip}" id="id1" contentStyle="width:150px;"
+                                inlineStyle="text-align:center;">
+                    <f:validator binding="#{bindings.FmigpDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.FmigpDate.format}"/>
+                  </af:inputDate>
+                  <af:spacer id="s2"/>
+                  <af:selectOneChoice value="#{bindings.FmtokenId.inputValue}" label="Token No."
+                                      required="#{bindings.FmtokenId.hints.mandatory}"
+                                      shortDesc="#{bindings.FmtokenId.hints.tooltip}" id="soc1"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.FmtokenId.items}" id="si1"/>
+                    <f:validator binding="#{bindings.FmtokenId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.FmigpRemarks.inputValue}" label="Remarks"
+                                required="#{bindings.FmigpRemarks.hints.mandatory}"
+                                columns="#{bindings.FmigpRemarks.hints.displayWidth}"
+                                maximumLength="#{bindings.FmigpRemarks.hints.precision}"
+                                shortDesc="#{bindings.FmigpRemarks.hints.tooltip}" id="it2" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.FmigpRemarks.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                      
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Gate Pass List">
+                <af:table value="#{bindings.TblFmigpView1.collectionModel}" var="row"
+                          rows="#{bindings.TblFmigpView1.rangeSize}"
+                          emptyText="#{bindings.TblFmigpView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblFmigpView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmigpView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmigpView1.rangeSize}"
+                          filterModel="#{bindings.TblFmigpView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmigpView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblFmigpView1.hints.FmigpId.name}" filterable="true"
+                             sortable="true" headerText="Gate Pass ID" id="c1" align="center" width="80">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmigpId}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmigpId.inputValue}"
+                                  label="#{bindings.TblFmigpView1.hints.FmigpId.label}"
+                                  required="#{bindings.TblFmigpView1.hints.FmigpId.mandatory}"
+                                  columns="#{bindings.TblFmigpView1.hints.FmigpId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmigpView1.hints.FmigpId.precision}"
+                                  shortDesc="#{bindings.TblFmigpView1.hints.FmigpId.tooltip}" id="it3"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmigpId.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmigpView1.hints.FmigpId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmigpView1.hints.FmigpDate.name}" filterable="true"
+                             sortable="true" headerText="Gate Pass Date" id="c2" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblFmigpView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmigpDate.value}"
+                                    id="id2">
+                        <af:convertDateTime pattern="#{bindings.TblFmigpView1.hints.FmigpDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.FmigpDate.inputValue}"
+                                  label="#{bindings.TblFmigpView1.hints.FmigpDate.label}"
+                                  required="#{bindings.TblFmigpView1.hints.FmigpDate.mandatory}"
+                                  columns="#{bindings.TblFmigpView1.hints.FmigpDate.displayWidth}"
+                                  shortDesc="#{bindings.TblFmigpView1.hints.FmigpDate.tooltip}" id="id3"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmigpDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblFmigpView1.hints.FmigpDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmigpView1.hints.FmtokenId.name}" filterable="true"
+                             sortable="true" headerText="Token No." id="c3" align="center" width="200">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmtokenId}"
+       id="it5" placeholder="Search Token No.">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FmtokenId.inputValue}"
+                                        label="#{row.bindings.FmtokenId.label}"
+                                        required="#{bindings.TblFmigpView1.hints.FmtokenId.mandatory}"
+                                        shortDesc="#{bindings.TblFmigpView1.hints.FmtokenId.tooltip}" id="soc2"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.FmtokenId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.FmtokenId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmigpView1.hints.FmigpRemarks.name}" filterable="true"
+                             sortable="true" headerText="Remarks" id="c4" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmigpRemarks}"
+       id="it6" placeholder="Search Remarks">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmigpRemarks.inputValue}"
+                                  label="#{bindings.TblFmigpView1.hints.FmigpRemarks.label}"
+                                  required="#{bindings.TblFmigpView1.hints.FmigpRemarks.mandatory}"
+                                  columns="#{bindings.TblFmigpView1.hints.FmigpRemarks.displayWidth}"
+                                  maximumLength="#{bindings.TblFmigpView1.hints.FmigpRemarks.precision}"
+                                  shortDesc="#{bindings.TblFmigpView1.hints.FmigpRemarks.tooltip}" id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.FmigpRemarks.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

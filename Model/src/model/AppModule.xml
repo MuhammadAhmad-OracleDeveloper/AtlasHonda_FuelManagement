@@ -148,6 +148,24 @@
   <ViewUsage
     Name="TblFmvcfView1"
     ViewObjectName="model.VO.TblFmvcfView"/>
+  <ViewUsage
+    Name="TblFmigpView1"
+    ViewObjectName="model.VO.TblFmigpView"/>
+  <ViewUsage
+    Name="TblFmpdcDView1"
+    ViewObjectName="model.VO.TblFmpdcDView"/>
+  <ViewUsage
+    Name="TblFmpdcMView1"
+    ViewObjectName="model.VO.TblFmpdcMView"/>
+  <ViewUsage
+    Name="TblFmtokenView1"
+    ViewObjectName="model.VO.TblFmtokenView"/>
+  <ViewUsage
+    Name="TblFmigpView2"
+    ViewObjectName="model.VO.TblFmigpView"/>
+  <ViewUsage
+    Name="TblFmpdcDView2"
+    ViewObjectName="model.VO.TblFmpdcDView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
@@ -255,5 +273,17 @@
     ViewLinkObjectName="model.VO.FkTblFmlabTestRepMRepMLink"
     SrcViewUsageName="model.AppModule.TblFmlabTestRepMView1"
     DstViewUsageName="model.AppModule.TblFmlabTestRepDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFmigpTokenLink1"
+    ViewLinkObjectName="model.VO.FkFmigpTokenLink"
+    SrcViewUsageName="model.AppModule.TblFmtokenView1"
+    DstViewUsageName="model.AppModule.TblFmigpView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFmpdcDPdcLink1"
+    ViewLinkObjectName="model.VO.FkFmpdcDPdcLink"
+    SrcViewUsageName="model.AppModule.TblFmpdcMView1"
+    DstViewUsageName="model.AppModule.TblFmpdcDView2"
     Reversed="false"/>
 </AppModule>
