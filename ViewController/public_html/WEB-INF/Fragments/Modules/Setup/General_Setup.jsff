@@ -729,7 +729,7 @@
                                   shortDesc="#{bindings.TblFmvcfView1.hints.FromValue.tooltip}" id="it34"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FromValue.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="3" maxFractionDigits="3"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmvcfView1.hints.ToValue.name}" filterable="true"
@@ -747,7 +747,7 @@
                                   shortDesc="#{bindings.TblFmvcfView1.hints.ToValue.tooltip}" id="it35"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ToValue.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="3" maxFractionDigits="3"/>
                       
                     </af:inputText>
                   </af:column>
