@@ -46,7 +46,7 @@
     Precision="20"
     ColumnName="COMP_SIZE"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
     TableName="TBL_FMRN_DIP">
     <DesignTime>
@@ -58,9 +58,11 @@
     Precision="20"
     ColumnName="SHORTAGE"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
-    TableName="TBL_FMRN_DIP">
+    TableName="TBL_FMRN_DIP"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -70,9 +72,11 @@
     Precision="20"
     ColumnName="SHORT_PER_CHART"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
-    TableName="TBL_FMRN_DIP">
+    TableName="TBL_FMRN_DIP"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>

@@ -709,8 +709,7 @@
                                             shortDesc="#{bindings.TblFmrnDipView2.hints.ProdDip.tooltip}" id="it48"
                                             contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.ProdDip.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblFmrnDipView2.hints.ProdDip.format}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.ActualDip.name}" filterable="true"
@@ -729,8 +728,7 @@
                                             shortDesc="#{bindings.TblFmrnDipView2.hints.ActualDip.tooltip}" id="it49"
                                             contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.ActualDip.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblFmrnDipView2.hints.ActualDip.format}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.CompSize.name}" filterable="true"
@@ -749,6 +747,7 @@
                                             shortDesc="#{bindings.TblFmrnDipView2.hints.CompSize.tooltip}" id="it50"
                                             contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.CompSize.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.Shortage.name}" filterable="true"
@@ -768,6 +767,7 @@
                                             readOnly="true"
                                             contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.Shortage.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.ShortPerChart.name}"
@@ -787,6 +787,7 @@
                                             shortDesc="#{bindings.TblFmrnDipView2.hints.ShortPerChart.tooltip}"
                                             id="it52" contentStyle='text-align: center' readOnly="true">
                                 <f:validator binding="#{row.bindings.ShortPerChart.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                               </af:inputText>
                             </af:column>
                           </af:table>
@@ -862,7 +863,7 @@
                                           maximumLength="#{bindings.PhyDensity.hints.precision}"
                                           shortDesc="#{bindings.PhyDensity.hints.tooltip}" id="it38">
                               <f:validator binding="#{bindings.PhyDensity.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="3" maxFractionDigits="3"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s40"/>
                             <af:inputText value="#{bindings.WaterPerc.inputValue}"
