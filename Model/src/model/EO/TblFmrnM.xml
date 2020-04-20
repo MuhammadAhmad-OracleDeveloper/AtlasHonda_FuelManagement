@@ -426,6 +426,13 @@
     AssociationOtherEnd="model.EO.FkFmrnMPoAssoc.TblFmrnM"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFmrnDip"
+    Association="model.EO.FkTblFmrnMFkAssoc"
+    AssociationEnd="model.EO.FkTblFmrnMFkAssoc.TblFmrnDip"
+    AssociationOtherEnd="model.EO.FkTblFmrnMFkAssoc.TblFmrnM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkFmrnM"
     PrimaryKey="true">

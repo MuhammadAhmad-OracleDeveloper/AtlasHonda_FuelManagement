@@ -112,32 +112,14 @@ order  by TblFmrnM.FMRN_M_ID desc">
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ListBinding
-    Name="LOV_FmpoMId"
-    ListVOName="Purchase_Order_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="FmpoMId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="CreditDays"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FmpoMId"/>
-      <Item Value="FmpoMCrDays"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FmpoMId"/>
-      <Item Value="FmvendorsName"/>
-      <Item Value="FmlocationName"/>
-      <Item Value="FmpoMDate"/>
-      <Item Value="CreditDays"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="PO_Name_LOV1"
+    ViewObjectName="model.LOV.PO_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="VCF_Value_LOV1"
+    ViewObjectName="model.LOV.VCF_Value_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FmdocstsId"
     ListVOName="Document_Status_LOV1"
@@ -301,6 +283,46 @@ order  by TblFmrnM.FMRN_M_ID desc">
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_FmpoMId"
+    ListVOName="PO_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmpoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmpoMId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmpoMId"/>
+      <Item Value="FmvendorsName"/>
+      <Item Value="FmlocationName"/>
+      <Item Value="FmpoMDate"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_VolCorrFactorId"
+    ListVOName="VCF_Value_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VolCorrFactorId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvcfId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="VcfValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmrnM"
     Entity="model.EO.TblFmrnM"/>
@@ -340,7 +362,7 @@ order  by TblFmrnM.FMRN_M_ID desc">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -709,7 +731,15 @@ order  by TblFmrnM.FMRN_M_ID desc">
     PrecisionRule="true"
     EntityAttrName="VolCorrFactorId"
     EntityUsage="TblFmrnM"
-    AliasName="VOL_CORR_FACTOR_ID"/>
+    AliasName="VOL_CORR_FACTOR_ID"
+    LOVName="LOV_VolCorrFactorId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Viscosity"
     PrecisionRule="true"
@@ -722,6 +752,11 @@ order  by TblFmrnM.FMRN_M_ID desc">
   <ViewLinkAccessor
     Name="TblFmrnDView"
     ViewLink="model.VO.FkFmrnDRnMLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblFmrnDipView"
+    ViewLink="model.VO.FkTblFmrnMFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

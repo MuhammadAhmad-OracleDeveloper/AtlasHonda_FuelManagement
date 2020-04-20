@@ -662,117 +662,142 @@
                         </af:panelGroupLayout>
                  </af:showDetailItem>
                         <af:showDetailItem text="DIP Info" id="sdi2">
-                         
-                                  <af:table value="#{bindings.TblFmrnDView4.collectionModel}" var="row"
-                                rows="#{bindings.TblFmrnDView4.rangeSize}"
-                                emptyText="#{bindings.TblFmrnDView4.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                rowBandingInterval="0"
-                                selectedRowKeys="#{bindings.TblFmrnDView4.collectionModel.selectedRow}"
-                                selectionListener="#{bindings.TblFmrnDView4.collectionModel.makeCurrent}"
-                                rowSelection="single" fetchSize="#{bindings.TblFmrnDView4.rangeSize}"
-                                filterModel="#{bindings.TblFmrnDView4Query.queryDescriptor}" filterVisible="true"
-                                queryListener="#{bindings.TblFmrnDView4Query.processQuery}" varStatus="vs" id="t1"
-                                scrollPolicy="page" autoHeightRows="0" >
-                        <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip2.name}" filterable="true"
-                                   sortable="true" headerText="Prod. Dip" id="c2" align="center">
-                                    <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.FmrnDip2}"
-       id="it73" placeholder="Search Dip">
+                          <af:table value="#{bindings.TblFmrnDipView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmrnDipView2.rangeSize}"
+                                    emptyText="#{bindings.TblFmrnDipView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmrnDipView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmrnDipView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmrnDipView2.rangeSize}"
+                                    filterModel="#{bindings.TblFmrnDipView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblFmrnDipView2Query.processQuery}" varStatus="vs"
+                                    id="t1" scrollPolicy="page" autoHeightRows="0" >
+                            <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.FmrnDipId.name}" filterable="true"
+                                       sortable="true" headerText="Dip ID"
+                                       id="c2" align="center">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnDipId}"
+       id="it73" placeholder="Search ID">
       </af:inputText>
 </f:facet>
-                          <af:inputText value="#{row.bindings.FmrnDip2.inputValue}"
-                                        label="#{bindings.TblFmrnDView4.hints.FmrnDip2.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.FmrnDip2.mandatory}"
-                                        columns="#{bindings.TblFmrnDView4.hints.FmrnDip2.displayWidth}"
-                                        maximumLength="#{bindings.TblFmrnDView4.hints.FmrnDip2.precision}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.FmrnDip2.tooltip}" id="it48"
-                                        contentStyle='text-align: center'>
-                            <f:validator binding="#{row.bindings.FmrnDip2.validator}"/>
-                            <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
-                          </af:inputText>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnDip3.name}" filterable="true"
-                                   sortable="true" headerText="Actual Dip" id="c3" align="center">
-                                   <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.FmrnDip3}"
-       id="it74" placeholder="Search Dip">
+                              <af:inputText value="#{row.bindings.FmrnDipId.inputValue}"
+                                            label="#{bindings.TblFmrnDipView2.hints.FmrnDipId.label}"
+                                            required="#{bindings.TblFmrnDipView2.hints.FmrnDipId.mandatory}"
+                                            columns="#{bindings.TblFmrnDipView2.hints.FmrnDipId.displayWidth}"
+                                            maximumLength="#{bindings.TblFmrnDipView2.hints.FmrnDipId.precision}"
+                                            shortDesc="#{bindings.TblFmrnDipView2.hints.FmrnDipId.tooltip}" id="it19"
+                                            readOnly="true"
+                                  contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnDipId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmrnDipView2.hints.FmrnDipId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.ProdDip.name}" filterable="true"
+                                       sortable="true" headerText="Prod.Dip"
+                                       id="c3" align="center">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProdDip}"
+       id="it74" placeholder="Search Prod.Dip">
       </af:inputText>
 </f:facet>
-                          <af:inputText value="#{row.bindings.FmrnDip3.inputValue}"
-                                        label="#{bindings.TblFmrnDView4.hints.FmrnDip3.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.FmrnDip3.mandatory}"
-                                        columns="#{bindings.TblFmrnDView4.hints.FmrnDip3.displayWidth}"
-                                        maximumLength="#{bindings.TblFmrnDView4.hints.FmrnDip3.precision}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.FmrnDip3.tooltip}" id="it49"
-                                        contentStyle='text-align: center'>
-                            <f:validator binding="#{row.bindings.FmrnDip3.validator}"/>
-                            <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
-                          </af:inputText>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.TblFmrnDView4.hints.CompSize.name}" filterable="true"
-                                   sortable="true" headerText="Comp. Size" id="c4" align="center">
-                                    <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.FmrnDip3}"
-       id="it75" placeholder="Search Size">
+                              <af:inputText value="#{row.bindings.ProdDip.inputValue}"
+                                            label="#{bindings.TblFmrnDipView2.hints.ProdDip.label}"
+                                            required="#{bindings.TblFmrnDipView2.hints.ProdDip.mandatory}"
+                                            columns="#{bindings.TblFmrnDipView2.hints.ProdDip.displayWidth}"
+                                            maximumLength="#{bindings.TblFmrnDipView2.hints.ProdDip.precision}"
+                                            shortDesc="#{bindings.TblFmrnDipView2.hints.ProdDip.tooltip}" id="it48"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.ProdDip.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmrnDipView2.hints.ProdDip.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.ActualDip.name}" filterable="true"
+                                       sortable="true" headerText="Actual Dip"
+                                       id="c4" align="center">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ActualDip}"
+       id="it75" placeholder="Search Actual Dip">
       </af:inputText>
 </f:facet>
-                          <af:inputText value="#{row.bindings.CompSize.inputValue}"
-                                        label="#{bindings.TblFmrnDView4.hints.CompSize.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.CompSize.mandatory}"
-                                        columns="#{bindings.TblFmrnDView4.hints.CompSize.displayWidth}"
-                                        maximumLength="#{bindings.TblFmrnDView4.hints.CompSize.precision}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.CompSize.tooltip}" id="it50"
-                                        contentStyle='text-align: center'>
-                            <f:validator binding="#{row.bindings.CompSize.validator}"/>
-                            <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
-                          </af:inputText>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.TblFmrnDView4.hints.Shortage.name}" filterable="true"
-                                   sortable="true" headerText="Shortage" id="c6" align="center">
-                                    <f:facet name="filter">
+                              <af:inputText value="#{row.bindings.ActualDip.inputValue}"
+                                            label="#{bindings.TblFmrnDipView2.hints.ActualDip.label}"
+                                            required="#{bindings.TblFmrnDipView2.hints.ActualDip.mandatory}"
+                                            columns="#{bindings.TblFmrnDipView2.hints.ActualDip.displayWidth}"
+                                            maximumLength="#{bindings.TblFmrnDipView2.hints.ActualDip.precision}"
+                                            shortDesc="#{bindings.TblFmrnDipView2.hints.ActualDip.tooltip}" id="it49"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.ActualDip.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmrnDipView2.hints.ActualDip.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.CompSize.name}" filterable="true"
+                                       sortable="true" headerText="Comp.Size"
+                                       id="c5" align="center">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompSize}"
+       id="it76" placeholder="Search Comp.Size">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.CompSize.inputValue}"
+                                            label="#{bindings.TblFmrnDipView2.hints.CompSize.label}"
+                                            required="#{bindings.TblFmrnDipView2.hints.CompSize.mandatory}"
+                                            columns="#{bindings.TblFmrnDipView2.hints.CompSize.displayWidth}"
+                                            maximumLength="#{bindings.TblFmrnDipView2.hints.CompSize.precision}"
+                                            shortDesc="#{bindings.TblFmrnDipView2.hints.CompSize.tooltip}" id="it50"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.CompSize.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.Shortage.name}" filterable="true"
+                                       sortable="true" headerText="Shortage"
+                                       id="c6" align="center">
+                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Shortage}"
-       id="it19" placeholder="Search Shortage">
+       id="it78" placeholder="Search Shortage">
       </af:inputText>
 </f:facet>
-                          <af:inputText value="#{row.bindings.Shortage.inputValue}"
-                                        label="#{bindings.TblFmrnDView4.hints.Shortage.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.Shortage.mandatory}"
-                                        columns="#{bindings.TblFmrnDView4.hints.Shortage.displayWidth}"
-                                        maximumLength="#{bindings.TblFmrnDView4.hints.Shortage.precision}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.Shortage.tooltip}" id="it52"
-                                        contentStyle='text-align: center'>
-                            <f:validator binding="#{row.bindings.Shortage.validator}"/>
-                            <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
-                          </af:inputText>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.TblFmrnDView4.hints.ShortPerChart.name}" filterable="true"
-                                   sortable="true" headerText="Short per Chart"
-                                   id="c5" align="center">
-                                    <f:facet name="filter">
+                              <af:inputText value="#{row.bindings.Shortage.inputValue}"
+                                            label="#{bindings.TblFmrnDipView2.hints.Shortage.label}"
+                                            required="#{bindings.TblFmrnDipView2.hints.Shortage.mandatory}"
+                                            columns="#{bindings.TblFmrnDipView2.hints.Shortage.displayWidth}"
+                                            maximumLength="#{bindings.TblFmrnDipView2.hints.Shortage.precision}"
+                                            shortDesc="#{bindings.TblFmrnDipView2.hints.Shortage.tooltip}" id="it51"
+                                            readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.Shortage.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmrnDipView2.hints.ShortPerChart.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Short per Chart" id="c22"
+                                       align="center">
+                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ShortPerChart}"
-       id="it76" placeholder="Search Chart">
+       id="it79" placeholder="Search Short per Chart">
       </af:inputText>
 </f:facet>
-                          <af:inputText value="#{row.bindings.ShortPerChart.inputValue}"
-                                        label="#{bindings.TblFmrnDView4.hints.ShortPerChart.label}"
-                                        required="#{bindings.TblFmrnDView4.hints.ShortPerChart.mandatory}"
-                                        columns="#{bindings.TblFmrnDView4.hints.ShortPerChart.displayWidth}"
-                                        maximumLength="#{bindings.TblFmrnDView4.hints.ShortPerChart.precision}"
-                                        shortDesc="#{bindings.TblFmrnDView4.hints.ShortPerChart.tooltip}" id="it51"
-                                        contentStyle='text-align: center'>
-                            <f:validator binding="#{row.bindings.ShortPerChart.validator}"/>
-                            <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
-                          </af:inputText>
-                        </af:column>
-                        
-                      </af:table>
-                      <af:panelGroupLayout id="pgl7" layout="horizontal">
+                              <af:inputText value="#{row.bindings.ShortPerChart.inputValue}"
+                                            label="#{bindings.TblFmrnDipView2.hints.ShortPerChart.label}"
+                                            required="#{bindings.TblFmrnDipView2.hints.ShortPerChart.mandatory}"
+                                            columns="#{bindings.TblFmrnDipView2.hints.ShortPerChart.displayWidth}"
+                                            maximumLength="#{bindings.TblFmrnDipView2.hints.ShortPerChart.precision}"
+                                            shortDesc="#{bindings.TblFmrnDipView2.hints.ShortPerChart.tooltip}"
+                                            id="it52" contentStyle='text-align: center' readOnly="true">
+                                <f:validator binding="#{row.bindings.ShortPerChart.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                          <af:panelGroupLayout id="pgl7" layout="horizontal">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
@@ -870,15 +895,15 @@
                               <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s43"/>
-                            <af:inputText value="#{bindings.VolCorrFactorId.inputValue}"
-                                          label="Volume Correction Factor"
-                                          required="#{bindings.VolCorrFactorId.hints.mandatory}"
-                                          columns="10"
-                                          maximumLength="#{bindings.VolCorrFactorId.hints.precision}"
-                                          shortDesc="#{bindings.VolCorrFactorId.hints.tooltip}" id="it56">
-                              <f:validator binding="#{bindings.VolCorrFactorId.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
-                            </af:inputText>
+                            
+                            <af:selectOneChoice value="#{bindings.VolCorrFactorId1.inputValue}"
+                                                label="Volume Correction Factor"
+                                                required="#{bindings.VolCorrFactorId1.hints.mandatory}"
+                                                shortDesc="#{bindings.VolCorrFactorId1.hints.tooltip}" id="soc13" disabled="true"
+                                                contentStyle="width:100px;">
+                              <f:selectItems value="#{bindings.VolCorrFactorId1.items}" id="si13"/>
+                              <f:validator binding="#{bindings.VolCorrFactorId1.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer width="10" height="0" id="s44"/>
                             <af:inputText value="#{bindings.CalorificValue.inputValue}"
                                           label="Calorific Value"

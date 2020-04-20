@@ -6,13 +6,13 @@
   Name="Token_issuance_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmtoken.FMTOKEN_ID, 
+       TblFmtoken.FMTOKEN_VEHICLE_NO"
+  FromList="TBL_FMTOKEN TblFmtoken"
+  Where="TblFmtoken.FMTOKEN_ID not in (Select FMTOKEN_ID from tbl_fmigp)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

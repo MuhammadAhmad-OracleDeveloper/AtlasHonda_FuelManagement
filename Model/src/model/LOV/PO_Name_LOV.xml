@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PO_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.PO_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT TblFmpoM.FMPO_M_DATE,  
+       TblFmpoM.FMPO_M_ID,  
+       TblFmpoM.FMLOCATION_ID,  
+       TblFmpoM.FMVENDORS_ID,  
+       TblFmpoM.FMPO_M_CR_DAYS, 
+       TblFmvendors.FMVENDORS_NAME,  
+       TblFmlocation.FMLOCATION_NAME 
+        
+FROM  TBL_FMPO_M TblFmpoM,  TBL_FMVENDORS TblFmvendors, TBL_FMLOCATION TblFmlocation 
+Where TblFmpoM.FMLOCATION_ID=TblFmlocation.FMLOCATION_ID 
+And TblFmpoM.FMVENDORS_ID=TblFmvendors.FMVENDORS_ID 
+Order by TblFmpoM.FMPO_M_ID desc]]></SQLQuery>
+  <ViewAttribute
+    Name="FmpoMDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="FMPO_M_DATE"
+    Expression="FMPO_M_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="FmpoMId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMPO_M_ID"
+    Expression="FMPO_M_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmlocationId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMLOCATION_ID"
+    Expression="FMLOCATION_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmvendorsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMVENDORS_ID"
+    Expression="FMVENDORS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmpoMCrDays"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMPO_M_CR_DAYS"
+    Expression="FMPO_M_CR_DAYS"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmvendorsName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FMVENDORS_NAME"
+    Expression="FMVENDORS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FmlocationName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FMLOCATION_NAME"
+    Expression="FMLOCATION_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="FmpoMId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

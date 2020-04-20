@@ -166,6 +166,12 @@
   <ViewUsage
     Name="TblFmpdcDView2"
     ViewObjectName="model.VO.TblFmpdcDView"/>
+  <ViewUsage
+    Name="TblFmrnDipView1"
+    ViewObjectName="model.VO.TblFmrnDipView"/>
+  <ViewUsage
+    Name="TblFmrnDipView2"
+    ViewObjectName="model.VO.TblFmrnDipView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
@@ -285,5 +291,11 @@
     ViewLinkObjectName="model.VO.FkFmpdcDPdcLink"
     SrcViewUsageName="model.AppModule.TblFmpdcMView1"
     DstViewUsageName="model.AppModule.TblFmpdcDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFmrnMFkLink1"
+    ViewLinkObjectName="model.VO.FkTblFmrnMFkLink"
+    SrcViewUsageName="model.AppModule.TblFmrnMView1"
+    DstViewUsageName="model.AppModule.TblFmrnDipView2"
     Reversed="false"/>
 </AppModule>
