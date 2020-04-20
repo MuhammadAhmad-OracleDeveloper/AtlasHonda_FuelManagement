@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="FmpdcMId"
-    IsNotNull="true"
     ColumnName="FMPDC_M_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMPDC_M"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmpdcMDate"
     IsNotNull="true"

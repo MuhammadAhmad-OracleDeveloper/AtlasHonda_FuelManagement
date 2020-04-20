@@ -277,7 +277,7 @@
                                 maximumLength="#{bindings.VendorGrossWeight.hints.precision}"
                                 shortDesc="#{bindings.VendorGrossWeight.hints.tooltip}" id="it24" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VendorGrossWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                             <af:inputText value="#{bindings.VendorTearWeight.inputValue}"
                                 label="Fuel Supplier Tare Weight"
@@ -286,7 +286,7 @@
                                 maximumLength="#{bindings.VendorTearWeight.hints.precision}"
                                 shortDesc="#{bindings.VendorTearWeight.hints.tooltip}" id="it39" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VendorTearWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                             <af:spacer width="10" height="0" id="s24"/>
                             <af:inputText value="#{bindings.DeliveryNo.inputValue}"
@@ -321,7 +321,7 @@
                                 maximumLength="#{bindings.GrossWeight.hints.precision}"
                                 shortDesc="#{bindings.GrossWeight.hints.tooltip}" id="it7" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.GrossWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                             <af:spacer width="10" height="0" id="s31"/>
                             <af:inputText value="#{bindings.TearWeight.inputValue}" label="APL Tare Weight"
@@ -330,7 +330,7 @@
                                 maximumLength="#{bindings.TearWeight.hints.precision}"
                                 shortDesc="#{bindings.TearWeight.hints.tooltip}" id="it22" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.TearWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                             <af:spacer width="10" height="0" id="s32"/>
                             <af:inputText value="#{bindings.NetWeight.inputValue}" label="Net Weight"
@@ -339,7 +339,7 @@
                                 maximumLength="#{bindings.NetWeight.hints.precision}"
                                 shortDesc="#{bindings.NetWeight.hints.tooltip}" id="it23" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.NetWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                             <af:spacer width="10" height="0" id="s33"/>
                             <af:inputText value="#{bindings.ShortageWeight.inputValue}"
@@ -349,7 +349,7 @@
                                 maximumLength="#{bindings.ShortageWeight.hints.precision}"
                                 shortDesc="#{bindings.ShortageWeight.hints.tooltip}" id="it45" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.ShortageWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                   <af:spacer width="10" height="0" id="s29"/>
                             <af:inputText value="#{bindings.VendorNetWeight.inputValue}"
@@ -359,7 +359,7 @@
                                 maximumLength="#{bindings.VendorNetWeight.hints.precision}"
                                 shortDesc="#{bindings.VendorNetWeight.hints.tooltip}" id="it44" disabled="true" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.VendorNetWeight.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" id="pgl5">
@@ -558,7 +558,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnGWeight.name}" filterable="false"
-                             sortable="false" headerText="Gross Weight" id="c17">
+                             sortable="false" headerText="Gross Weight" id="c17" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FmrnGWeight}"
                                           id="it33" placeholder="Search Weight">
@@ -572,7 +572,7 @@
                                   shortDesc="#{bindings.TblFmrnDView4.hints.FmrnGWeight.tooltip}" id="it14"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnGWeight.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnTWeight.name}" filterable="false"
@@ -590,7 +590,7 @@
                                   shortDesc="#{bindings.TblFmrnDView4.hints.FmrnTWeight.tooltip}" id="it15"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnTWeight.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnNWeight.name}" filterable="false"
@@ -608,7 +608,7 @@
                                   shortDesc="#{bindings.TblFmrnDView4.hints.FmrnNWeight.tooltip}" id="it16"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnNWeight.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnVtWeight.name}" filterable="false"
@@ -626,7 +626,7 @@
                                   shortDesc="#{bindings.TblFmrnDView4.hints.FmrnVtWeight.tooltip}" id="it17"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnVtWeight.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnVnWeight.name}" filterable="false"
@@ -644,7 +644,7 @@
                                   shortDesc="#{bindings.TblFmrnDView4.hints.FmrnVnWeight.tooltip}" id="it18"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnVnWeight.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   
