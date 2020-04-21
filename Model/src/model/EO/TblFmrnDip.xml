@@ -14,7 +14,7 @@
     Name="FmrnDipId"
     ColumnName="FMRN_DIP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP"
     PrimaryKey="true"
@@ -24,30 +24,29 @@
     Name="FmrnMId"
     ColumnName="FMRN_M_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP"/>
   <Attribute
     Name="ProdDip"
     ColumnName="PROD_DIP"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP"/>
   <Attribute
     Name="ActualDip"
     ColumnName="ACTUAL_DIP"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP"/>
   <Attribute
     Name="CompSize"
-    Precision="20"
     ColumnName="COMP_SIZE"
     SQLType="VARCHAR"
     Type="oracle.jbo.domain.Number"
-    ColumnType="VARCHAR2"
+    ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -55,11 +54,10 @@
   </Attribute>
   <Attribute
     Name="Shortage"
-    Precision="20"
     ColumnName="SHORTAGE"
     SQLType="VARCHAR"
     Type="oracle.jbo.domain.Number"
-    ColumnType="VARCHAR2"
+    ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP"
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true">
@@ -69,11 +67,10 @@
   </Attribute>
   <Attribute
     Name="ShortPerChart"
-    Precision="20"
     ColumnName="SHORT_PER_CHART"
     SQLType="VARCHAR"
     Type="oracle.jbo.domain.Number"
-    ColumnType="VARCHAR2"
+    ColumnType="NUMBER"
     TableName="TBL_FMRN_DIP"
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true">
