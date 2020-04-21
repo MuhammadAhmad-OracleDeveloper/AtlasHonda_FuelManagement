@@ -367,7 +367,10 @@
             Action="createInsertRow"/>
     <action IterBinding="TblFmrnDipView2Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblFmrnDipView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_VolCorrFactorId" id="VolCorrFactorId1"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VolCorrFactorId">
+      <AttrNames>
+        <Item Value="VolCorrFactorId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

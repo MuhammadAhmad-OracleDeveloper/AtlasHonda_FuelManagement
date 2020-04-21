@@ -821,7 +821,7 @@
                                           required="#{bindings.InvTempFr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTempFr.hints.precision}"
-                                          shortDesc="#{bindings.InvTempFr.hints.tooltip}" id="it21">
+                                          shortDesc="#{bindings.InvTempFr.hints.tooltip}" id="it21" disabled="true">
                               <f:validator binding="#{bindings.InvTempFr.validator}"/>
                               <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                             </af:inputText>
@@ -833,7 +833,7 @@
                                           maximumLength="#{bindings.InvDensity.hints.precision}"
                                           shortDesc="#{bindings.InvDensity.hints.tooltip}" id="it77">
                               <f:validator binding="#{bindings.InvDensity.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="3" maxFractionDigits="3"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s37"/>
                             <af:inputText value="#{bindings.PhyTempCel.inputValue}"
@@ -851,7 +851,7 @@
                                           required="#{bindings.PhyTempFr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.PhyTempFr.hints.precision}"
-                                          shortDesc="#{bindings.PhyTempFr.hints.tooltip}" id="it37">
+                                          shortDesc="#{bindings.PhyTempFr.hints.tooltip}" id="it37" disabled="true">
                               <f:validator binding="#{bindings.PhyTempFr.validator}"/>
                               <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                             </af:inputText>
@@ -897,14 +897,24 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s43"/>
                             
-                            <af:selectOneChoice value="#{bindings.VolCorrFactorId1.inputValue}"
+                            <!--<af:selectOneChoice value="#{bindings.VolCorrFactorId1.inputValue}"
                                                 label="Volume Correction Factor"
                                                 required="#{bindings.VolCorrFactorId1.hints.mandatory}"
                                                 shortDesc="#{bindings.VolCorrFactorId1.hints.tooltip}" id="soc13" disabled="true"
                                                 contentStyle="width:100px;">
                               <f:selectItems value="#{bindings.VolCorrFactorId1.items}" id="si13"/>
                               <f:validator binding="#{bindings.VolCorrFactorId1.validator}"/>
-                            </af:selectOneChoice>
+                            </af:selectOneChoice>-->
+                            <af:inputText value="#{bindings.VolCorrFactorId.inputValue}"
+                                          label="Volume Correction Factor"
+                                          required="#{bindings.VolCorrFactorId.hints.mandatory}"
+                                          columns="#{bindings.VolCorrFactorId.hints.displayWidth}"
+                                          maximumLength="#{bindings.VolCorrFactorId.hints.precision}"
+                                          shortDesc="#{bindings.VolCorrFactorId.hints.tooltip}" id="it56" disabled="true"
+                                          contentStyle="width:100px;">
+                              <f:validator binding="#{bindings.VolCorrFactorId.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.VolCorrFactorId.format}"/>
+                            </af:inputText>
                             <af:spacer width="10" height="0" id="s44"/>
                             <af:inputText value="#{bindings.CalorificValue.inputValue}"
                                           label="Calorific Value"
@@ -921,9 +931,9 @@
                                           required="#{bindings.DipFuelShort.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.DipFuelShort.hints.precision}"
-                                          shortDesc="#{bindings.DipFuelShort.hints.tooltip}" id="it58">
+                                          shortDesc="#{bindings.DipFuelShort.hints.tooltip}" id="it58" disabled="true">
                               <f:validator binding="#{bindings.DipFuelShort.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s46"/>
                             <af:inputText value="#{bindings.TempShortRec.inputValue}"
@@ -951,7 +961,7 @@
                                           required="#{bindings.InvTotalFuelLtr.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelLtr.hints.precision}"
-                                          shortDesc="#{bindings.InvTotalFuelLtr.hints.tooltip}" id="it61">
+                                          shortDesc="#{bindings.InvTotalFuelLtr.hints.tooltip}" id="it61" disabled="true">
                               <f:validator binding="#{bindings.InvTotalFuelLtr.validator}"/>
                               <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                             </af:inputText>
@@ -981,7 +991,7 @@
                                           required="#{bindings.InvTotalFuelKg.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelKg.hints.precision}"
-                                          shortDesc="#{bindings.InvTotalFuelKg.hints.tooltip}" id="it64" >
+                                          shortDesc="#{bindings.InvTotalFuelKg.hints.tooltip}" id="it64" disabled="true">
                               <f:validator binding="#{bindings.InvTotalFuelKg.validator}"/>
                               <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                             </af:inputText>
@@ -1011,7 +1021,7 @@
                                           required="#{bindings.InvTotalFuelTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.InvTotalFuelTon.hints.precision}"
-                                          shortDesc="#{bindings.InvTotalFuelTon.hints.tooltip}" id="it67">
+                                          shortDesc="#{bindings.InvTotalFuelTon.hints.tooltip}" id="it67" disabled="true">
                               <f:validator binding="#{bindings.InvTotalFuelTon.validator}"/>
                               <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                             </af:inputText>
