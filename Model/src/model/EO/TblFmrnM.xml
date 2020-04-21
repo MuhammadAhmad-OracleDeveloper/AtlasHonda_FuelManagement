@@ -407,7 +407,7 @@
     Name="VolCorrFactorId"
     ColumnName="VOL_CORR_FACTOR_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_M"
     RetrievedOnInsert="true"
