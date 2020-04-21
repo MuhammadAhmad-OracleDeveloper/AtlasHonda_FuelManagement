@@ -258,7 +258,7 @@
                                 maximumLength="#{bindings.InvoiceNo.hints.precision}"
                                 shortDesc="#{bindings.InvoiceNo.hints.tooltip}" id="it3" contentStyle='text-align: center'>
                     <f:validator binding="#{bindings.InvoiceNo.validator}"/>
-                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    
                   </af:inputText>
                             <af:spacer width="10" height="0" id="s22"/>
                             <af:inputDate value="#{bindings.InvoiceDate.inputValue}"
@@ -296,7 +296,7 @@
                                           maximumLength="#{bindings.DeliveryNo.hints.precision}"
                                           shortDesc="#{bindings.DeliveryNo.hints.tooltip}" id="it20" contentStyle='text-align: center'>
                               <f:validator binding="#{bindings.DeliveryNo.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s25"/>
                             <af:inputText value="#{bindings.FmrnRemarks.inputValue}" label="Remarks"
@@ -463,7 +463,7 @@
                                   shortDesc="#{bindings.TblFmrnDView4.hints.FmrnQty.tooltip}" id="it8"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnQty.validator}"/>
-                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnDView4.hints.FmrnRate.name}" filterable="false"
@@ -1006,7 +1006,7 @@
                                           maximumLength="#{bindings.ActualFuelRecTon.hints.precision}"
                                           shortDesc="#{bindings.ActualFuelRecTon.hints.tooltip}" id="it66" disabled="true">
                               <f:validator binding="#{bindings.ActualFuelRecTon.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s54"/>
                             <af:inputText value="#{bindings.InvTotalFuelTon.inputValue}"
@@ -1016,7 +1016,7 @@
                                           maximumLength="#{bindings.InvTotalFuelTon.hints.precision}"
                                           shortDesc="#{bindings.InvTotalFuelTon.hints.tooltip}" id="it67" disabled="true">
                               <f:validator binding="#{bindings.InvTotalFuelTon.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s55"/>
                             <af:inputText value="#{bindings.ActualFuelWeighTon.inputValue}"
@@ -1024,9 +1024,9 @@
                                           required="#{bindings.ActualFuelWeighTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ActualFuelWeighTon.hints.precision}"
-                                          shortDesc="#{bindings.ActualFuelWeighTon.hints.tooltip}" id="it68">
+                                          shortDesc="#{bindings.ActualFuelWeighTon.hints.tooltip}" id="it68" disabled="true">
                               <f:validator binding="#{bindings.ActualFuelWeighTon.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s56"/>
                             <af:inputText value="#{bindings.ShortageTon.inputValue}"
@@ -1034,9 +1034,9 @@
                                           required="#{bindings.ShortageTon.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.ShortageTon.hints.precision}"
-                                          shortDesc="#{bindings.ShortageTon.hints.tooltip}" id="it69">
+                                          shortDesc="#{bindings.ShortageTon.hints.tooltip}" id="it69" disabled="true">
                               <f:validator binding="#{bindings.ShortageTon.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                             </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" id="pgl9">
