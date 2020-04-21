@@ -897,14 +897,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s43"/>
                             
-                            <!--<af:selectOneChoice value="#{bindings.VolCorrFactorId1.inputValue}"
-                                                label="Volume Correction Factor"
-                                                required="#{bindings.VolCorrFactorId1.hints.mandatory}"
-                                                shortDesc="#{bindings.VolCorrFactorId1.hints.tooltip}" id="soc13" disabled="true"
-                                                contentStyle="width:100px;">
-                              <f:selectItems value="#{bindings.VolCorrFactorId1.items}" id="si13"/>
-                              <f:validator binding="#{bindings.VolCorrFactorId1.validator}"/>
-                            </af:selectOneChoice>-->
+                           
                             <af:inputText value="#{bindings.VolCorrFactorId.inputValue}"
                                           label="Volume Correction Factor"
                                           required="#{bindings.VolCorrFactorId.hints.mandatory}"
@@ -913,7 +906,7 @@
                                           shortDesc="#{bindings.VolCorrFactorId.hints.tooltip}" id="it56" disabled="true"
                                           contentStyle="width:100px;">
                               <f:validator binding="#{bindings.VolCorrFactorId.validator}"/>
-                              <af:convertNumber groupingUsed="false" pattern="#{bindings.VolCorrFactorId.format}"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="6" maxFractionDigits="6"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s44"/>
                             <af:inputText value="#{bindings.CalorificValue.inputValue}"
