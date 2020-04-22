@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Fuel_Dashboard_VO"
+  Name="Fuel_Receipt_VO"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,50 +15,47 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.VO.Fuel_Dashboard_VO_LABEL"/>
+        ResId="model.VO.Fuel_Receipt_VO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select  
-Max(a.fmpo_m_date) PO_Date,  
-a.fmpo_m_id,  
-Max(a.fmvendors_id) Vendor_ID,  
-Max(e.fmvendors_name) Vendor_Name,  
-MAx(a.fmlocation_id) Location_ID,  
-Max(f.fmlocation_name) Location_Name,  
-b.fmitems_id,  
-Max(g.fmitems_name) Item_Name,  
-Sum(Nvl(b.fmqty,0)) PO_Qty,  
-Sum(Nvl(d.fmrn_qty,0)) RN_Qty,  
-(Sum(Nvl(b.fmqty,0))-Sum(Nvl(d.fmrn_qty,0))) Bal_Qty  
-From Tbl_FMPO_M a, Tbl_FMPO_D b, Tbl_FMRN_M C, Tbl_FMRN_D D, Tbl_FMVENDORS e, Tbl_FMLOCATION f, tbl_fmitems g  
-Where b.fmpo_m_id=a.fmpo_m_id  
-And d.fmrn_m_id(+)=c.fmrn_m_id  
-And c.fmpo_m_id(+)=a.fmpo_m_id  
-And d.fmitems_id(+)=b.fmitems_id  
-And e.fmvendors_id(+)=a.fmvendors_id  
-And f.fmlocation_id(+)=a.fmlocation_id  
-And g.fmitems_id(+)=b.fmitems_id  
-Group By a.fmpo_m_id,b.fmitems_id 
-Order by  a.fmpo_m_id desc]]></SQLQuery>
+  <SQLQuery><![CDATA[Select 
+a.fmrn_m_date, 
+a.fmrn_m_id, 
+a.VENDOR_ID, 
+c.fmvendors_name, 
+a.LOCATION_ID, 
+d.fmlocation_name, 
+a.VEHICLE_NO, 
+b.fmitems_id, 
+e.fmitems_name, 
+Nvl(b.fmrn_qty,0) fmrn_qty, 
+Nvl(b.fmrn_g_weight,0) fmrn_g_weight 
+From Tbl_FMRN_M A,Tbl_FMRN_D B,tbl_fmvendors C, tbl_fmlocation D, tbl_fmitems E 
+Where b.fmrn_m_id=a.fmrn_m_id 
+And c.fmvendors_id=a.vendor_id 
+And d.fmlocation_id=a.location_id 
+And e.fmitems_id=b.fmitems_id 
+And Nvl(a.tear_weight,0)=0 
+order By a.fmrn_m_date desc]]></SQLQuery>
   <ViewAttribute
-    Name="PoDate"
+    Name="FmrnMDate"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    AliasName="PO_DATE"
-    Expression="PO_DATE"
+    AliasName="FMRN_M_DATE"
+    Expression="FMRN_M_DATE"
     SQLType="DATE"/>
   <ViewAttribute
-    Name="FmpoMId"
+    Name="FmrnMId"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    AliasName="FMPO_M_ID"
-    Expression="FMPO_M_ID"
+    AliasName="FMRN_M_ID"
+    Expression="FMRN_M_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
     Name="VendorId"
@@ -71,15 +68,15 @@ Order by  a.fmpo_m_id desc]]></SQLQuery>
     Expression="VENDOR_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
-    Name="VendorName"
+    Name="FmvendorsName"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="150"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="VENDOR_NAME"
-    Expression="VENDOR_NAME"
+    AliasName="FMVENDORS_NAME"
+    Expression="FMVENDORS_NAME"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
@@ -96,18 +93,33 @@ Order by  a.fmpo_m_id desc]]></SQLQuery>
     Expression="LOCATION_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
-    Name="LocationName"
+    Name="FmlocationName"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="150"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="LOCATION_NAME"
-    Expression="LOCATION_NAME"
+    AliasName="FMLOCATION_NAME"
+    Expression="FMLOCATION_NAME"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VehicleNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VEHICLE_NO"
+    Expression="VEHICLE_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
@@ -121,52 +133,42 @@ Order by  a.fmpo_m_id desc]]></SQLQuery>
     Expression="FMITEMS_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
-    Name="ItemName"
+    Name="FmitemsName"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="150"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="ITEM_NAME"
-    Expression="ITEM_NAME"
+    AliasName="FMITEMS_NAME"
+    Expression="FMITEMS_NAME"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="PoQty"
+    Name="FmrnQty"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    AliasName="PO_QTY"
-    Expression="PO_QTY"
+    AliasName="FMRN_QTY"
+    Expression="FMRN_QTY"
     SQLType="NUMERIC"/>
   <ViewAttribute
-    Name="RnQty"
+    Name="FmrnGWeight"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    AliasName="RN_QTY"
-    Expression="RN_QTY"
-    SQLType="NUMERIC"/>
-  <ViewAttribute
-    Name="BalQty"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    AliasName="BAL_QTY"
-    Expression="BAL_QTY"
+    AliasName="FMRN_G_WEIGHT"
+    Expression="FMRN_G_WEIGHT"
     SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
-    <Item Value="FmpoMId"/>
+    <Item Value="FmrnMId"/>
   </AttrArray>
   <ResourceBundle>
     <PropertiesBundle

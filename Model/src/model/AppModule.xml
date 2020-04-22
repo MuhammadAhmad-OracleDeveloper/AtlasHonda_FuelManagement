@@ -175,6 +175,12 @@
   <ViewUsage
     Name="Fuel_Dashboard_VO1"
     ViewObjectName="model.VO.Fuel_Dashboard_VO"/>
+  <ViewUsage
+    Name="Fuel_Receipt_VO1"
+    ViewObjectName="model.VO.Fuel_Receipt_VO"/>
+  <ViewUsage
+    Name="Fuel_Receipt_Dashboard_VO1"
+    ViewObjectName="model.VO.Fuel_Receipt_Dashboard_VO"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
