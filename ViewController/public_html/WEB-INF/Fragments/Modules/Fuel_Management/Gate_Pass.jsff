@@ -30,7 +30,7 @@
                                 columns="#{bindings.FmigpId.hints.displayWidth}"
                                 maximumLength="#{bindings.FmigpId.hints.precision}"
                                 shortDesc="#{bindings.FmigpId.hints.tooltip}" id="it1" contentStyle="width:150px;"
-                                inlineStyle="text-align:center;">
+                                disabled="true">
                     <f:validator binding="#{bindings.FmigpId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmigpId.format}"/>
                   </af:inputText>

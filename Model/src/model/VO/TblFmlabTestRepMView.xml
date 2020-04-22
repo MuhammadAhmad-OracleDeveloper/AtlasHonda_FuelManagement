@@ -6,13 +6,18 @@
   Name="TblFmlabTestRepMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmlabTestRepM.FMLAB_TEST_REP_M_ID, 
+       TblFmlabTestRepM.FMREPORT_DATE, 
+       TblFmlabTestRepM.FMGATE_PASS, 
+       TblFmlabTestRepM.FMVENDORS_ID, 
+       TblFmlabTestRepM.FMLOCATION_ID, 
+       TblFmlabTestRepM.FMITEMS_ID, 
+       TblFmlabTestRepM.FMBATCH_NO"
+  FromList="TBL_FMLAB_TEST_REP_M TblFmlabTestRepM"
+  OrderBy="TblFmlabTestRepM.FMREPORT_DATE desc">
   <ViewAccessor
     Name="Vendor_LOV1"
     ViewObjectName="model.LOV.Vendor_LOV"

@@ -22,7 +22,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Batch Report  List">
+              <!--<af:showDetailItem id="tab1" text="Batch Report  List">
                 <af:table value="#{bindings.TblFmlabTestRepDView21.collectionModel}" var="row"
                           rows="#{bindings.TblFmlabTestRepDView21.rangeSize}"
                           emptyText="#{bindings.TblFmlabTestRepDView21.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -90,13 +90,13 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-              </af:showDetailItem>
+              </af:showDetailItem>-->
               <af:showDetailItem text="Batch Report" id="sdi1">
                 <af:panelGridLayout id="pgl5">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3">
-                        <af:showDetailItem id="tab3" text="Lab Test Report Master">
+                        <!--<af:showDetailItem id="tab3" text="Lab Test Report Master">
                           <af:panelFormLayout id="pfl1">
                             <af:inputText value="#{bindings.FmlabTestRepMId.inputValue}"
                                           label="Report Master ID"
@@ -168,7 +168,7 @@
                               </af:panelGroupLayout>
                             </f:facet>
                           </af:panelFormLayout>
-                        </af:showDetailItem> 
+                        </af:showDetailItem>--> 
                         <af:showDetailItem id="tab3" text="Batch Report Master">
 
                           <af:table value="#{bindings.TblFmlabTestRepMView1.collectionModel}" var="row"
@@ -313,18 +313,9 @@
                               </af:selectOneChoice>
                             </af:column>
                           </af:table>
-                        </af:showDetailItem>
-
-                       
-                        
-
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr7">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
-                     <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer height="10" id="s4"/>
+                          <af:spacer width="10" height="40" id="s4"/>
+                          <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer height="10" id="s7"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -335,11 +326,7 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr8">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
-                      <af:panelTabbed position="above" id="pt4">
+                        </af:showDetailItem>
                         <af:showDetailItem id="tab4" text="Batch Report Detail">
                           <af:table value="#{bindings.TblFmlabTestRepDView2.collectionModel}" var="row"
                                     rows="#{bindings.TblFmlabTestRepDView2.rangeSize}"
@@ -353,7 +340,7 @@
                                     queryListener="#{bindings.TblFmlabTestRepDView2Query.processQuery}" varStatus="vs"
                                     id="t2" scrollPolicy="page" autoHeightRows="0" >
                             <af:column sortProperty="#{bindings.TblFmlabTestRepDView2.hints.FmlabTestRepDId.name}"
-                                       filterable="false" sortable="false"
+                                       filterable="true" sortable="true"
                                        headerText="Report Detail ID"
                                        id="c4" align="center" width="80">
                                        <f:facet name="filter">
@@ -376,7 +363,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmlabTestRepDView2.hints.FmlabtestId.name}"
-                                       filterable="false" sortable="false"
+                                       filterable="true" sortable="true"
                                        headerText="Lab Test" id="c6" width="200">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FmlabtestId}"
@@ -387,13 +374,13 @@
                                                   label="#{row.bindings.FmlabtestId.label}"
                                                   required="#{bindings.TblFmlabTestRepDView2.hints.FmlabtestId.mandatory}"
                                                   shortDesc="#{bindings.TblFmlabTestRepDView2.hints.FmlabtestId.tooltip}"
-                                                  id="soc1">
+                                                  id="soc1" readOnly="true">
                                 <f:selectItems value="#{row.bindings.FmlabtestId.items}" id="si1"/>
                                 <f:validator binding="#{row.bindings.FmlabtestId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmlabTestRepDView2.hints.Remarks.name}"
-                                       filterable="false" sortable="false"
+                                       filterable="true" sortable="true"
                                        headerText="Remarks" id="c9" width="640">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Remarks}"
@@ -411,14 +398,8 @@
                               </af:inputText>
                             </af:column>
                           </af:table>
-                         
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr9">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
-                      <af:panelGroupLayout id="pgl2" layout="horizontal">
+                          <af:spacer width="10" height="40" id="s6"/>
+                          <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:spacer height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -430,6 +411,24 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                      
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr10">
