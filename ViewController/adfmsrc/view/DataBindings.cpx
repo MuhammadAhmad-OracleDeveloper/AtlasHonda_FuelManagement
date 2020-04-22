@@ -59,6 +59,7 @@
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/PDC_Issuance.jsff" usageId="view_PDC_IssuancePageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Fuel_DashBoard_TaskFlow.xml#Fuel_DashBoard_TaskFlow@ExecuteWithParams"
           usageId="view_Fuel_DashBoard_TaskFlow_Fuel_DashBoard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Fuel_DashBoard.jsff" usageId="view_Fuel_DashBoardPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -114,6 +115,7 @@
     <page id="view_PDC_IssuancePageDef" path="Fragments.Modules.Fuel_Management.PDC_IssuancePageDef"/>
     <page id="view_Fuel_DashBoard_TaskFlow_Fuel_DashBoard_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Fuel_DashBoard_TaskFlow_Fuel_DashBoard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Fuel_DashBoardPageDef" path="Fragments.Modules.Fuel_Management.Fuel_DashBoardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"

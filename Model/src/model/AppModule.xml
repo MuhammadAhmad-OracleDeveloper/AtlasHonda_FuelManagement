@@ -172,6 +172,9 @@
   <ViewUsage
     Name="TblFmrnDipView2"
     ViewObjectName="model.VO.TblFmrnDipView"/>
+  <ViewUsage
+    Name="Fuel_Dashboard_VO1"
+    ViewObjectName="model.VO.Fuel_Dashboard_VO"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"

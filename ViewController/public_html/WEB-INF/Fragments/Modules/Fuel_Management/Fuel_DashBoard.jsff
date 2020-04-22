@@ -1,2 +1,181 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Purchase Orders Dashboard">
+         
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Purchase Orders Dashboard">
+                <af:table value="#{bindings.Fuel_Dashboard_VO1.collectionModel}" var="row"
+                          rows="#{bindings.Fuel_Dashboard_VO1.rangeSize}"
+                          emptyText="#{bindings.Fuel_Dashboard_VO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.Fuel_Dashboard_VO1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Fuel_Dashboard_VO1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.Fuel_Dashboard_VO1.rangeSize}"
+                          filterModel="#{bindings.Fuel_Dashboard_VO1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.Fuel_Dashboard_VO1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.name}" filterable="true"
+                             sortable="true" headerText="PO Date" id="c1" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.Fuel_Dashboard_VO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.PoDate.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.PoDate.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.displayWidth}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.PoDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.Fuel_Dashboard_VO1.hints.PoDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.name}" filterable="true"
+                             sortable="true" headerText="PO No." id="c2" align="center">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmpoMId}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmpoMId.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.tooltip}" id="it1"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmpoMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Fuel_Dashboard_VO1.hints.FmpoMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.VendorName.name}" filterable="true"
+                             sortable="true" headerText="Vendor" id="c4" width="200">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VendorName}"
+       id="it2" placeholder="Search Vendor">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.VendorName.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.VendorName.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.VendorName.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.VendorName.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.VendorName.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.VendorName.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.VendorName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.LocationName.name}" filterable="true"
+                             sortable="true" headerText="Location"
+                             id="c6" width="250">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LocationName}"
+       id="it4" placeholder="Search Location">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.LocationName.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.LocationName.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.LocationName.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.LocationName.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.LocationName.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.LocationName.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.LocationName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.ItemName.name}" filterable="true"
+                             sortable="true" headerText="Item" id="c8" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemName}"
+       id="it6" placeholder="Search Item">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ItemName.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.ItemName.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.ItemName.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.ItemName.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.ItemName.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.ItemName.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.ItemName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.name}" filterable="true"
+                             sortable="true" headerText="PO Qty" id="c9" align="center">
+                     <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PoQty}"
+       id="it11" placeholder="Search PO Qty">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.PoQty.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.tooltip}" id="it8"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.PoQty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Fuel_Dashboard_VO1.hints.PoQty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.name}" filterable="true"
+                             sortable="true" headerText="Rec. Qty" id="c10" align="center">
+                     <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.RnQty}"
+       id="it12" placeholder="Search Rec. Qty">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.RnQty.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.tooltip}" id="it9"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.RnQty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Fuel_Dashboard_VO1.hints.RnQty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.name}" filterable="true"
+                             sortable="true" headerText="Bal.Qty" id="c11" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BalQty}"
+       id="it13" placeholder="Search Bal.Qty">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.BalQty.inputValue}"
+                                  label="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.label}"
+                                  required="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.mandatory}"
+                                  columns="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.displayWidth}"
+                                  maximumLength="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.precision}"
+                                  shortDesc="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.tooltip}" id="it10"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.BalQty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Fuel_Dashboard_VO1.hints.BalQty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
