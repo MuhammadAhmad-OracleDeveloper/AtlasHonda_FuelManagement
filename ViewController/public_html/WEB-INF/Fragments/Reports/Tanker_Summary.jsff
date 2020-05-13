@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+ <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Tanker Summary Report">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"></af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                    
+                        <af:spacer width="20" height="30" id="s15"/>
+                        <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            <af:spacer width="20" height="10" id="s16"/>
+                           
+                        <af:spacer width="20" height="10" id="s2"/>
+                          
+                            
+                            <af:spacer width="30" height="30" id="s1"/>
+                            <af:button text="Generate Report" id="b2"
+                                      action="#{backingBeanScope.tanker_sumary_reportBean.get_report}"/>
+                            <af:spacer width="30" height="10" id="s6"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+               
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+
+</ui:composition>

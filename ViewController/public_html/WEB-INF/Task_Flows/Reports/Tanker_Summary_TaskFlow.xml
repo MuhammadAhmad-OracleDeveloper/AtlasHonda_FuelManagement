@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Tanker_Summary_TaskFlow">
+    <default-activity>Tanker_Summary</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>tanker_sumary_reportBean</managed-bean-name>
+      <managed-bean-class>view.reports.tanker_sumary_report</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="Tanker_Summary">
+      <page>/WEB-INF/Fragments/Reports/Tanker_Summary.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

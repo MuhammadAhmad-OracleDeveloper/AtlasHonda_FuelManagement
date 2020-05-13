@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Batch_TestPageDef"
+                Package="Fragments.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFmlabTestRepMView1" DataControl="AppModuleDataControl1"
+              id="TblFmlabTestRepMView1Iterator" Refresh="always" CacheResults="false"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblFmlabTestRepMView1Iterator" StaticList="false" Uses="LOV_FmvendorsId" id="FmvendorsId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFmlabTestRepMView1Iterator" StaticList="false" Uses="LOV_FmitemsId" id="FmitemsId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

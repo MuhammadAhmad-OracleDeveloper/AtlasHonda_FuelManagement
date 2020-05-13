@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Fuel_Receipt_TaskFlow">
+    <default-activity>Fuel_Receipt</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>fuel_receipt_reportBean</managed-bean-name>
+      <managed-bean-class>view.reports.fuel_receipt_report</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="Fuel_Receipt">
+      <page>/WEB-INF/Fragments/Reports/Fuel_Receipt.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
