@@ -858,7 +858,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s39"/>
                             <af:inputText value="#{bindings.PhyDensity.inputValue}"
-                                          label="Phy. Density (Kg/Ltr)"
+                                          label="Invc.Density (Kg/Ltr)"
                                           required="#{bindings.PhyDensity.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.PhyDensity.hints.precision}"
@@ -874,7 +874,7 @@
                                           maximumLength="#{bindings.WaterPerc.hints.precision}"
                                           shortDesc="#{bindings.WaterPerc.hints.tooltip}" id="it53">
                               <f:validator binding="#{bindings.WaterPerc.validator}"/>
-                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="3" maxFractionDigits="3"/>
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s41"/>
                             <af:inputText value="#{bindings.Viscosity.inputValue}"

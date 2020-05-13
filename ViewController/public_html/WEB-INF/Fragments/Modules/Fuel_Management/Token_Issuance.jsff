@@ -30,7 +30,7 @@
                                 columns="20"
                                 maximumLength="#{bindings.FmtokenId.hints.precision}"
                                 shortDesc="#{bindings.FmtokenId.hints.tooltip}" id="it1" contentStyle="width:150px;"
-                                inlineStyle="text-align:center;">
+                                disabled="true">
                     <f:validator binding="#{bindings.FmtokenId.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FmtokenId.format}"/>
                   </af:inputText>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fuel_Receipt_Dashboard_VO"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.Fuel_Receipt_Dashboard_VO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[Select 
+a.fmrn_m_date, 
+a.fmrn_m_id, 
+a.VENDOR_ID, 
+c.fmvendors_name, 
+a.LOCATION_ID, 
+d.fmlocation_name, 
+a.VEHICLE_NO, 
+a.status, 
+b.fmitems_id, 
+e.fmitems_name, 
+Nvl(b.fmrn_qty,0) fmrn_qty, 
+Nvl(b.fmrn_g_weight,0) fmrn_g_weight 
+From Tbl_FMRN_M A,Tbl_FMRN_D B,tbl_fmvendors C, tbl_fmlocation D, tbl_fmitems E 
+Where b.fmrn_m_id=a.fmrn_m_id 
+And c.fmvendors_id=a.vendor_id 
+And d.fmlocation_id=a.location_id 
+And e.fmitems_id=b.fmitems_id 
+And Nvl(a.tear_weight,0)>0 
+order By a.fmrn_m_date desc]]></SQLQuery>
+  <ViewAttribute
+    Name="FmrnMDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="FMRN_M_DATE"
+    Expression="FMRN_M_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="FmrnMId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMRN_M_ID"
+    Expression="FMRN_M_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="VendorId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VENDOR_ID"
+    Expression="VENDOR_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmvendorsName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FMVENDORS_NAME"
+    Expression="FMVENDORS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LocationId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LOCATION_ID"
+    Expression="LOCATION_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmlocationName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FMLOCATION_NAME"
+    Expression="FMLOCATION_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VehicleNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VEHICLE_NO"
+    Expression="VEHICLE_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Status"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STATUS"
+    Expression="STATUS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FmitemsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMITEMS_ID"
+    Expression="FMITEMS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmitemsName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FMITEMS_NAME"
+    Expression="FMITEMS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FmrnQty"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMRN_QTY"
+    Expression="FMRN_QTY"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FmrnGWeight"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FMRN_G_WEIGHT"
+    Expression="FMRN_G_WEIGHT"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="FmrnMId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
