@@ -22,9 +22,15 @@ public class DatabaseConnection {
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("ahfm");
         setUpasss("ahfm");
+        
         setUipp("192.168.1.2");
+//        setUipp("192.168.128.160");
+        
         setUportADF("1521");
+        
         setUSID("orcl");
+//        setUSID("appsdb");
+
         /* END  */
         
         /*  Report servlet connection >> port , hostname */

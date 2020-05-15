@@ -9,15 +9,73 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                    
+                    <af:panelGroupLayout id="pgl2">
+                            <af:selectOneChoice label="From Vendor: "
+                            binding="#{backingBeanScope.tanker_sumary_reportBean.fromVendor}" autoSubmit="true"
+                                                required="#{bindings.FmvendorsId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmvendorsId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.FmvendorsId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.FmvendorsId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="20" height="20" id="s4"/>
+                            <af:selectOneChoice label="To Vendor: "
+                            binding="#{backingBeanScope.tanker_sumary_reportBean.toVendor}" autoSubmit="true"
+                                                required="#{bindings.FmvendorsId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmvendorsId.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.FmvendorsId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.FmvendorsId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="10" height="10" id="s5"/>
+                            <af:selectOneChoice label="From Location: "
+                            binding="#{backingBeanScope.tanker_sumary_reportBean.fromLocation}" autoSubmit="true"
+                                                required="#{bindings.FmlocationId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmlocationId.hints.tooltip}" id="soc6">
+                                <f:selectItems value="#{bindings.FmlocationId.items}" id="si7"/>
+                                <f:validator binding="#{bindings.FmlocationId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="20" height="20" id="s8"/>
+                            <af:selectOneChoice label="To Location: "
+                            binding="#{backingBeanScope.tanker_sumary_reportBean.toLocation}" autoSubmit="true"
+                                                required="#{bindings.FmlocationId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmlocationId.hints.tooltip}" id="soc7">
+                                <f:selectItems value="#{bindings.FmlocationId.items}" id="si8"/>
+                                <f:validator binding="#{bindings.FmlocationId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="10" height="10" id="s9"/>
+                            <af:selectOneChoice label="From Items: "
+                            binding="#{backingBeanScope.tanker_sumary_reportBean.fromitems}" autoSubmit="true"
+                                                required="#{bindings.FmitemsId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmitemsId.hints.tooltip}" id="soc3">
+                                <f:selectItems value="#{bindings.FmitemsId.items}" id="si3"/>
+                                <f:validator binding="#{bindings.FmitemsId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="10" height="10" id="s7"/>
+                            <af:selectOneChoice label="To Items: "
+                            binding="#{backingBeanScope.tanker_sumary_reportBean.toitems}" autoSubmit="true"
+                                                required="#{bindings.FmitemsId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmitemsId.hints.tooltip}" id="soc4">
+                                <f:selectItems value="#{bindings.FmitemsId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.FmitemsId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                             <af:spacer width="20" height="10" id="s16"/>
-                           
-                        <af:spacer width="20" height="10" id="s2"/>
-                          
-                            
+                            <af:inputDate label="From date: " id="id1" autoSubmit="true" contentStyle="width:200px"
+                                          binding="#{backingBeanScope.tanker_sumary_reportBean.fromDateParam}"></af:inputDate>
+                            <af:spacer width="20" height="10" id="s2"/>
+                            <af:inputDate label="To date: " id="id2" autoSubmit="true" contentStyle="width:200px"
+                                          binding="#{backingBeanScope.tanker_sumary_reportBean.toDateParam}"></af:inputDate>
                             <af:spacer width="30" height="30" id="s1"/>
+                           
+                            <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
+                                                unselectedLabel="--Select--" contentStyle="width:200px"
+                                                binding="#{backingBeanScope.tanker_sumary_reportBean.format_type}">
+                                <af:selectItem label="PDF" value="PDF" id="si5"/>
+                                <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
+                            </af:selectOneChoice>
+                           
+                            <af:spacer width="30" height="30" id="s3"/>
                             <af:button text="Generate Report" id="b2"
                                       action="#{backingBeanScope.tanker_sumary_reportBean.get_report}"/>
                             <af:spacer width="30" height="10" id="s6"/>

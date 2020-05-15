@@ -62,6 +62,8 @@
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Fuel_DashBoard.jsff" usageId="view_Fuel_DashBoardPageDef"/>
     <page path="/Reports/Report.jsf" usageId="view_ReportPageDef"/>
     <page path="/WEB-INF/Fragments/Reports/Batch_Test.jsff" usageId="view_Batch_TestPageDef"/>
+    <page path="/WEB-INF/Fragments/Reports/Fuel_Receipt.jsff" usageId="view_Fuel_ReceiptPageDef"/>
+    <page path="/WEB-INF/Fragments/Reports/Tanker_Summary.jsff" usageId="view_Tanker_SummaryPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -120,6 +122,8 @@
     <page id="view_Fuel_DashBoardPageDef" path="Fragments.Modules.Fuel_Management.Fuel_DashBoardPageDef"/>
     <page id="view_ReportPageDef" path="Reports.ReportPageDef"/>
     <page id="view_Batch_TestPageDef" path="Fragments.Reports.Batch_TestPageDef"/>
+    <page id="view_Fuel_ReceiptPageDef" path="Fragments.Reports.Fuel_ReceiptPageDef"/>
+    <page id="view_Tanker_SummaryPageDef" path="Fragments.Reports.Tanker_SummaryPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
