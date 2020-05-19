@@ -184,7 +184,7 @@
                   <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
                                       shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2"
                                       autoSubmit="true"
-                                      contentStyle="width:200px;">
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
                     <f:validator binding="#{bindings.FmpoMId.validator}"/>
                   </af:selectOneChoice>
