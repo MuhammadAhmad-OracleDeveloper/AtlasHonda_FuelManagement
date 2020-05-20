@@ -427,6 +427,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="VehicleInDate"
+    ColumnName="VEHICLE_IN_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMRN_M"/>
+  <Attribute
+    Name="VehicleOutDate"
+    ColumnName="VEHICLE_OUT_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMRN_M"/>
   <AccessorAttribute
     Name="TblFmrnD"
     Association="model.EO.FkFmrnDRnMAssoc"

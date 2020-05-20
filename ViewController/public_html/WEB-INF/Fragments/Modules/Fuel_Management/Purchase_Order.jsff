@@ -31,7 +31,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmpoMView1.rangeSize}"
                           filterModel="#{bindings.TblFmpoMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmpoMView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4 ::b5">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmpoMView1.hints.FmpoMId.name}" filterable="true"
                              sortable="true" headerText="Purchase Order Master ID" id="c1" align="center">
                              <f:facet name="filter">

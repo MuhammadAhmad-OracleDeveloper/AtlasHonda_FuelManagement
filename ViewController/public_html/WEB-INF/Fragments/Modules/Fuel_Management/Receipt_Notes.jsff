@@ -29,8 +29,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblFmrnMView1.rangeSize}"
                           filterModel="#{bindings.TblFmrnMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t3"
-                          scrollPolicy="page" autoHeightRows="0"
-                          >
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMId.name}" filterable="true"
                              sortable="true" headerText="Receipt Notes Master ID" id="c19" align="center">
                              <f:facet name="filter">
@@ -184,7 +183,7 @@
                   <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
                                       shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2"
                                       autoSubmit="true"
-                                      contentStyle="width:250px;">
+                                      contentStyle="width:200px;">
                     <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
                     <f:validator binding="#{bindings.FmpoMId.validator}"/>
                   </af:selectOneChoice>
@@ -239,7 +238,7 @@
                             <af:inputText value="#{bindings.CreditDays.inputValue}"
                                           label="Credit Days"
                                           required="#{bindings.CreditDays.hints.mandatory}"
-                                          columns="10"
+                                          columns="20"
                                           maximumLength="#{bindings.CreditDays.hints.precision}"
                                           shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46">
                               <f:validator binding="#{bindings.CreditDays.validator}"/>
@@ -280,7 +279,24 @@
                               <f:validator binding="#{bindings.InvoiceDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.InvoiceDate.format}"/>
                             </af:inputDate>
+                            
                             <af:spacer width="10" height="0" id="s28"/>
+                             <af:inputDate value="#{bindings.VehicleInDate.inputValue}"
+                                          label="Vehicle In Date"
+                                          required="#{bindings.VehicleInDate.hints.mandatory}"
+                                          columns="#{bindings.VehicleInDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.VehicleInDate.hints.tooltip}" id="id6">
+                              <f:validator binding="#{bindings.VehicleInDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.VehicleInDate.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.VehicleOutDate.inputValue}"
+                                          label="Vehicle Out Date"
+                                          required="#{bindings.VehicleOutDate.hints.mandatory}"
+                                          columns="#{bindings.VehicleOutDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.VehicleOutDate.hints.tooltip}" id="id7">
+                              <f:validator binding="#{bindings.VehicleOutDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.VehicleOutDate.format}"/>
+                            </af:inputDate>
                             <af:inputText value="#{bindings.VendorGrossWeight.inputValue}"
                                 label="Fuel Supplier Gross Weight"
                                 required="#{bindings.VendorGrossWeight.hints.mandatory}"
@@ -290,6 +306,7 @@
                     <f:validator binding="#{bindings.VendorGrossWeight.validator}"/>
                     <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                   </af:inputText>
+ 
                             <af:inputText value="#{bindings.VendorTearWeight.inputValue}"
                                 label="Fuel Supplier Tare Weight"
                                 required="#{bindings.VendorTearWeight.hints.mandatory}"
