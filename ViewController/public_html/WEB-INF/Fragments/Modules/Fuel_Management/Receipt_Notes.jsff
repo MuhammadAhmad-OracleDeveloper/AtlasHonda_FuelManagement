@@ -217,9 +217,7 @@
                     <f:validator binding="#{bindings.TankId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer width="10" height="0" id="s27"/>
-                            
-                  <af:spacer  width="10" height="0" id="s13"/>
-                  <af:selectOneChoice value="#{bindings.CarrierId.inputValue}" label="Carrier"
+                   <af:selectOneChoice value="#{bindings.CarrierId.inputValue}" label="Carrier"
                                       required="#{bindings.CarrierId.hints.mandatory}"
                                       
                                       shortDesc="#{bindings.CarrierId.hints.tooltip}" id="soc11">
@@ -240,7 +238,7 @@
                                           required="#{bindings.CreditDays.hints.mandatory}"
                                           columns="20"
                                           maximumLength="#{bindings.CreditDays.hints.precision}"
-                                          shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46">
+                                          shortDesc="#{bindings.CreditDays.hints.tooltip}" id="it46" contentStyle='text-align: center'>
                               <f:validator binding="#{bindings.CreditDays.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.CreditDays.format}"/>
                             </af:inputText>
@@ -279,24 +277,60 @@
                               <f:validator binding="#{bindings.InvoiceDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.InvoiceDate.format}"/>
                             </af:inputDate>
-                            
-                            <af:spacer width="10" height="0" id="s28"/>
+                            <af:spacer  id="s28"/>
                              <af:inputDate value="#{bindings.VehicleInDate.inputValue}"
                                           label="Vehicle In Date"
                                           required="#{bindings.VehicleInDate.hints.mandatory}"
                                           columns="#{bindings.VehicleInDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.VehicleInDate.hints.tooltip}" id="id6">
+                                          shortDesc="#{bindings.VehicleInDate.hints.tooltip}" id="id6" contentStyle='text-align: center'>
                               <f:validator binding="#{bindings.VehicleInDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.VehicleInDate.format}"/>
+                              
                             </af:inputDate>
                             <af:inputDate value="#{bindings.VehicleOutDate.inputValue}"
                                           label="Vehicle Out Date"
                                           required="#{bindings.VehicleOutDate.hints.mandatory}"
                                           columns="#{bindings.VehicleOutDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.VehicleOutDate.hints.tooltip}" id="id7">
+                                          shortDesc="#{bindings.VehicleOutDate.hints.tooltip}" id="id7" contentStyle='text-align: center'>
                               <f:validator binding="#{bindings.VehicleOutDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.VehicleOutDate.format}"/>
+                              <af:convertDateTime pattern="HH:mm"/>
                             </af:inputDate>
+                            <af:inputDate value="#{bindings.VehicleBayIndate.inputValue}"
+                                          label="Vehicle Bay In Date"
+                                          required="#{bindings.VehicleBayIndate.hints.mandatory}"
+                                          columns="#{bindings.VehicleBayIndate.hints.displayWidth}"
+                                          shortDesc="#{bindings.VehicleBayIndate.hints.tooltip}" id="id10" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.VehicleBayIndate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.VehicleBayIndate.format}"/>
+                              
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.VehicleBayOutdate.inputValue}"
+                                          label="Vehicle Bay Out Date"
+                                          required="#{bindings.VehicleBayOutdate.hints.mandatory}"
+                                          columns="#{bindings.VehicleBayOutdate.hints.displayWidth}"
+                                          shortDesc="#{bindings.VehicleBayOutdate.hints.tooltip}" id="id11" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.VehicleBayOutdate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.VehicleBayOutdate.format}"/>
+                              
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.SupplierCv.inputValue}"
+                                          label="Supplier CV"
+                                          required="#{bindings.SupplierCv.hints.mandatory}"
+                                          columns="#{bindings.SupplierCv.hints.displayWidth}"
+                                          maximumLength="#{bindings.SupplierCv.hints.precision}"
+                                          shortDesc="#{bindings.SupplierCv.hints.tooltip}" id="it80" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.SupplierCv.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.SupplierCv.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.LabTemp.inputValue}" label="Lab Temperature"
+                                          required="#{bindings.LabTemp.hints.mandatory}"
+                                          columns="#{bindings.LabTemp.hints.displayWidth}"
+                                          maximumLength="#{bindings.LabTemp.hints.precision}"
+                                          shortDesc="#{bindings.LabTemp.hints.tooltip}" id="it81" contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.LabTemp.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.LabTemp.format}"/>
+                            </af:inputText>
                             <af:inputText value="#{bindings.VendorGrossWeight.inputValue}"
                                 label="Fuel Supplier Gross Weight"
                                 required="#{bindings.VendorGrossWeight.hints.mandatory}"
@@ -875,7 +909,7 @@
                             </af:inputText>
                             <af:spacer width="10" height="0" id="s39"/>
                             <af:inputText value="#{bindings.PhyDensity.inputValue}"
-                                          label="Invc.Density (Kg/Ltr)"
+                                          label="In House Density (Kg/Ltr)"
                                           required="#{bindings.PhyDensity.hints.mandatory}"
                                           columns="10"
                                           maximumLength="#{bindings.PhyDensity.hints.precision}"

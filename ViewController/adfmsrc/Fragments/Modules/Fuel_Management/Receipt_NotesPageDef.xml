@@ -382,5 +382,25 @@
         <Item Value="VehicleOutDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VehicleBayIndate">
+      <AttrNames>
+        <Item Value="VehicleBayIndate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="VehicleBayOutdate">
+      <AttrNames>
+        <Item Value="VehicleBayOutdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="SupplierCv">
+      <AttrNames>
+        <Item Value="SupplierCv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmrnMView1Iterator" id="LabTemp">
+      <AttrNames>
+        <Item Value="LabTemp"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

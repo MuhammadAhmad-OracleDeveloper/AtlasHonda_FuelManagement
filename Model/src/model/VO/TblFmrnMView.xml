@@ -62,7 +62,11 @@
        TblFmrnM.VOL_CORR_FACTOR_ID, 
        TblFmrnM.VISCOSITY, 
        TblFmrnM.VEHICLE_IN_DATE, 
-       TblFmrnM.VEHICLE_OUT_DATE"
+       TblFmrnM.VEHICLE_OUT_DATE, 
+       TblFmrnM.VEHICLE_BAY_INDATE, 
+       TblFmrnM.VEHICLE_BAY_OUTDATE, 
+       TblFmrnM.SUPPLIER_CV, 
+       TblFmrnM.LAB_TEMP"
   FromList="TBL_FMRN_M TblFmrnM, TBL_FMRN_D TblFmrnD"
   Where="TblFmrnM.FMRN_M_ID = TblFmrnD.FMRN_M_ID(+)  
 order  by TblFmrnM.FMRN_M_ID desc">
@@ -760,6 +764,30 @@ order  by TblFmrnM.FMRN_M_ID desc">
     EntityAttrName="VehicleOutDate"
     EntityUsage="TblFmrnM"
     AliasName="VEHICLE_OUT_DATE"/>
+  <ViewAttribute
+    Name="VehicleBayIndate"
+    PrecisionRule="true"
+    EntityAttrName="VehicleBayIndate"
+    EntityUsage="TblFmrnM"
+    AliasName="VEHICLE_BAY_INDATE"/>
+  <ViewAttribute
+    Name="VehicleBayOutdate"
+    PrecisionRule="true"
+    EntityAttrName="VehicleBayOutdate"
+    EntityUsage="TblFmrnM"
+    AliasName="VEHICLE_BAY_OUTDATE"/>
+  <ViewAttribute
+    Name="SupplierCv"
+    PrecisionRule="true"
+    EntityAttrName="SupplierCv"
+    EntityUsage="TblFmrnM"
+    AliasName="SUPPLIER_CV"/>
+  <ViewAttribute
+    Name="LabTemp"
+    PrecisionRule="true"
+    EntityAttrName="LabTemp"
+    EntityUsage="TblFmrnM"
+    AliasName="LAB_TEMP"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmrnMId"/>
   </AttrArray>
