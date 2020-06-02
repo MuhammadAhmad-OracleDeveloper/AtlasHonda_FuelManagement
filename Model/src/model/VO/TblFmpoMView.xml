@@ -100,7 +100,16 @@
     PrecisionRule="true"
     EntityAttrName="FmpoMDate"
     EntityUsage="TblFmpoM"
-    AliasName="FMPO_M_DATE"/>
+    AliasName="FMPO_M_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmpoMView.FmpoMDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmpoMView.FmpoMDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmvendorsId"
     PrecisionRule="true"
@@ -171,4 +180,8 @@
     ViewLink="model.VO.FkFmrnMPoLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
