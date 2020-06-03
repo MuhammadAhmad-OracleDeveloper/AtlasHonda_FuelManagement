@@ -180,13 +180,19 @@
                     <f:validator binding="#{bindings.Status.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer width="10" height="0" id="s7"/>
-                  <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
+                  <!--<af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
                                       shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc2"
                                       autoSubmit="true"
                                       contentStyle="width:200px;">
                     <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
                     <f:validator binding="#{bindings.FmpoMId.validator}"/>
-                  </af:selectOneChoice>
+                  </af:selectOneChoice>-->
+                            <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="#{bindings.FmpoMId.label}"
+                                                required="#{bindings.FmpoMId.hints.mandatory}"
+                                                shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc13">
+                              <f:selectItems value="#{bindings.FmpoMId.items}" id="si13"/>
+                              <f:validator binding="#{bindings.FmpoMId.validator}"/>
+                            </af:selectOneChoice>
                   <af:spacer  width="10" height="0" id="s8"/>
                   <af:selectOneChoice value="#{bindings.VendorId.inputValue}" label="Vendor"
                                       required="#{bindings.VendorId.hints.mandatory}"
@@ -194,7 +200,7 @@
                     <f:selectItems value="#{bindings.VendorId.items}" id="si7"/>
                     <f:validator binding="#{bindings.VendorId.validator}"/>
                   </af:selectOneChoice>
-                  <af:spacer  width="10" height="0" id="s10"/>
+                            <af:spacer  width="10" height="0" id="s10"/>
                   <af:selectOneChoice value="#{bindings.BayId.inputValue}" label="Bay"
                                       required="#{bindings.BayId.hints.mandatory}"
                                       shortDesc="#{bindings.BayId.hints.tooltip}" id="soc8">

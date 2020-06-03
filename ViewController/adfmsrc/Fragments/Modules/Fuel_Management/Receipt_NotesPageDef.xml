@@ -73,8 +73,6 @@
         <Item Value="FmrnMId"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmpoMId" id="FmpoMId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
     <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmdocstsId" id="FmdocstsId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFmrnMView1Iterator" id="FmrnMDate">
@@ -402,5 +400,7 @@
         <Item Value="LabTemp"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmpoMId" id="FmpoMId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

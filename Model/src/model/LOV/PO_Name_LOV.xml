@@ -18,17 +18,17 @@
         ResId="model.LOV.PO_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT TblFmpoM.FMPO_M_DATE,  
-       TblFmpoM.FMPO_M_ID,  
-       TblFmpoM.FMLOCATION_ID,  
-       TblFmpoM.FMVENDORS_ID,  
-       TblFmpoM.FMPO_M_CR_DAYS, 
-       TblFmvendors.FMVENDORS_NAME,  
-       TblFmlocation.FMLOCATION_NAME 
-        
-FROM  TBL_FMPO_M TblFmpoM,  TBL_FMVENDORS TblFmvendors, TBL_FMLOCATION TblFmlocation 
-Where TblFmpoM.FMLOCATION_ID=TblFmlocation.FMLOCATION_ID 
-And TblFmpoM.FMVENDORS_ID=TblFmvendors.FMVENDORS_ID 
+  <SQLQuery><![CDATA[SELECT TblFmpoM.FMPO_M_DATE,       
+       TblFmpoM.FMPO_M_ID,           
+       TblFmpoM.FMLOCATION_ID,           
+       TblFmpoM.FMVENDORS_ID,           
+       TblFmpoM.FMPO_M_CR_DAYS,          
+       TblFmvendors.FMVENDORS_NAME,           
+       TblFmlocation.FMLOCATION_NAME          
+                 
+FROM  TBL_FMPO_M TblFmpoM,  TBL_FMVENDORS TblFmvendors, TBL_FMLOCATION TblFmlocation          
+Where TblFmpoM.FMLOCATION_ID=TblFmlocation.FMLOCATION_ID          
+And TblFmpoM.FMVENDORS_ID=TblFmvendors.FMVENDORS_ID          
 Order by TblFmpoM.FMPO_M_ID desc]]></SQLQuery>
   <ViewAttribute
     Name="FmpoMDate"
@@ -39,7 +39,16 @@ Order by TblFmpoM.FMPO_M_ID desc]]></SQLQuery>
     ColumnType="DATE"
     AliasName="FMPO_M_DATE"
     Expression="FMPO_M_DATE"
-    SQLType="DATE"/>
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.LOV.PO_Name_LOV.FmpoMDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.LOV.PO_Name_LOV.FmpoMDate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmpoMId"
     IsUpdateable="false"
