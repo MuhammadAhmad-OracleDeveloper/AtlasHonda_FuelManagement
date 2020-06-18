@@ -6,7 +6,7 @@
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-            <af:panelGroupLayout id="pgl2">
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
               <af:selectOneChoice label="From Tank ID :"
                                   required="#{bindings.FmtanksId.hints.mandatory}" autoSubmit="true"
                                   binding="#{backingBeanScope.fuel_tank_reportBean.fromTankParam}"
@@ -27,7 +27,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelGroupLayout id="pgl3">
+            <af:panelGroupLayout id="pgl3" layout="horizontal">
               <af:inputDate label="From Date :"
                             required="#{bindings.FmreadingDate.hints.mandatory}"
                             binding="#{backingBeanScope.fuel_tank_reportBean.fromDateParam}"
