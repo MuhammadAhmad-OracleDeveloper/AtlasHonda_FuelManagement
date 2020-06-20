@@ -6,6 +6,14 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFmdailyConMView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmdailyConMView1Iterator"/>
+    <searchRegion Binds="TblFmdailyConMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmdailyConMView1Query"/>
+    <iterator Binds="TblFmdailyConDView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmdailyConDView2Iterator"/>
+    <searchRegion Binds="TblFmdailyConDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmdailyConDView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -21,5 +29,55 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblFmdailyConMView1Iterator" id="FmdailyConMId">
+      <AttrNames>
+        <Item Value="FmdailyConMId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFmdailyConMView1Iterator" id="ReadingDate">
+      <AttrNames>
+        <Item Value="ReadingDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmdailyConMView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmdailyConMView1Iterator" id="TblFmdailyConMView1">
+      <nodeDefinition DefName="model.VO.TblFmdailyConMView" Name="TblFmdailyConMView10">
+        <AttrNames>
+          <Item Value="FmdailyConMId"/>
+          <Item Value="ReadingDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFmdailyConDView2Iterator" id="TblFmdailyConDView2">
+      <nodeDefinition DefName="model.VO.TblFmdailyConDView" Name="TblFmdailyConDView20">
+        <AttrNames>
+          <Item Value="FmdailyConId"/>
+          <Item Value="FmtanksId"/>
+          <Item Value="FmitemsId"/>
+          <Item Value="FillSts"/>
+          <Item Value="DipValue1"/>
+          <Item Value="DipValue2"/>
+          <Item Value="DipValue3"/>
+          <Item Value="AmbTemp"/>
+          <Item Value="FuelTemp"/>
+          <Item Value="DensityKg"/>
+          <Item Value="DensityTemp"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmdailyConDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmdailyConDView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFmdailyConDView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

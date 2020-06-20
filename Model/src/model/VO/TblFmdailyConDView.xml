@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Tanks_Name_LOV1"
+    ViewObjectName="model.LOV.Tanks_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_LOV1"
+    ViewObjectName="model.LOV.Item_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FmtanksId"
+    ListVOName="Tanks_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmtanksId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmtanksId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmtanksName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FmitemsId"
+    ListVOName="Item_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmitemsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmitemsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmdailyConD"
     Entity="model.EO.TblFmdailyConD"/>
@@ -28,13 +72,29 @@
     PrecisionRule="true"
     EntityAttrName="FmtanksId"
     EntityUsage="TblFmdailyConD"
-    AliasName="FMTANKS_ID"/>
+    AliasName="FMTANKS_ID"
+    LOVName="LOV_FmtanksId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmitemsId"
     PrecisionRule="true"
     EntityAttrName="FmitemsId"
     EntityUsage="TblFmdailyConD"
-    AliasName="FMITEMS_ID"/>
+    AliasName="FMITEMS_ID"
+    LOVName="LOV_FmitemsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmdailyConMId"
     PrecisionRule="true"

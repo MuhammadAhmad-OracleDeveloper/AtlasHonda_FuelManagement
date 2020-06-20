@@ -394,7 +394,9 @@
                           </af:table>
                           
                         </af:showDetailItem>
+                        
                       </af:panelTabbed>
+                     
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr9">
@@ -411,13 +413,138 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        
                     </af:gridCell>
                   </af:gridRow>
+                  
                   <af:gridRow marginTop="5px" height="auto" id="gr10">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10"/>
                   </af:gridRow>
+                   <af:gridRow id="gr12">
+                        <af:gridCell id="gc12">
+                          <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab2" text="PDC Issuance Detail D">
+                          <af:table value="#{bindings.TblFmpdcDDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmpdcDDView2.rangeSize}"
+                                    emptyText="#{bindings.TblFmpdcDDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmpdcDDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmpdcDDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmpdcDDView2.rangeSize}"
+                                    filterModel="#{bindings.TblFmpdcDDView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblFmpdcDDView2Query.processQuery}" varStatus="vs"
+                                    id="t4" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.name}"
+                                       filterable="false"
+                                       sortable="false" headerText="PDC Detail D ID"
+                                       id="c18" align="center" width="80">
+                              <af:inputText value="#{row.bindings.FmpdcDDId.inputValue}"
+                                            label="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.label}"
+                                            required="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.mandatory}"
+                                            columns="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.displayWidth}"
+                                            maximumLength="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.precision}"
+                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.tooltip}" id="it13" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmpdcDDId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmpdcDDView2.hints.FmpdcDDId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.RecDate.name}" filterable="false"
+                                       sortable="false" headerText="Rec. Date"
+                                       id="c19" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmpdcDDView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RecDate.value}"
+                                              id="id16">
+                                  <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.RecDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.RecDate.inputValue}"
+                                            label="#{bindings.TblFmpdcDDView2.hints.RecDate.label}"
+                                            required="#{bindings.TblFmpdcDDView2.hints.RecDate.mandatory}"
+                                            columns="#{bindings.TblFmpdcDDView2.hints.RecDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.RecDate.tooltip}" id="id17"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.RecDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.RecDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.CrDate.name}" filterable="false"
+                                       sortable="false" headerText="Cr. Date"
+                                       id="c20" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmpdcDDView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CrDate.value}"
+                                              id="id18">
+                                  <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.CrDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.CrDate.inputValue}"
+                                            label="#{bindings.TblFmpdcDDView2.hints.CrDate.label}"
+                                            required="#{bindings.TblFmpdcDDView2.hints.CrDate.mandatory}"
+                                            columns="#{bindings.TblFmpdcDDView2.hints.CrDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.CrDate.tooltip}" id="id19"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.CrDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.CrDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.DueDate.name}" filterable="false"
+                                       sortable="false" headerText="Due Date"
+                                       id="c21" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmpdcDDView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DueDate.value}"
+                                              id="id20">
+                                  <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.DueDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.DueDate.inputValue}"
+                                            label="#{bindings.TblFmpdcDDView2.hints.DueDate.label}"
+                                            required="#{bindings.TblFmpdcDDView2.hints.DueDate.mandatory}"
+                                            columns="#{bindings.TblFmpdcDDView2.hints.DueDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.DueDate.tooltip}" id="id21"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.DueDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.DueDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.Amount.name}" filterable="false"
+                                       sortable="false" headerText="Amount"
+                                       id="c22" align="center">
+                              <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                            label="#{bindings.TblFmpdcDDView2.hints.Amount.label}"
+                                            required="#{bindings.TblFmpdcDDView2.hints.Amount.mandatory}"
+                                            columns="#{bindings.TblFmpdcDDView2.hints.Amount.displayWidth}"
+                                            maximumLength="#{bindings.TblFmpdcDDView2.hints.Amount.precision}"
+                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.Amount.tooltip}" id="it15"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmpdcDDView2.hints.Amount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                          
+                           
+                        </af:showDetailItem>
+                          </af:panelTabbed>
+                        </af:gridCell>
+                      </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+                     <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:spacer height="10" id="s7"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s8"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
