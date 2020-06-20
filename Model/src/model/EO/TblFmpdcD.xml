@@ -74,6 +74,13 @@
     AssociationOtherEnd="model.EO.FkFmpdcDPdcAssoc.TblFmpdcD"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFmpdcDD"
+    Association="model.EO.FkTblFmpdcddFkAssoc"
+    AssociationEnd="model.EO.FkTblFmpdcddFkAssoc.TblFmpdcDD"
+    AssociationOtherEnd="model.EO.FkTblFmpdcddFkAssoc.TblFmpdcD"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkFmpdcD"
     PrimaryKey="true">

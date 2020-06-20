@@ -140,9 +140,6 @@
     Name="TblFmlabTestRepDView2"
     ViewObjectName="model.VO.TblFmlabTestRepDView"/>
   <ViewUsage
-    Name="TblFmdailyConView1"
-    ViewObjectName="model.VO.TblFmdailyConView"/>
-  <ViewUsage
     Name="TblFmdailyConEngView1"
     ViewObjectName="model.VO.TblFmdailyConEngView"/>
   <ViewUsage
@@ -181,6 +178,21 @@
   <ViewUsage
     Name="Fuel_Receipt_Dashboard_VO1"
     ViewObjectName="model.VO.Fuel_Receipt_Dashboard_VO"/>
+  <ViewUsage
+    Name="TblFmpdcDDView1"
+    ViewObjectName="model.VO.TblFmpdcDDView"/>
+  <ViewUsage
+    Name="TblFmpdcDDView2"
+    ViewObjectName="model.VO.TblFmpdcDDView"/>
+  <ViewUsage
+    Name="TblFmdailyConDView1"
+    ViewObjectName="model.VO.TblFmdailyConDView"/>
+  <ViewUsage
+    Name="TblFmdailyConMView1"
+    ViewObjectName="model.VO.TblFmdailyConMView"/>
+  <ViewUsage
+    Name="TblFmdailyConDView2"
+    ViewObjectName="model.VO.TblFmdailyConDView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
@@ -306,5 +318,17 @@
     ViewLinkObjectName="model.VO.FkTblFmrnMFkLink"
     SrcViewUsageName="model.AppModule.TblFmrnMView1"
     DstViewUsageName="model.AppModule.TblFmrnDipView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFmpdcddFkLink1"
+    ViewLinkObjectName="model.VO.FkTblFmpdcddFkLink"
+    SrcViewUsageName="model.AppModule.TblFmpdcDView2"
+    DstViewUsageName="model.AppModule.TblFmpdcDDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SysC0023854Link1"
+    ViewLinkObjectName="model.VO.SysC0023854Link"
+    SrcViewUsageName="model.AppModule.TblFmdailyConMView1"
+    DstViewUsageName="model.AppModule.TblFmdailyConDView2"
     Reversed="false"/>
 </AppModule>

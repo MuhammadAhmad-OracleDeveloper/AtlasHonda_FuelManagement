@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmpdcDD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FMPDC_D_D"
+  AliasName="TblFmpdcDD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FmpdcDDId"
+    IsNotNull="true"
+    ColumnName="FMPDC_D_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPDC_D_D"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FmpdcDId"
+    ColumnName="FMPDC_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPDC_D_D"/>
+  <Attribute
+    Name="RecDate"
+    ColumnName="REC_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMPDC_D_D"/>
+  <Attribute
+    Name="CrDate"
+    ColumnName="CR_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMPDC_D_D"/>
+  <Attribute
+    Name="DueDate"
+    ColumnName="DUE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMPDC_D_D"/>
+  <Attribute
+    Name="Amount"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPDC_D_D"/>
+  <AccessorAttribute
+    Name="TblFmpdcD"
+    Association="model.EO.FkTblFmpdcddFkAssoc"
+    AssociationEnd="model.EO.FkTblFmpdcddFkAssoc.TblFmpdcD"
+    AssociationOtherEnd="model.EO.FkTblFmpdcddFkAssoc.TblFmpdcDD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkFmpdcDD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FMPDC_D_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpdcDD.FmpdcDDId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFmpdcDDPdc">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMPDC_D"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FMPDC_D_D_PDC"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpdcDD.FmpdcDId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblFmpdcDD">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMPDC_D"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_FMPDC_DD"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmpdcDD.FmpdcDId"/>
+    </AttrArray>
+  </Key>
+</Entity>
