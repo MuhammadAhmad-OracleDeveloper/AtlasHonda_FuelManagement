@@ -77,7 +77,6 @@
         <AttrNames>
           <Item Value="FmpdcDDId"/>
           <Item Value="RecDate"/>
-          <Item Value="CrDate"/>
           <Item Value="DueDate"/>
           <Item Value="Amount"/>
           <Item Value="CrDays"/>

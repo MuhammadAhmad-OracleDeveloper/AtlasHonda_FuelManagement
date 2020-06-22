@@ -59,7 +59,6 @@
     <tree IterBinding="TblFmdailyConDView2Iterator" id="TblFmdailyConDView2">
       <nodeDefinition DefName="model.VO.TblFmdailyConDView" Name="TblFmdailyConDView20">
         <AttrNames>
-          <Item Value="FmdailyConId"/>
           <Item Value="FmtanksId"/>
           <Item Value="FmitemsId"/>
           <Item Value="FillSts"/>
