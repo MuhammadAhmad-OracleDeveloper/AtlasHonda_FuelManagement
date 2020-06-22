@@ -11,16 +11,6 @@
   AliasName="TblFmdailyConD"
   BindingStyle="OracleName">
   <Attribute
-    Name="FmdailyConId"
-    ColumnName="FMDAILY_CON_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_FMDAILY_CON_D"
-    PrimaryKey="true"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
-  <Attribute
     Name="FmtanksId"
     ColumnName="FMTANKS_ID"
     SQLType="NUMERIC"
@@ -106,6 +96,16 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMDAILY_CON_D"/>
+  <Attribute
+    Name="FmdailyConDId"
+    ColumnName="FMDAILY_CON_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMDAILY_CON_D"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <AccessorAttribute
     Name="TblFmdailyConM"
     Association="model.EO.SysC0023854Assoc"
@@ -119,9 +119,7 @@
     <DesignTime>
       <Attr Name="_DBObjectName" Value="PK_TBL_FMDAILY_CON"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.EO.TblFmdailyConD.FmdailyConId"/>
-    </AttrArray>
+    <AttrArray Name="Attributes"/>
   </Key>
   <Key
     Name="FkTblFmdailyConItems">

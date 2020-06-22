@@ -75,7 +75,7 @@
                   </af:column>
                 </af:table>
               </af:showDetailItem>
-              <af:showDetailItem text="PDC Issuance" id="sdi1">
+              <af:showDetailItem text="Daily Consumption" id="sdi1">
                 <af:panelGridLayout id="pgl5">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
@@ -147,26 +147,25 @@
                                     filterModel="#{bindings.TblFmdailyConDView2Query.queryDescriptor}"
                                     filterVisible="true"
                                     queryListener="#{bindings.TblFmdailyConDView2Query.processQuery}" varStatus="vs"
-                                    id="t2" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6 ::b7 ::b8">
-                            <af:column sortProperty="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.name}"
-                                       filterable="false" sortable="false"
-                                       headerText="Detail ID" id="c3" align="center" width="80">
-                                       <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.FmdailyConId}"
+                                    id="t2" scrollPolicy="page" autoHeightRows="0" >
+                            <af:column headerText="Detail ID" id="c3"
+                                       align="center" sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmdailyConDId}"
        id="it12" placeholder="Search ID">
       </af:inputText>
 </f:facet>
-                              <af:inputText value="#{row.bindings.FmdailyConId.inputValue}"
-                                            label="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.label}"
-                                            required="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.mandatory}"
-                                            columns="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.displayWidth}"
-                                            maximumLength="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.precision}"
-                                            shortDesc="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.tooltip}"
+                              <af:inputText value="#{row.bindings.FmdailyConDId.inputValue}"
+                                            label="#{bindings.TblFmdailyConDView2.hints.FmdailyConDId.label}"
+                                            required="#{bindings.TblFmdailyConDView2.hints.FmdailyConDId.mandatory}"
+                                            columns="#{bindings.TblFmdailyConDView2.hints.FmdailyConDId.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConDView2.hints.FmdailyConDId.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConDView2.hints.FmdailyConDId.tooltip}"
                                             id="it3" readOnly="true"
                                             contentStyle='text-align: center'>
-                                <f:validator binding="#{row.bindings.FmdailyConId.validator}"/>
+                                <f:validator binding="#{row.bindings.FmdailyConDId.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblFmdailyConDView2.hints.FmdailyConId.format}"/>
+                                                  pattern="#{bindings.TblFmdailyConDView2.hints.FmdailyConDId.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmdailyConDView2.hints.FmtanksId.name}"

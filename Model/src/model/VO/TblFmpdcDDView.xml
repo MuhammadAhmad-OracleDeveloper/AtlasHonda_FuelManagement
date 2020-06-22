@@ -36,12 +36,6 @@
     EntityUsage="TblFmpdcDD"
     AliasName="REC_DATE"/>
   <ViewAttribute
-    Name="CrDate"
-    PrecisionRule="true"
-    EntityAttrName="CrDate"
-    EntityUsage="TblFmpdcDD"
-    AliasName="CR_DATE"/>
-  <ViewAttribute
     Name="DueDate"
     PrecisionRule="true"
     EntityAttrName="DueDate"
@@ -53,4 +47,10 @@
     EntityAttrName="Amount"
     EntityUsage="TblFmpdcDD"
     AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="CrDays"
+    PrecisionRule="true"
+    EntityAttrName="CrDays"
+    EntityUsage="TblFmpdcDD"
+    AliasName="CR_DAYS"/>
 </ViewObject>

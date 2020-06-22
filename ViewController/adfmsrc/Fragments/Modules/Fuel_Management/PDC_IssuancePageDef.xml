@@ -80,6 +80,7 @@
           <Item Value="CrDate"/>
           <Item Value="DueDate"/>
           <Item Value="Amount"/>
+          <Item Value="CrDays"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

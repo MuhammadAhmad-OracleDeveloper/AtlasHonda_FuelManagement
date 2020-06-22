@@ -35,13 +35,6 @@
     ColumnType="DATE"
     TableName="TBL_FMPDC_D_D"/>
   <Attribute
-    Name="CrDate"
-    ColumnName="CR_DATE"
-    SQLType="DATE"
-    Type="java.sql.Timestamp"
-    ColumnType="DATE"
-    TableName="TBL_FMPDC_D_D"/>
-  <Attribute
     Name="DueDate"
     ColumnName="DUE_DATE"
     SQLType="DATE"
@@ -51,6 +44,13 @@
   <Attribute
     Name="Amount"
     ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMPDC_D_D"/>
+  <Attribute
+    Name="CrDays"
+    ColumnName="CR_DAYS"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"

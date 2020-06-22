@@ -469,24 +469,19 @@
                                 <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.RecDate.format}"/>
                               </af:inputDate>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.CrDate.name}" filterable="false"
-                                       sortable="false" headerText="Cr. Date"
-                                       id="c20" align="center">
-                              <f:facet name="filter">
-                                <af:inputDate value="#{bindings.TblFmpdcDDView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CrDate.value}"
-                                              id="id18">
-                                  <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.CrDate.format}"/>
-                                </af:inputDate>
-                              </f:facet>
-                              <af:inputDate value="#{row.bindings.CrDate.inputValue}"
-                                            label="#{bindings.TblFmpdcDDView2.hints.CrDate.label}"
-                                            required="#{bindings.TblFmpdcDDView2.hints.CrDate.mandatory}"
-                                            columns="#{bindings.TblFmpdcDDView2.hints.CrDate.displayWidth}"
-                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.CrDate.tooltip}" id="id19"
+                            <af:column headerText="Cr. Days" id="c20" align="center" sortable="false" filterable="false">
+                            
+                              <af:inputText value="#{row.bindings.CrDays.inputValue}"
+                                            label="#{bindings.TblFmpdcDDView2.hints.CrDays.label}"
+                                            required="#{bindings.TblFmpdcDDView2.hints.CrDays.mandatory}"
+                                            columns="#{bindings.TblFmpdcDDView2.hints.CrDays.displayWidth}"
+                                            maximumLength="#{bindings.TblFmpdcDDView2.hints.CrDays.precision}"
+                                            shortDesc="#{bindings.TblFmpdcDDView2.hints.CrDays.tooltip}" id="it16"
                                             contentStyle='text-align: center'>
-                                <f:validator binding="#{row.bindings.CrDate.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.TblFmpdcDDView2.hints.CrDate.format}"/>
-                              </af:inputDate>
+                                <f:validator binding="#{row.bindings.CrDays.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmpdcDDView2.hints.CrDays.format}"/>
+                              </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmpdcDDView2.hints.DueDate.name}" filterable="false"
                                        sortable="false" headerText="Due Date"

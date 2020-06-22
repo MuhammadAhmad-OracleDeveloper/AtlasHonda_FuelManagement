@@ -61,13 +61,6 @@
     Name="TblFmdailyConD"
     Entity="model.EO.TblFmdailyConD"/>
   <ViewAttribute
-    Name="FmdailyConId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="FmdailyConId"
-    EntityUsage="TblFmdailyConD"
-    AliasName="FMDAILY_CON_ID"/>
-  <ViewAttribute
     Name="FmtanksId"
     PrecisionRule="true"
     EntityAttrName="FmtanksId"
@@ -149,4 +142,11 @@
     EntityAttrName="DensityTemp"
     EntityUsage="TblFmdailyConD"
     AliasName="DENSITY_TEMP"/>
+  <ViewAttribute
+    Name="FmdailyConDId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmdailyConDId"
+    EntityUsage="TblFmdailyConD"
+    AliasName="FMDAILY_CON_D_ID"/>
 </ViewObject>

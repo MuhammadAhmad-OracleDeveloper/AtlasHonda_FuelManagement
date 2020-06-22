@@ -70,6 +70,7 @@
           <Item Value="FuelTemp"/>
           <Item Value="DensityKg"/>
           <Item Value="DensityTemp"/>
+          <Item Value="FmdailyConDId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
