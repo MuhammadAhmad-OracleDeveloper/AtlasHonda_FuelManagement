@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Boiler_Name_LOV1"
+    ViewObjectName="model.LOV.Boiler_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FmboilerId"
+    ListVOName="Boiler_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmboilerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmboilerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmboilerName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmdailyConEngBoilerD"
     Entity="model.EO.TblFmdailyConEngBoilerD"/>
@@ -58,5 +80,13 @@
     PrecisionRule="true"
     EntityAttrName="FmboilerId"
     EntityUsage="TblFmdailyConEngBoilerD"
-    AliasName="FMBOILER_ID"/>
+    AliasName="FMBOILER_ID"
+    LOVName="LOV_FmboilerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

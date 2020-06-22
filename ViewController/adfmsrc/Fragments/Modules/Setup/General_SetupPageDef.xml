@@ -41,6 +41,10 @@
     <iterator Binds="TblFmvcfView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmvcfView1Iterator"/>
     <searchRegion Binds="TblFmvcfView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmvcfView1Query"/>
+    <iterator Binds="TblFmboilerView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmboilerView1Iterator"/>
+    <searchRegion Binds="TblFmboilerView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmboilerView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblFmdocstsView1Iterator" id="TblFmdocstsView1">
@@ -184,5 +188,18 @@
     <action IterBinding="TblFmvcfView1Iterator" id="CreateInsert9" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblFmvcfView1Iterator" id="Execute9" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblFmvcfView1Iterator" id="Delete9" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmboilerView1Iterator" id="TblFmboilerView1">
+      <nodeDefinition DefName="model.VO.TblFmboilerView" Name="TblFmboilerView10">
+        <AttrNames>
+          <Item Value="FmboilerId"/>
+          <Item Value="FmboilerName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmboilerView1Iterator" id="CreateInsert10" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmboilerView1Iterator" id="Execute10" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmboilerView1Iterator" id="Delete10" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

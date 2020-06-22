@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+ 
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Daily Consumption Engine">
-     
-      <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+    <af:showDetailItem id="pane1" text="Engine Consumption">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -23,29 +23,407 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Daily Consumption Engine Readings">
-               
+              <af:showDetailItem id="tab1" text="Engine Consumption List">
+                <af:table value="#{bindings.TblFmdailyConEngMView1.collectionModel}" var="row"
+                          rows="#{bindings.TblFmdailyConEngMView1.rangeSize}"
+                          emptyText="#{bindings.TblFmdailyConEngMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmdailyConEngMView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmdailyConEngMView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmdailyConEngMView1.rangeSize}"
+                          filterModel="#{bindings.TblFmdailyConEngMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmdailyConEngMView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0" >
+                  <af:column sortProperty="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Master ID" id="c1" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmdailyConEngMId}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmdailyConEngMId.inputValue}"
+                                  label="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.label}"
+                                  required="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.mandatory}"
+                                  columns="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.precision}"
+                                  shortDesc="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.tooltip}"
+                                  id="it2" readOnly="true" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmdailyConEngMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmdailyConEngMView1.hints.FmdailyConEngMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.name}" filterable="true"
+                             sortable="true" headerText="Reading Date"
+                             id="c2" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblFmdailyConEngMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ReadingDate.value}"
+                                    id="id2" placeholder="Search Date">
+                        <af:convertDateTime pattern="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.ReadingDate.inputValue}"
+                                  label="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.label}"
+                                  required="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.mandatory}"
+                                  columns="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.displayWidth}"
+                                  shortDesc="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.tooltip}" id="id3" readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ReadingDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblFmdailyConEngMView1.hints.ReadingDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                </af:table>
               </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
+              <af:showDetailItem text="Engine Consumption" id="sdi1">
+                <af:panelGridLayout id="pgl5">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                      <af:panelTabbed position="above" id="pt3">
+                        <af:showDetailItem id="tab3" text="Engine Consumption Master">
+                          <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.FmdailyConEngMId.inputValue}"
+                                          label="Master ID"
+                                          required="#{bindings.FmdailyConEngMId.hints.mandatory}"
+                                          columns="20"
+                                          maximumLength="#{bindings.FmdailyConEngMId.hints.precision}"
+                                          shortDesc="#{bindings.FmdailyConEngMId.hints.tooltip}" id="it1" disabled="true" 
+                                          contentStyle='text-align: center'>
+                              <f:validator binding="#{bindings.FmdailyConEngMId.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.FmdailyConEngMId.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.ReadingDate.inputValue}"
+                                          label="Reading Date"
+                                          required="#{bindings.ReadingDate.hints.mandatory}"
+                                          columns="17"
+                                          shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id1">
+                              <f:validator binding="#{bindings.ReadingDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
+                            </af:inputDate>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" id="pgl6">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                         
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                     <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                      <af:panelTabbed position="above" id="pt4">
+                        <af:showDetailItem id="tab4" text="Engine Consumption Detail">
+                          <af:table value="#{bindings.TblFmdailyConEngDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmdailyConEngDView2.rangeSize}"
+                                    emptyText="#{bindings.TblFmdailyConEngDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmdailyConEngDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmdailyConEngDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmdailyConEngDView2.rangeSize}"
+                                    filterModel="#{bindings.TblFmdailyConEngDView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblFmdailyConEngDView2Query.processQuery}" varStatus="vs"
+                                    id="t2" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Engine Consumption Detail ID"
+                                       id="c3" align="center">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmdailyConEngDId}"
+       id="it5" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmdailyConEngDId.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.label}"
+                                            required="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.tooltip}"
+                                            id="it3" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmdailyConEngDId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmdailyConEngDView2.hints.FmdailyConEngDId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngDView2.hints.FmitemsId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Item" id="c4" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmitemsId}"
+       id="it6" placeholder="Search Item">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.FmitemsId.inputValue}"
+                                                  label="#{row.bindings.FmitemsId.label}"
+                                                  required="#{bindings.TblFmdailyConEngDView2.hints.FmitemsId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmdailyConEngDView2.hints.FmitemsId.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.FmitemsId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngDView2.hints.FmenginesId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Engines" id="c5" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmenginesId}"
+       id="it7" placeholder="Search Engines">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.FmenginesId.inputValue}"
+                                                  label="#{row.bindings.FmenginesId.label}"
+                                                  required="#{bindings.TblFmdailyConEngDView2.hints.FmenginesId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmdailyConEngDView2.hints.FmenginesId.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.FmenginesId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.FmenginesId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngDView2.hints.MeterRead.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Meter Reading " id="c6" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MeterRead}"
+       id="it8" placeholder="Search Reading">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.MeterRead.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngDView2.hints.MeterRead.label}"
+                                            required="#{bindings.TblFmdailyConEngDView2.hints.MeterRead.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngDView2.hints.MeterRead.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngDView2.hints.MeterRead.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngDView2.hints.MeterRead.tooltip}"
+                                            id="it4">
+                                <f:validator binding="#{row.bindings.MeterRead.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:spacer height="10" id="s6"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s7"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Engine Consumption Boiler Detail" id="sdi2">
+                          <af:table value="#{bindings.TblFmdailyConEngBoilerDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmdailyConEngBoilerDView2.rangeSize}"
+                                    emptyText="#{bindings.TblFmdailyConEngBoilerDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmdailyConEngBoilerDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmdailyConEngBoilerDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmdailyConEngBoilerDView2.rangeSize}"
+                                    filterModel="#{bindings.TblFmdailyConEngBoilerDView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblFmdailyConEngBoilerDView2Query.processQuery}"
+                                    varStatus="vs" id="t3" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Engine Consumption Boiler Detail ID"
+                                       id="c7" align="center">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmdailyConEngBoilerDId}"
+       id="it14" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmdailyConEngBoilerDId.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.label}"
+                                            required="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.tooltip}"
+                                            id="it9" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmdailyConEngBoilerDId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmdailyConEngBoilerDId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmboilerId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Boiler"
+                                       id="c8" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmboilerId}"
+       id="it15" placeholder="Search Boiler">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.FmboilerId.inputValue}"
+                                                  label="#{row.bindings.FmboilerId.label}"
+                                                  required="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmboilerId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmdailyConEngBoilerDView2.hints.FmboilerId.tooltip}"
+                                                  id="soc3">
+                                <f:selectItems value="#{row.bindings.FmboilerId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.FmboilerId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Hours" id="c9">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Hours}"
+       id="it16" placeholder="Search Hours">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Hours.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.label}"
+                                            required="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.tooltip}"
+                                            id="it10" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.Hours.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmdailyConEngBoilerDView2.hints.Hours.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Inlet Meter Reading"
+                                       id="c10" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InletMeterRead}"
+       id="it17" placeholder="Search Reading">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.InletMeterRead.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.label}"
+                                            required="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.tooltip}"
+                                            id="it11" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.InletMeterRead.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmdailyConEngBoilerDView2.hints.InletMeterRead.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Outlet Meter Reading"
+                                       id="c11" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.OutletMeterRead}"
+       id="it18" placeholder="Search Reading">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.OutletMeterRead.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.label}"
+                                            required="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.tooltip}"
+                                            id="it12" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.OutletMeterRead.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmdailyConEngBoilerDView2.hints.OutletMeterRead.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Net Difference"
+                                       id="c12" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetDifference}"
+       id="it19" placeholder="Search Difference">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetDifference.inputValue}"
+                                            label="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.label}"
+                                            required="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.mandatory}"
+                                            columns="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.displayWidth}"
+                                            maximumLength="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.precision}"
+                                            shortDesc="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.tooltip}"
+                                            id="it13" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.NetDifference.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmdailyConEngBoilerDView2.hints.NetDifference.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                     
+                        
+                    </af:gridCell>
+                  </af:gridRow>
+                  
+                  <af:gridRow marginTop="5px" height="auto" id="gr10">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10"/>
+                  </af:gridRow>
+                   <af:gridRow id="gr12">
+                        <af:gridCell id="gc12"/>
+                      </af:gridRow>
+                  
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
-        
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             
+           </af:gridCell>
+        </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>
+

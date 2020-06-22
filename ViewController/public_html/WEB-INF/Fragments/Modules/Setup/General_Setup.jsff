@@ -686,6 +686,81 @@
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
+              <af:showDetailItem text="Boiler" id="sdi9">
+                <af:table value="#{bindings.TblFmboilerView1.collectionModel}" var="row"
+                          rows="#{bindings.TblFmboilerView1.rangeSize}"
+                          emptyText="#{bindings.TblFmboilerView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmboilerView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmboilerView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmboilerView1.rangeSize}"
+                          filterModel="#{bindings.TblFmboilerView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmboilerView1Query.processQuery}" varStatus="vs" id="t10"
+                          scrollPolicy="page" autoHeightRows="0" >
+                  <af:column sortProperty="#{bindings.TblFmboilerView1.hints.FmboilerId.name}" filterable="true"
+                             sortable="true" headerText="Boiler ID" id="c33" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmboilerId}"
+       id="it57" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmboilerId.inputValue}"
+                                  label="#{bindings.TblFmboilerView1.hints.FmboilerId.label}"
+                                  required="#{bindings.TblFmboilerView1.hints.FmboilerId.mandatory}"
+                                  columns="#{bindings.TblFmboilerView1.hints.FmboilerId.displayWidth}"
+                                  maximumLength="#{bindings.TblFmboilerView1.hints.FmboilerId.precision}"
+                                  shortDesc="#{bindings.TblFmboilerView1.hints.FmboilerId.tooltip}" id="it55"
+                                  readOnly="true"
+                                    contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmboilerId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFmboilerView1.hints.FmboilerId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmboilerView1.hints.FmboilerName.name}" filterable="true"
+                             sortable="true" headerText="Boiler"
+                             id="c34" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmboilerName}"
+       id="it58" placeholder="Search Boiler">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FmboilerName.inputValue}"
+                                  label="#{bindings.TblFmboilerView1.hints.FmboilerName.label}"
+                                  required="#{bindings.TblFmboilerView1.hints.FmboilerName.mandatory}"
+                                  columns="#{bindings.TblFmboilerView1.hints.FmboilerName.displayWidth}"
+                                  maximumLength="#{bindings.TblFmboilerView1.hints.FmboilerName.precision}"
+                                  shortDesc="#{bindings.TblFmboilerView1.hints.FmboilerName.tooltip}" id="it56">
+                      <f:validator binding="#{row.bindings.FmboilerName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmboilerView1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c35">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it59" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblFmboilerView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblFmboilerView1.hints.Ast.tooltip}" id="soc10">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}10"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
               <af:showDetailItem text="VCF" id="sdi5">
                 <af:table value="#{bindings.TblFmvcfView1.collectionModel}" var="row"
                           rows="#{bindings.TblFmvcfView1.rangeSize}"
@@ -771,18 +846,19 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                 <af:panelGroupLayout id="pgl8" layout="horizontal">
-                            <af:iterator id="i6" var="index" varStatus="status"
+                 <af:panelGroupLayout id="pgl12" layout="horizontal">
+                            <af:iterator id="i10" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}8"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}9"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s2"/>
+                                <af:spacer width="5" height="10" id="s6"/>
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
+              
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
