@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC0023882Assoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFmboiler"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblFmboiler">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmboiler"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmboiler.PkFmboiler"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmboiler.FmboilerId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFmdailyConEngBoilerD"
+    Cardinality="-1"
+    Owner="model.EO.TblFmdailyConEngBoilerD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmdailyConEngBoilerD"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmdailyConEngBoilerD.SysC0023882"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmdailyConEngBoilerD.FmboilerId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

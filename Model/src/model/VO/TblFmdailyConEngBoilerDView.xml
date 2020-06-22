@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmdailyConEngBoilerDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="TblFmdailyConEngBoilerD"
+    Entity="model.EO.TblFmdailyConEngBoilerD"/>
+  <ViewAttribute
+    Name="FmdailyConEngBoilerDId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FmdailyConEngBoilerDId"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="FMDAILY_CON_ENG_BOILER_D_ID"/>
+  <ViewAttribute
+    Name="Hours"
+    PrecisionRule="true"
+    EntityAttrName="Hours"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="HOURS"/>
+  <ViewAttribute
+    Name="InletMeterRead"
+    PrecisionRule="true"
+    EntityAttrName="InletMeterRead"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="INLET_METER_READ"/>
+  <ViewAttribute
+    Name="OutletMeterRead"
+    PrecisionRule="true"
+    EntityAttrName="OutletMeterRead"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="OUTLET_METER_READ"/>
+  <ViewAttribute
+    Name="NetDifference"
+    PrecisionRule="true"
+    EntityAttrName="NetDifference"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="NET_DIFFERENCE"/>
+  <ViewAttribute
+    Name="FmdailyConEngMId"
+    PrecisionRule="true"
+    EntityAttrName="FmdailyConEngMId"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="FMDAILY_CON_ENG_M_ID"/>
+  <ViewAttribute
+    Name="FmboilerId"
+    PrecisionRule="true"
+    EntityAttrName="FmboilerId"
+    EntityUsage="TblFmdailyConEngBoilerD"
+    AliasName="FMBOILER_ID"/>
+</ViewObject>

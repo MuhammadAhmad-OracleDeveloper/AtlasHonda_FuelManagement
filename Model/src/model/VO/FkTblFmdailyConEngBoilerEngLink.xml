@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblFmdailyConEngBoilerEngLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkTblFmdailyConEngBoilerEngAssoc">
+  <ViewLinkDefEnd
+    Name="TblFmdailyConEngMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblFmdailyConEngMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmdailyConEngMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmdailyConEngMView.FmdailyConEngMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblFmdailyConEngBoilerDView"
+    Cardinality="-1"
+    Owner="model.VO.TblFmdailyConEngBoilerDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFmdailyConEngBoilerDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFmdailyConEngBoilerDView.FmdailyConEngMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
