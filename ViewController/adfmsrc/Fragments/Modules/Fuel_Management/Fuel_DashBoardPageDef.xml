@@ -16,7 +16,7 @@
               id="Fuel_Receipt_Dashboard_VO1Iterator"/>
     <searchRegion Binds="Fuel_Receipt_Dashboard_VO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Fuel_Receipt_Dashboard_VO1Query"/>
-    <iterator Binds="due_pdc_view1" RangeSize="25" DataControl="AppModuleDataControl1" id="due_pdc_view1Iterator"/>
+    <iterator Binds="due_pdc_view1" RangeSize="15" DataControl="AppModuleDataControl1" id="due_pdc_view1Iterator"/>
     <searchRegion Binds="due_pdc_view1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="due_pdc_view1Query"/>
   </executables>

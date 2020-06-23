@@ -31,7 +31,7 @@
                           queryListener="#{bindings.TblFmrnMView1Query.processQuery}" varStatus="vs" id="t3"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFmrnMView1.hints.FmrnMId.name}" filterable="true"
-                             sortable="true" headerText="Receipt Notes Master ID" id="c19" align="center">
+                             sortable="true" headerText="Receipt Master ID" id="c19" align="center">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FmrnMId}"
        id="id4" placeholder="Search ID">

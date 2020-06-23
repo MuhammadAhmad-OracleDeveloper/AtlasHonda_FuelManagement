@@ -513,33 +513,33 @@
                           selectionListener="#{bindings.due_pdc_view1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.due_pdc_view1.rangeSize}"
                           filterModel="#{bindings.due_pdc_view1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.due_pdc_view1Query.processQuery}" varStatus="vs" id="t4">
+                          queryListener="#{bindings.due_pdc_view1Query.processQuery}" varStatus="vs" id="t4"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmrnMId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmrnMId.label}" id="c26">
+                             sortable="true" headerText="Receipt Master ID" id="c26">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnMId}"
+       id="it45" placeholder="Search ID">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.FmrnMId.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.FmrnMId.label}"
                                   required="#{bindings.due_pdc_view1.hints.FmrnMId.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.FmrnMId.displayWidth}"
                                   maximumLength="#{bindings.due_pdc_view1.hints.FmrnMId.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnMId.tooltip}" id="it44">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnMId.tooltip}" id="it44"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnMId.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.due_pdc_view1.hints.FmrnMId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.VendorId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.VendorId.label}" id="c27">
-                    <af:inputText value="#{row.bindings.VendorId.inputValue}"
-                                  label="#{bindings.due_pdc_view1.hints.VendorId.label}"
-                                  required="#{bindings.due_pdc_view1.hints.VendorId.mandatory}"
-                                  columns="#{bindings.due_pdc_view1.hints.VendorId.displayWidth}"
-                                  maximumLength="#{bindings.due_pdc_view1.hints.VendorId.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.VendorId.tooltip}" id="it45">
-                      <f:validator binding="#{row.bindings.VendorId.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.due_pdc_view1.hints.VendorId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmvendorsName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmvendorsName.label}" id="c28">
+                             sortable="true" headerText="Vendor" id="c28" width="200">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmvendorsName}"
+       id="it52" placeholder="Search Vendor">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.FmvendorsName.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.FmvendorsName.label}"
                                   required="#{bindings.due_pdc_view1.hints.FmvendorsName.mandatory}"
@@ -550,49 +550,67 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.GrossWeight.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.GrossWeight.label}" id="c29">
+                             sortable="true" headerText="APL Gross Weight" id="c29" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrossWeight}"
+       id="it53" placeholder="Search Weight">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.GrossWeight.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.GrossWeight.label}"
                                   required="#{bindings.due_pdc_view1.hints.GrossWeight.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.GrossWeight.displayWidth}"
                                   maximumLength="#{bindings.due_pdc_view1.hints.GrossWeight.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.GrossWeight.tooltip}" id="it47">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.GrossWeight.tooltip}" id="it47"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.GrossWeight.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.due_pdc_view1.hints.GrossWeight.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.TearWeight.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.TearWeight.label}" id="c30">
+                             sortable="true" headerText="APLTear Weight" id="c30" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TearWeight}"
+       id="it54" placeholder="Search Weight">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.TearWeight.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.TearWeight.label}"
                                   required="#{bindings.due_pdc_view1.hints.TearWeight.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.TearWeight.displayWidth}"
                                   maximumLength="#{bindings.due_pdc_view1.hints.TearWeight.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.TearWeight.tooltip}" id="it48">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.TearWeight.tooltip}" id="it48"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.TearWeight.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.due_pdc_view1.hints.TearWeight.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.NetWeight.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.NetWeight.label}" id="c31">
+                             sortable="true" headerText="Net Weight" id="c31" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetWeight}"
+       id="it55" placeholder="Search Weight">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.NetWeight.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.NetWeight.label}"
                                   required="#{bindings.due_pdc_view1.hints.NetWeight.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.NetWeight.displayWidth}"
                                   maximumLength="#{bindings.due_pdc_view1.hints.NetWeight.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.NetWeight.tooltip}" id="it49">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.NetWeight.tooltip}" id="it49"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.NetWeight.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.due_pdc_view1.hints.NetWeight.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmrnMRecDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmrnMRecDate.label}" id="c32">
+                             sortable="true" headerText="Received Date" id="c32" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.due_pdc_view1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMRecDate.value}"
-                                    id="id8">
+                                    id="id8" placeholder="Search Date">
                         <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.FmrnMRecDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -600,29 +618,36 @@
                                   label="#{bindings.due_pdc_view1.hints.FmrnMRecDate.label}"
                                   required="#{bindings.due_pdc_view1.hints.FmrnMRecDate.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.FmrnMRecDate.displayWidth}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnMRecDate.tooltip}" id="id9">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnMRecDate.tooltip}" id="id9"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnMRecDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.FmrnMRecDate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.CreditDays.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.CreditDays.label}" id="c33">
+                             sortable="true" headerText="Credit Days" id="c33" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CreditDays}"
+       id="it56" placeholder="Search Credit Days">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.CreditDays.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.CreditDays.label}"
                                   required="#{bindings.due_pdc_view1.hints.CreditDays.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.CreditDays.displayWidth}"
                                   maximumLength="#{bindings.due_pdc_view1.hints.CreditDays.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.CreditDays.tooltip}" id="it50">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.CreditDays.tooltip}" id="it50"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.CreditDays.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.due_pdc_view1.hints.CreditDays.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.DueDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.DueDate.label}" id="c34">
+                             sortable="true" headerText="Due Date" id="c34" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.due_pdc_view1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DueDate.value}"
-                                    id="id10">
+                                    id="id10" placeholder="Search Date">
                         <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.DueDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -630,19 +655,26 @@
                                   label="#{bindings.due_pdc_view1.hints.DueDate.label}"
                                   required="#{bindings.due_pdc_view1.hints.DueDate.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.DueDate.displayWidth}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.DueDate.tooltip}" id="id11">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.DueDate.tooltip}" id="id11"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.DueDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.DueDate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmrnNetAmt.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmrnNetAmt.label}" id="c35">
+                             sortable="true" headerText="Net Amount" id="c35" align="center">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmrnNetAmt}"
+       id="it57" placeholder="Search Net Amount">
+      </af:inputText>
+      </f:facet>
                     <af:inputText value="#{row.bindings.FmrnNetAmt.inputValue}"
                                   label="#{bindings.due_pdc_view1.hints.FmrnNetAmt.label}"
                                   required="#{bindings.due_pdc_view1.hints.FmrnNetAmt.mandatory}"
                                   columns="#{bindings.due_pdc_view1.hints.FmrnNetAmt.displayWidth}"
                                   maximumLength="#{bindings.due_pdc_view1.hints.FmrnNetAmt.precision}"
-                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnNetAmt.tooltip}" id="it51">
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnNetAmt.tooltip}" id="it51"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FmrnNetAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.due_pdc_view1.hints.FmrnNetAmt.format}"/>
