@@ -6,13 +6,13 @@
   Name="TblFmdailyConEngMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmdailyConEngM.FMDAILY_CON_ENG_M_ID, 
+       TblFmdailyConEngM.READING_DATE"
+  FromList="TBL_FMDAILY_CON_ENG_M TblFmdailyConEngM"
+  OrderBy="TblFmdailyConEngM.READING_DATE desc">
   <EntityUsage
     Name="TblFmdailyConEngM"
     Entity="model.EO.TblFmdailyConEngM"/>
@@ -28,7 +28,16 @@
     PrecisionRule="true"
     EntityAttrName="ReadingDate"
     EntityUsage="TblFmdailyConEngM"
-    AliasName="READING_DATE"/>
+    AliasName="READING_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmdailyConEngMView.ReadingDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmdailyConEngMView.ReadingDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblFmdailyConEngBoilerDView"
     ViewLink="model.VO.FkTblFmdailyConEngBoilerEngLink"
@@ -39,4 +48,8 @@
     ViewLink="model.VO.SysC0023878Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

@@ -180,7 +180,7 @@
                                                   label="#{row.bindings.FmtanksId.label}"
                                                   required="#{bindings.TblFmdailyConDView2.hints.FmtanksId.mandatory}"
                                                   shortDesc="#{bindings.TblFmdailyConDView2.hints.FmtanksId.tooltip}"
-                                                  id="soc1">
+                                                  id="soc1" readOnly="true">
                                 <f:selectItems value="#{row.bindings.FmtanksId.items}" id="si1"/>
                                 <f:validator binding="#{row.bindings.FmtanksId.validator}"/>
                               </af:selectOneChoice>

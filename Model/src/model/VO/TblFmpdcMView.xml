@@ -89,4 +89,9 @@
     ViewLink="model.VO.FkFmpdcDPdcLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblFmpdcDDView"
+    ViewLink="model.VO.FkTblFmpdcddFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

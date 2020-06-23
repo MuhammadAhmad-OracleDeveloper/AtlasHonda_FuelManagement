@@ -6,13 +6,13 @@
   Name="TblFmdailyConMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmdailyConM.FMDAILY_CON_M_ID, 
+       TblFmdailyConM.READING_DATE"
+  FromList="TBL_FMDAILY_CON_M TblFmdailyConM"
+  OrderBy="TblFmdailyConM.READING_DATE desc">
   <EntityUsage
     Name="TblFmdailyConM"
     Entity="model.EO.TblFmdailyConM"/>
@@ -28,10 +28,23 @@
     PrecisionRule="true"
     EntityAttrName="ReadingDate"
     EntityUsage="TblFmdailyConM"
-    AliasName="READING_DATE"/>
+    AliasName="READING_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmdailyConMView.ReadingDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmdailyConMView.ReadingDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblFmdailyConDView"
     ViewLink="model.VO.SysC0023854Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

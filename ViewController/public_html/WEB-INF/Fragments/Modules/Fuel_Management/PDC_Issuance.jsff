@@ -424,7 +424,7 @@
                         <af:gridCell id="gc12">
                           <af:panelTabbed position="above" id="pt2">
                             <af:showDetailItem id="tab2" text="PDC Issuance Detail D">
-                          <af:table value="#{bindings.TblFmpdcDDView2.collectionModel}" var="row"
+                      <af:table value="#{bindings.TblFmpdcDDView2.collectionModel}" var="row"
                                     rows="#{bindings.TblFmpdcDDView2.rangeSize}"
                                     emptyText="#{bindings.TblFmpdcDDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
@@ -518,9 +518,6 @@
                               </af:inputText>
                             </af:column>
                           </af:table>
-                          
-                          
-                           
                         </af:showDetailItem>
                           </af:panelTabbed>
                         </af:gridCell>

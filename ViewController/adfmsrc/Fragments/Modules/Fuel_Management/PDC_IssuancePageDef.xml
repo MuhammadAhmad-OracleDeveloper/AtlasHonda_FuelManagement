@@ -12,7 +12,7 @@
     <iterator Binds="TblFmpdcDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmpdcDView2Iterator"/>
     <searchRegion Binds="TblFmpdcDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmpdcDView2Query"/>
-    <iterator Binds="TblFmpdcDDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblFmpdcDDView2Iterator"/>
+    <iterator Binds="TblFmpdcDDView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFmpdcDDView2Iterator"/>
     <searchRegion Binds="TblFmpdcDDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmpdcDDView2Query"/>
   </executables>

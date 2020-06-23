@@ -24,12 +24,6 @@
     EntityUsage="TblFmpdcDD"
     AliasName="FMPDC_D_D_ID"/>
   <ViewAttribute
-    Name="FmpdcDId"
-    PrecisionRule="true"
-    EntityAttrName="FmpdcDId"
-    EntityUsage="TblFmpdcDD"
-    AliasName="FMPDC_D_ID"/>
-  <ViewAttribute
     Name="RecDate"
     PrecisionRule="true"
     EntityAttrName="RecDate"
@@ -53,4 +47,10 @@
     EntityAttrName="CrDays"
     EntityUsage="TblFmpdcDD"
     AliasName="CR_DAYS"/>
+  <ViewAttribute
+    Name="FmpdcMId"
+    PrecisionRule="true"
+    EntityAttrName="FmpdcMId"
+    EntityUsage="TblFmpdcDD"
+    AliasName="FMPDC_M_ID"/>
 </ViewObject>

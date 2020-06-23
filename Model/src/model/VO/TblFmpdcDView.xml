@@ -59,9 +59,4 @@
     EntityAttrName="ChqAmount"
     EntityUsage="TblFmpdcD"
     AliasName="CHQ_AMOUNT"/>
-  <ViewLinkAccessor
-    Name="TblFmpdcDDView"
-    ViewLink="model.VO.FkTblFmpdcddFkLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
 </ViewObject>

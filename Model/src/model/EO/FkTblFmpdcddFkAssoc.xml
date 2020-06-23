@@ -10,19 +10,19 @@
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblFmpdcD"
+    Name="TblFmpdcM"
     Cardinality="1"
     Source="true"
-    Owner="model.EO.TblFmpdcD"
+    Owner="model.EO.TblFmpdcM"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblFmpdcD"/>
-      <Attr Name="_foreignKey" Value="model.EO.TblFmpdcD.PkFmpdcD"/>
+      <Attr Name="_finderName" Value="TblFmpdcM"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmpdcM.PkFmpdcM"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.TblFmpdcD.FmpdcDId"/>
+      <Item Value="model.EO.TblFmpdcM.FmpdcMId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -36,7 +36,7 @@
       <Attr Name="_foreignKey" Value="model.EO.TblFmpdcDD.fk_TblFmpdcDD"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.TblFmpdcDD.FmpdcDId"/>
+      <Item Value="model.EO.TblFmpdcDD.FmpdcMId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

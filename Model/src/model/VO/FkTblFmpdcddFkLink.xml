@@ -14,16 +14,16 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="TblFmpdcDView"
+    Name="TblFmpdcMView"
     Cardinality="1"
     Source="true"
-    Owner="model.VO.TblFmpdcDView">
+    Owner="model.VO.TblFmpdcMView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblFmpdcDView"/>
+      <Attr Name="_finderName" Value="TblFmpdcMView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.TblFmpdcDView.FmpdcDId"/>
+      <Item Value="model.VO.TblFmpdcMView.FmpdcMId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -35,7 +35,7 @@
       <Attr Name="_finderName" Value="TblFmpdcDDView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.TblFmpdcDDView.FmpdcDId"/>
+      <Item Value="model.VO.TblFmpdcDDView.FmpdcMId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>
