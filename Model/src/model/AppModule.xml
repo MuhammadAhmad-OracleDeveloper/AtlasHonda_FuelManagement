@@ -211,6 +211,7 @@
   <ViewUsage
     Name="TblFmpdcDDView2"
     ViewObjectName="model.VO.TblFmpdcDDView"/>
+  <ViewUsage
     Name="due_pdc_view1"
     ViewObjectName="model.VO.due_pdc_view"/>
   <ViewLinkUsage
