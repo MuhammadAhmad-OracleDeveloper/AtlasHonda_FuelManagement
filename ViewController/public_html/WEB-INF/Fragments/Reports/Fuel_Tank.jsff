@@ -8,7 +8,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
             <af:panelGroupLayout id="pgl2" layout="horizontal">
               <af:selectOneChoice label="From Tank ID :"
-                                  required="#{bindings.FmtanksId.hints.mandatory}" autoSubmit="true"
+                                  autoSubmit="true"
                                   binding="#{backingBeanScope.fuel_tank_reportBean.fromTankParam}"
                                   shortDesc="#{bindings.FmtanksId.hints.tooltip}" id="soc1">
                 <f:selectItems value="#{bindings.FmtanksId.items}" id="si1"/>
@@ -16,7 +16,7 @@
               </af:selectOneChoice>
               <af:spacer width="10" height="10" id="s1"/>
               <af:selectOneChoice label="To Tank ID :"
-                                  required="#{bindings.FmtanksId.hints.mandatory}" autoSubmit="true"
+                                  autoSubmit="true"
                                   binding="#{backingBeanScope.fuel_tank_reportBean.toTankParam}"
                                   shortDesc="#{bindings.FmtanksId.hints.tooltip}" id="soc2">
                 <f:selectItems value="#{bindings.FmtanksId.items}" id="si2"/>
@@ -28,22 +28,21 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelGroupLayout id="pgl3" layout="horizontal">
-              <af:inputDate label="From Date :"
-                            required="#{bindings.FmreadingDate.hints.mandatory}"
-                            binding="#{backingBeanScope.fuel_tank_reportBean.fromDateParam}"
-                            columns="#{bindings.FmreadingDate.hints.displayWidth}" autoSubmit="true"
-                            shortDesc="#{bindings.FmreadingDate.hints.tooltip}" id="id1">
-                <f:validator binding="#{bindings.FmreadingDate.validator}"/>
-                <af:convertDateTime pattern="#{bindings.FmreadingDate.format}"/>
+              <af:inputDate value="#{bindings.ReadingDate.inputValue}"
+              binding="#{backingBeanScope.fuel_tank_reportBean.fromDateParam}"
+              label="From Date :" autoSubmit="true"
+                            columns="#{bindings.ReadingDate.hints.displayWidth}"
+                            shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id3">
+                <f:validator binding="#{bindings.ReadingDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
               </af:inputDate>
               <af:spacer width="10" height="10" id="s2"/>
-              <af:inputDate label="To Date :"
-                            required="#{bindings.FmreadingDate.hints.mandatory}"
-                            binding="#{backingBeanScope.fuel_tank_reportBean.toDateParam}"
-                            columns="#{bindings.FmreadingDate.hints.displayWidth}" autoSubmit="true"
-                            shortDesc="#{bindings.FmreadingDate.hints.tooltip}" id="id2">
-                <f:validator binding="#{bindings.FmreadingDate.validator}"/>
-                <af:convertDateTime pattern="#{bindings.FmreadingDate.format}"/>
+              <af:inputDate value="#{bindings.ReadingDate.inputValue}" label="To Date :"
+               autoSubmit="true"
+              columns="#{bindings.ReadingDate.hints.displayWidth}"
+                            shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id1">
+                <f:validator binding="#{bindings.ReadingDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
               </af:inputDate>
                <af:spacer width="30" height="30" id="s4"/>
                             <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"

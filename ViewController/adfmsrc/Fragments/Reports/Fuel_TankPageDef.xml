@@ -4,9 +4,18 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-   
+    <iterator Binds="TblFmdailyConDView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmdailyConDView1Iterator"/>
+    <iterator Binds="TblFmdailyConMView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFmdailyConMView1Iterator"/>
   </executables>
   <bindings>
-    
+    <list IterBinding="TblFmdailyConDView1Iterator" StaticList="false" Uses="LOV_FmtanksId" id="FmtanksId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFmdailyConMView1Iterator" id="ReadingDate">
+      <AttrNames>
+        <Item Value="ReadingDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
