@@ -16,6 +16,9 @@
               id="Fuel_Receipt_Dashboard_VO1Iterator"/>
     <searchRegion Binds="Fuel_Receipt_Dashboard_VO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Fuel_Receipt_Dashboard_VO1Query"/>
+    <iterator Binds="due_pdc_view1" RangeSize="25" DataControl="AppModuleDataControl1" id="due_pdc_view1Iterator"/>
+    <searchRegion Binds="due_pdc_view1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="due_pdc_view1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="Fuel_Dashboard_VO1Iterator" id="Fuel_Dashboard_VO1">
@@ -61,6 +64,22 @@
           <Item Value="FmrnQty"/>
           <Item Value="FmrnGWeight"/>
           <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="due_pdc_view1Iterator" id="due_pdc_view1">
+      <nodeDefinition DefName="model.VO.due_pdc_view" Name="due_pdc_view10">
+        <AttrNames>
+          <Item Value="FmrnMId"/>
+          <Item Value="VendorId"/>
+          <Item Value="FmvendorsName"/>
+          <Item Value="GrossWeight"/>
+          <Item Value="TearWeight"/>
+          <Item Value="NetWeight"/>
+          <Item Value="FmrnMRecDate"/>
+          <Item Value="CreditDays"/>
+          <Item Value="DueDate"/>
+          <Item Value="FmrnNetAmt"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

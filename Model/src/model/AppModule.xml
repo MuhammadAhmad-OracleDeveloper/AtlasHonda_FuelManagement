@@ -211,6 +211,9 @@
   <ViewUsage
     Name="TblFmdailyConEngBoilerDView3"
     ViewObjectName="model.VO.TblFmdailyConEngBoilerDView"/>
+  <ViewUsage
+    Name="due_pdc_view1"
+    ViewObjectName="model.VO.due_pdc_view"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
