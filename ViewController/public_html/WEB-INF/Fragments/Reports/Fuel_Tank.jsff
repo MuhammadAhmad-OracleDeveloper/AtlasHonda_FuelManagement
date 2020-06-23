@@ -1,71 +1,69 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelAccordion discloseMany="false" id="pa1">
-    <af:showDetailItem id="pane1" text="Panel Label 1">
-      <af:panelGridLayout id="pgl1">
-        <af:gridRow marginTop="5px" height="auto" id="gr1">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-            <af:panelGroupLayout id="pgl2" layout="horizontal">
-              <af:selectOneChoice label="From Tank ID :"
-                                  autoSubmit="true"
-                                  binding="#{backingBeanScope.fuel_tank_reportBean.fromTankParam}"
-                                  shortDesc="#{bindings.FmtanksId.hints.tooltip}" id="soc1">
-                <f:selectItems value="#{bindings.FmtanksId.items}" id="si1"/>
-                <f:validator binding="#{bindings.FmtanksId.validator}"/>
-              </af:selectOneChoice>
-              <af:spacer width="10" height="10" id="s1"/>
-              <af:selectOneChoice label="To Tank ID :"
-                                  autoSubmit="true"
-                                  binding="#{backingBeanScope.fuel_tank_reportBean.toTankParam}"
-                                  shortDesc="#{bindings.FmtanksId.hints.tooltip}" id="soc2">
-                <f:selectItems value="#{bindings.FmtanksId.items}" id="si2"/>
-                <f:validator binding="#{bindings.FmtanksId.validator}"/>
-              </af:selectOneChoice>
-            </af:panelGroupLayout>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelGroupLayout id="pgl3" layout="horizontal">
-              <af:inputDate value="#{bindings.ReadingDate.inputValue}"
-              binding="#{backingBeanScope.fuel_tank_reportBean.fromDateParam}"
-              label="From Date :" autoSubmit="true"
-                            columns="#{bindings.ReadingDate.hints.displayWidth}"
-                            shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id3">
-                <f:validator binding="#{bindings.ReadingDate.validator}"/>
-                <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
-              </af:inputDate>
-              <af:spacer width="10" height="10" id="s2"/>
-              <af:inputDate value="#{bindings.ReadingDate.inputValue}" label="To Date :"
-               autoSubmit="true"
-              columns="#{bindings.ReadingDate.hints.displayWidth}"
-                            shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id1">
-                <f:validator binding="#{bindings.ReadingDate.validator}"/>
-                <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
-              </af:inputDate>
-               <af:spacer width="30" height="30" id="s4"/>
+    <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Panel Label 1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:selectOneChoice label="From Tank ID :" autoSubmit="true"
+                                                binding="#{backingBeanScope.fuel_tank_reportBean.fromTankParam}"
+                                                shortDesc="#{bindings.FmtanksId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.FmtanksId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.FmtanksId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="10" height="10" id="s1"/>
+                            <af:selectOneChoice label="To Tank ID :" autoSubmit="true"
+                                                binding="#{backingBeanScope.fuel_tank_reportBean.toTankParam}"
+                                                shortDesc="#{bindings.FmtanksId.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.FmtanksId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.FmtanksId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:inputDate binding="#{backingBeanScope.fuel_tank_reportBean.fromDateParam}"
+                                          label="From Date :" autoSubmit="true"
+                                          columns="#{bindings.ReadingDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id3">
+                                <f:validator binding="#{bindings.ReadingDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
+                            </af:inputDate>
+                            <af:spacer width="10" height="10" id="s2"/>
+                            <af:inputDate binding="#{backingBeanScope.fuel_tank_reportBean.toDateParam}"
+                            label="To Date :" autoSubmit="true"
+                                          columns="#{bindings.ReadingDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.ReadingDate.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.ReadingDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ReadingDate.format}"/>
+                            </af:inputDate>
+                            <af:spacer width="30" height="30" id="s4"/>
                             <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--" contentStyle="width:200px"
                                                 binding="#{backingBeanScope.fuel_tank_reportBean.format_type}">
                                 <af:selectItem label="PDF" value="PDF" id="si5"/>
                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
                             </af:selectOneChoice>
-              <af:spacer width="10" height="10" id="s3"/>
-               <af:button text="Generate Report" id="b2" action="#{backingBeanScope.fuel_tank_reportBean.get_report}"/>
-            </af:panelGroupLayout>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
-        </af:gridRow>
-      </af:panelGridLayout>
-    </af:showDetailItem>
-  </af:panelAccordion>
+                            <af:spacer width="10" height="10" id="s3"/>
+                            <af:button text="Generate Report" id="b2"
+                                       action="#{backingBeanScope.fuel_tank_reportBean.get_report}"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
 </ui:composition>
