@@ -505,6 +505,151 @@
                   </af:column>
                 </af:table>
               </af:showDetailItem>
+               <af:showDetailItem text="Due PDC" id="sdi3">
+                <af:table value="#{bindings.due_pdc_view1.collectionModel}" var="row"
+                          rows="#{bindings.due_pdc_view1.rangeSize}"
+                          emptyText="#{bindings.due_pdc_view1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.due_pdc_view1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.due_pdc_view1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.due_pdc_view1.rangeSize}"
+                          filterModel="#{bindings.due_pdc_view1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.due_pdc_view1Query.processQuery}" varStatus="vs" id="t4">
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmrnMId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmrnMId.label}" id="c26">
+                    <af:inputText value="#{row.bindings.FmrnMId.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.FmrnMId.label}"
+                                  required="#{bindings.due_pdc_view1.hints.FmrnMId.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.FmrnMId.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.FmrnMId.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnMId.tooltip}" id="it44">
+                      <f:validator binding="#{row.bindings.FmrnMId.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.due_pdc_view1.hints.FmrnMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.VendorId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.VendorId.label}" id="c27">
+                    <af:inputText value="#{row.bindings.VendorId.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.VendorId.label}"
+                                  required="#{bindings.due_pdc_view1.hints.VendorId.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.VendorId.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.VendorId.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.VendorId.tooltip}" id="it45">
+                      <f:validator binding="#{row.bindings.VendorId.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.due_pdc_view1.hints.VendorId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmvendorsName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmvendorsName.label}" id="c28">
+                    <af:inputText value="#{row.bindings.FmvendorsName.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.FmvendorsName.label}"
+                                  required="#{bindings.due_pdc_view1.hints.FmvendorsName.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.FmvendorsName.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.FmvendorsName.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmvendorsName.tooltip}" id="it46">
+                      <f:validator binding="#{row.bindings.FmvendorsName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.GrossWeight.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.GrossWeight.label}" id="c29">
+                    <af:inputText value="#{row.bindings.GrossWeight.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.GrossWeight.label}"
+                                  required="#{bindings.due_pdc_view1.hints.GrossWeight.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.GrossWeight.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.GrossWeight.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.GrossWeight.tooltip}" id="it47">
+                      <f:validator binding="#{row.bindings.GrossWeight.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.due_pdc_view1.hints.GrossWeight.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.TearWeight.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.TearWeight.label}" id="c30">
+                    <af:inputText value="#{row.bindings.TearWeight.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.TearWeight.label}"
+                                  required="#{bindings.due_pdc_view1.hints.TearWeight.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.TearWeight.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.TearWeight.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.TearWeight.tooltip}" id="it48">
+                      <f:validator binding="#{row.bindings.TearWeight.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.due_pdc_view1.hints.TearWeight.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.NetWeight.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.NetWeight.label}" id="c31">
+                    <af:inputText value="#{row.bindings.NetWeight.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.NetWeight.label}"
+                                  required="#{bindings.due_pdc_view1.hints.NetWeight.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.NetWeight.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.NetWeight.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.NetWeight.tooltip}" id="it49">
+                      <f:validator binding="#{row.bindings.NetWeight.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.due_pdc_view1.hints.NetWeight.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmrnMRecDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmrnMRecDate.label}" id="c32">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.due_pdc_view1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMRecDate.value}"
+                                    id="id8">
+                        <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.FmrnMRecDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.FmrnMRecDate.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.FmrnMRecDate.label}"
+                                  required="#{bindings.due_pdc_view1.hints.FmrnMRecDate.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.FmrnMRecDate.displayWidth}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnMRecDate.tooltip}" id="id9">
+                      <f:validator binding="#{row.bindings.FmrnMRecDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.FmrnMRecDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.CreditDays.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.CreditDays.label}" id="c33">
+                    <af:inputText value="#{row.bindings.CreditDays.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.CreditDays.label}"
+                                  required="#{bindings.due_pdc_view1.hints.CreditDays.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.CreditDays.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.CreditDays.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.CreditDays.tooltip}" id="it50">
+                      <f:validator binding="#{row.bindings.CreditDays.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.due_pdc_view1.hints.CreditDays.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.DueDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.DueDate.label}" id="c34">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.due_pdc_view1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DueDate.value}"
+                                    id="id10">
+                        <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.DueDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.DueDate.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.DueDate.label}"
+                                  required="#{bindings.due_pdc_view1.hints.DueDate.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.DueDate.displayWidth}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.DueDate.tooltip}" id="id11">
+                      <f:validator binding="#{row.bindings.DueDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.due_pdc_view1.hints.DueDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.due_pdc_view1.hints.FmrnNetAmt.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.due_pdc_view1.hints.FmrnNetAmt.label}" id="c35">
+                    <af:inputText value="#{row.bindings.FmrnNetAmt.inputValue}"
+                                  label="#{bindings.due_pdc_view1.hints.FmrnNetAmt.label}"
+                                  required="#{bindings.due_pdc_view1.hints.FmrnNetAmt.mandatory}"
+                                  columns="#{bindings.due_pdc_view1.hints.FmrnNetAmt.displayWidth}"
+                                  maximumLength="#{bindings.due_pdc_view1.hints.FmrnNetAmt.precision}"
+                                  shortDesc="#{bindings.due_pdc_view1.hints.FmrnNetAmt.tooltip}" id="it51">
+                      <f:validator binding="#{row.bindings.FmrnNetAmt.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.due_pdc_view1.hints.FmrnNetAmt.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
