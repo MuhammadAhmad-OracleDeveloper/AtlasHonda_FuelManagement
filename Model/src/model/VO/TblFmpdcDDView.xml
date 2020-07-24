@@ -6,13 +6,17 @@
   Name="TblFmpdcDDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmpdcDD.FMPDC_D_D_ID, 
+       TblFmpdcDD.REC_DATE, 
+       TblFmpdcDD.DUE_DATE, 
+       TblFmpdcDD.AMOUNT, 
+       TblFmpdcDD.CR_DAYS, 
+       TblFmpdcDD.FMPDC_M_ID"
+  FromList="TBL_FMPDC_D_D TblFmpdcDD"
+  OrderBy="TblFmpdcDD.FMPDC_D_D_ID desc">
   <EntityUsage
     Name="TblFmpdcDD"
     Entity="model.EO.TblFmpdcDD"/>

@@ -6,13 +6,20 @@
   Name="TblFmpoDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmpoD.FMPO_D_ID, 
+       TblFmpoD.FMPO_M_ID, 
+       TblFmpoD.FMITEMS_ID, 
+       TblFmpoD.FMQTY, 
+       TblFmpoD.FMRATE, 
+       TblFmpoD.FMGAMT, 
+       TblFmpoD.FMST_PERC, 
+       TblFmpoD.FMST_AMT, 
+       TblFmpoD.FMNET_AMT"
+  FromList="TBL_FMPO_D TblFmpoD"
+  OrderBy="TblFmpoD.FMPO_D_ID desc">
   <ViewAccessor
     Name="Item_LOV1"
     ViewObjectName="model.LOV.Item_LOV"

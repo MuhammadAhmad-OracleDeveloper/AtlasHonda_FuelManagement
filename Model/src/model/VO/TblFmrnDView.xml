@@ -9,10 +9,30 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectList="TblFmrnD.FMRN_D_ID, 
+       TblFmrnD.FMRN_M_ID, 
+       TblFmrnD.FMITEMS_ID, 
+       TblFmrnD.FMRN_QTY, 
+       TblFmrnD.FMRN_RATE, 
+       TblFmrnD.FMRN_GAMT, 
+       TblFmrnD.FMRN_ST_PERC, 
+       TblFmrnD.FMRN_ST_AMT, 
+       TblFmrnD.FMRN_NET_AMT, 
+       TblFmrnD.FMRN_G_WEIGHT, 
+       TblFmrnD.FMRN_T_WEIGHT, 
+       TblFmrnD.FMRN_N_WEIGHT, 
+       TblFmrnD.FMRN_VT_WEIGHT, 
+       TblFmrnD.FMRN_VN_WEIGHT, 
+       TblFmrnD.FMRN_DIP1, 
+       TblFmrnD.FMRN_DIP2, 
+       TblFmrnD.FMRN_DIP3, 
+       TblFmrnD.FMBAY_ID, 
+       TblFmrnD.FMTANKS_ID, 
+       TblFmrnD.COMP_SIZE, 
+       TblFmrnD.SHORT_PER_CHART, 
+       TblFmrnD.SHORTAGE"
+  FromList="TBL_FMRN_D TblFmrnD"
+  OrderBy="TblFmrnD.FMRN_D_ID desc">
   <ViewAccessor
     Name="Item_LOV1"
     ViewObjectName="model.LOV.Item_LOV"

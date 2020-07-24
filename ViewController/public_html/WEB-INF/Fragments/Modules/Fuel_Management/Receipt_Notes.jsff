@@ -135,7 +135,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                
+
               </af:showDetailItem>
               <af:showDetailItem id="sdi1" text="Fuel Receipt">
                <af:panelGroupLayout id="pgl3" layout="horizontal">

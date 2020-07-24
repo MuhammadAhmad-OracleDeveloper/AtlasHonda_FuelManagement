@@ -402,5 +402,16 @@
     </attributeValues>
     <list IterBinding="TblFmrnMView1Iterator" StaticList="false" Uses="LOV_FmpoMId" id="FmpoMId" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblFmrnMView1Iterator" id="TblFmrnMView11">
+      <nodeDefinition DefName="model.VO.TblFmrnMView" Name="TblFmrnMView110">
+        <AttrNames>
+          <Item Value="FmrnMId"/>
+          <Item Value="FmrnMDate"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="VendorId"/>
+          <Item Value="FmitemsId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

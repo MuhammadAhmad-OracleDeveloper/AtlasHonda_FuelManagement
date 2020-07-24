@@ -6,13 +6,18 @@
   Name="TblFmdailyConEngBoilerDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmdailyConEngBoilerD.FMDAILY_CON_ENG_BOILER_D_ID, 
+       TblFmdailyConEngBoilerD.HOURS, 
+       TblFmdailyConEngBoilerD.INLET_METER_READ, 
+       TblFmdailyConEngBoilerD.OUTLET_METER_READ, 
+       TblFmdailyConEngBoilerD.NET_DIFFERENCE, 
+       TblFmdailyConEngBoilerD.FMDAILY_CON_ENG_M_ID, 
+       TblFmdailyConEngBoilerD.FMBOILER_ID"
+  FromList="TBL_FMDAILY_CON_ENG_BOILER_D TblFmdailyConEngBoilerD"
+  OrderBy="TblFmdailyConEngBoilerD.FMDAILY_CON_ENG_BOILER_D_ID desc">
   <ViewAccessor
     Name="Boiler_Name_LOV1"
     ViewObjectName="model.LOV.Boiler_Name_LOV"

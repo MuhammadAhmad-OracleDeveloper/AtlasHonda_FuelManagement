@@ -6,13 +6,16 @@
   Name="TblFmdailyConEngDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmdailyConEngD.FMDAILY_CON_ENG_D_ID, 
+       TblFmdailyConEngD.FMITEMS_ID, 
+       TblFmdailyConEngD.FMENGINES_ID, 
+       TblFmdailyConEngD.METER_READ, 
+       TblFmdailyConEngD.FMDAILY_CON_ENG_M_ID"
+  FromList="TBL_FMDAILY_CON_ENG_D TblFmdailyConEngD"
+  OrderBy="TblFmdailyConEngD.FMDAILY_CON_ENG_D_ID desc">
   <ViewAccessor
     Name="Item_LOV1"
     ViewObjectName="model.LOV.Item_LOV"
