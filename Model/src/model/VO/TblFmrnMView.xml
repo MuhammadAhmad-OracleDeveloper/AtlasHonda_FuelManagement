@@ -66,10 +66,14 @@
        TblFmrnM.VEHICLE_BAY_INDATE, 
        TblFmrnM.VEHICLE_BAY_OUTDATE, 
        TblFmrnM.SUPPLIER_CV, 
-       TblFmrnM.LAB_TEMP"
+       TblFmrnM.LAB_TEMP, 
+       TblFmrnM.UPDATED_BY, 
+       TblFmrnM.UPDATED_DATE, 
+       TblFmrnM.CREATED_BY, 
+       TblFmrnM.CREATED_DATE"
   FromList="TBL_FMRN_M TblFmrnM, TBL_FMRN_D TblFmrnD"
-  Where="TblFmrnM.FMRN_M_ID = TblFmrnD.FMRN_M_ID(+)   
-order  by TblFmrnM.FMRN_M_DATE desc">
+  Where="TblFmrnM.FMRN_M_ID = TblFmrnD.FMRN_M_ID(+)"
+  OrderBy="TblFmrnM.FMRN_M_DATE desc">
   <ViewAccessor
     Name="Purchase_Order_LOV1"
     ViewObjectName="model.LOV.Purchase_Order_LOV"
@@ -125,6 +129,10 @@ order  by TblFmrnM.FMRN_M_DATE desc">
   <ViewAccessor
     Name="VCF_Value_LOV1"
     ViewObjectName="model.LOV.VCF_Value_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="User_Name_LOV1"
+    ViewObjectName="model.LOV.User_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FmdocstsId"
@@ -326,6 +334,24 @@ order  by TblFmrnM.FMRN_M_DATE desc">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="VcfValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CreatedBy"
+    ListVOName="User_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CreatedBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UserMasterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UserMasterName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -788,6 +814,38 @@ order  by TblFmrnM.FMRN_M_DATE desc">
     EntityAttrName="LabTemp"
     EntityUsage="TblFmrnM"
     AliasName="LAB_TEMP"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblFmrnM"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblFmrnM"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblFmrnM"
+    AliasName="CREATED_BY"
+    LOVName="LOV_CreatedBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblFmrnM"
+    AliasName="CREATED_DATE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FmrnMId"/>
   </AttrArray>

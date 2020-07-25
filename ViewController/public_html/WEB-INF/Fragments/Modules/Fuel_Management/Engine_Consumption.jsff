@@ -183,7 +183,7 @@
                                                   label="#{row.bindings.FmitemsId.label}"
                                                   required="#{bindings.TblFmdailyConEngDView2.hints.FmitemsId.mandatory}"
                                                   shortDesc="#{bindings.TblFmdailyConEngDView2.hints.FmitemsId.tooltip}"
-                                                  id="soc1">
+                                                  id="soc1" readOnly="true">
                                 <f:selectItems value="#{row.bindings.FmitemsId.items}" id="si1"/>
                                 <f:validator binding="#{row.bindings.FmitemsId.validator}"/>
                               </af:selectOneChoice>

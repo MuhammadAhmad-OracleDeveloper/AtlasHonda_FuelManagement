@@ -346,6 +346,7 @@
           <Item Value="WaterPerc"/>
           <Item Value="VolCorrFactorId"/>
           <Item Value="Viscosity"/>
+          <Item Value="CreatedBy"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

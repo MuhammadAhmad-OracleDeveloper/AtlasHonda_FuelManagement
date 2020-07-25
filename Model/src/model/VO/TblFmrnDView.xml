@@ -30,7 +30,11 @@
        TblFmrnD.FMTANKS_ID, 
        TblFmrnD.COMP_SIZE, 
        TblFmrnD.SHORT_PER_CHART, 
-       TblFmrnD.SHORTAGE"
+       TblFmrnD.SHORTAGE, 
+       TblFmrnD.CREATED_BY, 
+       TblFmrnD.CREATED_DATE, 
+       TblFmrnD.UPDATED_BY, 
+       TblFmrnD.UPDATED_DATE"
   FromList="TBL_FMRN_D TblFmrnD"
   OrderBy="TblFmrnD.FMRN_D_ID desc">
   <ViewAccessor
@@ -259,4 +263,28 @@
     EntityAttrName="Shortage"
     EntityUsage="TblFmrnD"
     AliasName="SHORTAGE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblFmrnD"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblFmrnD"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblFmrnD"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblFmrnD"
+    AliasName="UPDATED_DATE"/>
 </ViewObject>

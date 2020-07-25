@@ -119,6 +119,37 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFmrnMView1.hints.FmrnQty.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Invoice No." id="c23" sortable="true" filterable="true" align="center">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InvoiceNo}"
+       id="it83" placeholder="Search Invoice No.">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.InvoiceNo.inputValue}"
+                                  label="#{bindings.TblFmrnMView1.hints.InvoiceNo.label}"
+                                  required="#{bindings.TblFmrnMView1.hints.InvoiceNo.mandatory}"
+                                  columns="#{bindings.TblFmrnMView1.hints.InvoiceNo.displayWidth}"
+                                  maximumLength="#{bindings.TblFmrnMView1.hints.InvoiceNo.precision}"
+                                  shortDesc="#{bindings.TblFmrnMView1.hints.InvoiceNo.tooltip}" id="it82"
+                                  readOnly="true" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.InvoiceNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="User" id="c24" sortable="true" filterable="true" align="left" width="150">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CreatedBy}"
+       id="it84" placeholder="Search Invoice No.">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CreatedBy.inputValue}"
+                                        label="#{row.bindings.CreatedBy.label}"
+                                        required="#{bindings.TblFmrnMView1.hints.CreatedBy.mandatory}"
+                                        shortDesc="#{bindings.TblFmrnMView1.hints.CreatedBy.tooltip}" id="soc2"
+                                         readOnly="true">
+                      <f:selectItems value="#{row.bindings.CreatedBy.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblFmrnMView1.hints.Status.name}" filterable="true"
                              sortable="true" headerText="Status" id="c29">
                               <f:facet name="filter">
