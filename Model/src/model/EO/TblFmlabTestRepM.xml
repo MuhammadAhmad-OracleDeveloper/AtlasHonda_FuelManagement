@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_FMLAB_TEST_REP_M"
   AliasName="TblFmlabTestRepM"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblFmlabTestRepMImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="FmlabTestRepMId"
     ColumnName="FMLAB_TEST_REP_M_ID"
@@ -67,6 +72,37 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMLAB_TEST_REP_M"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_FMLAB_TEST_REP_M"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_FMLAB_TEST_REP_M"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_FMLAB_TEST_REP_M"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_FMLAB_TEST_REP_M"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblFmlabTestRepD"
     Association="model.EO.FkTblFmlabTestRepMRepMAssoc"

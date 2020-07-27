@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_FMVENDORS_ATRIBUTE"
   AliasName="TblFmvendorsAtribute"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblFmvendorsAtributeImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="FmvendorsAtributeId"
     ColumnName="FMVENDORS_ATRIBUTE_ID"
@@ -47,6 +52,37 @@
       <Attr Name="_DisplaySize" Value="500"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_FMVENDORS_ATRIBUTE"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_FMVENDORS_ATRIBUTE"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_FMVENDORS_ATRIBUTE"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_FMVENDORS_ATRIBUTE"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblFmvendors"
     Association="model.EO.FkTblFMVendorAtributeFKAssoc"

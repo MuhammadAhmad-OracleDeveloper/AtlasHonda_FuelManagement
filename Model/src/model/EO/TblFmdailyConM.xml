@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_FMDAILY_CON_M"
   AliasName="TblFmdailyConM"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblFmdailyConMImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="FmdailyConMId"
     ColumnName="FMDAILY_CON_M_ID"
@@ -27,6 +32,37 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="TBL_FMDAILY_CON_M"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_FMDAILY_CON_M"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_FMDAILY_CON_M"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_FMDAILY_CON_M"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_FMDAILY_CON_M"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblFmdailyConD"
     Association="model.EO.SysC0023854Assoc"

@@ -216,7 +216,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_FMRN_D"/>
+    TableName="TBL_FMRN_D"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
@@ -230,7 +232,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_FMRN_D"/>
+    TableName="TBL_FMRN_D"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblFmbay"
     Association="model.EO.FkFmrnDBayAssoc"

@@ -487,7 +487,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
@@ -501,7 +503,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_FMRN_M"/>
+    TableName="TBL_FMRN_M"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblFmrnD"
     Association="model.EO.FkFmrnDRnMAssoc"
