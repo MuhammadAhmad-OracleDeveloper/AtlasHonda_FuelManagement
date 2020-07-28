@@ -184,7 +184,7 @@ public class TblFmdailyConMImpl extends EntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         Number loginId = null;
              try {
-                 loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
+                 loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
              } catch(Exception ex) {
                  ex.printStackTrace();
              }
