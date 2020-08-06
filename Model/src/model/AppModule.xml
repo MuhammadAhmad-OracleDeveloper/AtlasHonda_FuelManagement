@@ -214,6 +214,27 @@
   <ViewUsage
     Name="due_pdc_view1"
     ViewObjectName="model.VO.due_pdc_view"/>
+  <ViewUsage
+    Name="TblFmcvfccCbView1"
+    ViewObjectName="model.VO.TblFmcvfccCbView"/>
+  <ViewUsage
+    Name="TblFmcvfccConsView1"
+    ViewObjectName="model.VO.TblFmcvfccConsView"/>
+  <ViewUsage
+    Name="TblFmcvfccMView1"
+    ViewObjectName="model.VO.TblFmcvfccMView"/>
+  <ViewUsage
+    Name="TblFmcvfccOrView1"
+    ViewObjectName="model.VO.TblFmcvfccOrView"/>
+  <ViewUsage
+    Name="TblFmcvfccConsView2"
+    ViewObjectName="model.VO.TblFmcvfccConsView"/>
+  <ViewUsage
+    Name="TblFmcvfccCbView2"
+    ViewObjectName="model.VO.TblFmcvfccCbView"/>
+  <ViewUsage
+    Name="TblFmcvfccOrView2"
+    ViewObjectName="model.VO.TblFmcvfccOrView"/>
   <ViewLinkUsage
     Name="FkFmpoDItemsLink1"
     ViewLinkObjectName="model.VO.FkFmpoDItemsLink"
@@ -369,5 +390,23 @@
     ViewLinkObjectName="model.VO.FkTblFmpdcddFkLink"
     SrcViewUsageName="model.AppModule.TblFmpdcMView1"
     DstViewUsageName="model.AppModule.TblFmpdcDDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FmcvfccConsFmcvfccMFkLink1"
+    ViewLinkObjectName="model.VO.FmcvfccConsFmcvfccMFkLink"
+    SrcViewUsageName="model.AppModule.TblFmcvfccMView1"
+    DstViewUsageName="model.AppModule.TblFmcvfccConsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FmcvfccCbFmcvfccMFkLink1"
+    ViewLinkObjectName="model.VO.FmcvfccCbFmcvfccMFkLink"
+    SrcViewUsageName="model.AppModule.TblFmcvfccMView1"
+    DstViewUsageName="model.AppModule.TblFmcvfccCbView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FmcvfccOpFmcvfccMFkLink1"
+    ViewLinkObjectName="model.VO.FmcvfccOpFmcvfccMFkLink"
+    SrcViewUsageName="model.AppModule.TblFmcvfccMView1"
+    DstViewUsageName="model.AppModule.TblFmcvfccOrView2"
     Reversed="false"/>
 </AppModule>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FmcvfccConsFmcvfccMFkAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFmcvfccM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblFmcvfccM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmcvfccM"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmcvfccM.TblFmcvfccMPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmcvfccM.FmcvfccMId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFmcvfccCons"
+    Cardinality="-1"
+    Owner="model.EO.TblFmcvfccCons">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFmcvfccCons"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblFmcvfccCons.FmcvfccConsFmcvfccMFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmcvfccCons.FmcvfccMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

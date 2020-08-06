@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFmcvfccCb"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FMCVFCC_CB"
+  AliasName="TblFmcvfccCb"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FmcvfccMId"
+    ColumnName="FMCVFCC_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="FmcvfccCbId"
+    IsNotNull="true"
+    ColumnName="FMCVFCC_CB_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FmcbMDate"
+    ColumnName="FMCB_M_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="VendorId"
+    ColumnName="VENDOR_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="LocationId"
+    ColumnName="LOCATION_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="FmcbQty"
+    ColumnName="FMCB_QTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="FmcbRate"
+    ColumnName="FMCB_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="FmcbFrght"
+    ColumnName="FMCB_FRGHT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="FmcbGamt"
+    ColumnName="FMCB_GAMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="SupplierCv"
+    ColumnName="SUPPLIER_CV"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="StAmt"
+    ColumnName="ST_AMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="NetAmt"
+    ColumnName="NET_AMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="CvQty"
+    ColumnName="CV_QTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="BalQty"
+    ColumnName="BAL_QTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="Opt"
+    ColumnName="OPT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FMCVFCC_CB"/>
+  <Attribute
+    Name="StockTytpe"
+    Precision="1"
+    ColumnName="STOCK_TYTPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_FMCVFCC_CB"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblFmcvfccM"
+    Association="model.EO.FmcvfccCbFmcvfccMFkAssoc"
+    AssociationEnd="model.EO.FmcvfccCbFmcvfccMFkAssoc.TblFmcvfccM"
+    AssociationOtherEnd="model.EO.FmcvfccCbFmcvfccMFkAssoc.TblFmcvfccCb"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="TblFmcvfccCbPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="TBL_FMCVFCC_CB_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmcvfccCb.FmcvfccCbId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FmcvfccCbFmcvfccMFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TBL_FMCVFCC_M_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FMCVFCC_CB_FMCVFCC_M_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmcvfccCb.FmcvfccMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FmcvfccCbFmlocationFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMLOCATION"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FMCVFCC_CB_FMLOCATION_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmcvfccCb.LocationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FmcvfccCbFmvendorFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FMVENDORS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FMCVFCC_CB_FMVENDOR_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFmcvfccCb.VendorId"/>
+    </AttrArray>
+  </Key>
+</Entity>
