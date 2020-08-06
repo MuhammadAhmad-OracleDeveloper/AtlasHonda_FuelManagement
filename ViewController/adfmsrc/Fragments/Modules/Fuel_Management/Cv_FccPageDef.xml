@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cv_FccPageDef"
+                Package="Fragments.Modules.Fuel_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFmcvfccMView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmcvfccMView1Iterator"/>
+    <searchRegion Binds="TblFmcvfccMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmcvfccMView1Query"/>
+    <iterator Binds="TblFmcvfccOrView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmcvfccOrView2Iterator"/>
+    <searchRegion Binds="TblFmcvfccOrView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmcvfccOrView2Query"/>
+    <iterator Binds="TblFmcvfccConsView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmcvfccConsView2Iterator"/>
+    <searchRegion Binds="TblFmcvfccConsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmcvfccConsView2Query"/>
+    <iterator Binds="TblFmcvfccCbView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFmcvfccCbView2Iterator"/>
+    <searchRegion Binds="TblFmcvfccCbView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFmcvfccCbView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.Users_Roles.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFmcvfccMView1Iterator" id="TblFmcvfccMView1">
+      <nodeDefinition DefName="model.VO.TblFmcvfccMView" Name="TblFmcvfccMView10">
+        <AttrNames>
+          <Item Value="FmcvfccMId"/>
+          <Item Value="FmcvfccMDate"/>
+          <Item Value="FmcvfccMStdate"/>
+          <Item Value="FmcvfccMEndate"/>
+          <Item Value="FmcvfccMClqty"/>
+          <Item Value="FmcvfccMConsqty"/>
+          <Item Value="FmcvfccMRmks"/>
+          <Item Value="FCalc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmcvfccMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmcvfccMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmcvfccMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblFmcvfccOrView2Iterator" id="TblFmcvfccOrView2">
+      <nodeDefinition DefName="model.VO.TblFmcvfccOrView" Name="TblFmcvfccOrView20">
+        <AttrNames>
+          <Item Value="FmcvfccOrId"/>
+          <Item Value="VendorId"/>
+          <Item Value="LocationId"/>
+          <Item Value="FmrnMDate"/>
+          <Item Value="FmrnRate"/>
+          <Item Value="FmrnFrght"/>
+          <Item Value="NetAmt"/>
+          <Item Value="SupplierCv"/>
+          <Item Value="FmrnQty"/>
+          <Item Value="CvQty"/>
+          <Item Value="StAmt"/>
+          <Item Value="FmrnGamt"/>
+          <Item Value="BalQty"/>
+          <Item Value="StockTytpe"/>
+          <Item Value="Opt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmcvfccOrView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmcvfccOrView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmcvfccOrView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmcvfccConsView2Iterator" id="TblFmcvfccConsView2">
+      <nodeDefinition DefName="model.VO.TblFmcvfccConsView" Name="TblFmcvfccConsView20">
+        <AttrNames>
+          <Item Value="FmcvfccConsId"/>
+          <Item Value="VendorId"/>
+          <Item Value="LocationId"/>
+          <Item Value="FmrnMDate"/>
+          <Item Value="FmrnRate"/>
+          <Item Value="FmrnFrght"/>
+          <Item Value="NetAmt"/>
+          <Item Value="SupplierCv"/>
+          <Item Value="FmrnQty"/>
+          <Item Value="CvQty"/>
+          <Item Value="FmrnGamt"/>
+          <Item Value="StAmt"/>
+          <Item Value="QtyCons"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmcvfccConsView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmcvfccConsView2Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFmcvfccConsView2Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFmcvfccCbView2Iterator" id="TblFmcvfccCbView2">
+      <nodeDefinition DefName="model.VO.TblFmcvfccCbView" Name="TblFmcvfccCbView20">
+        <AttrNames>
+          <Item Value="FmcvfccCbId"/>
+          <Item Value="VendorId"/>
+          <Item Value="LocationId"/>
+          <Item Value="FmcbMDate"/>
+          <Item Value="FmcbRate"/>
+          <Item Value="FmcbFrght"/>
+          <Item Value="SupplierCv"/>
+          <Item Value="FmcbQty"/>
+          <Item Value="NetAmt"/>
+          <Item Value="FmcbGamt"/>
+          <Item Value="StAmt"/>
+          <Item Value="CvQty"/>
+          <Item Value="BalQty"/>
+          <Item Value="Opt"/>
+          <Item Value="StockTytpe"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFmcvfccCbView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFmcvfccCbView2Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFmcvfccCbView2Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

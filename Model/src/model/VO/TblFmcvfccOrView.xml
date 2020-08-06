@@ -6,13 +6,71 @@
   Name="TblFmcvfccOrView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmcvfccOr.FMCVFCC_M_ID, 
+       TblFmcvfccOr.FMCVFCC_OR_ID, 
+       TblFmcvfccOr.FMRN_M_DATE, 
+       TblFmcvfccOr.VENDOR_ID, 
+       TblFmcvfccOr.LOCATION_ID, 
+       TblFmcvfccOr.FMRN_QTY, 
+       TblFmcvfccOr.FMRN_RATE, 
+       TblFmcvfccOr.FMRN_FRGHT, 
+       TblFmcvfccOr.FMRN_GAMT, 
+       TblFmcvfccOr.SUPPLIER_CV, 
+       TblFmcvfccOr.ST_AMT, 
+       TblFmcvfccOr.NET_AMT, 
+       TblFmcvfccOr.CV_QTY, 
+       TblFmcvfccOr.BAL_QTY, 
+       TblFmcvfccOr.OPT, 
+       TblFmcvfccOr.STOCK_TYTPE"
+  FromList="TBL_FMCVFCC_OR TblFmcvfccOr"
+  OrderBy="TblFmcvfccOr.FMRN_M_DATE desc">
+  <ViewAccessor
+    Name="Vendor_LOV1"
+    ViewObjectName="model.LOV.Vendor_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Location_LOV1"
+    ViewObjectName="model.LOV.Location_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_VendorId"
+    ListVOName="Vendor_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VendorId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmvendorsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmvendorsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LocationId"
+    ListVOName="Location_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmlocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmlocationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmcvfccOr"
     Entity="model.EO.TblFmcvfccOr"/>
@@ -34,19 +92,44 @@
     PrecisionRule="true"
     EntityAttrName="FmrnMDate"
     EntityUsage="TblFmcvfccOr"
-    AliasName="FMRN_M_DATE"/>
+    AliasName="FMRN_M_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmcvfccOrView.FmrnMDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmcvfccOrView.FmrnMDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="VendorId"
     PrecisionRule="true"
     EntityAttrName="VendorId"
     EntityUsage="TblFmcvfccOr"
-    AliasName="VENDOR_ID"/>
+    AliasName="VENDOR_ID"
+    LOVName="LOV_VendorId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LocationId"
     PrecisionRule="true"
     EntityAttrName="LocationId"
     EntityUsage="TblFmcvfccOr"
-    AliasName="LOCATION_ID"/>
+    AliasName="LOCATION_ID"
+    LOVName="LOV_LocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmrnQty"
     PrecisionRule="true"
@@ -113,4 +196,8 @@
     EntityAttrName="StockTytpe"
     EntityUsage="TblFmcvfccOr"
     AliasName="STOCK_TYTPE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

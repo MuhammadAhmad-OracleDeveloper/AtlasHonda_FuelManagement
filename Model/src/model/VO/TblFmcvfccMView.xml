@@ -6,13 +6,41 @@
   Name="TblFmcvfccMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFmcvfccM.FMCVFCC_M_ID, 
+       TblFmcvfccM.FMCVFCC_M_DATE, 
+       TblFmcvfccM.FMCVFCC_M_STDATE, 
+       TblFmcvfccM.FMCVFCC_M_ENDATE, 
+       TblFmcvfccM.FMCVFCC_M_CLQTY, 
+       TblFmcvfccM.FMCVFCC_M_CONSQTY, 
+       TblFmcvfccM.FMCVFCC_M_RMKS, 
+       TblFmcvfccM.F_CALC"
+  FromList="TBL_FMCVFCC_M TblFmcvfccM"
+  OrderBy="TblFmcvfccM.FMCVFCC_M_DATE desc">
+  <ViewAccessor
+    Name="Calculation_LOV1"
+    ViewObjectName="model.LOV.Calculation_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FCalc"
+    ListVOName="Calculation_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FCalc"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmcvfccM"
     Entity="model.EO.TblFmcvfccM"/>
@@ -28,19 +56,46 @@
     PrecisionRule="true"
     EntityAttrName="FmcvfccMDate"
     EntityUsage="TblFmcvfccM"
-    AliasName="FMCVFCC_M_DATE"/>
+    AliasName="FMCVFCC_M_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmcvfccMView.FmcvfccMDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmcvfccMView.FmcvfccMDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmcvfccMStdate"
     PrecisionRule="true"
     EntityAttrName="FmcvfccMStdate"
     EntityUsage="TblFmcvfccM"
-    AliasName="FMCVFCC_M_STDATE"/>
+    AliasName="FMCVFCC_M_STDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmcvfccMView.FmcvfccMStdate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmcvfccMView.FmcvfccMStdate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmcvfccMEndate"
     PrecisionRule="true"
     EntityAttrName="FmcvfccMEndate"
     EntityUsage="TblFmcvfccM"
-    AliasName="FMCVFCC_M_ENDATE"/>
+    AliasName="FMCVFCC_M_ENDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.TblFmcvfccMView.FmcvfccMEndate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.TblFmcvfccMView.FmcvfccMEndate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmcvfccMClqty"
     PrecisionRule="true"
@@ -59,6 +114,20 @@
     EntityAttrName="FmcvfccMRmks"
     EntityUsage="TblFmcvfccM"
     AliasName="FMCVFCC_M_RMKS"/>
+  <ViewAttribute
+    Name="FCalc"
+    PrecisionRule="true"
+    EntityAttrName="FCalc"
+    EntityUsage="TblFmcvfccM"
+    AliasName="F_CALC"
+    LOVName="LOV_FCalc">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblFmcvfccConsView"
     ViewLink="model.VO.FmcvfccConsFmcvfccMFkLink"
@@ -74,4 +143,8 @@
     ViewLink="model.VO.FmcvfccOpFmcvfccMFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

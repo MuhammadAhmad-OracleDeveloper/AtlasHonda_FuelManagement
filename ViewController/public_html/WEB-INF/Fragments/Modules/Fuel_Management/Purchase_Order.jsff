@@ -170,7 +170,7 @@
                             </af:selectOneChoice>
                             <af:spacer id="s6"/>
                             <af:selectOneChoice value="#{bindings.FmlocationId.inputValue}"
-                                                label="location"
+                                                label="Location"
                                                 required="#{bindings.FmlocationId.hints.mandatory}"
                                                 shortDesc="#{bindings.FmlocationId.hints.tooltip}" id="soc6">
                               <f:selectItems value="#{bindings.FmlocationId.items}" id="si6"/>

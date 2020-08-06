@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="FmcvfccMId"
-    IsNotNull="true"
     ColumnName="FMCVFCC_M_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FMCVFCC_M"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmcvfccMDate"
     ColumnName="FMCVFCC_M_DATE"
@@ -64,6 +65,18 @@
     TableName="TBL_FMCVFCC_M">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FCalc"
+    Precision="1"
+    ColumnName="F_CALC"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_FMCVFCC_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
   <AccessorAttribute

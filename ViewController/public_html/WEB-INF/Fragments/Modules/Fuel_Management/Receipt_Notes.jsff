@@ -218,7 +218,7 @@
                     <f:selectItems value="#{bindings.FmpoMId.items}" id="si2"/>
                     <f:validator binding="#{bindings.FmpoMId.validator}"/>
                   </af:selectOneChoice>-->
-                            <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="#{bindings.FmpoMId.label}"
+                            <af:selectOneChoice value="#{bindings.FmpoMId.inputValue}" label="Purchase Order"
                                                 required="#{bindings.FmpoMId.hints.mandatory}"
                                                 shortDesc="#{bindings.FmpoMId.hints.tooltip}" id="soc13">
                               <f:selectItems value="#{bindings.FmpoMId.items}" id="si13"/>
@@ -331,7 +331,7 @@
                                           shortDesc="#{bindings.VehicleOutDate.hints.tooltip}" id="id7" contentStyle='text-align: center'>
                               <f:validator binding="#{bindings.VehicleOutDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.VehicleOutDate.format}"/>
-                              <af:convertDateTime pattern="HH:mm"/>
+                              
                             </af:inputDate>
                             <af:inputDate value="#{bindings.VehicleBayIndate.inputValue}"
                                           label="Vehicle Bay In Date"

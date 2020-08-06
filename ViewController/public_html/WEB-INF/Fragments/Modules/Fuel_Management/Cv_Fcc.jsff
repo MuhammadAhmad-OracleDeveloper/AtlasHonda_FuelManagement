@@ -1,2 +1,770 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+ 
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="CV FCC">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem text="CV FCC" id="sdi1">
+                <af:panelGridLayout id="pgl5">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                      <af:panelTabbed position="above" id="pt3">
+                        <af:showDetailItem id="tab3" text="CV FCC Master">
+                          <af:table value="#{bindings.TblFmcvfccMView1.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmcvfccMView1.rangeSize}"
+                                    emptyText="#{bindings.TblFmcvfccMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmcvfccMView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmcvfccMView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmcvfccMView1.rangeSize}"
+                                    filterModel="#{bindings.TblFmcvfccMView1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblFmcvfccMView1Query.processQuery}" varStatus="vs"
+                                    id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="ID" id="c1" width="80" align="center">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmcvfccMId}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmcvfccMId.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.tooltip}" id="it1"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmcvfccMId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Date" id="c2" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmcvfccMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmcvfccMDate.value}"
+                                              id="id1" placeholder="Search Date">
+                                  <af:convertDateTime pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.FmcvfccMDate.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.tooltip}"
+                                            id="id2" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmcvfccMDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="From Date" id="c3" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmcvfccMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmcvfccMStdate.value}"
+                                              id="id3" placeholder="Search Date">
+                                  <af:convertDateTime pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.FmcvfccMStdate.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.tooltip}"
+                                            id="id13" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmcvfccMStdate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMStdate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="To Date" id="c4" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmcvfccMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmcvfccMEndate.value}"
+                                              id="id5" placeholder="Search Date">
+                                  <af:convertDateTime pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.FmcvfccMEndate.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.tooltip}"
+                                            id="id6" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmcvfccMEndate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmcvfccMView1.hints.FmcvfccMEndate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMClqty.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Closing Qty" id="c5">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmcvfccMClqty}"
+       id="it5" placeholder="Search Qty">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmcvfccMClqty.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMClqty.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMClqty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMClqty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccMView1.hints.FmcvfccMClqty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMClqty.tooltip}"
+                                            id="it2" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmcvfccMClqty.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMConsqty.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Consumed Qty" id="c6" align="center">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmcvfccMConsqty}"
+       id="it14" placeholder="Search Qty">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmcvfccMConsqty.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMConsqty.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMConsqty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMConsqty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccMView1.hints.FmcvfccMConsqty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMConsqty.tooltip}"
+                                            id="it3" readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmcvfccMConsqty.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccMView1.hints.FmcvfccMRmks.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Remarks" id="c7" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FmcvfccMRmks}"
+       id="it17" placeholder="Search Remarks">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.FmcvfccMRmks.inputValue}"
+                                            label="#{bindings.TblFmcvfccMView1.hints.FmcvfccMRmks.label}"
+                                            required="#{bindings.TblFmcvfccMView1.hints.FmcvfccMRmks.mandatory}"
+                                            columns="#{bindings.TblFmcvfccMView1.hints.FmcvfccMRmks.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccMView1.hints.FmcvfccMRmks.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccMView1.hints.FmcvfccMRmks.tooltip}"
+                                            id="it4">
+                                <f:validator binding="#{row.bindings.FmcvfccMRmks.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Caculation" id="c8" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FCalc}"
+       id="it19" placeholder="Search Caculation">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.FCalc.inputValue}"
+                                                  label="#{row.bindings.FCalc.label}"
+                                                  required="#{bindings.TblFmcvfccMView1.hints.FCalc.mandatory}"
+                                                  shortDesc="#{bindings.TblFmcvfccMView1.hints.FCalc.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.FCalc.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.FCalc.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                     <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                      <af:panelTabbed position="above" id="pt4">
+                        <af:showDetailItem id="tab4" text="CV FCC Opening Receving">
+                          <af:table value="#{bindings.TblFmcvfccOrView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmcvfccOrView2.rangeSize}"
+                                    emptyText="#{bindings.TblFmcvfccOrView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmcvfccOrView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmcvfccOrView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmcvfccOrView2.rangeSize}"
+                                    filterModel="#{bindings.TblFmcvfccOrView2Query.queryDescriptor}"
+                                    filterVisible="true" queryListener="#{bindings.TblFmcvfccOrView2Query.processQuery}"
+                                    varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                            <af:column headerText="Vendor" id="c9"
+                                       width="200">
+                              <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
+                                                  label="#{row.bindings.VendorId.label}"
+                                                  required="#{bindings.TblFmcvfccOrView2.hints.VendorId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmcvfccOrView2.hints.VendorId.tooltip}"
+                                                  id="soc2" readOnly="true">
+                                <f:selectItems value="#{row.bindings.VendorId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.VendorId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Location" id="c10" width="200">
+                              <af:selectOneChoice value="#{row.bindings.LocationId.inputValue}"
+                                                  label="#{row.bindings.LocationId.label}"
+                                                  required="#{bindings.TblFmcvfccOrView2.hints.LocationId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmcvfccOrView2.hints.LocationId.tooltip}"
+                                                  id="soc3" readOnly="true">
+                                <f:selectItems value="#{row.bindings.LocationId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Date" id="c11" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmcvfccOrView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDate.value}"
+                                              id="id7">
+                                  <af:convertDateTime pattern="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.FmrnMDate.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.tooltip}" id="id8"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnMDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Rate" id="c12" align="center">
+                              <af:inputText value="#{row.bindings.FmrnRate.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.tooltip}" id="it8"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnRate.validator}"/>
+                              <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Frght" id="c13" align="center">
+                              <af:inputText value="#{row.bindings.FmrnFrght.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.tooltip}" id="it9"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnFrght.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Cost" id="c19" align="center">
+                              <af:inputText value="#{row.bindings.FmrnGamt.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.tooltip}" id="it15"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnGamt.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="CV" id="c15" align="center">
+                              <af:inputText value="#{row.bindings.SupplierCv.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.tooltip}"
+                                            id="it11" readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.SupplierCv.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.name}"
+                                       filterable="false"
+                                       sortable="false" headerText="Qty"
+                                       id="c16" align="center">
+                              <af:inputText value="#{row.bindings.FmrnQty.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.tooltip}" id="it12"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnQty.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.CvQty.name}" filterable="false"
+                                       sortable="false" headerText="CV Qty"
+                                       id="c17" align="center">
+                              <af:inputText value="#{row.bindings.CvQty.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.CvQty.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.CvQty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.CvQty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.CvQty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.CvQty.tooltip}" id="it13"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.CvQty.validator}"/>
+                               <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.NetAmt.name}" filterable="false"
+                                       sortable="false" headerText="Amount"
+                                       id="c14" align="center">
+                              <af:inputText value="#{row.bindings.NetAmt.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.NetAmt.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.NetAmt.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.NetAmt.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.NetAmt.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.NetAmt.tooltip}" id="it10"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.NetAmt.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                           
+                            
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.BalQty.name}" filterable="false"
+                                       sortable="false" headerText="Bal Qty"
+                                       id="c20" align="center">
+                              <af:inputText value="#{row.bindings.BalQty.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.BalQty.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.BalQty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.BalQty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.BalQty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.BalQty.tooltip}" id="it16"
+                                            readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.BalQty.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.Opt.name}" filterable="false"
+                                       sortable="false" headerText="Priority"
+                                       id="c22" align="center">
+                              <af:inputText value="#{row.bindings.Opt.inputValue}"
+                                            label="#{bindings.TblFmcvfccOrView2.hints.Opt.label}"
+                                            required="#{bindings.TblFmcvfccOrView2.hints.Opt.mandatory}"
+                                            columns="#{bindings.TblFmcvfccOrView2.hints.Opt.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccOrView2.hints.Opt.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccOrView2.hints.Opt.tooltip}" id="it18"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.Opt.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFmcvfccOrView2.hints.Opt.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                        </af:showDetailItem>
+                        
+                      </af:panelTabbed>
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                      <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        
+                    </af:gridCell>
+                  </af:gridRow>
+                  
+                  <af:gridRow marginTop="5px" height="auto" id="gr10">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10"/>
+                  </af:gridRow>
+                   <af:gridRow id="gr12">
+                        <af:gridCell id="gc12">
+                          <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab2" text="CV FCC Concumption">
+                          <af:table value="#{bindings.TblFmcvfccConsView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFmcvfccConsView2.rangeSize}"
+                                    emptyText="#{bindings.TblFmcvfccConsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFmcvfccConsView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFmcvfccConsView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFmcvfccConsView2.rangeSize}"
+                                    filterModel="#{bindings.TblFmcvfccConsView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblFmcvfccConsView2Query.processQuery}" varStatus="vs"
+                                    id="t3" scrollPolicy="page" autoHeightRows="0">
+                            <af:column headerText="Vendor" id="c18" width="200">
+                              <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
+                                                  label="#{row.bindings.VendorId.label}"
+                                                  required="#{bindings.TblFmcvfccConsView2.hints.VendorId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmcvfccConsView2.hints.VendorId.tooltip}"
+                                                  id="soc4" readOnly="true">
+                                <f:selectItems value="#{row.bindings.VendorId.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.VendorId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Location" id="c21" width="200">
+                              <af:selectOneChoice value="#{row.bindings.LocationId.inputValue}"
+                                                  label="#{row.bindings.LocationId.label}"
+                                                  required="#{bindings.TblFmcvfccConsView2.hints.LocationId.mandatory}"
+                                                  shortDesc="#{bindings.TblFmcvfccConsView2.hints.LocationId.tooltip}"
+                                                  id="soc5" readOnly="true">
+                                <f:selectItems value="#{row.bindings.LocationId.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Date" id="c26" align="center">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblFmcvfccConsView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDate.value}"
+                                              id="id9">
+                                  <af:convertDateTime pattern="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.FmrnMDate.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.tooltip}"
+                                            id="id10" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnMDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Rate" id="c27" align="center">
+                              <af:inputText value="#{row.bindings.FmrnRate.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.tooltip}"
+                                            id="it22" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnRate.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Frght" id="c28" align="center">
+                              <af:inputText value="#{row.bindings.FmrnFrght.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.tooltip}"
+                                            id="it23" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnFrght.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Cost" id="c33" align="center">
+                              <af:inputText value="#{row.bindings.FmrnGamt.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.tooltip}"
+                                            id="it28" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnGamt.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="CV" id="c30" align="center">
+                              <af:inputText value="#{row.bindings.SupplierCv.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.tooltip}"
+                                            id="it25" readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.SupplierCv.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Qty" id="c31" align="center">
+                              <af:inputText value="#{row.bindings.FmrnQty.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.tooltip}" id="it26"
+                                            readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.FmrnQty.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.CvQty.name}"
+                                       filterable="false"
+                                       sortable="false" headerText="CVQty"
+                                       id="c32" align="center">
+                              <af:inputText value="#{row.bindings.CvQty.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.CvQty.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.CvQty.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.CvQty.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.CvQty.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.CvQty.tooltip}" id="it27"
+                                            readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.CvQty.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.NetAmt.name}"
+                                       filterable="false" sortable="false"
+                                       headerText="Amount" id="c29" align="center">
+                              <af:inputText value="#{row.bindings.NetAmt.inputValue}"
+                                            label="#{bindings.TblFmcvfccConsView2.hints.NetAmt.label}"
+                                            required="#{bindings.TblFmcvfccConsView2.hints.NetAmt.mandatory}"
+                                            columns="#{bindings.TblFmcvfccConsView2.hints.NetAmt.displayWidth}"
+                                            maximumLength="#{bindings.TblFmcvfccConsView2.hints.NetAmt.precision}"
+                                            shortDesc="#{bindings.TblFmcvfccConsView2.hints.NetAmt.tooltip}" id="it24"
+                                            readOnly="true"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.NetAmt.validator}"/>
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                              </af:inputText>
+                            </af:column>
+                           
+                          </af:table>
+                          
+                        </af:showDetailItem>
+                          </af:panelTabbed>
+                        </af:gridCell>
+                      </af:gridRow>
+                  
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+            <af:panelTabbed position="above" id="pt5">
+              <af:showDetailItem id="tab1" text="CV FCC CB">
+                <af:table value="#{bindings.TblFmcvfccCbView2.collectionModel}" var="row"
+                          rows="#{bindings.TblFmcvfccCbView2.rangeSize}"
+                          emptyText="#{bindings.TblFmcvfccCbView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblFmcvfccCbView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblFmcvfccCbView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblFmcvfccCbView2.rangeSize}"
+                          filterModel="#{bindings.TblFmcvfccCbView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblFmcvfccCbView2Query.processQuery}" varStatus="vs" id="t4"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column headerText="Vendor" id="c23" width="200">
+                    <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
+                                        label="#{row.bindings.VendorId.label}"
+                                        required="#{bindings.TblFmcvfccCbView2.hints.VendorId.mandatory}"
+                                        shortDesc="#{bindings.TblFmcvfccCbView2.hints.VendorId.tooltip}" id="soc6"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.VendorId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.VendorId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Location" id="c24" width="200">
+                    <af:selectOneChoice value="#{row.bindings.LocationId.inputValue}"
+                                        label="#{row.bindings.LocationId.label}"
+                                        required="#{bindings.TblFmcvfccCbView2.hints.LocationId.mandatory}"
+                                        shortDesc="#{bindings.TblFmcvfccCbView2.hints.LocationId.tooltip}" id="soc7"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.LocationId.items}" id="si7"/>
+                      <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.name}" filterable="false"
+                             sortable="false" headerText="Date" id="c39" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblFmcvfccCbView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmcbMDate.value}"
+                                    id="id11">
+                        <af:convertDateTime pattern="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.FmcbMDate.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.displayWidth}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.tooltip}" id="id12"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmcbMDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.name}" filterable="false"
+                             sortable="false" headerText="Rate" id="c40" align="center">
+                    <af:inputText value="#{row.bindings.FmcbRate.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.tooltip}" id="it34"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmcbRate.validator}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.name}" filterable="false"
+                             sortable="false" headerText="Frght" id="c41" align="center">
+                    <af:inputText value="#{row.bindings.FmcbFrght.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.tooltip}" id="it35"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmcbFrght.validator}"/>
+                     <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.name}" filterable="false"
+                             sortable="false" headerText="Cost" id="c45" align="center">
+                    <af:inputText value="#{row.bindings.FmcbGamt.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.tooltip}" id="it39"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmcbGamt.validator}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.name}" filterable="false"
+                             sortable="false" headerText="CV" id="c42" align="center">
+                    <af:inputText value="#{row.bindings.SupplierCv.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.tooltip}" id="it36"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.SupplierCv.validator}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.name}" filterable="false"
+                             sortable="false" headerText="Qty" id="c43" align="center">
+                    <af:inputText value="#{row.bindings.FmcbQty.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.tooltip}" id="it37"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FmcbQty.validator}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.CvQty.name}" filterable="false"
+                             sortable="false" headerText="CV Qty" id="c47" align="center">
+                    <af:inputText value="#{row.bindings.CvQty.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.CvQty.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.CvQty.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.CvQty.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.CvQty.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.CvQty.tooltip}" id="it41"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.CvQty.validator}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.NetAmt.name}" filterable="false"
+                             sortable="false" headerText="Amount" id="c44" align="center">
+                    <af:inputText value="#{row.bindings.NetAmt.inputValue}"
+                                  label="#{bindings.TblFmcvfccCbView2.hints.NetAmt.label}"
+                                  required="#{bindings.TblFmcvfccCbView2.hints.NetAmt.mandatory}"
+                                  columns="#{bindings.TblFmcvfccCbView2.hints.NetAmt.displayWidth}"
+                                  maximumLength="#{bindings.TblFmcvfccCbView2.hints.NetAmt.precision}"
+                                  shortDesc="#{bindings.TblFmcvfccCbView2.hints.NetAmt.tooltip}" id="it38"
+                                  readOnly="true"
+                                            contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.NetAmt.validator}"/>
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                </af:table>
+
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
