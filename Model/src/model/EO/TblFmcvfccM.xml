@@ -26,35 +26,45 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FMCVFCC_M"/>
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmcvfccMStdate"
     ColumnName="FMCVFCC_M_STDATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FMCVFCC_M"/>
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmcvfccMEndate"
     ColumnName="FMCVFCC_M_ENDATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FMCVFCC_M"/>
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmcvfccMClqty"
     ColumnName="FMCVFCC_M_CLQTY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMCVFCC_M"/>
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmcvfccMConsqty"
     ColumnName="FMCVFCC_M_CONSQTY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_FMCVFCC_M"/>
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="FmcvfccMRmks"
     Precision="200"
@@ -62,7 +72,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_FMCVFCC_M">
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
@@ -74,7 +86,9 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_FMCVFCC_M">
+    TableName="TBL_FMCVFCC_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

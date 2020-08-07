@@ -213,16 +213,13 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
                       <af:panelTabbed position="above" id="pt4">
                         <af:showDetailItem id="tab4" text="CV FCC Opening Receving">
-                          <af:table value="#{bindings.TblFmcvfccOrView2.collectionModel}" var="row"
+                         <af:table value="#{bindings.TblFmcvfccOrView2.collectionModel}" var="row"
                                     rows="#{bindings.TblFmcvfccOrView2.rangeSize}"
                                     emptyText="#{bindings.TblFmcvfccOrView2.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
                                     selectedRowKeys="#{bindings.TblFmcvfccOrView2.collectionModel.selectedRow}"
                                     selectionListener="#{bindings.TblFmcvfccOrView2.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblFmcvfccOrView2.rangeSize}"
-                                    filterModel="#{bindings.TblFmcvfccOrView2Query.queryDescriptor}"
-                                    filterVisible="true" queryListener="#{bindings.TblFmcvfccOrView2Query.processQuery}"
-                                    varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                                    rowSelection="single" fetchSize="#{bindings.TblFmcvfccOrView2.rangeSize}" id="t2">
                             <af:column headerText="Vendor" id="c9"
                                        width="200">
                               <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
@@ -245,7 +242,6 @@
                               </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnMDate.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Date" id="c11" align="center">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblFmcvfccOrView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDate.value}"
@@ -264,7 +260,6 @@
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Rate" id="c12" align="center">
                               <af:inputText value="#{row.bindings.FmrnRate.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.FmrnRate.label}"
@@ -278,7 +273,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Frght" id="c13" align="center">
                               <af:inputText value="#{row.bindings.FmrnFrght.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.FmrnFrght.label}"
@@ -292,7 +286,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Cost" id="c19" align="center">
                               <af:inputText value="#{row.bindings.FmrnGamt.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.FmrnGamt.label}"
@@ -306,7 +299,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.name}"
-                                       filterable="false" sortable="false"
                                        headerText="CV" id="c15" align="center">
                               <af:inputText value="#{row.bindings.SupplierCv.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.SupplierCv.label}"
@@ -320,8 +312,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.name}"
-                                       filterable="false"
-                                       sortable="false" headerText="Qty"
+                                     headerText="Qty"
                                        id="c16" align="center">
                               <af:inputText value="#{row.bindings.FmrnQty.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.FmrnQty.label}"
@@ -334,8 +325,7 @@
                                 <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.CvQty.name}" filterable="false"
-                                       sortable="false" headerText="CV Qty"
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.CvQty.name}" headerText="CV Qty"
                                        id="c17" align="center">
                               <af:inputText value="#{row.bindings.CvQty.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.CvQty.label}"
@@ -348,8 +338,7 @@
                                <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.NetAmt.name}" filterable="false"
-                                       sortable="false" headerText="Amount"
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.NetAmt.name}" headerText="Amount"
                                        id="c14" align="center">
                               <af:inputText value="#{row.bindings.NetAmt.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.NetAmt.label}"
@@ -364,8 +353,7 @@
                             </af:column>
                            
                             
-                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.BalQty.name}" filterable="false"
-                                       sortable="false" headerText="Bal Qty"
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.BalQty.name}"  headerText="Bal Qty"
                                        id="c20" align="center">
                               <af:inputText value="#{row.bindings.BalQty.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.BalQty.label}"
@@ -379,8 +367,7 @@
                               </af:inputText>
                             </af:column>
                             
-                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.Opt.name}" filterable="false"
-                                       sortable="false" headerText="Priority"
+                            <af:column sortProperty="#{bindings.TblFmcvfccOrView2.hints.Opt.name}" headerText="Priority"
                                        id="c22" align="center">
                               <af:inputText value="#{row.bindings.Opt.inputValue}"
                                             label="#{bindings.TblFmcvfccOrView2.hints.Opt.label}"
@@ -434,10 +421,7 @@
                                     selectedRowKeys="#{bindings.TblFmcvfccConsView2.collectionModel.selectedRow}"
                                     selectionListener="#{bindings.TblFmcvfccConsView2.collectionModel.makeCurrent}"
                                     rowSelection="single" fetchSize="#{bindings.TblFmcvfccConsView2.rangeSize}"
-                                    filterModel="#{bindings.TblFmcvfccConsView2Query.queryDescriptor}"
-                                    filterVisible="true"
-                                    queryListener="#{bindings.TblFmcvfccConsView2Query.processQuery}" varStatus="vs"
-                                    id="t3" scrollPolicy="page" autoHeightRows="0">
+                                    id="t3">
                             <af:column headerText="Vendor" id="c18" width="200">
                               <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
                                                   label="#{row.bindings.VendorId.label}"
@@ -459,7 +443,6 @@
                               </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnMDate.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Date" id="c26" align="center">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblFmcvfccConsView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmrnMDate.value}"
@@ -479,7 +462,6 @@
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Rate" id="c27" align="center">
                               <af:inputText value="#{row.bindings.FmrnRate.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.FmrnRate.label}"
@@ -494,7 +476,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Frght" id="c28" align="center">
                               <af:inputText value="#{row.bindings.FmrnFrght.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.FmrnFrght.label}"
@@ -509,7 +490,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Cost" id="c33" align="center">
                               <af:inputText value="#{row.bindings.FmrnGamt.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.FmrnGamt.label}"
@@ -524,7 +504,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.name}"
-                                       filterable="false" sortable="false"
                                        headerText="CV" id="c30" align="center">
                               <af:inputText value="#{row.bindings.SupplierCv.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.SupplierCv.label}"
@@ -539,7 +518,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Qty" id="c31" align="center">
                               <af:inputText value="#{row.bindings.FmrnQty.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.FmrnQty.label}"
@@ -554,8 +532,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.CvQty.name}"
-                                       filterable="false"
-                                       sortable="false" headerText="CVQty"
+                                        headerText="CVQty"
                                        id="c32" align="center">
                               <af:inputText value="#{row.bindings.CvQty.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.CvQty.label}"
@@ -570,7 +547,6 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblFmcvfccConsView2.hints.NetAmt.name}"
-                                       filterable="false" sortable="false"
                                        headerText="Amount" id="c29" align="center">
                               <af:inputText value="#{row.bindings.NetAmt.inputValue}"
                                             label="#{bindings.TblFmcvfccConsView2.hints.NetAmt.label}"
@@ -607,10 +583,7 @@
                           rowBandingInterval="0"
                           selectedRowKeys="#{bindings.TblFmcvfccCbView2.collectionModel.selectedRow}"
                           selectionListener="#{bindings.TblFmcvfccCbView2.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblFmcvfccCbView2.rangeSize}"
-                          filterModel="#{bindings.TblFmcvfccCbView2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFmcvfccCbView2Query.processQuery}" varStatus="vs" id="t4"
-                          scrollPolicy="page" autoHeightRows="0">
+                          rowSelection="single" fetchSize="#{bindings.TblFmcvfccCbView2.rangeSize}" id="t4">
                   <af:column headerText="Vendor" id="c23" width="200">
                     <af:selectOneChoice value="#{row.bindings.VendorId.inputValue}"
                                         label="#{row.bindings.VendorId.label}"
@@ -631,8 +604,7 @@
                       <f:validator binding="#{row.bindings.LocationId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.name}" filterable="false"
-                             sortable="false" headerText="Date" id="c39" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.name}" headerText="Date" id="c39" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblFmcvfccCbView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FmcbMDate.value}"
                                     id="id11">
@@ -650,8 +622,7 @@
                       <af:convertDateTime pattern="#{bindings.TblFmcvfccCbView2.hints.FmcbMDate.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.name}" filterable="false"
-                             sortable="false" headerText="Rate" id="c40" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.name}" headerText="Rate" id="c40" align="center">
                     <af:inputText value="#{row.bindings.FmcbRate.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.FmcbRate.mandatory}"
@@ -664,8 +635,7 @@
                       <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.name}" filterable="false"
-                             sortable="false" headerText="Frght" id="c41" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.name}" headerText="Frght" id="c41" align="center">
                     <af:inputText value="#{row.bindings.FmcbFrght.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.FmcbFrght.mandatory}"
@@ -678,8 +648,7 @@
                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.name}" filterable="false"
-                             sortable="false" headerText="Cost" id="c45" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.name}" headerText="Cost" id="c45" align="center">
                     <af:inputText value="#{row.bindings.FmcbGamt.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.FmcbGamt.mandatory}"
@@ -692,8 +661,7 @@
                       <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.name}" filterable="false"
-                             sortable="false" headerText="CV" id="c42" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.name}" headerText="CV" id="c42" align="center">
                     <af:inputText value="#{row.bindings.SupplierCv.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.SupplierCv.mandatory}"
@@ -706,8 +674,7 @@
                       <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.name}" filterable="false"
-                             sortable="false" headerText="Qty" id="c43" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.name}" headerText="Qty" id="c43" align="center">
                     <af:inputText value="#{row.bindings.FmcbQty.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.FmcbQty.mandatory}"
@@ -720,8 +687,7 @@
                       <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.CvQty.name}" filterable="false"
-                             sortable="false" headerText="CV Qty" id="c47" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.CvQty.name}" headerText="CV Qty" id="c47" align="center">
                     <af:inputText value="#{row.bindings.CvQty.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.CvQty.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.CvQty.mandatory}"
@@ -734,8 +700,7 @@
                       <f:convertNumber groupingUsed="true" minFractionDigits="2" maxFractionDigits="2"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.NetAmt.name}" filterable="false"
-                             sortable="false" headerText="Amount" id="c44" align="center">
+                  <af:column sortProperty="#{bindings.TblFmcvfccCbView2.hints.NetAmt.name}" headerText="Amount" id="c44" align="center">
                     <af:inputText value="#{row.bindings.NetAmt.inputValue}"
                                   label="#{bindings.TblFmcvfccCbView2.hints.NetAmt.label}"
                                   required="#{bindings.TblFmcvfccCbView2.hints.NetAmt.mandatory}"
