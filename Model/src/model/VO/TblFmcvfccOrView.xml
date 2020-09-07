@@ -35,6 +35,14 @@
     Name="Location_LOV1"
     ViewObjectName="model.LOV.Location_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="FMCVFCCM_ID_LOV1"
+    ViewObjectName="model.LOV.FMCVFCCM_ID_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="FMCVFCC_Stock_Type_LOV1"
+    ViewObjectName="model.LOV.FMCVFCC_Stock_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_VendorId"
     ListVOName="Vendor_LOV1"
@@ -71,6 +79,42 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_FmcvfccMId"
+    ListVOName="FMCVFCCM_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FmcvfccMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FmcvfccMId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FmcvfccMId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StockTytpe"
+    ListVOName="FMCVFCC_Stock_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StockTytpe"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFmcvfccOr"
     Entity="model.EO.TblFmcvfccOr"/>
@@ -79,7 +123,15 @@
     PrecisionRule="true"
     EntityAttrName="FmcvfccMId"
     EntityUsage="TblFmcvfccOr"
-    AliasName="FMCVFCC_M_ID"/>
+    AliasName="FMCVFCC_M_ID"
+    LOVName="LOV_FmcvfccMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FmcvfccOrId"
     IsNotNull="true"
@@ -195,7 +247,15 @@
     PrecisionRule="true"
     EntityAttrName="StockTytpe"
     EntityUsage="TblFmcvfccOr"
-    AliasName="STOCK_TYTPE"/>
+    AliasName="STOCK_TYTPE"
+    LOVName="LOV_StockTytpe">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

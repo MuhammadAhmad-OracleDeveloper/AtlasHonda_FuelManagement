@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Batch Test Report">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"></af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:selectOneChoice label="#{bindings.FmcvfccMId.label}"
+                                                shortDesc="#{bindings.FmcvfccMId.hints.tooltip}" id="soc1"
+                                                binding="#{backingBeanScope.fcc_cv_reportBean.fmcvfccMID}"
+                                                contentStyle="width:200px;">
+                                <f:selectItems value="#{bindings.FmcvfccMId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.FmcvfccMId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="20" height="10" id="s16"/>
+                            <af:selectOneChoice label="#{bindings.StockTytpe.label}"
+                                                shortDesc="#{bindings.StockTytpe.hints.tooltip}" id="soc2"
+                                                binding="#{backingBeanScope.fcc_cv_reportBean.stockTytpe}"
+                                                contentStyle="width:200px;">
+                                <f:selectItems value="#{bindings.StockTytpe.items}" id="si2"/>
+                                <f:validator binding="#{bindings.StockTytpe.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
+                        <af:spacer width="20" height="30" id="s15"/>
+                        <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            <af:spacer width="20" height="10" id="s1"/>
+                            
+                           
+                            <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
+                                                unselectedLabel="--Select--" contentStyle="width:200px"
+                                                binding="#{backingBeanScope.fcc_cv_reportBean.format_type}">
+                                <af:selectItem label="PDF" value="PDF" id="si5"/>
+                                <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
+                            </af:selectOneChoice>
+                           
+                            <af:spacer width="30" height="30" id="s3"/>
+                            <af:button text="Generate Report" id="b2"
+                                       action="#{backingBeanScope.fcc_cv_reportBean.get_report}"/>
+                            <af:spacer width="30" height="10" id="s6"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+
+</ui:composition>

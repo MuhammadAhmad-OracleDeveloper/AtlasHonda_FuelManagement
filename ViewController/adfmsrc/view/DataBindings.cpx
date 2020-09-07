@@ -68,6 +68,7 @@
     <page path="/WEB-INF/Task_Flows/Modules/Fuel_Management/Cv_Fcc_TaskFlow.xml#Cv_Fcc_TaskFlow@ExecuteWithParams"
           usageId="view_Cv_Fcc_TaskFlow_Cv_Fcc_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fuel_Management/Cv_Fcc.jsff" usageId="view_Cv_FccPageDef"/>
+    <page path="/WEB-INF/Fragments/Reports/FCC_CV.jsff" usageId="view_FCC_CVPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
@@ -132,6 +133,7 @@
     <page id="view_Cv_Fcc_TaskFlow_Cv_Fcc_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fuel_Management.Cv_Fcc_TaskFlow_Cv_Fcc_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Cv_FccPageDef" path="Fragments.Modules.Fuel_Management.Cv_FccPageDef"/>
+    <page id="view_FCC_CVPageDef" path="Fragments.Reports.FCC_CVPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.Users_Roles"
